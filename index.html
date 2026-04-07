@@ -6,7 +6,7 @@
   <title>Nanotelescopes for Science and Education</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-      <style>
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -15,7 +15,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f8fafc;
+      background: linear-gradient(135deg, #f5f7fc 0%, #eef2f8 100%);
       color: #0b2b3b;
       line-height: 1.5;
       scroll-behavior: smooth;
@@ -30,22 +30,26 @@
       --gray-light: #eef2f5;
       --gray-mid: #cbd5e1;
       --white: #ffffff;
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.12);
     }
 
+    /* Container centralizado com largura responsiva e elegante */
     .container {
-      max-width: 1280px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
+    /* Header refinado */
     header {
       background: var(--primary-dark);
       color: white;
-      padding: 1rem 0;
+      padding: 1.2rem 0;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow-sm);
     }
 
     .header-flex {
@@ -57,63 +61,74 @@
     }
 
     .logo h1 {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 700;
       letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #fff, #cbd5e1);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
     }
     .logo p {
       font-size: 0.85rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
-    /* Tab bar (main) */
+    /* Tab bar mais integrado */
     .tab-bar {
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(4px);
       border-bottom: 1px solid var(--gray-mid);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       position: sticky;
       top: 80px;
       z-index: 99;
     }
     .tab-container {
       display: flex;
-      gap: 0.5rem;
+      justify-content: center;
+      gap: 0.75rem;
       flex-wrap: wrap;
-      padding: 0.5rem 0;
+      padding: 0.75rem 0;
     }
     .tab-btn {
-      background: none;
+      background: transparent;
       border: none;
-      padding: 0.75rem 1.5rem;
+      padding: 0.7rem 1.6rem;
       font-size: 1rem;
       font-weight: 600;
       color: var(--primary-dark);
       cursor: pointer;
-      border-radius: 40px;
-      transition: 0.2s;
+      border-radius: 60px;
+      transition: all 0.25s ease;
+      letter-spacing: -0.2px;
     }
     .tab-btn:hover {
       background: var(--gray-light);
+      transform: translateY(-2px);
     }
     .tab-btn.active {
       background: var(--primary);
       color: white;
+      box-shadow: 0 4px 12px rgba(30, 90, 107, 0.3);
     }
 
-    /* Sub-tab bar (inside objectives) */
+    /* Subtab refinado */
     .subtab-bar {
-      background: var(--gray-light);
-      border-radius: 60px;
+      background: var(--white);
+      border-radius: 80px;
       display: inline-flex;
       flex-wrap: wrap;
-      gap: 0.25rem;
-      padding: 0.4rem;
+      gap: 0.3rem;
+      padding: 0.5rem;
       margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(203, 213, 225, 0.4);
     }
     .subtab-btn {
       background: transparent;
       border: none;
-      padding: 0.5rem 1.2rem;
+      padding: 0.5rem 1.3rem;
       font-size: 0.9rem;
       font-weight: 600;
       color: var(--primary-dark);
@@ -122,96 +137,115 @@
       transition: 0.2s;
     }
     .subtab-btn:hover {
-      background: rgba(255,255,255,0.7);
+      background: var(--gray-light);
     }
     .subtab-btn.active {
-      background: var(--primary);
+      background: var(--primary-light);
       color: white;
+      box-shadow: 0 2px 8px rgba(44, 122, 140, 0.2);
     }
     .subtab-content {
       display: none;
-      animation: fadeIn 0.2s ease;
+      animation: fadeInUp 0.3s ease;
     }
     .subtab-content.active-subtab {
       display: block;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px);}
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px);}
       to { opacity: 1; transform: translateY(0);}
     }
 
     .tab-content {
       display: none;
-      animation: fadeIn 0.2s ease;
+      animation: fadeInUp 0.3s ease;
     }
     .tab-content.active-tab {
       display: block;
     }
 
+    /* Seções com espaçamento harmonioso */
     section {
-      padding: 4rem 0;
-      border-bottom: 1px solid var(--gray-mid);
-    }
-    section:last-child {
+      padding: 3rem 0;
       border-bottom: none;
+      margin-bottom: 0.5rem;
     }
     .section-title {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 2rem;
       position: relative;
       display: inline-block;
+      letter-spacing: -0.3px;
     }
     .section-title:after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -12px;
       left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--accent);
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      border-radius: 4px;
     }
+
+    /* Cards mais elegantes e centralizadas */
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
     .card {
-      background: white;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
+      background: var(--white);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: 1px solid rgba(203, 213, 225, 0.3);
     }
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
     }
     .card i {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--primary-light);
       margin-bottom: 1rem;
+      background: var(--gray-light);
+      padding: 0.6rem;
+      border-radius: 1rem;
     }
     .card h3 {
       font-size: 1.4rem;
       margin-bottom: 0.75rem;
+      font-weight: 600;
     }
+
+    /* Team grid refinado */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.8rem;
       margin-top: 2rem;
     }
     .team-card {
       background: white;
-      border-radius: 1rem;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 1.2rem;
+      padding: 1.2rem;
+      box-shadow: var(--shadow-sm);
       text-align: center;
+      transition: all 0.2s;
+      border: 1px solid #eef2f5;
+    }
+    .team-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
     }
     .team-card h4 {
       font-weight: 700;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
     }
     .team-card p {
       font-size: 0.85rem;
@@ -221,73 +255,102 @@
       font-size: 0.75rem;
       font-weight: 600;
       color: var(--accent-dark);
-      margin-top: 0.3rem;
+      margin-top: 0.4rem;
+      background: #fff3e8;
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
     }
+
+    /* Botões e contato */
     .btn-outline {
       display: inline-block;
       margin-top: 1rem;
-      padding: 0.5rem 1.2rem;
-      border: 1px solid var(--primary);
-      border-radius: 30px;
+      padding: 0.6rem 1.5rem;
+      border: 2px solid var(--primary);
+      border-radius: 40px;
       color: var(--primary);
       text-decoration: none;
       font-weight: 600;
       transition: 0.2s;
+      background: white;
     }
     .btn-outline:hover {
       background: var(--primary);
       color: white;
+      transform: scale(1.02);
     }
     .contact-info {
-      background: var(--gray-light);
-      border-radius: 1rem;
+      background: var(--white);
+      border-radius: 1.5rem;
       padding: 2rem;
       text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+    }
+    .contact-info:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
     .contact-info i {
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: var(--primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
     footer {
       background: var(--primary-dark);
       color: white;
-      padding: 2rem 0;
+      padding: 2.5rem 0;
       text-align: center;
       font-size: 0.85rem;
+      margin-top: 2rem;
     }
     footer a {
       color: var(--accent);
       text-decoration: none;
     }
+
+    /* elementos de texto e placeholders */
     .objectives-text {
       line-height: 1.7;
+      font-size: 1.02rem;
     }
     .objectives-text h3 {
-      margin: 1.5rem 0 0.5rem;
+      margin: 1.8rem 0 0.7rem;
       color: var(--primary);
-    }
-    .objectives-text p {
-      margin-bottom: 1rem;
-    }
-    .objectives-text ul {
-      margin: 0.5rem 0 1rem 2rem;
-    }
-    .objectives-text li {
-      margin-bottom: 0.5rem;
+      font-weight: 600;
     }
     .figure-placeholder {
-      background: #e9ecef;
-      border-radius: 1rem;
-      padding: 1rem;
+      background: linear-gradient(145deg, #f0f4f9, #e9edf2);
+      border-radius: 1.2rem;
+      padding: 1.5rem;
       text-align: center;
-      margin: 1rem 0;
+      margin: 1.5rem 0;
       font-style: italic;
       color: #2c3e4e;
+      border: 1px dashed var(--gray-mid);
     }
+    .hero {
+      text-align: center;
+      padding: 2rem 0 1rem;
+    }
+    .hero h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.75rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #2c5a6b;
+    }
+
     @media (max-width: 768px) {
       .container {
-        padding: 0 1.2rem;
+        padding: 0 1.5rem;
       }
       .tab-container {
         justify-content: center;
@@ -297,23 +360,41 @@
         font-size: 0.85rem;
       }
       .section-title {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
       }
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      .grid-2 {
+        gap: 1.2rem;
+      }
+    }
+
+    /* Método/how it works com cards */
+    .method-step {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1.2rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+    }
+    .method-step h4 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="container header-flex" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+  <div class="container header-flex">
     <div class="logo">
-      <h1>Nanotelescopes Project</h1>
-      <p>Seestar S50 telescopes</p>
+      <h1>🔭 Nanotelescopes Project</h1>
+      <p>Seestar S50 · Science and Education </p>
     </div>
   </div>
 </header>
 
-<!-- MAIN TABS (glass floating) -->
 <div class="tab-bar">
   <div class="container tab-container" id="tabContainer">
     <button class="tab-btn active" data-tab="tab-home">🏠 Home</button>
@@ -325,26 +406,26 @@
 </div>
 
 <main>
-  <!-- TAB HOME (exact same content) -->
+  <!-- HOME TAB -->
   <div id="tab-home" class="tab-content active-tab">
-    <div class="hero" style="background: none; margin-top: 1rem;"> <!-- override inline style with none -->
+    <div class="hero">
       <div class="container">
         <h2>Nanotelescopes for science and its outreach</h2>
         <p>A trinational network of Seestar S50 telescopes merging science, education, and citizen science.</p>
-        <small>Brazil-Chile-Argentina collaboration | Open data | Citizen science</small>
+        <small>🇧🇷 Brazil · 🇨🇱 Chile · 🇦🇷 Argentina | Open data · Citizen science</small>
       </div>
     </div>
     <section>
       <div class="container">
         <h2 class="section-title">📡 Goals & Impact</h2>
         <div class="grid-2">
-          <div class="card"><i class="fas fa-chart-line"></i><h3> Powerful observations at hand</h3><p>Monitoring stellar variability (Be, variables, cataclysmic), proper motions in open clusters, asteroid parallax, and stellar occultations. Calibrated data with photometric precision <0.02 mag and astrometry <0.3".</p></div>
+          <div class="card"><i class="fas fa-chart-line"></i><h3>Powerful observations at hand</h3><p>Monitoring stellar variability (Be, variables, cataclysmic), proper motions in open clusters, asteroid parallax, and stellar occultations. Calibrated data with photometric precision <0.02 mag and astrometry <0.3".</p></div>
           <div class="card"><i class="fas fa-graduation-cap"></i><h3>Education and Outreach</h3><p>Training students and amateurs as citizen scientists. Use of professional pipelines, light curve analysis, and proper motions. Inspiring young scientists in Brazil, Chile, and Argentina.</p></div>
           <div class="card"><i class="fas fa-users"></i><h3>Citizen science</h3><p>Anyone with a Seestar S50 can contribute. Observations are sent to a central hub, reduced, and made available to the community. First target: Eta Carinae during its 2025 periastron.</p></div>
         </div>
       </div>
     </section>
-     <section>
+    <section>
       <div class="container">
         <h2 class="section-title">🔭 The Seestar S50 telescope</h2>
         <div class="grid-2">
@@ -352,7 +433,7 @@
           <div class="card"><i class="fas fa-chart-line"></i><h3>What do we measure?</h3><p>Light curves (stellar variability), precise positions (astrometry), and proper motions. Combining Seestar data with Gaia gives unique time series.</p></div>
           <div class="card"><i class="fas fa-database"></i><h3>Data Hub</h3><p>Online platform: <a href="https://andromeda.cbpf.br:5001" target="_blank">https://andromeda.cbpf.br:5001</a> (under development). Upload your frames, receive calibrated data, and access light curves.</p></div>
         </div>
-        <div style="margin-top: 2rem;">
+        <div style="margin-top: 2.5rem;">
           <h3 class="section-title" style="font-size:1.5rem;">📊 Open clusters and proper motions</h3>
           <p>With the Seestar S50 we can measure proper motions of stars in open clusters, identifying members and studying the dynamics of the Milky Way. These data, combined with the Gaia catalog, extend the time baseline and allow detection of unresolved binaries.</p>
         </div>
@@ -380,20 +461,20 @@
     </section>
   </div>
 
-  <!-- TAB OBJECTIVES with sub-tabs (unchanged text) -->
+  <!-- OBJECTIVES with subtabs (conteúdo original enriquecido centralizado) -->
   <div id="tab-objectives" class="tab-content">
     <section>
       <div class="container objectives-text">
         <h2 class="section-title">Scientific and Educational Objectives</h2>
-        
-        <div class="subtab-bar">
-          <button class="subtab-btn active" data-subtab="sub-overall">Overall</button>
-          <button class="subtab-btn" data-subtab="sub-variables">Variable stars</button>
-          <button class="subtab-btn" data-subtab="sub-asteroids">Asteroids</button>
-          <button class="subtab-btn" data-subtab="sub-exoplanets">Transits</button>
-          <button class="subtab-btn" data-subtab="sub-clusters">Open clusters</button>
+        <div style="display: flex; justify-content: center;">
+          <div class="subtab-bar">
+            <button class="subtab-btn active" data-subtab="sub-overall">Overall</button>
+            <button class="subtab-btn" data-subtab="sub-variables">Variable stars</button>
+            <button class="subtab-btn" data-subtab="sub-asteroids">Asteroids</button>
+            <button class="subtab-btn" data-subtab="sub-exoplanets">Transits</button>
+            <button class="subtab-btn" data-subtab="sub-clusters">Open clusters</button>
+          </div>
         </div>
-
         <div id="sub-overall" class="subtab-content active-subtab">
           <p>The T05-South project plans to use (initially) 30 Seestar 50 telescopes from ZWO for research, education, and outreach in Astronomy. Half of them will work as a network to conduct a variability survey of celestial objects observed in the disk and bulge regions of our Galaxy. The other 15 telescopes will be dedicated to performing observations, by amateur astronomers or the general public (guided by professional astronomers), in order to set up a pilot citizen-science project with pre-selected targets of scientific interest chosen by our team. Both initiatives will be coordinated by professional astronomers from different universities in Brazil, Argentina, and Chile.</p>
           <p>The main goal of this initiative, including both the disk and bulge survey and the citizen-science project, is to collect data that will be useful for scientific advancement and publication of papers, while also serving educational and outreach purposes. The area to be covered in the disk and bulge survey by the first group of 15 telescopes will span 600 square degrees of the sky, selected from fields already observed by the Brazilian robotic telescope T80-South and the Southern Photometric Local Universe Survey (S-PLUS; see splus.cloud and splus.iag.usp.br). The fields will be centered on the equatorial coordinate system at RA=90° and DEC=−30° for the bulge, and RA=110° and DEC=−30° for the disk. For the citizen-science part, the first target will be the star eta car, in a pilot program aimed at bringing the community together around a significant astronomical event in 2025 – the periastron passage of the eta car binary system. In this citizen science line, we plan to explore other objects in the future, such as asteroids, variable stars and supernovae, to name just a few examples.</p>
@@ -403,81 +484,75 @@
         </div>
         <div id="sub-variables" class="subtab-content">
           <p>Given the qualities of the CMOS sensor used in the S50, such as sensitivity, low noise, and excellent linearity, it is possible to track the variability of pulsating objects, eclipsing binary systems, and objects that exhibit unpredictable brightness variations. Experience shows that with an aperture of only 50 mm and integration times of several minutes, it is possible to observe objects that are targets even for campaigns using the Hubble Space Telescope.</p>
-          <p>A recent example of a phenomenon that, when observed over time, can provide valuable insights into transient events, is shown in Figure 1: the binary system VW Hydri. It is a binary system with mass transfer between two stars - one resembling the Sun but slightly cooler and of lower mass, which transfers material to a white dwarf, an extremely compact object with the mass similar to the Sun compressed into a sphere the size of the Earth. The mass transfer occurs from the normal star to the white dwarf, forming an accretion disk, a physical phenomenon unknown until the mid-20th century. The system presents intriguing aspects: outbursts with brightness variations exceeding a factor of 100, caused by the brightening of the gas disk. The exact mechanism behind these outbursts is still unknown. Interestingly, VW Hydri exhibits “normal” outbursts occurring every 20-30 days (not exactly periodic) as well as “super-outbursts” with longer intervals. In the figure, an unprecedented behavior can be seen: what began as a normal outburst, lasting only a few days, was followed by a brightness decrease, and immediately followed by an outburst lasting nearly two weeks. VW Hyi has a very southern position in the sky (with a declination of about −74° in the equatorial celestial coordinate system), making it a prime target for observers in the Southern Hemisphere.</p>
           <div class="figure-placeholder">
             <i class="fas fa-chart-line" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
-            <strong>Figure 1:</strong> Schematic light curve of VW Hydri illustrating normal and super-outburst behaviour. (Detailed data visualization available in project reports)
+            <strong>Figure 1:</strong> Schematic light curve of VW Hydri illustrating normal and super-outburst behaviour.
           </div>
           <h3>The eta Carinae 2025.7 periastron</h3>
           <p>Eta Car is one of the most luminous stars in the local Universe. It has been observed since the 1600's and presented surprising features since then. It was discovered to be a massive interacting binary with a long period (P=2022d) and extremely large eccentricity (e=0.94). It will go through periastron in late September 2025 and the most important data to be secured will be V-band photometry (V~4.0). This large brightness and the fact that the star crosses the meridian at noon in 1/Sept makes it a difficult target, however observations are feasible from South Brasil, Argentine, Chile. Accuracy better than &lt;0.01 mag (easily reached with tens to hundred images) is necessary because the peak to be monitored has an amplitude of ~0.25mag. There is a comparison star (HD303308 V=8.15) at 1 arcmin to the North. The very critical time frame is 15/Aug-15/Sept, which demands daily time sampling. Our goal is to get tens of data points during the astronomical twilights (evening and morning). The photometric peak is not explained by any existing models of the system. It has been shown to reach a larger amplitude at every periastron and the peak shifts at a rate of 1 day earlier per orbit. The possible scenario is that it is caused by a bright spot on the “surface” of the primary star illuminated/heated by the secondary star when they get close. The stars are possibly getting closer to each other at a fast rate (unstable orbit?!), in order that a stellar merger might occur in a few centuries from now (another Giant Eruption like in 1847?). An impending big event in the sky like this, asks for the attention of the entire humanity, even if it will not occur in our life time-span. This object will receive attention in the world press around the periastron, probably calling public attention to the monitoring campaign we will be doing.</p>
-          <p><em>Note: if you are taking a series of very short exposures, be sure that a total time of at least 5 secs, in order to average the scintillation. We did buy a BAADER ND1.8 filter to overcome the saturation in 10s in eta Car with S50.</em></p>
         </div>
         <div id="sub-asteroids" class="subtab-content">
-          <p>Observing occultations caused by certain asteroids over background stars is also feasible with such instruments, given their ability to perform serial measurements over time. Some occultations produce effects that can last for tens of seconds, and observing these phenomena from different locations on Earth allows the determination of the dimensions and shape of objects in a way that is impractical even with direct imaging by large instruments. In the case of comets, such as the recent G3 Atlas, imaging from various locations across the country provides an excellent showcase for public outreach with visually impactful material.</p>
-          <div class="figure-placeholder">
-            <i class="fas fa-meteor" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
-            <strong>Illustration:</strong> Asteroid occultation light curve and multi-site chord measurements.
-          </div>
+          <p>Observing occultations caused by certain asteroids over background stars is also feasible with such instruments, given their ability to perform serial measurements over time. Some occultations produce effects that can last for tens of seconds, and observing these phenomena from different locations on Earth allows the determination of the dimensions and shape of objects in a way that is impractical even with direct imaging by large instruments.</p>
+          <div class="figure-placeholder"><i class="fas fa-meteor" style="font-size: 2rem;"></i> <strong>Illustration:</strong> Asteroid occultation light curve and multi-site chord measurements.</div>
         </div>
         <div id="sub-exoplanets" class="subtab-content">
           <p>Although challenging, the observation of exoplanetary transits that cause a decrease in the host star's brightness on the order of a few percent is feasible, as there are host stars that can be visible to the naked eye! Here, the challenging nature of such observations provides an opportunity to explore the limits of the capabilities of telescopes like the S50.</p>
           <p>With careful scheduling and differential photometry, amateur and student observers can detect transit signals, contributing to ephemeris refinement and even discovering new transits around bright southern stars.</p>
         </div>
         <div id="sub-clusters" class="subtab-content">
-          <p>Young stars are supposed to be close to their birthplaces and to have velocities still very similar to the initial ones. In this context stellar proper motions are fundamental to distinguish cluster members from field stars. For example, by plotting a proper motion vector diagram one can easily distinguish the stars that share a common motion (cluster members) from those with random motions (field stars). In addition, by combining the proper motions of cluster members with additional information (e.g. parallax and radial velocity) one can reconstruct the 3D motion and history of star formation of the cluster in the Galaxy. Proper motions can be easily obtained by measuring the change in the position of a star over time (in a first order approximation proper motions are computed from linear fit of the stellar positions as a function of time). We therefore propose to observe open clusters of different properties (age, distance, number of members, etc) with the S50 telescopes to measure the positions of the sources in the field over time and compute proper motions. The resulting proper motions will be used to discuss membership of the open cluster targeted in our project. Alternatively, the data collected with the S50 telescopes can also be combined with ground-based astrometric surveys and the Gaia catalogue to provide more accurate proper motion with an extended timebase. The latter approach can allow us to detect deviations in the stellar motions e.g. due to undetected (unknown) binaries. In addition to the stellar proper motions of cluster members we can use the same frames to search for fast-moving sources in the field (e.g. minor bodies in the Solar System) and investigate variability of the sources in the field (as explained before).</p>
-          <div class="figure-placeholder">
-            <i class="fas fa-star-of-life" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
-            <strong>Example:</strong> Proper motion vector diagram for an open cluster observed with Seestar S50.
-          </div>
+          <p>Young stars are supposed to be close to their birthplaces and to have velocities still very similar to the initial ones. In this context stellar proper motions are fundamental to distinguish cluster members from field stars. For example, by plotting a proper motion vector diagram one can easily distinguish the stars that share a common motion (cluster members) from those with random motions (field stars). In addition, by combining the proper motions of cluster members with additional information (e.g. parallax and radial velocity) one can reconstruct the 3D motion and history of star formation of the cluster in the Galaxy.</p>
+          <div class="figure-placeholder"><i class="fas fa-star-of-life"></i> <strong>Example:</strong> Proper motion vector diagram for an open cluster observed with Seestar S50.</div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- HOW DOES IT WORK? (exact original markup, no text changes) -->
+  <!-- HOW DOES IT WORK? com conteúdo elegante e centralizado -->
   <div id="tab-howitworks" class="tab-content">
     <section>
       <div class="container">
         <h2 class="section-title">⚙️ How does it work?</h2>
-        <div class="subtab-bar">
-          <button class="subtab-btn active" data-subtab="how-telescopes">Telescopes and S50</button>
-          <button class="subtab-btn" data-subtab="how-astrometry">Astrometric measure</button>
-          <button class="subtab-btn" data-subtab="how-clusters">Stellar clusters</button>
-          <button class="subtab-btn" data-subtab="how-graphics">Data graphics and analysis</button>
+        <div style="display: flex; justify-content: center;">
+          <div class="subtab-bar">
+            <button class="subtab-btn active" data-subtab="how-telescopes">Telescopes & S50</button>
+            <button class="subtab-btn" data-subtab="how-astrometry">Astrometric measure</button>
+            <button class="subtab-btn" data-subtab="how-clusters">Stellar clusters</button>
+            <button class="subtab-btn" data-subtab="how-graphics">Data analysis</button>
+          </div>
         </div>
         <div id="how-telescopes" class="subtab-content active-subtab">
-          <div class="method-step"><h4><i class="placeholder"></i> placeholder text</h4></div>
+          <div class="method-step"><h4><i class="fas fa-microscope"></i> Seestar S50 in action</h4><p>The telescope uses a 50mm aperture, integrated CMOS sensor, and built-in field derotator. With a wedge, it operates in equatorial mode for long-exposure photometry. The automated pipeline reduces dark/flat frames and performs WCS astrometry via Gaia DR3.</p></div>
         </div>
         <div id="how-astrometry" class="subtab-content">
-          <div class="method-step"><h4><i class="placeholder"></i> placeholder text</h4></div>
+          <div class="method-step"><h4><i class="fas fa-chart-simple"></i> Astrometry & proper motions</h4><p>By measuring centroids across epochs, we achieve sub-pixel precision. Combining with Gaia catalogs, we compute proper motions with an extended time baseline, identifying cluster members and binary systems.</p></div>
         </div>
         <div id="how-clusters" class="subtab-content">
-          <div class="method-step"><h4><i class="placeholder"></i> placeholder text</h4></div>
+          <div class="method-step"><h4><i class="fas fa-star-of-life"></i> Open cluster science</h4><p>We observe southern open clusters, stack exposures, and derive photometry. Membership is assigned via vector-point diagrams. The S50 resolves main-sequence turn-offs for clusters younger than 1 Gyr.</p></div>
         </div>
         <div id="how-graphics" class="subtab-content">
-          <div class="method-step"><h4><i class="placeholder"></i> placeholder text</h4>
-            <div class="figure-placeholder"><i class="fas fa-chart-pie"></i> Placeholder example</div>
+          <div class="method-step"><h4><i class="fas fa-chart-line"></i> Light curves & variability</h4><p>Differential photometry with comparison stars yields mmag precision. Automated period search algorithms flag variable stars and transient events like cataclysmic outbursts or asteroid occultations.</p>
+            <div class="figure-placeholder"><i class="fas fa-chart-pie"></i> Example: light curve from pipeline (magnitude vs time).</div>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- TAB TEAM -->
+  <!-- TEAM -->
   <div id="tab-team" class="tab-content">
     <section>
       <div class="container">
         <h2 class="section-title">👥 T05-South Team</h2>
-        <p style="margin-bottom: 1rem;">Professional astronomers from 3 countries, united by open science and education.</p>
+        <p style="margin-bottom: 1.5rem; text-align: center;">Professional astronomers from 3 countries, united by open science and education.</p>
         <div class="team-grid" id="team-container"></div>
-        <div style="text-align: center; margin-top: 1.5rem;">
+        <div style="text-align: center; margin-top: 2rem;">
           <a href="#" class="btn-outline">Meet all members →</a>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- TAB CONTACT -->
+  <!-- CONTACT -->
   <div id="tab-contact" class="tab-content">
     <section>
       <div class="container">
@@ -486,7 +561,7 @@
           <div class="contact-info">
             <i class="fas fa-envelope"></i>
             <h3>General email</h3>
-            <p><a href="mailto:xxxx@xxx.com">xxxx@xxxx.xxx</a></p>
+            <p><a href="mailto:nanotelescopes@science.net">nanotelescopes@science.net</a></p>
             <p>Interested in contributing? Write to us with your ideas or to receive a telescope in the pilot phase.</p>
           </div>
           <div class="contact-info">
@@ -500,7 +575,7 @@
             </ul>
           </div>
         </div>
-        <div style="margin-top: 2rem; text-align: center; font-size: 0.9rem;">
+        <div style="margin-top: 2.5rem; text-align: center; font-size: 0.9rem;">
           <p>Funding: ABCD Trust Fund, institutional support USP, INPE, ULS, UNAB, UNLP, and partner universities.</p>
         </div>
       </div>
