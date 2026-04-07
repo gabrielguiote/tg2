@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Nanotelescopes for Science and Education (T05-South) | 3D Structure</title>
+  <title>Nanotelescopes for Science and Education</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -491,7 +491,7 @@
     </section>
   </div>
 
-  <!-- HOW DOES IT WORK? (Fixed structure + 3D style) -->
+  <!-- HOW DOES IT WORK?-->
   <div id="tab-howitworks" class="tab-content">
     <section>
       <div class="container">
@@ -504,25 +504,7 @@
           <button class="subtab-btn" data-subtab="how-graphics">Data graphics & analysis</button>
         </div>
 
-        <div id="how-telescopes" class="subtab-content active-subtab">
-          <div class="method-step"><h4><i class="fas fa-microscope"></i> Seestar S50 – Smart telescope</h4><p>The S50 integrates a 50mm f/5 apochromatic lens, Sony CMOS sensor, and built-in alt-az mount with field derotation. Using the intelligent image stacking (live stacking) and equatorial wedge, we achieve sub-arcsecond tracking and scientific-grade FITS files. Our team developed custom SDK routines to command exposures and dithering sequences for photometric calibration.</p></div>
-          <div class="method-step"><h4><i class="fas fa-cloud-sun"></i> Calibration pipeline</h4><p>Raw frames are automatically dark-subtracted, flat-fielded, and astrometrically solved with Gaia DR3. Aperture photometry yields differential light curves with precision down to 0.01 mag for stars brighter than mag 12.</p></div>
-        </div>
-
-        <div id="how-astrometry" class="subtab-content">
-          <div class="method-step"><h4><i class="fas fa-chart-line"></i> Accurate astrometry & proper motions</h4><p>By combining multi-epoch Seestar images spanning months or years, we measure stellar positions with centroid errors below 0.1 pixel (~0.3 arcsec). The time series is merged with Gaia epoch astrometry to derive proper motions and detect astrometric binaries.</p></div>
-          <div class="figure-placeholder"><i class="fas fa-drafting-compass"></i> Schematic: positional displacement over 6 months – proper motion detection in open clusters.</div>
-        </div>
-
-        <div id="how-clusters" class="subtab-content">
-          <div class="method-step"><h4><i class="fas fa-cluster"></i> Open cluster membership</h4><p>Using vector point diagrams (proper motion space), cluster members are separated from field stars. Our pipeline uses a Bayesian membership algorithm, delivering clean color-magnitude diagrams down to magnitude 15.</p></div>
-          <div class="figure-placeholder"><i class="fas fa-chart-scatter"></i> Example: proper motion vector diagram for open cluster IC 2391 – clear cluster sequence.</div>
-        </div>
-
-        <div id="how-graphics" class="subtab-content">
-          <div class="method-step"><h4><i class="fas fa-chart-pie"></i> Real-time data graphics & public dashboard</h4><p>All reduced data are ingested into the central hub (andromeda.cbpf.br) where users can visualize live light curves, FITS previews, and download calibrated catalogues. Interactive plots show variable star classification, asteroid motion residuals, and transit detection.</p></div>
-          <div class="figure-placeholder"><i class="fas fa-chart-simple"></i> Live light curve dashboard – real-time monitoring from the Seestar network.</div>
-        </div>
+        
       </div>
     </section>
   </div>
