@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>T05-South | Nanotelescopes for Science and Education</title>
+  <title>Nanotelescopes for Science and Education (T05-South)</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -307,8 +307,8 @@
 <header>
   <div class="container header-flex">
     <div class="logo">
-      <h1>T05-South</h1>
-      <p>Nanotelescopes Network</p>
+      <h1>Nanotelescopes Project</h1>
+      <p>Seestar 50 telescopes (T05-South)</p>
     </div>
   </div>
 </header>
@@ -318,7 +318,6 @@
   <div class="container tab-container" id="tabContainer">
     <button class="tab-btn active" data-tab="tab-home">🏠 Home</button>
     <button class="tab-btn" data-tab="tab-objectives">📋 Objectives</button>
-    <button class="tab-btn" data-tab="tab-science">🔭 Science</button>
     <button class="tab-btn" data-tab="tab-team">👥 Team</button>
     <button class="tab-btn" data-tab="tab-contact">📬 Contact & Resources</button>
   </div>
@@ -329,7 +328,7 @@
   <div id="tab-home" class="tab-content active-tab">
     <section class="hero" style="background: linear-gradient(135deg, #0a2f3f 0%, #123e4a 100%); color: white; padding: 4rem 0;">
       <div class="container">
-        <h2>Nanotelescopes for big discoveries</h2>
+        <h2>Nanotelescopes for science and its divulgation</h2>
         <p>A trinational network of Seestar S50 telescopes merging science, education, and citizen science.</p>
         <small>Brazil-Chile-Argentina collaboration | Open data | Citizen science</small>
       </div>
@@ -341,6 +340,20 @@
           <div class="card"><i class="fas fa-chart-line"></i><h3>Cutting-edge science</h3><p>Monitoring stellar variability (Be, variables, cataclysmic), proper motions in open clusters, asteroid parallax, and stellar occultations. Calibrated data with photometric precision <0.02 mag and astrometry <0.3".</p></div>
           <div class="card"><i class="fas fa-graduation-cap"></i><h3>Education & Outreach</h3><p>Training students and amateurs as citizen scientists. Use of professional pipelines, light curve analysis, and proper motions. Inspiring young scientists in Brazil, Chile, and Argentina.</p></div>
           <div class="card"><i class="fas fa-users"></i><h3>Citizen science</h3><p>Anyone with a Seestar S50 can contribute. Observations are sent to a central hub, reduced, and made available to the community. First target: Eta Carinae during its 2025 periastron.</p></div>
+        </div>
+      </div>
+    </section>
+     <section>
+      <div class="container">
+        <h2 class="section-title">🔭 The Seestar S50 telescope</h2>
+        <div class="grid-2">
+          <div class="card"><i class="fas fa-camera"></i><h3>Affordable technology</h3><p>50 mm aperture, CMOS camera with IRCUT filter. Operates in Alt-Az or equatorial mode (wedge). Sensitivity similar to Gaia BP filter, enabling precise photometry down to magnitude 13.</p></div>
+          <div class="card"><i class="fas fa-chart-line"></i><h3>What do we measure?</h3><p>Light curves (stellar variability), precise positions (astrometry), and proper motions. Combining Seestar data with Gaia gives unique time series.</p></div>
+          <div class="card"><i class="fas fa-database"></i><h3>Data Hub</h3><p>Online platform: <a href="https://andromeda.cbpf.br:5001" target="_blank">https://andromeda.cbpf.br:5001</a> (under development). Upload your frames, receive calibrated data, and access light curves.</p></div>
+        </div>
+        <div style="margin-top: 2rem;">
+          <h3 class="section-title" style="font-size:1.5rem;">📊 Open clusters and proper motions</h3>
+          <p>With the Seestar S50 we can measure proper motions of stars in open clusters, identifying members and studying the dynamics of the Milky Way. These data, combined with the Gaia catalog, extend the time baseline and allow detection of unresolved binaries.</p>
         </div>
       </div>
     </section>
@@ -370,13 +383,13 @@
   <div id="tab-objectives" class="tab-content">
     <section>
       <div class="container objectives-text">
-        <h2 class="section-title">📋 Scientific & Educational Objectives</h2>
+        <h2 class="section-title">Scientific and Educational Objectives</h2>
         
         <!-- Sub-tab navigation -->
         <div class="subtab-bar">
           <button class="subtab-btn active" data-subtab="sub-overall">Overall</button>
-          <button class="subtab-btn" data-subtab="sub-variables">Variable stars & η Car</button>
-          <button class="subtab-btn" data-subtab="sub-asteroids">Asteroids & Comets</button>
+          <button class="subtab-btn" data-subtab="sub-variables">Variable stars</button>
+          <button class="subtab-btn" data-subtab="sub-asteroids">Asteroids and Comets</button>
           <button class="subtab-btn" data-subtab="sub-exoplanets">Exoplanets</button>
           <button class="subtab-btn" data-subtab="sub-clusters">Open clusters</button>
         </div>
