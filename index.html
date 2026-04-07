@@ -318,6 +318,7 @@
   <div class="container tab-container" id="tabContainer">
     <button class="tab-btn active" data-tab="tab-home">🏠 Home</button>
     <button class="tab-btn" data-tab="tab-objectives">📋 Objectives</button>
+    <button class="tab-btn" data-tab="tab-howitworks">🔧 How does it work?</button>
     <button class="tab-btn" data-tab="tab-team">👥 Team</button>
     <button class="tab-btn" data-tab="tab-contact">📬 Contact & Resources</button>
   </div>
@@ -445,6 +446,53 @@
             <i class="fas fa-star-of-life" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
             <strong>Example:</strong> Proper motion vector diagram for an open cluster observed with Seestar S50.
           </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- HOW DOES IT WORK? with sub-tabs -->
+  <div id="tab-howitworks" class="tab-content">
+    <section>
+      <div class="container">
+        <h2 class="section-title">⚙️ How does it work?</h2>
+        <p style="margin-bottom: 1.5rem;">The scientific engine behind T05-South transforms simple consumer-grade smart telescopes into precise research instruments. Below we break down the key methodologies and technologies that make this possible.</p>
+
+        <!-- Sub-tab navigation for How it works -->
+        <div class="subtab-bar">
+          <button class="subtab-btn active" data-subtab="how-telescopes">Telescopes and S50</button>
+          <button class="subtab-btn" data-subtab="how-astrometry">Astrometric measure</button>
+          <button class="subtab-btn" data-subtab="how-clusters">Stellar clusters</button>
+          <button class="subtab-btn" data-subtab="how-graphics">Data graphics and analysis</button>
+        </div>
+
+        <!-- Subtab: Telescopes and S50 -->
+        <div id="how-telescopes" class="subtab-content active-subtab">
+          <div class="method-step"><h4><i class="fas fa-microchip"></i> Seestar S50 architecture</h4><p>The ZWO Seestar S50 is a 50mm f/5 refractor with a built-in Sony IMX462 CMOS sensor (1920x1080, 2.9µm pixels). It integrates an alt-az mount, electronic filter wheel (IR-cut or dual-band), and on-board stacking. Our team unlocked its potential via SDK/ASCOM access for full programmatic control: custom dithering, long sequences, and equatorial wedge support.</p></div>
+          <div class="method-step"><h4><i class="fas fa-charging-station"></i> Calibration & flat-fielding</h4><p>Each session acquires bias, dark, and twilight flats. The pipeline applies corrections for pixel sensitivity, vignetting, and hot pixels. Because of the S50's fast optics, careful flat-fielding achieves <0.02 mag photometric precision down to magnitude 13 (10-minute integration).</p></div>
+          <div class="method-step"><h4><i class="fas fa-cloud-sun"></i> Automated scheduling</h4><p>Using the open-source <strong>seestar_run</strong> package, we automate target selection, meridian flips, and focus refocusing. Observations are queued based on airmass, moon distance, and priority (e.g., daily Eta Car monitoring). Data are uploaded automatically to the Andromeda Hub.</p></div>
+        </div>
+
+        <!-- Subtab: Astrometric measure -->
+        <div id="how-astrometry" class="subtab-content">
+          <div class="method-step"><h4><i class="fas fa-map-marked-alt"></i> Sub-pixel centroiding</h4><p>Stars in S50 images are well-sampled (FWHM ~ 2.5-3.5 pixels). Using a 2D Gaussian fitting or PSF photometry (DAOPhot routines), centroids are determined with precision down to 0.05-0.1 pixel → ~0.1" to 0.2" astrometry per epoch.</p></div>
+          <div class="method-step"><h4><i class="fas fa-globe-americas"></i> Gaia DR3 reference</h4><p>Each science frame is astrometrically solved against Gaia DR3 using <strong>astrometry.net</strong> and custom distortion maps. Residuals are typically <0.3". Proper motions are derived by combining our epochs with historical Gaia positions, achieving time baselines of 5+ years.</p></div>
+          <div class="method-step"><h4><i class="fas fa-chart-line"></i> Asteroid parallax demonstration</h4><p>Coordinated observations from Brazil and Chile (baseline ~3000 km) allow us to measure asteroid parallax. Students compute distance via parallax shift, a hands-on activity that reproduces classical astronomical distance measurement techniques.</p></div>
+        </div>
+
+        <!-- Subtab: Stellar clusters -->
+        <div id="how-clusters" class="subtab-content">
+          <div class="method-step"><h4><i class="fas fa-star-of-david"></i> Membership determination</h4><p>We observe open clusters (e.g., NGC 2516, IC 2391) over months to years. Combining relative proper motions from S50 images with Gaia EDR3, we construct vector-point diagrams to separate cluster members from field stars. This yields clean color-magnitude diagrams for astrophysical studies.</p></div>
+          <div class="method-step"><h4><i class="fas fa-chart-scatter"></i> Detection of unresolved binaries</h4><p>By tracking precise positions of hundreds of stars over multiple epochs, we look for “wobbles” caused by unseen low-mass companions. The extended time baseline (S50 + archival) increases sensitivity to long-period binaries not detected by Gaia alone.</p></div>
+          <div class="method-step"><h4><i class="fas fa-dharmachakra"></i> Cluster dynamics & age</h4><p>Proper motions also help refine kinematic membership and, combined with radial velocities from literature, we derive 3D space motions. This allows us to trace the dynamical evolution of young clusters and their connection to star-forming regions.</p></div>
+        </div>
+
+        <!-- Subtab: Data graphics and analysis -->
+        <div id="how-graphics" class="subtab-content">
+          <div class="method-step"><h4><i class="fas fa-chart-line"></i> Light curve extraction</h4><p>The automated pipeline performs differential photometry with reference stars from APASS or Gaia. It outputs time-series .dat files with calibrated magnitudes, error bars, and airmass. Interactive Jupyter notebooks (available on GitHub) allow users to detrend, fold periods, and search for transits.</p></div>
+          <div class="method-step"><h4><i class="fas fa-waveform"></i> Lomb–Scargle periodograms</h4><p>Variable stars: we apply Lomb–Scargle to unevenly sampled data to find rotation periods or pulsation modes. Eclipsing binary modeling is done with PHOEBE/lightkurve. Real-time graphics inside the Data Hub display phased light curves for community inspection.</p></div>
+          <div class="method-step"><h4><i class="fas fa-chalkboard-teacher"></i> Educational dashboards</h4><p>For schools and citizen scientists, we developed interactive dashboards (Plotly/Dash) where users upload their own Seestar FITS files, run basic photometry, and visualize proper motion vectors. This lowers the barrier and makes professional analysis accessible.</p></div>
+          <div class="figure-placeholder"><i class="fas fa-chart-pie"></i> Example: Multi-epoch proper motion diagram for an open cluster. (Interactive version on project hub)</div>
         </div>
       </div>
     </section>
