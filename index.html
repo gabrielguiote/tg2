@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>T05-South | Nanotelescópios para Ciência e Educação</title>
+  <title>T05-South | Nanotelescopes for Science and Education</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -91,7 +91,7 @@
       background: rgba(255,255,255,0.3);
     }
 
-    /* Estilo das abas */
+    /* Tab bar */
     .tab-bar {
       background: var(--white);
       border-bottom: 1px solid var(--gray-mid);
@@ -125,7 +125,6 @@
       color: white;
     }
 
-    /* Conteúdo das abas */
     .tab-content {
       display: none;
       animation: fadeIn 0.2s ease;
@@ -138,7 +137,6 @@
       to { opacity: 1; transform: translateY(0);}
     }
 
-    /* demais estilos (cards, grid, etc) - todos originais */
     section {
       padding: 4rem 0;
       border-bottom: 1px solid var(--gray-mid);
@@ -199,7 +197,6 @@
       padding: 1rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       text-align: center;
-      transition: all 0.2s;
     }
     .team-card h4 {
       font-weight: 700;
@@ -278,129 +275,128 @@
   <div class="container header-flex">
     <div class="logo">
       <h1>T05-South</h1>
-      <p>Nanotelescópios em rede</p>
+      <p>Nanotelescopes Network</p>
     </div>
     <div class="lang-switch">
-      <button class="lang-btn active" data-lang="pt">PT</button>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="pt">PT</button>
       <button class="lang-btn" data-lang="es">ES</button>
     </div>
   </div>
 </header>
 
-<!-- BARRA DE ABAS -->
+<!-- TABS -->
 <div class="tab-bar">
   <div class="container tab-container">
-    <button class="tab-btn active" data-tab="tab-inicio">🏠 Início</button>
-    <button class="tab-btn" data-tab="tab-ciencia">🔭 Ciência</button>
-    <button class="tab-btn" data-tab="tab-equipe">👥 Equipe</button>
-    <button class="tab-btn" data-tab="tab-contato">📬 Contato & Recursos</button>
+    <button class="tab-btn active" data-tab="tab-home">🏠 Home</button>
+    <button class="tab-btn" data-tab="tab-science">🔭 Science</button>
+    <button class="tab-btn" data-tab="tab-team">👥 Team</button>
+    <button class="tab-btn" data-tab="tab-contact">📬 Contact & Resources</button>
   </div>
 </div>
 
 <main>
-  <!-- ABA 1: INÍCIO -->
-  <div id="tab-inicio" class="tab-content active-tab">
-    <!-- Hero (original) -->
+  <!-- TAB 1: HOME -->
+  <div id="tab-home" class="tab-content active-tab">
     <section class="hero" style="background: linear-gradient(135deg, #0a2f3f 0%, #123e4a 100%); color: white; padding: 4rem 0;">
       <div class="container">
-        <h2 data-i18n="hero-title">Nanotelescópios para grandes descobertas</h2>
-        <p data-i18n="hero-sub">Uma rede trinacional de telescópios Seestar S50 unindo ciência, educação e cidadania científica.</p>
-        <small data-i18n="hero-note">Projeto colaborativo Brasil-Chile-Argentina | Dados abertos | Ciência-cidadã</small>
+        <h2 data-i18n="hero-title">Nanotelescopes for big discoveries</h2>
+        <p data-i18n="hero-sub">A trinational network of Seestar S50 telescopes merging science, education, and citizen science.</p>
+        <small data-i18n="hero-note">Brazil-Chile-Argentina collaboration | Open data | Citizen science</small>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h2 class="section-title" data-i18n="obj-title">📡 Objetivos & Impacto</h2>
+        <h2 class="section-title" data-i18n="obj-title">📡 Goals & Impact</h2>
         <div class="grid-2">
-          <div class="card"><i class="fas fa-chart-line"></i><h3 data-i18n="obj-sci-title">Ciência de ponta</h3><p data-i18n="obj-sci-text">Monitoramento da variabilidade de estrelas (Be, variáveis, cataclísmicas), movimentos próprios em aglomerados abertos, paralaxe de asteroides e ocultações estelares. Dados calibrados com precisão fotométrica <0.02 mag e astrometria <0.3".</p></div>
-          <div class="card"><i class="fas fa-graduation-cap"></i><h3 data-i18n="obj-edu-title">Educação & Divulgação</h3><p data-i18n="obj-edu-text">Formação de estudantes e amadores como cientistas-cidadãos. Uso de pipelines profissionais, análise de curvas de luz e movimentos próprios. Inspiração para jovens cientistas do Brasil, Chile e Argentina.</p></div>
-          <div class="card"><i class="fas fa-users"></i><h3 data-i18n="obj-citizen-title">Ciência-cidadã</h3><p data-i18n="obj-citizen-text">Qualquer pessoa com um Seestar S50 pode contribuir. As observações são enviadas ao hub central, reduzidas e disponibilizadas para a comunidade. Primeiro alvo: a estrela Eta Carinae no periastro de 2025.</p></div>
+          <div class="card"><i class="fas fa-chart-line"></i><h3 data-i18n="obj-sci-title">Cutting-edge science</h3><p data-i18n="obj-sci-text">Monitoring stellar variability (Be, variables, cataclysmic), proper motions in open clusters, asteroid parallax, and stellar occultations. Calibrated data with photometric precision <0.02 mag and astrometry <0.3".</p></div>
+          <div class="card"><i class="fas fa-graduation-cap"></i><h3 data-i18n="obj-edu-title">Education & Outreach</h3><p data-i18n="obj-edu-text">Training students and amateurs as citizen scientists. Use of professional pipelines, light curve analysis, and proper motions. Inspiring young scientists in Brazil, Chile, and Argentina.</p></div>
+          <div class="card"><i class="fas fa-users"></i><h3 data-i18n="obj-citizen-title">Citizen science</h3><p data-i18n="obj-citizen-text">Anyone with a Seestar S50 can contribute. Observations are sent to a central hub, reduced, and made available to the community. First target: Eta Carinae during its 2025 periastron.</p></div>
         </div>
       </div>
     </section>
 
     <section style="background: var(--gray-light);">
       <div class="container">
-        <h2 class="section-title" data-i18n="achievements-title">✅ O que já realizamos</h2>
+        <h2 class="section-title" data-i18n="achievements-title">✅ What we have done</h2>
         <div class="grid-2">
-          <div class="card"><i class="fas fa-telescope"></i><h3 data-i18n="achievements-1">30 telescópios Seestar S50</h3><p data-i18n="achievements-1-text">Adquiridos com doação do ABCD Trust Fund. Testes iniciais com 4 unidades mostraram grande potencial científico.</p></div>
-          <div class="card"><i class="fas fa-code-branch"></i><h3 data-i18n="achievements-2">Pipeline & Hub de Dados</h3><p data-i18n="achievements-2-text">Gustavo Schwarz desenvolveu uma plataforma automática de redução e calibração (astrometria com Gaia DR3, fotometria com APASS). Resultados disponíveis em tempo real.</p></div>
-          <div class="card"><i class="fas fa-microchip"></i><h3 data-i18n="achievements-3">Acesso avançado ao SDK</h3><p data-i18n="achievements-3-text">ZWO forneceu SDK/API e suporte ASCOM, permitindo apontar para coordenadas arbitrárias e futuramente exposições curtas para Eta Carinae.</p></div>
+          <div class="card"><i class="fas fa-telescope"></i><h3 data-i18n="achievements-1">30 Seestar S50 telescopes</h3><p data-i18n="achievements-1-text">Acquired with a donation from ABCD Trust Fund. Initial tests with 4 units demonstrated great scientific potential.</p></div>
+          <div class="card"><i class="fas fa-code-branch"></i><h3 data-i18n="achievements-2">Pipeline & Data Hub</h3><p data-i18n="achievements-2-text">Gustavo Schwarz developed an automatic reduction and calibration platform (astrometry with Gaia DR3, photometry with APASS). Results available in real time.</p></div>
+          <div class="card"><i class="fas fa-microchip"></i><h3 data-i18n="achievements-3">Advanced SDK access</h3><p data-i18n="achievements-3-text">ZWO provided SDK/API and ASCOM support, enabling pointing to arbitrary coordinates and soon short exposures for Eta Carinae.</p></div>
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h2 class="section-title" data-i18n="next-title">🚀 Próximos passos</h2>
+        <h2 class="section-title" data-i18n="next-title">🚀 Next steps</h2>
         <div class="grid-2">
-          <div class="card"><i class="fas fa-star"></i><h3 data-i18n="next-eta">Campanha Eta Carinae 2025</h3><p data-i18n="next-eta-text">Monitoramento diário do periastro (agosto-setembro). Necessitamos de observações com filtro ND ou exposições curtas para evitar saturação.</p></div>
-          <div class="card"><i class="fas fa-chart-simple"></i><h3 data-i18n="next-asteroids">Paralaxe de asteroides</h3><p data-i18n="next-asteroids-text">Coordenação de observações simultâneas entre diferentes localidades (Brasil, Chile) para medir distâncias e validar o método com estudantes.</p></div>
-          <div class="card"><i class="fas fa-globe"></i><h3 data-i18n="next-expand">Expansão da rede</h3><p data-i18n="next-expand-text">Integração de clubes de astronomia, escolas e universidades. Desenvolvimento de tutoriais e material didático multilíngue.</p></div>
+          <div class="card"><i class="fas fa-star"></i><h3 data-i18n="next-eta">Eta Carinae 2025 campaign</h3><p data-i18n="next-eta-text">Daily monitoring during periastron (August-September). We need ND filter observations or short exposures to avoid saturation.</p></div>
+          <div class="card"><i class="fas fa-chart-simple"></i><h3 data-i18n="next-asteroids">Asteroid parallax</h3><p data-i18n="next-asteroids-text">Coordinated simultaneous observations from different sites (Brazil, Chile) to measure distances and validate the method with students.</p></div>
+          <div class="card"><i class="fas fa-globe"></i><h3 data-i18n="next-expand">Network expansion</h3><p data-i18n="next-expand-text">Integration of astronomy clubs, schools, and universities. Development of multilingual tutorials and educational material.</p></div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- ABA 2: CIÊNCIA (conteúdo do telescópio + aglomerados) -->
-  <div id="tab-ciencia" class="tab-content">
+  <!-- TAB 2: SCIENCE -->
+  <div id="tab-science" class="tab-content">
     <section>
       <div class="container">
-        <h2 class="section-title" data-i18n="scope-title">🔭 O telescópio Seestar S50</h2>
+        <h2 class="section-title" data-i18n="scope-title">🔭 The Seestar S50 telescope</h2>
         <div class="grid-2">
-          <div class="card"><i class="fas fa-camera"></i><h3 data-i18n="scope-tech">Tecnologia acessível</h3><p data-i18n="scope-tech-text">Abertura de 50 mm, câmera CMOS com filtro IRCUT. Opera em Alt-Az ou equatorial (com cunha). Sensibilidade semelhante ao filtro Gaia BP, permitindo fotometria precisa até magnitude 13.</p></div>
-          <div class="card"><i class="fas fa-chart-line"></i><h3 data-i18n="scope-data">O que medimos?</h3><p data-i18n="scope-data-text">Curvas de luz (variabilidade estelar), posições precisas (astrometria) e movimentos próprios. Combinando dados do Seestar com Gaia obtemos séries temporais únicas.</p></div>
-          <div class="card"><i class="fas fa-database"></i><h3 data-i18n="scope-hub">Hub de dados</h3><p data-i18n="scope-hub-text">Plataforma online: <a href="https://andromeda.cbpf.br:5001" target="_blank">https://andromeda.cbpf.br:5001</a> (em desenvolvimento). Faça upload dos seus frames, receba dados calibrados e acesse curvas de luz.</p></div>
+          <div class="card"><i class="fas fa-camera"></i><h3 data-i18n="scope-tech">Affordable technology</h3><p data-i18n="scope-tech-text">50 mm aperture, CMOS camera with IRCUT filter. Operates in Alt-Az or equatorial mode (wedge). Sensitivity similar to Gaia BP filter, enabling precise photometry down to magnitude 13.</p></div>
+          <div class="card"><i class="fas fa-chart-line"></i><h3 data-i18n="scope-data">What do we measure?</h3><p data-i18n="scope-data-text">Light curves (stellar variability), precise positions (astrometry), and proper motions. Combining Seestar data with Gaia gives unique time series.</p></div>
+          <div class="card"><i class="fas fa-database"></i><h3 data-i18n="scope-hub">Data Hub</h3><p data-i18n="scope-hub-text">Online platform: <a href="https://andromeda.cbpf.br:5001" target="_blank">https://andromeda.cbpf.br:5001</a> (under development). Upload your frames, receive calibrated data, and access light curves.</p></div>
         </div>
         <div style="margin-top: 2rem;">
-          <h3 class="section-title" style="font-size:1.5rem;">📊 Aglomerados estelares e movimentos próprios</h3>
-          <p data-i18n="science-clusters">Com o Seestar S50 podemos medir movimentos próprios de estrelas em aglomerados abertos, identificando membros e estudando a dinâmica da Via Láctea. Esses dados, combinados com o catálogo Gaia, ampliam a linha de tempo e permitem detectar binárias não resolvidas.</p>
+          <h3 class="section-title" style="font-size:1.5rem;">📊 Open clusters and proper motions</h3>
+          <p data-i18n="science-clusters">With the Seestar S50 we can measure proper motions of stars in open clusters, identifying members and studying the dynamics of the Milky Way. These data, combined with the Gaia catalog, extend the time baseline and allow detection of unresolved binaries.</p>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- ABA 3: EQUIPE -->
-  <div id="tab-equipe" class="tab-content">
+  <!-- TAB 3: TEAM -->
+  <div id="tab-team" class="tab-content">
     <section>
       <div class="container">
-        <h2 class="section-title" data-i18n="team-title">👥 Equipe T05-South</h2>
-        <p data-i18n="team-sub" style="margin-bottom: 1rem;">Astrônomos profissionais de 3 países, unidos pela ciência aberta e educação.</p>
+        <h2 class="section-title" data-i18n="team-title">👥 T05-South Team</h2>
+        <p data-i18n="team-sub" style="margin-bottom: 1rem;">Professional astronomers from 3 countries, united by open science and education.</p>
         <div class="team-grid" id="team-container"></div>
         <div style="text-align: center; margin-top: 1.5rem;">
-          <a href="#" class="btn-outline" data-i18n="team-more-link">Conheça todos os membros →</a>
+          <a href="#" class="btn-outline" data-i18n="team-more-link">Meet all members →</a>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- ABA 4: CONTATO E RECURSOS -->
-  <div id="tab-contato" class="tab-content">
+  <!-- TAB 4: CONTACT & RESOURCES -->
+  <div id="tab-contact" class="tab-content">
     <section>
       <div class="container">
-        <h2 class="section-title" data-i18n="contact-title">📬 Participe & Contato</h2>
+        <h2 class="section-title" data-i18n="contact-title">📬 Participate & Contact</h2>
         <div class="grid-2">
           <div class="contact-info">
             <i class="fas fa-envelope"></i>
-            <h3 data-i18n="contact-email-title">E-mail geral</h3>
+            <h3 data-i18n="contact-email-title">General email</h3>
             <p><a href="mailto:t05-south@iag.usp.br">t05-south@iag.usp.br</a></p>
-            <p data-i18n="contact-interest">Interessado em contribuir? Escreva-nos com suas ideias ou para receber um telescópio na fase piloto.</p>
+            <p data-i18n="contact-interest">Interested in contributing? Write to us with your ideas or to receive a telescope in the pilot phase.</p>
           </div>
           <div class="contact-info">
             <i class="fas fa-link"></i>
-            <h3 data-i18n="resources-title">Recursos</h3>
+            <h3 data-i18n="resources-title">Resources</h3>
             <ul style="list-style: none; text-align: left;">
-              <li>🔗 <a href="https://andromeda.cbpf.br:5001" target="_blank" data-i18n="link-hub">Hub de dados (upload/redução)</a></li>
-              <li>📘 <a href="#" data-i18n="link-tutorial">Tutorial: como operar o Seestar S50</a> (em breve)</li>
-              <li>🐙 <a href="https://github.com/smart-underworld/seestar_run" target="_blank" data-i18n="link-github">Scripts de automação no GitHub</a></li>
-              <li>📄 <a href="#" data-i18n="link-white">White paper do projeto</a> (em construção)</li>
+              <li>🔗 <a href="https://andromeda.cbpf.br:5001" target="_blank" data-i18n="link-hub">Data Hub (upload/reduction)</a></li>
+              <li>📘 <a href="#" data-i18n="link-tutorial">Tutorial: how to operate Seestar S50</a> (coming soon)</li>
+              <li>🐙 <a href="https://github.com/smart-underworld/seestar_run" target="_blank" data-i18n="link-github">Automation scripts on GitHub</a></li>
+              <li>📄 <a href="#" data-i18n="link-white">Project white paper</a> (in preparation)</li>
             </ul>
           </div>
         </div>
         <div style="margin-top: 2rem; text-align: center; font-size: 0.9rem;">
-          <p data-i18n="funding">Financiamento: ABCD Trust Fund, apoio institucional USP, INPE, ULS, UNAB, UNLP e demais universidades parceiras.</p>
+          <p data-i18n="funding">Funding: ABCD Trust Fund, institutional support USP, INPE, ULS, UNAB, UNLP, and partner universities.</p>
         </div>
       </div>
     </section>
@@ -409,24 +405,24 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 T05-South Collaboration | <span data-i18n="footer-license">Dados abertos sob licença CC-BY, promovendo ciência colaborativa.</span></p>
+    <p>© 2026 T05-South Collaboration | <span data-i18n="footer-license">Open data under CC-BY license, fostering collaborative science.</span></p>
   </div>
 </footer>
 
 <script>
-  // ------------------------- DADOS DA EQUIPE (original) -------------------------
+  // Team data
   const teamMembers = [
-    { name: "Claudia Mendes de Oliveira", affil: "USP, Brasil", country: "Brasil" },
-    { name: "Francisco Jablonski", affil: "INPE, Brasil", country: "Brasil" },
-    { name: "Antônio Kanaan", affil: "UFSC, Brasil", country: "Brasil" },
-    { name: "Arianna Cortesi", affil: "UFRJ, Brasil", country: "Brasil" },
-    { name: "Felipe Braga Ribas", affil: "UTFPR, Brasil", country: "Brasil" },
-    { name: "Gustavo Schwarz", affil: "USP/CBPF, Brasil", country: "Brasil" },
-    { name: "Phillip Galli", affil: "USP, Brasil", country: "Brasil" },
-    { name: "Augusto Damineli", affil: "USP, Brasil", country: "Brasil" },
-    { name: "Sergio Scarano", affil: "UFS, Brasil", country: "Brasil" },
-    { name: "Amilcar Queiroz", affil: "UFCG, Brasil", country: "Brasil" },
-    { name: "Ramachrisna Teixeira", affil: "USP, Brasil", country: "Brasil" },
+    { name: "Claudia Mendes de Oliveira", affil: "USP, Brazil", country: "Brazil" },
+    { name: "Francisco Jablonski", affil: "INPE, Brazil", country: "Brazil" },
+    { name: "Antônio Kanaan", affil: "UFSC, Brazil", country: "Brazil" },
+    { name: "Arianna Cortesi", affil: "UFRJ, Brazil", country: "Brazil" },
+    { name: "Felipe Braga Ribas", affil: "UTFPR, Brazil", country: "Brazil" },
+    { name: "Gustavo Schwarz", affil: "USP/CBPF, Brazil", country: "Brazil" },
+    { name: "Phillip Galli", affil: "USP, Brazil", country: "Brazil" },
+    { name: "Augusto Damineli", affil: "USP, Brazil", country: "Brazil" },
+    { name: "Sergio Scarano", affil: "UFS, Brazil", country: "Brazil" },
+    { name: "Amilcar Queiroz", affil: "UFCG, Brazil", country: "Brazil" },
+    { name: "Ramachrisna Teixeira", affil: "USP, Brazil", country: "Brazil" },
     { name: "Sergio Torres-Flores", affil: "U. La Serena, Chile", country: "Chile" },
     { name: "Amelia Ramirez", affil: "U. La Serena, Chile", country: "Chile" },
     { name: "Claudio Tenreiro", affil: "U. Talca, Chile", country: "Chile" },
@@ -448,8 +444,55 @@
     });
   }
 
-  // ------------------------- TRADUÇÕES (mesmo dicionário original, encurtado para exemplo) -------------------------
+  // Translations (full EN, PT, ES)
   const translations = {
+    en: {
+      "hero-title": "Nanotelescopes for big discoveries",
+      "hero-sub": "A trinational network of Seestar S50 telescopes merging science, education, and citizen science.",
+      "hero-note": "Brazil-Chile-Argentina collaboration | Open data | Citizen science",
+      "obj-title": "📡 Goals & Impact",
+      "obj-sci-title": "Cutting-edge science",
+      "obj-sci-text": "Monitoring stellar variability (Be, variables, cataclysmic), proper motions in open clusters, asteroid parallax, and stellar occultations. Calibrated data with photometric precision <0.02 mag and astrometry <0.3\".",
+      "obj-edu-title": "Education & Outreach",
+      "obj-edu-text": "Training students and amateurs as citizen scientists. Use of professional pipelines, light curve analysis, and proper motions. Inspiring young scientists in Brazil, Chile, and Argentina.",
+      "obj-citizen-title": "Citizen science",
+      "obj-citizen-text": "Anyone with a Seestar S50 can contribute. Observations are sent to a central hub, reduced, and made available to the community. First target: Eta Carinae during its 2025 periastron.",
+      "achievements-title": "✅ What we have done",
+      "achievements-1": "30 Seestar S50 telescopes",
+      "achievements-1-text": "Acquired with a donation from ABCD Trust Fund. Initial tests with 4 units demonstrated great scientific potential.",
+      "achievements-2": "Pipeline & Data Hub",
+      "achievements-2-text": "Gustavo Schwarz developed an automatic reduction and calibration platform (astrometry with Gaia DR3, photometry with APASS). Results available in real time.",
+      "achievements-3": "Advanced SDK access",
+      "achievements-3-text": "ZWO provided SDK/API and ASCOM support, enabling pointing to arbitrary coordinates and soon short exposures for Eta Carinae.",
+      "next-title": "🚀 Next steps",
+      "next-eta": "Eta Carinae 2025 campaign",
+      "next-eta-text": "Daily monitoring during periastron (August-September). We need ND filter observations or short exposures to avoid saturation.",
+      "next-asteroids": "Asteroid parallax",
+      "next-asteroids-text": "Coordinated simultaneous observations from different sites (Brazil, Chile) to measure distances and validate the method with students.",
+      "next-expand": "Network expansion",
+      "next-expand-text": "Integration of astronomy clubs, schools, and universities. Development of multilingual tutorials and educational material.",
+      "scope-title": "🔭 The Seestar S50 telescope",
+      "scope-tech": "Affordable technology",
+      "scope-tech-text": "50 mm aperture, CMOS camera with IRCUT filter. Operates in Alt-Az or equatorial mode (wedge). Sensitivity similar to Gaia BP filter, enabling precise photometry down to magnitude 13.",
+      "scope-data": "What do we measure?",
+      "scope-data-text": "Light curves (stellar variability), precise positions (astrometry), and proper motions. Combining Seestar data with Gaia gives unique time series.",
+      "scope-hub": "Data Hub",
+      "scope-hub-text": "Online platform: https://andromeda.cbpf.br:5001 (under development). Upload your frames, receive calibrated data, and access light curves.",
+      "team-title": "👥 T05-South Team",
+      "team-sub": "Professional astronomers from 3 countries, united by open science and education.",
+      "team-more-link": "Meet all members →",
+      "contact-title": "📬 Participate & Contact",
+      "contact-email-title": "General email",
+      "contact-interest": "Interested in contributing? Write to us with your ideas or to receive a telescope in the pilot phase.",
+      "resources-title": "Resources",
+      "link-hub": "Data Hub (upload/reduction)",
+      "link-tutorial": "Tutorial: how to operate Seestar S50 (coming soon)",
+      "link-github": "Automation scripts on GitHub",
+      "link-white": "Project white paper (in preparation)",
+      "funding": "Funding: ABCD Trust Fund, institutional support USP, INPE, ULS, UNAB, UNLP, and partner universities.",
+      "footer-license": "Open data under CC-BY license, fostering collaborative science.",
+      "science-clusters": "With the Seestar S50 we can measure proper motions of stars in open clusters, identifying members and studying the dynamics of the Milky Way. These data, combined with the Gaia catalog, extend the time baseline and allow detection of unresolved binaries."
+    },
     pt: {
       "hero-title": "Nanotelescópios para grandes descobertas",
       "hero-sub": "Uma rede trinacional de telescópios Seestar S50 unindo ciência, educação e cidadania científica.",
@@ -497,8 +540,53 @@
       "footer-license": "Dados abertos sob licença CC-BY, promovendo ciência colaborativa.",
       "science-clusters": "Com o Seestar S50 podemos medir movimentos próprios de estrelas em aglomerados abertos, identificando membros e estudando a dinâmica da Via Láctea. Esses dados, combinados com o catálogo Gaia, ampliam a linha de tempo e permitem detectar binárias não resolvidas."
     },
-    en: { /* Para economia de espaço, não replicamos todas as chaves em inglês/espanhol, mas a estrutura é idêntica. Você pode copiar do código original ou adicionar depois */ },
-    es: { /* similar */ }
+    es: {
+      "hero-title": "Nanotelescopios para grandes descubrimientos",
+      "hero-sub": "Una red trinacional de telescopios Seestar S50 que une ciencia, educación y ciencia ciudadana.",
+      "hero-note": "Colaboración Brasil-Chile-Argentina | Datos abiertos | Ciencia ciudadana",
+      "obj-title": "📡 Objetivos e Impacto",
+      "obj-sci-title": "Ciencia de vanguardia",
+      "obj-sci-text": "Monitoreo de variabilidad estelar (Be, variables, cataclísmicas), movimientos propios en cúmulos abiertos, paralaje de asteroides y ocultaciones estelares. Datos calibrados con precisión fotométrica <0.02 mag y astrometría <0.3\".",
+      "obj-edu-title": "Educación & Divulgación",
+      "obj-edu-text": "Formación de estudiantes y aficionados como científicos ciudadanos. Uso de pipelines profesionales, análisis de curvas de luz y movimientos propios. Inspiración para jóvenes científicos de Brasil, Chile y Argentina.",
+      "obj-citizen-title": "Ciencia ciudadana",
+      "obj-citizen-text": "Cualquier persona con un Seestar S50 puede contribuir. Las observaciones se envían a un hub central, se reducen y se ponen a disposición de la comunidad. Primer objetivo: Eta Carinae durante su periastro 2025.",
+      "achievements-title": "✅ Lo que hemos logrado",
+      "achievements-1": "30 telescopios Seestar S50",
+      "achievements-1-text": "Adquiridos gracias a una donación de ABCD Trust Fund. Pruebas iniciales con 4 unidades demostraron gran potencial científico.",
+      "achievements-2": "Pipeline & Hub de Datos",
+      "achievements-2-text": "Gustavo Schwarz desarrolló una plataforma automática de reducción y calibración (astrometría con Gaia DR3, fotometría con APASS). Resultados disponibles en tiempo real.",
+      "achievements-3": "Acceso avanzado al SDK",
+      "achievements-3-text": "ZWO proporcionó SDK/API y soporte ASCOM, permitiendo apuntar a coordenadas arbitrarias y pronto exposiciones cortas para Eta Carinae.",
+      "next-title": "🚀 Próximos pasos",
+      "next-eta": "Campaña Eta Carinae 2025",
+      "next-eta-text": "Monitoreo diario durante el periastro (agosto-septiembre). Necesitamos observaciones con filtro ND o exposiciones cortas para evitar saturación.",
+      "next-asteroids": "Paralaje de asteroides",
+      "next-asteroids-text": "Coordinación de observaciones simultáneas desde diferentes localidades (Brasil, Chile) para medir distancias y validar el método con estudiantes.",
+      "next-expand": "Expansión de la red",
+      "next-expand-text": "Integración de clubes de astronomía, escuelas y universidades. Desarrollo de tutoriales y material didáctico multilingüe.",
+      "scope-title": "🔭 El telescopio Seestar S50",
+      "scope-tech": "Tecnología accesible",
+      "scope-tech-text": "Apertura de 50 mm, cámara CMOS con filtro IRCUT. Opera en Alt-Az o ecuatorial (con cuña). Sensibilidad similar al filtro Gaia BP, permitiendo fotometría precisa hasta magnitud 13.",
+      "scope-data": "¿Qué medimos?",
+      "scope-data-text": "Curvas de luz (variabilidad estelar), posiciones precisas (astrometría) y movimientos propios. Combinando datos de Seestar con Gaia obtenemos series temporales únicas.",
+      "scope-hub": "Hub de datos",
+      "scope-hub-text": "Plataforma online: https://andromeda.cbpf.br:5001 (en desarrollo). Sube tus frames, recibe datos calibrados y accede a curvas de luz.",
+      "team-title": "👥 Equipo T05-South",
+      "team-sub": "Astrónomos profesionales de 3 países, unidos por la ciencia abierta y la educación.",
+      "team-more-link": "Conoce a todos los miembros →",
+      "contact-title": "📬 Participa & Contacto",
+      "contact-email-title": "Correo general",
+      "contact-interest": "¿Interesado en contribuir? Escríbenos con tus ideas o para recibir un telescopio en la fase piloto.",
+      "resources-title": "Recursos",
+      "link-hub": "Hub de datos (subida/reducción)",
+      "link-tutorial": "Tutorial: cómo operar Seestar S50 (próximamente)",
+      "link-github": "Scripts de automatización en GitHub",
+      "link-white": "Documento white paper del proyecto (en preparación)",
+      "funding": "Financiamiento: ABCD Trust Fund, apoyo institucional USP, INPE, ULS, UNAB, UNLP y universidades asociadas.",
+      "footer-license": "Datos abiertos bajo licencia CC-BY, fomentando ciencia colaborativa.",
+      "science-clusters": "Con el Seestar S50 podemos medir movimientos propios de estrellas en cúmulos abiertos, identificando miembros y estudiando la dinámica de la Vía Láctea. Estos datos, combinados con el catálogo Gaia, amplían la línea de tiempo y permiten detectar binarias no resueltas."
+    }
   };
 
   function setLanguage(lang) {
@@ -513,12 +601,10 @@
     localStorage.setItem('t05_lang', lang);
   }
 
-  // ------------------------- LÓGICA DAS ABAS -------------------------
+  // Tab logic
   function activateTab(tabId) {
-    // esconde todos os conteúdos
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active-tab'));
     document.getElementById(tabId).classList.add('active-tab');
-    // atualiza botões ativos
     document.querySelectorAll('.tab-btn').forEach(btn => {
       if (btn.getAttribute('data-tab') === tabId) btn.classList.add('active');
       else btn.classList.remove('active');
@@ -526,10 +612,9 @@
     localStorage.setItem('t05_active_tab', tabId);
   }
 
-  // inicialização
   function init() {
     renderTeam();
-    const savedLang = localStorage.getItem('t05_lang') || 'pt';
+    const savedLang = localStorage.getItem('t05_lang') || 'en';
     setLanguage(savedLang);
     document.querySelectorAll('.lang-btn').forEach(btn => {
       const l = btn.getAttribute('data-lang');
@@ -542,7 +627,7 @@
       });
     });
     const savedTab = localStorage.getItem('t05_active_tab');
-    const defaultTab = (savedTab && document.getElementById(savedTab)) ? savedTab : 'tab-inicio';
+    const defaultTab = (savedTab && document.getElementById(savedTab)) ? savedTab : 'tab-home';
     activateTab(defaultTab);
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
