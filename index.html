@@ -466,6 +466,7 @@
   <div class="container tab-container" id="tabContainer">
     <button class="tab-btn active" data-tab="tab-home">🏠 Home</button>
     <button class="tab-btn" data-tab="tab-objectives">📋 Objectives</button>
+    <button class="tab-btn" data-tab="tab-basics">Astronomy Basics</button>
     <button class="tab-btn" data-tab="tab-howitworks">🔧 How does it work?</button>
     <button class="tab-btn" data-tab="tab-team">👥 Team</button>
     <button class="tab-btn" data-tab="tab-contact">📬 Contact & Resources</button>
@@ -516,19 +517,9 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="container">
-        <h2 class="section-title">🚀 Next steps</h2>
-        <div class="grid-2">
-          <div class="card"><i class="fas fa-star"></i><h3>Eta Carinae 2025 campaign</h3><p>Daily monitoring during periastron (August-September). We need ND filter observations or short exposures to avoid saturation.</p></div>
-          <div class="card"><i class="fas fa-chart-simple"></i><h3>Asteroid parallax</h3><p>Coordinated simultaneous observations from different sites (Brazil, Chile) to measure distances and validate the method with students.</p></div>
-          <div class="card"><i class="fas fa-globe"></i><h3>Network expansion</h3><p>Integration of astronomy clubs, schools, and universities. Development of multilingual tutorials and educational material.</p></div>
-        </div>
-      </div>
-    </section>
   </div>
 
-  <!-- OBJECTIVES with subtabs (conteúdo original enriquecido centralizado) -->
+  <!-- OBJECTIVES with subtabs-->
   <div id="tab-objectives" class="tab-content">
     <section>
       <div class="container objectives-text">
@@ -574,7 +565,38 @@
     </section>
   </div>
 
-  <!-- HOW DOES IT WORK? com conteúdo elegante e centralizado -->
+  <!-- ASTRONOMY BASICS-->
+  <div id="tab-howitworks" class="tab-content">
+    <section>
+      <div class="container">
+        <h2 class="section-title">⚙️ How does it work?</h2>
+        <div style="display: flex; justify-content: center;">
+          <div class="subtab-bar">
+            <button class="subtab-btn active" data-subtab="how-telescopes">Telescopes & S50</button>
+            <button class="subtab-btn" data-subtab="how-astrometry">Astrometric measure</button>
+            <button class="subtab-btn" data-subtab="how-clusters">Stellar clusters</button>
+            <button class="subtab-btn" data-subtab="how-graphics">Data analysis</button>
+          </div>
+        </div>
+        <div id="how-telescopes" class="subtab-content active-subtab">
+          <div class="method-step"><h4><i class="fas fa-microscope"></i> Seestar S50 in action</h4><p>The telescope uses a 50mm aperture, integrated CMOS sensor, and built-in field derotator. With a wedge, it operates in equatorial mode for long-exposure photometry. The automated pipeline reduces dark/flat frames and performs WCS astrometry via Gaia DR3.</p></div>
+        </div>
+        <div id="how-astrometry" class="subtab-content">
+          <div class="method-step"><h4><i class="fas fa-chart-simple"></i> Astrometry & proper motions</h4><p>By measuring centroids across epochs, we achieve sub-pixel precision. Combining with Gaia catalogs, we compute proper motions with an extended time baseline, identifying cluster members and binary systems.</p></div>
+        </div>
+        <div id="how-clusters" class="subtab-content">
+          <div class="method-step"><h4><i class="fas fa-star-of-life"></i> Open cluster science</h4><p>We observe southern open clusters, stack exposures, and derive photometry. Membership is assigned via vector-point diagrams. The S50 resolves main-sequence turn-offs for clusters younger than 1 Gyr.</p></div>
+        </div>
+        <div id="how-graphics" class="subtab-content">
+          <div class="method-step"><h4><i class="fas fa-chart-line"></i> Light curves & variability</h4><p>Differential photometry with comparison stars yields mmag precision. Automated period search algorithms flag variable stars and transient events like cataclysmic outbursts or asteroid occultations.</p>
+            <div class="figure-placeholder"><i class="fas fa-chart-pie"></i> Example: light curve from pipeline (magnitude vs time).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- HOW DOES IT WORK?-->
   <div id="tab-howitworks" class="tab-content">
     <section>
       <div class="container">
