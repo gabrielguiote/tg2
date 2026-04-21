@@ -41,15 +41,24 @@
       padding: 0 2rem;
     }
 
-    /* Header refinado */
+    /* ============================================ */
+    /* HEADER COM TRANSIÇÃO PARA RETRAIR NO SCROLL  */
+    /* ============================================ */
     header {
       background: var(--primary-dark);
       color: white;
-      padding: 1.2rem 0;
       position: sticky;
       top: 0;
       z-index: 100;
       box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      /* Valores iniciais (expandido) */
+      padding: 1.2rem 0;
+    }
+
+    /* Classe adicionada via JS quando scroll > 50px */
+    header.header-shrink {
+      padding: 0.5rem 0;
     }
 
     .header-flex {
@@ -58,6 +67,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      transition: all 0.3s ease;
     }
 
     .logo h1 {
@@ -68,10 +78,23 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
+      transition: all 0.3s ease;
     }
+
+    /* Quando o header encolhe, o título também diminui */
+    header.header-shrink .logo h1 {
+      font-size: 1.2rem;
+    }
+
     .logo p {
       font-size: 0.85rem;
       opacity: 0.85;
+      transition: all 0.3s ease;
+    }
+
+    /* Quando encolhe, esconde o subtítulo (opcional) */
+    header.header-shrink .logo p {
+      display: none;
     }
 
     /* Tab bar mais integrado */
@@ -81,9 +104,14 @@
       border-bottom: 1px solid var(--gray-mid);
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       position: sticky;
-      top: 80px;
-      z-index: 99;
+      top: 0; /* Vai acompanhar o header, mas como o header é sticky, o tab-bar fica abaixo */
+      z-index: 98;
+      transition: top 0.3s ease;
     }
+
+    /* Ajuste para quando o header encolhe, a tab-bar sobe um pouco */
+    /* Não é necessário mudar o topo, pois o header já é sticky */
+
     .tab-container {
       display: flex;
       justify-content: center;
@@ -91,6 +119,8 @@
       flex-wrap: wrap;
       padding: 0.75rem 0;
     }
+
+    /* Demais estilos permanecem iguais */
     .tab-btn {
       background: transparent;
       border: none;
@@ -453,7 +483,7 @@
   </div>
 </div>
 
-<header>
+<header id="mainHeader">
   <div class="container header-flex">
     <div class="logo">
       <h1>🔭 Nanotelescopes Project</h1>
@@ -464,12 +494,12 @@
 
 <div class="tab-bar">
   <div class="container tab-container" id="tabContainer">
-    <button class="tab-btn active" data-tab="tab-home">🏠 Home</button>
-    <button class="tab-btn" data-tab="tab-objectives">📋 Objectives</button>
+    <button class="tab-btn active" data-tab="tab-home">Home</button>
+    <button class="tab-btn" data-tab="tab-objectives">Objectives</button>
     <button class="tab-btn" data-tab="tab-basics">Astronomy Basics</button>
-    <button class="tab-btn" data-tab="tab-howitworks">🔧 How does it work?</button>
-    <button class="tab-btn" data-tab="tab-team">👥 Team</button>
-    <button class="tab-btn" data-tab="tab-contact">📬 Contact & Resources</button>
+    <button class="tab-btn" data-tab="tab-howitworks">How does it work?</button>
+    <button class="tab-btn" data-tab="tab-team">Team</button>
+    <button class="tab-btn" data-tab="tab-contact">Contact</button>
   </div>
 </div>
 
@@ -706,6 +736,7 @@
     { name: "Analia Smith-Castelli", affil: "U. La Plata, Argentina", country: "Argentina" },
     { name: "Rodrigo Haack", affil: "U. La Plata, Argentina", country: "Argentina" }
   ];
+  
   function renderTeam() {
     const container = document.getElementById('team-container');
     if (!container) return;
@@ -717,6 +748,7 @@
       container.appendChild(card);
     });
   }
+  
   function activateTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active-tab'));
     const targetTab = document.getElementById(tabId);
@@ -727,6 +759,7 @@
     });
     localStorage.setItem('t05_active_tab', tabId);
   }
+  
   function activateSubTab(subtabId) {
     document.querySelectorAll('.subtab-content').forEach(content => content.classList.remove('active-subtab'));
     const target = document.getElementById(subtabId);
@@ -736,20 +769,46 @@
       else btn.classList.remove('active');
     });
   }
+  
+  // ============================================
+  // FUNÇÃO PARA RETRAIR O HEADER NO SCROLL
+  // ============================================
+  function handleHeaderShrink() {
+    const header = document.getElementById('mainHeader');
+    if (!header) return;
+    
+    if (window.scrollY > 50) {
+      header.classList.add('header-shrink');
+    } else {
+      header.classList.remove('header-shrink');
+    }
+  }
+  
   function init() {
     renderTeam();
+    
+    // Tab initialization
     const savedTab = localStorage.getItem('t05_active_tab');
     let defaultTab = (savedTab && document.getElementById(savedTab)) ? savedTab : 'tab-home';
     activateTab(defaultTab);
+    
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => { activateTab(btn.getAttribute('data-tab')); });
     });
+    
     document.querySelectorAll('.subtab-btn').forEach(btn => {
       btn.addEventListener('click', () => { activateSubTab(btn.getAttribute('data-subtab')); });
     });
+    
     if (document.querySelector('#tab-objectives')) activateSubTab('sub-overall');
     if (document.querySelector('#tab-howitworks')) activateSubTab('how-telescopes');
+    
+    // Adiciona evento de scroll para retrair o header
+    window.addEventListener('scroll', handleHeaderShrink);
+    // Chama uma vez para garantir o estado inicial correto
+    handleHeaderShrink();
   }
+  
   init();
 </script>
 </body>
