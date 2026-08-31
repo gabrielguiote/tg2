@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Nanotelescopes for Science and Education</title>
+  <title>Nanotelescópios para Ciência e Educação</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -34,16 +34,12 @@
       --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.12);
     }
 
-    /* Container centralizado com largura responsiva e elegante */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* ============================================ */
-    /* HEADER COM TRANSIÇÃO PARA RETRAIR NO SCROLL  */
-    /* ============================================ */
     header {
       background: var(--primary-dark);
       color: white;
@@ -52,11 +48,9 @@
       z-index: 100;
       box-shadow: var(--shadow-sm);
       transition: all 0.3s ease;
-      /* Valores iniciais (expandido) */
       padding: 1.2rem 0;
     }
 
-    /* Classe adicionada via JS quando scroll > 50px */
     header.header-shrink {
       padding: 0.5rem 0;
     }
@@ -81,7 +75,6 @@
       transition: all 0.3s ease;
     }
 
-    /* Quando o header encolhe, o título também diminui */
     header.header-shrink .logo h1 {
       font-size: 1.2rem;
     }
@@ -92,25 +85,20 @@
       transition: all 0.3s ease;
     }
 
-    /* Quando encolhe, esconde o subtítulo (opcional) */
     header.header-shrink .logo p {
       display: none;
     }
 
-    /* Tab bar mais integrado */
     .tab-bar {
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(4px);
       border-bottom: 1px solid var(--gray-mid);
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       position: sticky;
-      top: 0; /* Vai acompanhar o header, mas como o header é sticky, o tab-bar fica abaixo */
+      top: 0;
       z-index: 98;
       transition: top 0.3s ease;
     }
-
-    /* Ajuste para quando o header encolhe, a tab-bar sobe um pouco */
-    /* Não é necessário mudar o topo, pois o header já é sticky */
 
     .tab-container {
       display: flex;
@@ -120,7 +108,6 @@
       padding: 0.75rem 0;
     }
 
-    /* Demais estilos permanecem iguais */
     .tab-btn {
       background: transparent;
       border: none;
@@ -143,7 +130,6 @@
       box-shadow: 0 4px 12px rgba(30, 90, 107, 0.3);
     }
 
-    /* Subtab refinado */
     .subtab-bar {
       background: var(--white);
       border-radius: 80px;
@@ -194,7 +180,6 @@
       display: block;
     }
 
-    /* Seções com espaçamento harmonioso */
     section {
       padding: 3rem 0;
       border-bottom: none;
@@ -219,7 +204,6 @@
       border-radius: 4px;
     }
 
-    /* Cards mais elegantes e centralizadas */
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -252,7 +236,6 @@
       font-weight: 600;
     }
 
-    /* Team grid refinado */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -292,7 +275,6 @@
       border-radius: 20px;
     }
 
-    /* Botões e contato */
     .btn-outline {
       display: inline-block;
       margin-top: 1rem;
@@ -340,7 +322,6 @@
       text-decoration: none;
     }
 
-    /* elementos de texto e placeholders */
     .objectives-text {
       line-height: 1.7;
       font-size: 1.02rem;
@@ -400,7 +381,6 @@
       }
     }
 
-    /* Método/how it works com cards */
     .method-step {
       background: white;
       padding: 1.5rem;
@@ -413,9 +393,6 @@
       margin-bottom: 0.75rem;
     }
 
-    /* ============================================ */
-    /* MARCA D'ÁGUA - NÃO USE. EM CONSTRUÇÃO */
-    /* ============================================ */
     .watermark {
       position: fixed;
       bottom: 30px;
@@ -447,7 +424,6 @@
       text-transform: uppercase;
     }
 
-    /* Versão responsiva da marca d'água */
     @media (max-width: 640px) {
       .watermark {
         bottom: 15px;
@@ -460,7 +436,6 @@
       }
     }
 
-    /* Efeito de pulsação suave na marca d'água (opcional) */
     @keyframes softPulse {
       0%, 100% {
         opacity: 0.85;
@@ -476,7 +451,7 @@
 </head>
 <body>
 
-<!-- MARCA D'ÁGUA - NÃO USE. EM CONSTRUÇÃO -->
+<!-- MARCA D'ÁGUA -->
 <div class="watermark">
   <div class="watermark-text">
     🚧 NÃO USE · EM CONSTRUÇÃO 🚧
@@ -486,226 +461,226 @@
 <header id="mainHeader">
   <div class="container header-flex">
     <div class="logo">
-      <h1>🔭 Nanotelescopes Project</h1>
-      <p>Seestar S50 · Science and Education </p>
+      <h1>🔭 Projeto Nanotelescópios</h1>
+      <p>Seestar S50 · Ciência e Educação </p>
     </div>
   </div>
 </header>
 
 <div class="tab-bar">
   <div class="container tab-container" id="tabContainer">
-    <button class="tab-btn active" data-tab="tab-home">Home</button>
-    <button class="tab-btn" data-tab="tab-objectives">Objectives</button>
-    <button class="tab-btn" data-tab="tab-basics">Astronomy Basics</button>
-    <button class="tab-btn" data-tab="tab-howitworks">How does it work?</button>
-    <button class="tab-btn" data-tab="tab-team">Team</button>
-    <button class="tab-btn" data-tab="tab-contact">Contact</button>
+    <button class="tab-btn active" data-tab="tab-home">Início</button>
+    <button class="tab-btn" data-tab="tab-objectives">Objetivos</button>
+    <button class="tab-btn" data-tab="tab-basics">Fundamentos</button>
+    <button class="tab-btn" data-tab="tab-howitworks">Como funciona?</button>
+    <button class="tab-btn" data-tab="tab-team">Equipe</button>
+    <button class="tab-btn" data-tab="tab-contact">Contato</button>
   </div>
 </div>
 
 <main>
-  <!-- HOME TAB -->
+  <!-- ABA INÍCIO -->
   <div id="tab-home" class="tab-content active-tab">
     <div class="hero">
       <div class="container">
-        <h2>Nanotelescopes for science and its outreach</h2>
-        <p>A trinational network of Seestar S50 telescopes merging science, education, and citizen science.</p>
-        <small>🇧🇷 Brazil · 🇨🇱 Chile · 🇦🇷 Argentina | Open data · Citizen science</small>
+        <h2>Nanotelescópios para ciência e divulgação</h2>
+        <p>Uma rede trinacional de telescópios Seestar S50 integrando ciência, educação e ciência cidadã.</p>
+        <small>🇧🇷 Brasil · 🇨🇱 Chile · 🇦🇷 Argentina | Dados abertos · Ciência cidadã</small>
       </div>
     </div>
     <section>
       <div class="container">
-        <h2 class="section-title">📡 Goals & Impact</h2>
+        <h2 class="section-title">📡 Metas & Impacto</h2>
         <div class="grid-2">
-          <div class="card"><i class="fas fa-chart-line"></i><h3>Powerful observations at hand</h3><p>Monitoring stellar variability, proper motions in open clusters, asteroid parallax, and stellar occultations.</p></div>
-          <div class="card"><i class="fas fa-graduation-cap"></i><h3>Education and Outreach</h3><p>...</p></div>
-          <div class="card"><i class="fas fa-users"></i><h3>Citizen science</h3><p>Anyone with a Seestar S50 can contribute. Observations are sent to a central hub, reduced, and made available to the community.</p></div>
+          <div class="card"><i class="fas fa-chart-line"></i><h3>Observações poderosas ao alcance</h3><p>Monitoramento de variabilidade estelar, movimentos próprios em aglomerados abertos, paralaxe de asteroides e ocultações estelares.</p></div>
+          <div class="card"><i class="fas fa-graduation-cap"></i><h3>Educação e Divulgação</h3><p>Formação de estudantes e professores, com materiais didáticos e oficinas práticas de astronomia.</p></div>
+          <div class="card"><i class="fas fa-users"></i><h3>Ciência cidadã</h3><p>Qualquer pessoa com um Seestar S50 pode contribuir. As observações são enviadas para um hub central, reduzidas e disponibilizadas à comunidade.</p></div>
         </div>
       </div>
     </section>
     <section>
       <div class="container">
-        <h2 class="section-title">🔭 The Seestar S50 telescope</h2>
+        <h2 class="section-title">🔭 O telescópio Seestar S50</h2>
         <div class="grid-2">
-          <div class="card"><i class="fas fa-camera"></i><h3>Affordable technology</h3><p>*********50 mm aperture, CMOS camera with IRCUT filter. Operates in Alt-Az or equatorial mode (wedge). Sensitivity similar to Gaia BP filter, enabling precise photometry down to magnitude 13.</p></div>
-          <div class="card"><i class="fas fa-chart-line"></i><h3>What do we measure?</h3><p>Light curves (stellar variability), precise positions (astrometry), and proper motions.</p></div>
-          <div class="card"><i class="fas fa-database"></i><h3>Data Hub</h3><p>Online platform: <a href="https://andromeda.cbpf.br:5001" target="_blank">https://andromeda.cbpf.br:5001</a> (under development). Upload your frames, receive calibrated data, and access light curves.</p></div>
+          <div class="card"><i class="fas fa-camera"></i><h3>Tecnologia acessível</h3><p>Abertura de 50 mm, câmera CMOS com filtro IRCUT. Opera em modo Alt-Az ou equatorial (com cunha). Sensibilidade similar ao filtro BP do Gaia, permitindo fotometria precisa até magnitude 13.</p></div>
+          <div class="card"><i class="fas fa-chart-line"></i><h3>O que medimos?</h3><p>Curvas de luz (variabilidade estelar), posições precisas (astrometria) e movimentos próprios.</p></div>
+          <div class="card"><i class="fas fa-database"></i><h3>Hub de Dados</h3><p>Plataforma online: <a href="https://andromeda.cbpf.br:5001" target="_blank">https://andromeda.cbpf.br:5001</a> (em desenvolvimento). Envie seus frames, receba dados calibrados e acesse curvas de luz.</p></div>
         </div>
         <div style="margin-top: 2.5rem;">
-          <h3 class="section-title" style="font-size:1.5rem;">📊 Open clusters and proper motions</h3>
-          <p>With the Seestar S50 we can measure proper motions of stars in open clusters, identifying members and studying the dynamics of the Milky Way.</p>
+          <h3 class="section-title" style="font-size:1.5rem;">📊 Aglomerados abertos e movimentos próprios</h3>
+          <p>Com o Seestar S50 podemos medir movimentos próprios de estrelas em aglomerados abertos, identificando membros e estudando a dinâmica da Via Láctea.</p>
         </div>
       </div>
     </section>
     <section>
       <div class="container">
-        <h2 class="section-title">✅ What we have done</h2>
+        <h2 class="section-title">✅ O que já fizemos</h2>
         <div class="grid-2">
-          <div class="card"><i class="fas fa-telescope"></i><h3>30 Seestar S50 telescopes</h3><p>...</p></div>
-          <div class="card"><i class="fas fa-code-branch"></i><h3>Data Hub</h3><p>...</p></div>
-          <div class="card"><i class="fas fa-microchip"></i><h3>...</h3><p>...</p></div>
+          <div class="card"><i class="fas fa-telescope"></i><h3>30 telescópios Seestar S50</h3><p>Adquiridos e em fase de testes, distribuídos entre instituições parceiras.</p></div>
+          <div class="card"><i class="fas fa-code-branch"></i><h3>Hub de Dados</h3><p>Infraestrutura de processamento e armazenamento em nuvem, com pipeline de redução automática.</p></div>
+          <div class="card"><i class="fas fa-microchip"></i><h3>Automação</h3><p>Scripts para operação remota e agendamento de observações, integrados com o hub.</p></div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- OBJECTIVES with subtabs-->
+  <!-- OBJETIVOS com subtabs -->
   <div id="tab-objectives" class="tab-content">
     <section>
       <div class="container objectives-text">
-        <h2 class="section-title">Scientific and Educational Objectives</h2>
+        <h2 class="section-title">Objetivos Científicos e Educacionais</h2>
         <div style="display: flex; justify-content: center;">
           <div class="subtab-bar">
-            <button class="subtab-btn active" data-subtab="sub-overall">Overall</button>
-            <button class="subtab-btn" data-subtab="sub-variables">Variable stars</button>
-            <button class="subtab-btn" data-subtab="sub-asteroids">Asteroids</button>
-            <button class="subtab-btn" data-subtab="sub-exoplanets">Transits</button>
-            <button class="subtab-btn" data-subtab="sub-clusters">Open clusters</button>
+            <button class="subtab-btn active" data-subtab="sub-overall">Visão Geral</button>
+            <button class="subtab-btn" data-subtab="sub-variables">Estrelas variáveis</button>
+            <button class="subtab-btn" data-subtab="sub-asteroids">Asteroides</button>
+            <button class="subtab-btn" data-subtab="sub-exoplanets">Trânsitos</button>
+            <button class="subtab-btn" data-subtab="sub-clusters">Aglomerados abertos</button>
           </div>
         </div>
         <div id="sub-overall" class="subtab-content active-subtab">
-          <p>The <span style="color:orangered;"><b>Nanotelescopes Project</b></span> currently uses 30 smart telescopes (ZWO Seestar 50) for <b>research</b>, <b>education</b>, and <b>outreach</b> in Astronomy&mdash;its scientific methods and tools.</p>
-          <p style="margin-top: 0.3rem;">Half of them (15) are being set to work as a network to conduct a <b>variability survey</b> of celestial objects observed in the <u>disk</u> and <u>bulge</u> regions of our <u>Galaxy</u>. The other half (15), to be dedicated to performing observations&mdash;by amateur astronomers or the general public (guided by professional astronomers)&mdash;in order to set up a <b>pilot citizen-science</b> project with pre-selected targets of scientific interest chosen by our team (which are currently: variable stars, asteroids, and open clusters). Both initiatives is going to be coordinated by professional astronomers from different universities in Brazil, Argentina, and Chile.</p>
-          <p style="margin-top: 2.0rem;">The <span style="color:orangered;"><b>main goal</b></span> of this initiative, including both the disk and bulge survey and the citizen-science project, is to <b>collect data</b> that will be useful for <b>scientific advancement</b> and <b>publication of papers</b>, while also serving <b>educational</b> and <b>outreach</b> purposes.</p>
-           <p style="margin-top: 0.3rem;">The area to be covered in the disk and bulge survey by the <b>first group</b> of 15 telescopes will span <b>600 square degrees of the sky</b>, selected from fields already observed by the Brazilian robotic telescope T80-South and the Southern Photometric Local Universe Survey (S-PLUS; see splus.cloud and splus.iag.usp.br). The fields will be centered on the equatorial coordinate system at <u>RA=90°</u> and <u>DEC=−30°</u> for the <u>bulge</u>, and <u>RA=110°</u>  and <u>DEC=−30°</u>  for the <u>disk</u>.</p>
-          <p style="margin-top: 0.3rem;"> The <span style="color:orangered;"><b>Nanotelescopes Project</b></span> aims to <b>increase public visibility</b> of Astronomy and generate <b>interest</b> in the use of <b>telescopes</b> and deeper exploration of Astrophysics topics in an <b>engaging way</b>, potentially <b>attracting young people</b> to the study of science. It also aims to <b>bring together</b> the <b>Brazilian, Chilean, and Argentine</b> communities in this pilot project, which is of interest to astronomers in all three countries. If successful, the project’s scale and reach will be expanded in the future.</p>
-          <p> Nanotelescopes Project is part of a larger initiative to install a 2 m telescope at the Cerro Tololo Inter-American Observatory, whose main objective will be the follow-up of sources discovered by the Vera Rubin Observatory. It is also linked to the GMT Brazil project, which involves the Brazilian astronomical community's participation in one of the largest telescopes in construction today, the Giant Magellan Telescope.</p>
-          <p>From a science education perspective, <b>students can learn</b> and <b>develop skills</b> in <b>image processing</b>, <b>data analysis</b>, and the fundamentals of <b>telescope operation</b>. It can be said that the same principles used in the operation of large professional telescopes, such as the Gemini or VLT telescopes, also apply to the operation of the S50. The experience with digital data formats, such as .fits images, exposes users to conditions similar to those encountered in professional data processing pipelines, bringing them closer to the practices and methods used in real-world scenarios. With proper training, students and teachers can engage in research topics that offer unique opportunities.</p>
+          <p>O <span style="color:orangered;"><b>Projeto Nanotelescópios</b></span> utiliza atualmente 30 telescópios inteligentes (ZWO Seestar 50) para <b>pesquisa</b>, <b>educação</b> e <b>divulgação</b> em Astronomia.</p>
+          <p style="margin-top: 0.3rem;">Metade deles (15) está sendo configurada para atuar como uma rede de levantamento de <b>variabilidade</b> de objetos celestes observados nas regiões do <u>disco</u> e <u>bojo</u> da nossa <u>Galáxia</u>. A outra metade (15) será dedicada a observações realizadas por astrônomos amadores ou pelo público em geral (com orientação de astrônomos profissionais) para estabelecer um <b>projeto-piloto de ciência cidadã</b> com alvos pré-selecionados de interesse científico (atualmente: estrelas variáveis, asteroides e aglomerados abertos). Ambas as iniciativas serão coordenadas por astrônomos profissionais de diferentes universidades do Brasil, Argentina e Chile.</p>
+          <p style="margin-top: 2.0rem;">O <span style="color:orangered;"><b>objetivo principal</b></span> desta iniciativa, incluindo tanto o levantamento do disco e bojo quanto o projeto de ciência cidadã, é <b>coletar dados</b> que sejam úteis para o <b>avanço científico</b> e a <b>publicação de artigos</b>, além de servir a propósitos <b>educacionais</b> e de <b>divulgação</b>.</p>
+          <p style="margin-top: 0.3rem;">A área a ser coberta no levantamento do disco e bojo pelo <b>primeiro grupo</b> de 15 telescópios abrangerá <b>600 graus quadrados do céu</b>, selecionados a partir de campos já observados pelo telescópio robótico brasileiro T80-South e pelo Southern Photometric Local Universe Survey (S-PLUS; veja splus.cloud e splus.iag.usp.br). Os campos serão centrados nas coordenadas equatoriais <u>RA=90°</u> e <u>DEC=−30°</u> para o <u>bojo</u>, e <u>RA=110°</u> e <u>DEC=−30°</u> para o <u>disco</u>.</p>
+          <p style="margin-top: 0.3rem;">O <span style="color:orangered;"><b>Projeto Nanotelescópios</b></span> visa <b>aumentar a visibilidade pública</b> da Astronomia e gerar <b>interesse</b> pelo uso de <b>telescópios</b> e pela exploração mais profunda de tópicos de Astrofísica de forma <b>envolvente</b>, potencialmente <b>atraindo jovens</b> para o estudo das ciências. Também visa <b>unir</b> as comunidades <b>brasileira, chilena e argentina</b> neste projeto-piloto, que é de interesse para astrônomos dos três países. Se bem-sucedido, a escala e o alcance do projeto serão ampliados no futuro.</p>
+          <p>O Projeto Nanotelescópios faz parte de uma iniciativa maior para instalar um telescópio de 2 m no Observatório Interamericano de Cerro Tololo, cujo principal objetivo será o acompanhamento de fontes descobertas pelo Observatório Vera Rubin. Também está vinculado ao projeto GMT Brasil, que envolve a participação da comunidade astronômica brasileira em um dos maiores telescópios em construção atualmente, o Giant Magellan Telescope.</p>
+          <p>Do ponto de vista da educação científica, <b>os alunos podem aprender</b> e <b>desenvolver habilidades</b> em <b>processamento de imagens</b>, <b>análise de dados</b> e os fundamentos da <b>operação de telescópios</b>. Pode-se dizer que os mesmos princípios usados na operação de grandes telescópios profissionais, como os telescópios Gemini ou VLT, também se aplicam à operação do S50. A experiência com formatos de dados digitais, como imagens .fits, expõe os usuários a condições semelhantes às encontradas em pipelines profissionais de processamento de dados, aproximando-os das práticas e métodos usados em cenários reais. Com o treinamento adequado, estudantes e professores podem se envolver em tópicos de pesquisa que oferecem oportunidades únicas.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
               <img src="ZWO-Seestar-S50_-Telescopio-Inteligente.jpg" alt="Imagem 1" style="max-width: 45%; height: 16.0rem;">
               <img src="ZWO-Seestar-S50_-Telescopio-Inteligente-2.jpg" alt="Imagem 2" style="max-width: 45%; height: 16.0rem;">
           </div>
           <p style="text-align: center; font-size: 0.75rem; color: #666; margin-top: 0.5rem;">
-              Duas imagens de um telescópico Seestar S50 All-in-One Smart. Fonte: https://www.seestar.com/products/seestar-s50.
+              Duas imagens de um telescópio Seestar S50 All-in-One Smart. Fonte: https://www.seestar.com/products/seestar-s50.
           </p>
-          <p style="margin-top: 2.0rem;">To sum it up, the  <span style="color:orangered;"><b>SeeStar 50 telescopes</b></span> offer an excellent <b>cost-benefit ratio</b>, and their <b>ease of use</b> makes them suitable <b>for educational and outreach purposes</b> as well as <b>for focused scientific topics</b>. We believe the Seestar telescopes will provide students and teachers with tools that were once reserved only for professionals.</p>
+          <p style="margin-top: 2.0rem;">Em resumo, os <span style="color:orangered;"><b>telescópios SeeStar 50</b></span> oferecem uma excelente <b>relação custo-benefício</b>, e sua <b>facilidade de uso</b> os torna adequados <b>para fins educacionais e de divulgação</b>, bem como <b>para tópicos científicos focados</b>. Acreditamos que os telescópios Seestar fornecerão a estudantes e professores ferramentas que antes eram reservadas apenas para profissionais.</p>
         </div>
         <div id="sub-variables" class="subtab-content">
-          <p>Given the qualities of the CMOS sensor used in the S50, such as sensitivity, low noise, and excellent linearity, it is possible to track the variability of pulsating objects, eclipsing binary systems, and objects that exhibit unpredictable brightness variations. Experience shows that with an aperture of only 50 mm and integration times of several minutes, it is possible to observe objects that are targets even for campaigns using the Hubble Space Telescope.</p>
+          <p>Dadas as qualidades do sensor CMOS utilizado no S50, como sensibilidade, baixo ruído e excelente linearidade, é possível acompanhar a variabilidade de objetos pulsantes, sistemas binários eclipsantes e objetos que apresentam variações imprevisíveis de brilho. A experiência mostra que, com uma abertura de apenas 50 mm e tempos de integração de vários minutos, é possível observar objetos que são alvo até mesmo de campanhas com o Telescópio Espacial Hubble.</p>
           <div class="figure-placeholder">
             <i class="fas fa-chart-line" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
-            <strong>Figure 1:</strong> Schematic light curve of VW Hydri illustrating normal and super-outburst behaviour.
+            <strong>Figura 1:</strong> Curva de luz esquemática de VW Hydri ilustrando o comportamento normal e de super-explosão.
           </div>
-          <h3>The eta Carinae 2025.7 periastron</h3>
-          <p>Eta Car is one of the most luminous stars in the local Universe. It has been observed since the 1600's and presented surprising features since then. It was discovered to be a massive interacting binary with a long period (P=2022d) and extremely large eccentricity (e=0.94). It will go through periastron in late September 2025 and the most important data to be secured will be V-band photometry (V~4.0). This large brightness and the fact that the star crosses the meridian at noon in 1/Sept makes it a difficult target, however observations are feasible from South Brasil, Argentine, Chile. Accuracy better than &lt;0.01 mag (easily reached with tens to hundred images) is necessary because the peak to be monitored has an amplitude of ~0.25mag. There is a comparison star (HD303308 V=8.15) at 1 arcmin to the North. The very critical time frame is 15/Aug-15/Sept, which demands daily time sampling. Our goal is to get tens of data points during the astronomical twilights (evening and morning). The photometric peak is not explained by any existing models of the system. It has been shown to reach a larger amplitude at every periastron and the peak shifts at a rate of 1 day earlier per orbit. The possible scenario is that it is caused by a bright spot on the "surface" of the primary star illuminated/heated by the secondary star when they get close. The stars are possibly getting closer to each other at a fast rate (unstable orbit?!), in order that a stellar merger might occur in a few centuries from now (another Giant Eruption like in 1847?). An impending big event in the sky like this, asks for the attention of the entire humanity, even if it will not occur in our life time-span. This object will receive attention in the world press around the periastron, probably calling public attention to the monitoring campaign we will be doing.</p>
+          <h3>O periastro de eta Carinae 2025.7</h3>
+          <p>Eta Car é uma das estrelas mais luminosas do Universo local. É observada desde o século XVII e apresentou características surpreendentes desde então. Descobriu-se que é uma binária massiva interagente com longo período (P=2022d) e excentricidade extremamente alta (e=0,94). Ela passará pelo periastro no final de setembro de 2025 e os dados mais importantes a serem obtidos serão a fotometria em banda V (V~4,0). Esse grande brilho e o fato de a estrela cruzar o meridiano ao meio-dia em 1º de setembro tornam-na um alvo difícil, no entanto as observações são viáveis a partir do sul do Brasil, Argentina e Chile. A precisão melhor que 0,01 mag (facilmente alcançada com dezenas a centenas de imagens) é necessária porque o pico a ser monitorado tem amplitude de ~0,25 mag. Há uma estrela de comparação (HD303308 V=8,15) a 1 minuto de arco ao norte. O período crítico é de 15/ago a 15/set, o que exige amostragem diária. Nosso objetivo é obter dezenas de pontos de dados durante os crepúsculos astronômicos (vespertino e matutino). O pico fotométrico não é explicado por nenhum modelo existente do sistema. Mostrou-se que ele atinge uma amplitude maior a cada periastro e que o pico se desloca a uma taxa de 1 dia mais cedo por órbita. O cenário possível é que seja causado por uma mancha brilhante na "superfície" da estrela primária, iluminada/aquecida pela estrela secundária quando elas se aproximam. As estrelas possivelmente estão se aproximando uma da outra a uma taxa rápida (órbita instável?!), de modo que uma fusão estelar possa ocorrer em alguns séculos (outra Erupção Gigante como em 1847?). Um grande evento iminente no céu como este exige a atenção de toda a humanidade, mesmo que não ocorra em nossa vida. Este objeto receberá atenção da imprensa mundial por ocasião do periastro, provavelmente chamando a atenção do público para a campanha de monitoramento que estaremos realizando.</p>
         </div>
         <div id="sub-asteroids" class="subtab-content">
-          <p>Observing occultations caused by certain asteroids over background stars is also feasible with such instruments, given their ability to perform serial measurements over time. Some occultations produce effects that can last for tens of seconds, and observing these phenomena from different locations on Earth allows the determination of the dimensions and shape of objects in a way that is impractical even with direct imaging by large instruments.</p>
-          <div class="figure-placeholder"><i class="fas fa-meteor" style="font-size: 2rem;"></i> <strong>Illustration:</strong> Asteroid occultation light curve and multi-site chord measurements.</div>
+          <p>Observar ocultações causadas por certos asteroides sobre estrelas de fundo também é viável com esses instrumentos, dada sua capacidade de realizar medições seriadas ao longo do tempo. Algumas ocultações produzem efeitos que podem durar dezenas de segundos, e observar esses fenômenos de diferentes locais na Terra permite determinar as dimensões e a forma de objetos de uma forma que é impraticável até mesmo com imagens diretas de grandes instrumentos.</p>
+          <div class="figure-placeholder"><i class="fas fa-meteor" style="font-size: 2rem;"></i> <strong>Ilustração:</strong> Curva de luz de ocultação asteroidal e medidas de acordes em múltiplos locais.</div>
         </div>
         <div id="sub-exoplanets" class="subtab-content">
-          <p>Although challenging, the observation of exoplanetary transits that cause a decrease in the host star's brightness on the order of a few percent is feasible, as there are host stars that can be visible to the naked eye! Here, the challenging nature of such observations provides an opportunity to explore the limits of the capabilities of telescopes like the S50.</p>
-          <p>With careful scheduling and differential photometry, amateur and student observers can detect transit signals, contributing to ephemeris refinement and even discovering new transits around bright southern stars.</p>
+          <p>Embora desafiador, a observação de trânsitos de exoplanetas que causam uma diminuição no brilho da estrela hospedeira da ordem de alguns por cento é factível, pois existem estrelas hospedeiras que podem ser visíveis a olho nu! Aqui, a natureza desafiadora dessas observações oferece uma oportunidade de explorar os limites das capacidades de telescópios como o S50.</p>
+          <p>Com agendamento cuidadoso e fotometria diferencial, observadores amadores e estudantes podem detectar sinais de trânsito, contribuindo para o refinamento de efemérides e até mesmo descobrindo novos trânsitos ao redor de estrelas brilhantes do sul.</p>
         </div>
         <div id="sub-clusters" class="subtab-content">
-          <p>Young stars are supposed to be close to their birthplaces and to have velocities still very similar to the initial ones. In this context stellar proper motions are fundamental to distinguish cluster members from field stars. For example, by plotting a proper motion vector diagram one can easily distinguish the stars that share a common motion (cluster members) from those with random motions (field stars). In addition, by combining the proper motions of cluster members with additional information (e.g. parallax and radial velocity) one can reconstruct the 3D motion and history of star formation of the cluster in the Galaxy.</p>
-          <div class="figure-placeholder"><i class="fas fa-star-of-life"></i> <strong>Example:</strong> Proper motion vector diagram for an open cluster observed with Seestar S50.</div>
+          <p>Estrelas jovens devem estar próximas de seus locais de nascimento e ter velocidades ainda muito semelhantes às iniciais. Nesse contexto, os movimentos próprios estelares são fundamentais para distinguir membros do aglomerado de estrelas de campo. Por exemplo, ao traçar um diagrama vetorial de movimentos próprios, pode-se distinguir facilmente as estrelas que compartilham um movimento comum (membros do aglomerado) daquelas com movimentos aleatórios (estrelas de campo). Além disso, combinando os movimentos próprios dos membros do aglomerado com informações adicionais (por exemplo, paralaxe e velocidade radial), pode-se reconstruir o movimento 3D e a história de formação do aglomerado na Galáxia.</p>
+          <div class="figure-placeholder"><i class="fas fa-star-of-life"></i> <strong>Exemplo:</strong> Diagrama vetorial de movimentos próprios para um aglomerado aberto observado com Seestar S50.</div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- ASTRONOMY BASICS-->
+  <!-- FUNDAMENTOS -->
   <div id="tab-basics" class="tab-content">
     <section>
       <div class="container">
-        <h2 class="section-title">Astronomy Basics</h2>
+        <h2 class="section-title">Fundamentos de Astronomia</h2>
         <div style="display: flex; justify-content: center;">
           <div class="subtab-bar">
-            <button class="subtab-btn active" data-subtab="how-telescopes">Telescopes & S50</button>
-            <button class="subtab-btn" data-subtab="how-astrometry">Astrometric measure</button>
-            <button class="subtab-btn" data-subtab="how-clusters">Stellar clusters</button>
-            <button class="subtab-btn" data-subtab="how-graphics">Data analysis</button>
+            <button class="subtab-btn active" data-subtab="bas-telescopes">Telescópios & S50</button>
+            <button class="subtab-btn" data-subtab="bas-astrometry">Medida astrométrica</button>
+            <button class="subtab-btn" data-subtab="bas-clusters">Aglomerados estelares</button>
+            <button class="subtab-btn" data-subtab="bas-graphics">Análise de dados</button>
           </div>
         </div>
-        <div id="how-telescopes" class="subtab-content active-subtab">
-          <div class="method-step"><h4><i class="fas fa-microscope"></i> Seestar S50 in action</h4><p>The telescope uses a 50mm aperture, integrated CMOS sensor, and built-in field derotator. With a wedge, it operates in equatorial mode for long-exposure photometry. The automated pipeline reduces dark/flat frames and performs WCS astrometry via Gaia DR3.</p></div>
+        <div id="bas-telescopes" class="subtab-content active-subtab">
+          <div class="method-step"><h4><i class="fas fa-microscope"></i> Seestar S50 em ação</h4><p>O telescópio usa abertura de 50 mm, sensor CMOS integrado e derrotador de campo embutido. Com uma cunha, opera em modo equatorial para fotometria de longa exposição. O pipeline automatizado reduz quadros escuros/planos e realiza astrometria WCS via Gaia DR3.</p></div>
         </div>
-        <div id="how-astrometry" class="subtab-content">
-          <div class="method-step"><h4><i class="fas fa-chart-simple"></i> Astrometry & proper motions</h4><p>By measuring centroids across epochs, we achieve sub-pixel precision. Combining with Gaia catalogs, we compute proper motions with an extended time baseline, identifying cluster members and binary systems.</p></div>
+        <div id="bas-astrometry" class="subtab-content">
+          <div class="method-step"><h4><i class="fas fa-chart-simple"></i> Astrometria e movimentos próprios</h4><p>Medindo centroides ao longo de épocas, alcançamos precisão subpixel. Combinando com catálogos do Gaia, calculamos movimentos próprios com uma linha de base temporal estendida, identificando membros de aglomerados e sistemas binários.</p></div>
         </div>
-        <div id="how-clusters" class="subtab-content">
-          <div class="method-step"><h4><i class="fas fa-star-of-life"></i> Open cluster science</h4><p>We observe southern open clusters, stack exposures, and derive photometry. Membership is assigned via vector-point diagrams. The S50 resolves main-sequence turn-offs for clusters younger than 1 Gyr.</p></div>
+        <div id="bas-clusters" class="subtab-content">
+          <div class="method-step"><h4><i class="fas fa-star-of-life"></i> Ciência de aglomerados abertos</h4><p>Observamos aglomerados abertos do sul, empilhamos exposições e derivamos fotometria. A membresia é atribuída via diagramas vetoriais. O S50 resolve os pontos de virada da sequência principal para aglomerados com menos de 1 Gyr.</p></div>
         </div>
-        <div id="how-graphics" class="subtab-content">
-          <div class="method-step"><h4><i class="fas fa-chart-line"></i> Light curves & variability</h4><p>Differential photometry with comparison stars yields mmag precision. Automated period search algorithms flag variable stars and transient events like cataclysmic outbursts or asteroid occultations.</p>
-            <div class="figure-placeholder"><i class="fas fa-chart-pie"></i> Example: light curve from pipeline (magnitude vs time).</div>
+        <div id="bas-graphics" class="subtab-content">
+          <div class="method-step"><h4><i class="fas fa-chart-line"></i> Curvas de luz e variabilidade</h4><p>A fotometria diferencial com estrelas de comparação fornece precisão de milimagnitudes. Algoritmos automatizados de busca de período identificam estrelas variáveis e eventos transitórios como surtos cataclísmicos ou ocultações asteroides.</p>
+            <div class="figure-placeholder"><i class="fas fa-chart-pie"></i> Exemplo: curva de luz do pipeline (magnitude vs tempo).</div>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- HOW DOES IT WORK?-->
+  <!-- COMO FUNCIONA? -->
   <div id="tab-howitworks" class="tab-content">
     <section>
       <div class="container">
-        <h2 class="section-title">⚙️ How does it work?</h2>
+        <h2 class="section-title">⚙️ Como funciona?</h2>
         <div style="display: flex; justify-content: center;">
           <div class="subtab-bar">
-            <button class="subtab-btn active" data-subtab="how-telescopes">Telescopes & S50</button>
-            <button class="subtab-btn" data-subtab="how-astrometry">Astrometric measure</button>
-            <button class="subtab-btn" data-subtab="how-clusters">Stellar clusters</button>
-            <button class="subtab-btn" data-subtab="how-graphics">Data analysis</button>
+            <button class="subtab-btn active" data-subtab="how-telescopes">Telescópios & S50</button>
+            <button class="subtab-btn" data-subtab="how-astrometry">Medida astrométrica</button>
+            <button class="subtab-btn" data-subtab="how-clusters">Aglomerados estelares</button>
+            <button class="subtab-btn" data-subtab="how-graphics">Análise de dados</button>
           </div>
         </div>
         <div id="how-telescopes" class="subtab-content active-subtab">
-          <div class="method-step"><h4><i class="fas fa-microscope"></i> Seestar S50 in action</h4><p>The telescope uses a 50mm aperture, integrated CMOS sensor, and built-in field derotator. With a wedge, it operates in equatorial mode for long-exposure photometry. The automated pipeline reduces dark/flat frames and performs WCS astrometry via Gaia DR3.</p></div>
+          <div class="method-step"><h4><i class="fas fa-microscope"></i> Seestar S50 em ação</h4><p>O telescópio usa abertura de 50 mm, sensor CMOS integrado e derrotador de campo embutido. Com uma cunha, opera em modo equatorial para fotometria de longa exposição. O pipeline automatizado reduz quadros escuros/planos e realiza astrometria WCS via Gaia DR3.</p></div>
         </div>
         <div id="how-astrometry" class="subtab-content">
-          <div class="method-step"><h4><i class="fas fa-chart-simple"></i> Astrometry & proper motions</h4><p>By measuring centroids across epochs, we achieve sub-pixel precision. Combining with Gaia catalogs, we compute proper motions with an extended time baseline, identifying cluster members and binary systems.</p></div>
+          <div class="method-step"><h4><i class="fas fa-chart-simple"></i> Astrometria e movimentos próprios</h4><p>Medindo centroides ao longo de épocas, alcançamos precisão subpixel. Combinando com catálogos do Gaia, calculamos movimentos próprios com uma linha de base temporal estendida, identificando membros de aglomerados e sistemas binários.</p></div>
         </div>
         <div id="how-clusters" class="subtab-content">
-          <div class="method-step"><h4><i class="fas fa-star-of-life"></i> Open cluster science</h4><p>We observe southern open clusters, stack exposures, and derive photometry. Membership is assigned via vector-point diagrams. The S50 resolves main-sequence turn-offs for clusters younger than 1 Gyr.</p></div>
+          <div class="method-step"><h4><i class="fas fa-star-of-life"></i> Ciência de aglomerados abertos</h4><p>Observamos aglomerados abertos do sul, empilhamos exposições e derivamos fotometria. A membresia é atribuída via diagramas vetoriais. O S50 resolve os pontos de virada da sequência principal para aglomerados com menos de 1 Gyr.</p></div>
         </div>
         <div id="how-graphics" class="subtab-content">
-          <div class="method-step"><h4><i class="fas fa-chart-line"></i> Light curves & variability</h4><p>Differential photometry with comparison stars yields mmag precision. Automated period search algorithms flag variable stars and transient events like cataclysmic outbursts or asteroid occultations.</p>
-            <div class="figure-placeholder"><i class="fas fa-chart-pie"></i> Example: light curve from pipeline (magnitude vs time).</div>
+          <div class="method-step"><h4><i class="fas fa-chart-line"></i> Curvas de luz e variabilidade</h4><p>A fotometria diferencial com estrelas de comparação fornece precisão de milimagnitudes. Algoritmos automatizados de busca de período identificam estrelas variáveis e eventos transitórios como surtos cataclísmicos ou ocultações asteroides.</p>
+            <div class="figure-placeholder"><i class="fas fa-chart-pie"></i> Exemplo: curva de luz do pipeline (magnitude vs tempo).</div>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- TEAM -->
+  <!-- EQUIPE -->
   <div id="tab-team" class="tab-content">
     <section>
       <div class="container">
-        <h2 class="section-title">👥 Nanotelescopes Team</h2>
-        <p style="margin-bottom: 1.5rem; text-align: center;">...</p>
+        <h2 class="section-title">👥 Equipe Nanotelescópios</h2>
+        <p style="margin-bottom: 1.5rem; text-align: center;">Pesquisadores, professores e colaboradores do Brasil, Chile e Argentina.</p>
         <div class="team-grid" id="team-container"></div>
         <div style="text-align: center; margin-top: 2rem;">
-          <a href="#" class="btn-outline">Meet all members →</a>
+          <a href="#" class="btn-outline">Conheça todos os membros →</a>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- CONTACT -->
+  <!-- CONTATO -->
   <div id="tab-contact" class="tab-content">
     <section>
       <div class="container">
-        <h2 class="section-title">📬 Participate & Contact</h2>
+        <h2 class="section-title">📬 Participe & Contato</h2>
         <div class="grid-2">
           <div class="contact-info">
             <i class="fas fa-envelope"></i>
-            <h3>General email</h3>
+            <h3>E-mail geral</h3>
             <p><a href="mailto:place@holder.net">place@holder.net</a></p>
-            <p>Interested in contributing? Write to us ...</p>
+            <p>Interessado em contribuir? Escreva para nós.</p>
           </div>
           <div class="contact-info">
             <i class="fas fa-link"></i>
-            <h3>Resources</h3>
+            <h3>Recursos</h3>
             <ul style="list-style: none; text-align: left;">
-              <li>🔗 <a href="https://andromeda.cbpf.br:5001" target="_blank">Data Hub (upload/reduction)</a></li>
-              <li>📘 <a href="#">Tutorial: how to operate Seestar S50</a> (*here*)</li>
-              <li>🐙 <a href="https://github.com/smart-underworld/seestar_run" target="_blank">Automation scripts on GitHub</a></li>
-              <li>📄 <a href="#">...</a> (...)</li>
+              <li>🔗 <a href="https://andromeda.cbpf.br:5001" target="_blank">Hub de Dados (envio/redução)</a></li>
+              <li>📘 <a href="#">Tutorial: como operar o Seestar S50</a> (*aqui*)</li>
+              <li>🐙 <a href="https://github.com/smart-underworld/seestar_run" target="_blank">Scripts de automação no GitHub</a></li>
+              <li>📄 <a href="#">Publicações e relatórios</a> (em breve)</li>
             </ul>
           </div>
         </div>
         <div style="margin-top: 2.5rem; text-align: center; font-size: 0.9rem;">
-          <p>...</p>
+          <p>Este projeto é financiado por agências de fomento dos três países e conta com o apoio de diversas universidades.</p>
         </div>
       </div>
     </section>
@@ -714,23 +689,23 @@
 
 <footer>
   <div class="container">
-    <p>© ...</p>
+    <p>© 2026 Projeto Nanotelescópios · Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <script>
   const teamMembers = [
-    { name: "Claudia Mendes de Oliveira", affil: "USP, Brazil", country: "Brazil" },
-    { name: "Francisco Jablonski", affil: "INPE, Brazil", country: "Brazil" },
-    { name: "Antônio Kanaan", affil: "UFSC, Brazil", country: "Brazil" },
-    { name: "Arianna Cortesi", affil: "UFRJ, Brazil", country: "Brazil" },
-    { name: "Felipe Braga Ribas", affil: "UTFPR, Brazil", country: "Brazil" },
-    { name: "Gustavo Schwarz", affil: "USP/CBPF, Brazil", country: "Brazil" },
-    { name: "Phillip Galli", affil: "USP, Brazil", country: "Brazil" },
-    { name: "Augusto Damineli", affil: "USP, Brazil", country: "Brazil" },
-    { name: "Sergio Scarano", affil: "UFS, Brazil", country: "Brazil" },
-    { name: "Amilcar Queiroz", affil: "UFCG, Brazil", country: "Brazil" },
-    { name: "Ramachrisna Teixeira", affil: "USP, Brazil", country: "Brazil" },
+    { name: "Claudia Mendes de Oliveira", affil: "USP, Brasil", country: "Brasil" },
+    { name: "Francisco Jablonski", affil: "INPE, Brasil", country: "Brasil" },
+    { name: "Antônio Kanaan", affil: "UFSC, Brasil", country: "Brasil" },
+    { name: "Arianna Cortesi", affil: "UFRJ, Brasil", country: "Brasil" },
+    { name: "Felipe Braga Ribas", affil: "UTFPR, Brasil", country: "Brasil" },
+    { name: "Gustavo Schwarz", affil: "USP/CBPF, Brasil", country: "Brasil" },
+    { name: "Phillip Galli", affil: "USP, Brasil", country: "Brasil" },
+    { name: "Augusto Damineli", affil: "USP, Brasil", country: "Brasil" },
+    { name: "Sergio Scarano", affil: "UFS, Brasil", country: "Brasil" },
+    { name: "Amilcar Queiroz", affil: "UFCG, Brasil", country: "Brasil" },
+    { name: "Ramachrisna Teixeira", affil: "USP, Brasil", country: "Brasil" },
     { name: "Sergio Torres-Flores", affil: "U. La Serena, Chile", country: "Chile" },
     { name: "Amelia Ramirez", affil: "U. La Serena, Chile", country: "Chile" },
     { name: "Claudio Tenreiro", affil: "U. Talca, Chile", country: "Chile" },
@@ -773,9 +748,6 @@
     });
   }
   
-  // ============================================
-  // FUNÇÃO PARA RETRAIR O HEADER NO SCROLL
-  // ============================================
   function handleHeaderShrink() {
     const header = document.getElementById('mainHeader');
     if (!header) return;
@@ -790,7 +762,6 @@
   function init() {
     renderTeam();
     
-    // Tab initialization
     const savedTab = localStorage.getItem('t05_active_tab');
     let defaultTab = (savedTab && document.getElementById(savedTab)) ? savedTab : 'tab-home';
     activateTab(defaultTab);
@@ -805,10 +776,9 @@
     
     if (document.querySelector('#tab-objectives')) activateSubTab('sub-overall');
     if (document.querySelector('#tab-howitworks')) activateSubTab('how-telescopes');
+    if (document.querySelector('#tab-basics')) activateSubTab('bas-telescopes');
     
-    // Adiciona evento de scroll para retrair o header
     window.addEventListener('scroll', handleHeaderShrink);
-    // Chama uma vez para garantir o estado inicial correto
     handleHeaderShrink();
   }
   
