@@ -4,332 +4,515 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Nanotelescópios para Ciência e Educação</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ===== ESTILO RETRÔ ===== */
-    * { margin:0; padding:0; box-sizing:border-box; }
+    /* ===== MISTURA: VISTA/7 + RETRÔ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: #008080;
-      font-family: 'IBM Plex Mono', 'Courier New', monospace;
-      font-size: 14px;
-      padding: 20px;
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #1a3a4a 0%, #2d6b7a 40%, #6ba3b8 100%);
       min-height: 100vh;
+      padding: 30px 20px;
       display: flex;
       justify-content: center;
       align-items: flex-start;
+      color: #1e1e1e;
       line-height: 1.5;
     }
+
     .desktop {
-      background: #c0c0c0;
-      padding: 20px;
-      border: 6px outset #ffffff;
-      max-width: 1200px;
       width: 100%;
-      box-shadow: 8px 8px 0 rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
+
+    /* ===== JANELA PRINCIPAL ===== */
     .window {
-      background: #c0c0c0;
-      border: 3px solid;
-      border-color: #ffffff #808080 #808080 #ffffff;
-      padding: 6px;
-      box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px -1px 0 #0a0a0a;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      overflow: hidden;
+      margin-bottom: 20px;
     }
+
+    /* ===== BARRA DE TÍTULO (Vista com toque retrô) ===== */
+    .window-title-bar {
+      background: linear-gradient(180deg, rgba(0, 0, 128, 0.7) 0%, rgba(0, 0, 80, 0.6) 100%);
+      backdrop-filter: blur(8px);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      cursor: default;
+      user-select: none;
+    }
+
     .window-title {
-      background: #000080;
-      color: white;
-      padding: 6px 12px;
-      font-size: 16px;
-      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 10px;
-      border: 2px outset #c0c0c0;
-      margin-bottom: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     }
-    .window-title .icon { font-size: 20px; }
+
+    .window-title .icon {
+      font-size: 20px;
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .win-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.15s;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    .win-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+    .win-btn.close:hover {
+      background: #e74c3c;
+      color: white;
+      border-color: #c0392b;
+    }
+    .win-btn.maximize:hover {
+      background: #2ecc71;
+      color: white;
+    }
+    .win-btn.minimize:hover {
+      background: #f39c12;
+      color: white;
+    }
+
+    /* ===== CONTEÚDO ===== */
     .window-content {
-      padding: 16px;
-      background: #c0c0c0;
-      border: 2px inset #ffffff;
+      padding: 20px 24px 24px;
+      background: rgba(240, 240, 245, 0.6);
+      backdrop-filter: blur(4px);
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
     }
+
+    /* ===== ABA DE NAVEGAÇÃO (Vista + retrô) ===== */
     .tab-bar {
-      background: #c0c0c0;
-      border-bottom: 3px solid #808080;
-      padding: 6px 4px;
-    }
-    .tab-container {
+      background: rgba(192, 192, 192, 0.3);
+      backdrop-filter: blur(4px);
+      padding: 8px 16px 0;
+      border-bottom: 2px solid rgba(128, 128, 128, 0.3);
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 4px;
     }
+
     .tab-btn {
-      background: #c0c0c0;
-      border: 3px solid;
-      border-color: #ffffff #808080 #808080 #ffffff;
-      padding: 8px 20px;
-      font-family: inherit;
+      background: transparent;
+      border: 2px solid transparent;
+      border-bottom: none;
+      padding: 10px 20px;
+      font-family: 'Segoe UI', sans-serif;
       font-size: 14px;
       font-weight: 600;
+      color: #1a2a3a;
+      border-radius: 8px 8px 0 0;
       cursor: pointer;
-      color: #000;
-      box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px -1px 0 #0a0a0a;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.3) transparent;
     }
     .tab-btn.active {
-      background: #000080;
-      color: white;
-      border-color: #808080 #ffffff #ffffff #808080;
-      box-shadow: inset -1px -1px 0 #dfdfdf, inset 1px 1px 0 #0a0a0a;
+      background: rgba(255, 255, 255, 0.6);
+      border-color: #c0c0c0 #c0c0c0 transparent;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+      color: #000080;
     }
-    .tab-content { display: none; }
-    .tab-content.active-tab { display: block; }
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 15%;
+      width: 70%;
+      height: 3px;
+      background: #000080;
+      border-radius: 2px;
+    }
 
+    .tab-content {
+      display: none;
+      padding-top: 8px;
+    }
+    .tab-content.active-tab {
+      display: block;
+      animation: fadeSlide 0.25s ease;
+    }
+
+    @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateY(6px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== SUBTABS (retrô com vidro) ===== */
     .subtab-bar {
-      background: #c0c0c0;
-      border: 3px solid;
-      border-color: #ffffff #808080 #808080 #ffffff;
       display: inline-flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 4px;
+      background: rgba(192, 192, 192, 0.3);
+      backdrop-filter: blur(4px);
       padding: 6px;
-      margin-bottom: 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 18px;
     }
     .subtab-btn {
-      background: #c0c0c0;
-      border: 3px solid;
-      border-color: #ffffff #808080 #808080 #ffffff;
-      padding: 6px 16px;
-      font-family: inherit;
-      font-size: 12px;
+      background: transparent;
+      border: 2px solid transparent;
+      padding: 8px 18px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 13px;
       font-weight: 600;
+      color: #1a2a3a;
+      border-radius: 8px;
       cursor: pointer;
-      color: #000;
-      box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px -1px 0 #0a0a0a;
+      transition: all 0.2s;
+    }
+    .subtab-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.3);
     }
     .subtab-btn.active {
-      background: #000080;
-      color: white;
-      border-color: #808080 #ffffff #ffffff #808080;
-      box-shadow: inset -1px -1px 0 #dfdfdf, inset 1px 1px 0 #0a0a0a;
+      background: rgba(0, 0, 128, 0.15);
+      border-color: #000080;
+      color: #000080;
+      box-shadow: inset 0 1px 4px rgba(0,0,128,0.1);
     }
-    .subtab-content { display: none; }
-    .subtab-content.active-subtab { display: block; }
+    .subtab-content {
+      display: none;
+    }
+    .subtab-content.active-subtab {
+      display: block;
+      animation: fadeSlide 0.2s ease;
+    }
 
+    /* ===== CARDS (retrô com toque moderno) ===== */
     .card {
-      background: #c0c0c0;
-      border: 3px solid;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 2px solid #c0c0c0;
       border-color: #ffffff #808080 #808080 #ffffff;
-      padding: 16px;
-      margin-bottom: 12px;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
     .card h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
+      font-size: 17px;
+      font-weight: 700;
       color: #000080;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      margin-bottom: 10px;
     }
     .card i {
-      font-size: 20px;
+      font-size: 22px;
       color: #000080;
-      width: 30px;
+      width: 32px;
       text-align: center;
     }
+
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-      margin-top: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
     }
+
+    /* ===== EQUIPE ===== */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
       margin-top: 12px;
     }
     .team-card {
-      background: #c0c0c0;
-      border: 3px solid;
-      border-color: #ffffff #808080 #808080 #ffffff;
-      padding: 12px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 10px;
+      padding: 16px;
       text-align: center;
+      border: 2px solid #c0c0c0;
+      border-color: #ffffff #808080 #808080 #ffffff;
+      transition: all 0.2s;
+    }
+    .team-card:hover {
+      background: rgba(255, 255, 255, 0.85);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     }
     .team-card h4 {
-      font-size: 15px;
+      font-size: 16px;
+      font-weight: 700;
       color: #000080;
       margin-bottom: 4px;
     }
-    .team-card p { font-size: 13px; color: #222; }
+    .team-card p {
+      font-size: 13px;
+      color: #3a5a6a;
+    }
     .team-card .country {
       font-size: 12px;
+      font-weight: 600;
+      color: #ffffff;
       background: #000080;
-      color: white;
-      padding: 3px 12px;
+      padding: 4px 14px;
+      border-radius: 20px;
       display: inline-block;
       margin-top: 6px;
       border: 2px solid #808080;
     }
+
+    /* ===== CONTATO ===== */
     .contact-info {
-      background: #c0c0c0;
-      border: 3px solid;
-      border-color: #ffffff #808080 #808080 #ffffff;
-      padding: 16px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 10px;
+      padding: 20px;
       text-align: center;
-    }
-    .contact-info i { font-size: 28px; color: #000080; }
-    .contact-info h3 { font-size: 16px; margin: 8px 0; }
-    .contact-info p, .contact-info li { font-size: 13px; }
-    .contact-info ul { list-style: none; text-align: left; }
-    .figure-placeholder {
-      background: #e0e0e0;
-      border: 3px solid;
-      border-color: #808080 #ffffff #ffffff #808080;
-      padding: 14px;
-      margin: 12px 0;
-      text-align: center;
-      font-size: 13px;
-      color: #000;
-    }
-    .method-step {
-      background: #c0c0c0;
-      border: 3px solid;
+      border: 2px solid #c0c0c0;
       border-color: #ffffff #808080 #808080 #ffffff;
-      padding: 14px;
-      margin-bottom: 14px;
+      transition: all 0.2s;
     }
-    .method-step h4 {
+    .contact-info:hover {
+      background: rgba(255, 255, 255, 0.8);
+      transform: translateY(-2px);
+    }
+    .contact-info i {
+      font-size: 28px;
       color: #000080;
-      font-size: 15px;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
-    .method-step p { font-size: 13px; line-height: 1.6; }
-    .btn-outline {
-      display: inline-block;
-      padding: 6px 18px;
-      border: 3px solid;
-      border-color: #ffffff #808080 #808080 #ffffff;
-      background: #c0c0c0;
-      color: #000;
-      font-family: inherit;
-      font-size: 13px;
+    .contact-info h3 {
+      font-size: 17px;
+      margin: 8px 0;
+      color: #000080;
+    }
+    .contact-info p, .contact-info li {
+      font-size: 14px;
+    }
+    .contact-info ul {
+      list-style: none;
+      text-align: left;
+      padding: 0;
+    }
+    .contact-info ul li {
+      margin: 6px 0;
+    }
+    .contact-info a {
+      color: #000080;
       font-weight: 600;
       text-decoration: none;
-      box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px -1px 0 #0a0a0a;
-      margin-top: 8px;
     }
-    .btn-outline:hover { background: #000080; color: white; }
-    footer {
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== BOTÃO ===== */
+    .btn-outline {
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 30px;
+      border: 2px solid #000080;
+      background: rgba(255, 255, 255, 0.3);
+      color: #000080;
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.2s;
+      backdrop-filter: blur(4px);
+      cursor: pointer;
+    }
+    .btn-outline:hover {
       background: #000080;
       color: white;
-      padding: 16px 0;
-      text-align: center;
-      font-size: 12px;
-      border: 3px outset #c0c0c0;
-      margin-top: 16px;
+      border-color: #000080;
+      transform: scale(1.02);
     }
-    footer a { color: #ffcc00; }
+
+    /* ===== FIGURAS ===== */
+    .figure-placeholder {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(2px);
+      border-radius: 10px;
+      padding: 18px;
+      margin: 14px 0;
+      text-align: center;
+      border: 2px dashed #000080;
+      color: #1a3a4a;
+    }
+
+    .method-step {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      border: 2px solid #c0c0c0;
+      border-color: #ffffff #808080 #808080 #ffffff;
+    }
+    .method-step h4 {
+      font-size: 16px;
+      color: #000080;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .method-step p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ===== IMAGENS ===== */
     .img-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
       justify-content: center;
-      margin: 12px 0;
+      margin: 14px 0;
     }
     .img-row img {
       max-width: 45%;
       height: 16rem;
       object-fit: cover;
-      border: 3px solid;
-      border-color: #808080 #ffffff #ffffff #808080;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border: 2px solid #c0c0c0;
+      border-color: #ffffff #808080 #808080 #ffffff;
+    }
+    .img-row-single {
+      display: flex;
+      justify-content: center;
+      margin: 12px 0;
     }
     .img-row-single img {
       max-width: 90%;
       height: 16rem;
       object-fit: cover;
-      border: 3px solid;
-      border-color: #808080 #ffffff #ffffff #808080;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      border: 2px solid #c0c0c0;
+      border-color: #ffffff #808080 #808080 #ffffff;
     }
     .img-caption {
       text-align: center;
-      font-size: 0.75rem;
-      color: #666;
-      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #3a5a6a;
+      margin-top: 6px;
     }
-    .watermark {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-      pointer-events: none;
-      opacity: 0.9;
+
+    /* ===== RODAPÉ (Vista + retrô) ===== */
+    footer {
+      background: rgba(0, 0, 128, 0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 16px 0;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 13px;
+      border: 2px solid #c0c0c0;
+      border-color: #ffffff #808080 #808080 #ffffff;
+      margin-top: 20px;
     }
-    .watermark-text {
-      background: #000;
-      color: #ff5555;
-      font-size: 12px;
-      padding: 8px 18px;
-      border: 3px solid #ff5555;
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 700;
-      text-transform: uppercase;
-      transform: rotate(-3deg);
-      box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+    footer a {
+      color: #8fcbdd;
+      text-decoration: none;
     }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== RESPONSIVO ===== */
     @media (max-width: 768px) {
-      body { padding: 10px; font-size: 12px; }
-      .desktop { padding: 12px; }
-      .window-title { font-size: 14px; }
-      .tab-btn, .subtab-btn { font-size: 12px; padding: 6px 14px; }
+      body { padding: 16px; }
+      .window-content { padding: 16px; }
+      .tab-btn { padding: 8px 14px; font-size: 13px; }
+      .subtab-btn { padding: 6px 14px; font-size: 12px; }
       .grid-2 { grid-template-columns: 1fr; }
       .team-grid { grid-template-columns: 1fr 1fr; }
-      .img-row img, .img-row-single img { max-width: 100%; height: auto; }
+      .img-row img { max-width: 100%; height: auto; }
+      .img-row-single img { max-width: 100%; height: auto; }
+      .window-title-bar { flex-wrap: wrap; gap: 6px; }
     }
   </style>
 </head>
 <body>
 
-<!-- MARCA D'ÁGUA (texto original) -->
-<div class="watermark">
-  <div class="watermark-text">
-    🚧 NÃO USE · EM CONSTRUÇÃO 🚧
-  </div>
-</div>
-
 <div class="desktop">
-  <div class="window">
-    <!-- TÍTULO DA JANELA (texto original) -->
-    <div class="window-title">
-      <span class="icon">🔭</span> Projeto Nanotelescópios
-    </div>
 
-    <!-- BARRA DE ABAS (textos originais) -->
-    <div class="tab-bar">
-      <div class="tab-container" id="tabContainer">
-        <button class="tab-btn active" data-tab="tab-home">Início</button>
-        <button class="tab-btn" data-tab="tab-objectives">Objetivos</button>
-        <button class="tab-btn" data-tab="tab-basics">Fundamentos</button>
-        <button class="tab-btn" data-tab="tab-howitworks">Como funciona?</button>
-        <button class="tab-btn" data-tab="tab-team">Equipe</button>
-        <button class="tab-btn" data-tab="tab-contact">Contato</button>
+  <!-- JANELA PRINCIPAL -->
+  <div class="window">
+
+    <!-- BARRA DE TÍTULO (Vista com toque retrô) -->
+    <div class="window-title-bar">
+      <div class="window-title">
+        <span class="icon">🔭</span> Projeto Nanotelescópios
+      </div>
+      <div class="window-controls">
+        <span class="win-btn minimize">─</span>
+        <span class="win-btn maximize">☐</span>
+        <span class="win-btn close">✕</span>
       </div>
     </div>
 
-    <!-- CONTEÚDO (100% extraído do arquivo) -->
-    <div class="window-content" style="padding:16px;">
+    <!-- ABAS -->
+    <div class="tab-bar" id="tabContainer">
+      <button class="tab-btn active" data-tab="tab-home">Início</button>
+      <button class="tab-btn" data-tab="tab-objectives">Objetivos</button>
+      <button class="tab-btn" data-tab="tab-basics">Fundamentos</button>
+      <button class="tab-btn" data-tab="tab-howitworks">Como funciona?</button>
+      <button class="tab-btn" data-tab="tab-team">Equipe</button>
+      <button class="tab-btn" data-tab="tab-contact">Contato</button>
+    </div>
 
-      <!-- INÍCIO -->
+    <!-- CONTEÚDO -->
+    <div class="window-content">
+
+      <!-- ===== INÍCIO ===== -->
       <div id="tab-home" class="tab-content active-tab">
-        <div class="hero" style="text-align:center; margin-bottom:16px;">
-          <h2 style="font-size:22px; color:#000080; margin-bottom:6px;">Nanotelescópios para ciência e divulgação</h2>
-          <p style="font-size:15px; font-weight:600;">Uma rede trinacional de nanotelescópios integrando ciência, educação e ciência cidadã.</p>
-          <small style="font-size:13px; color:#333;">🇧🇷 Brasil · 🇨🇱 Chile · 🇦🇷 Argentina | Dados abertos · Ciência cidadã</small>
+        <div style="text-align:center; margin-bottom:20px;">
+          <h2 style="font-size:26px; color:#000080; font-weight:700; margin-bottom:6px;">Nanotelescópios para ciência e divulgação</h2>
+          <p style="font-size:17px; font-weight:400; color:#1e4a5a;">Uma rede trinacional de nanotelescópios integrando ciência, educação e ciência cidadã.</p>
+          <small style="font-size:14px; color:#3a5a6a;">🇧🇷 Brasil · 🇨🇱 Chile · 🇦🇷 Argentina | Dados abertos · Ciência cidadã</small>
         </div>
 
         <div class="card">
@@ -348,9 +531,9 @@
             <div class="card"><i class="fas fa-chart-line"></i> <b>O que medimos?</b><br>Curvas de luz (variabilidade estelar), posições precisas (astrometria) e movimentos próprios.</div>
             <div class="card"><i class="fas fa-database"></i> <b>Hub de Dados</b><br>Plataforma online: <a href="https://andromeda.cbpf.br:5001" target="_blank" style="color:#000080; font-weight:600;">https://andromeda.cbpf.br:5001</a> (em desenvolvimento). Envie seus frames, receba dados calibrados e acesse curvas de luz.</div>
           </div>
-          <div style="margin-top:14px;">
-            <h4 style="font-size:16px; color:#000080;">📊 Aglomerados abertos e movimentos próprios</h4>
-            <p style="font-size:14px;">Com um nanotelescópio podemos medir movimentos próprios de estrelas em aglomerados abertos, identificando membros e estudando a dinâmica da Via Láctea.</p>
+          <div style="margin-top:16px;">
+            <h4 style="font-size:18px; color:#000080;">📊 Aglomerados abertos e movimentos próprios</h4>
+            <p style="font-size:15px;">Com um nanotelescópio podemos medir movimentos próprios de estrelas em aglomerados abertos, identificando membros e estudando a dinâmica da Via Láctea.</p>
           </div>
         </div>
 
@@ -364,9 +547,9 @@
         </div>
       </div>
 
-      <!-- OBJETIVOS -->
+      <!-- ===== OBJETIVOS ===== -->
       <div id="tab-objectives" class="tab-content">
-        <h2 style="font-size:20px; color:#000080; margin-bottom:12px;">Objetivos ...</h2>
+        <h2 style="font-size:22px; color:#000080; margin-bottom:12px;">Objetivos ...</h2>
         <div class="subtab-bar">
           <button class="subtab-btn active" data-subtab="sub-overall">Visão Geral</button>
           <button class="subtab-btn" data-subtab="sub-observacao">Observação</button>
@@ -374,33 +557,33 @@
         </div>
 
         <div id="sub-overall" class="subtab-content active-subtab">
-          <p style="font-size:14px; line-height:1.7; margin-bottom:10px;">O <span style="color:#cc0000; font-weight:700;">Projeto Nanotelescópios</span> utiliza telescópios inteligentes (atualmente ZWO Seestar 50) para <b>pesquisa</b>, <b>educação</b> e <b>divulgação</b> em Astronomia, criando ferramentas e atividades para ajudar diferentes públicos a usar facilmente os telescópios, coletar dados, aprender sobre diferentes tópicos de <b>Astronomia</b>, <b>Física</b> e <b>Matemática</b> e/ou ajudar astrônomos a publicar artigos científicos.</p>
-          <p style="font-size:14px; line-height:1.7; margin-bottom:10px;">O plano original consistia em dedicar um conjunto de nanotelescópios (cerca de 10 deles) para um levantamento da <b>variabilidade</b> de objetos celestes observados em nossa <u>Galáxia</u>. Outro conjunto de telescópios (outros 10 ou mais) será dedicado à realização de observações por astrônomos amadores e profissionais, ou até mesmo por estudantes ou pelo público em geral (orientados por astrônomos profissionais). O plano inicial de um <span style="color:#cc0000; font-weight:700;">projeto piloto de ciência cidadã</span> foi iniciado com um número pré-selecionado de alvos de interesse científico escolhidos por nossa equipe (que atualmente são: estrelas variáveis, asteroides, aglomerados abertos, trânsitos). As iniciativas são coordenadas por astrônomos profissionais de diferentes universidades no Brasil, Argentina e Chile.</p>
-          <p style="font-size:14px; line-height:1.7; margin-bottom:10px;">O <b>principal objetivo</b> de ambas as iniciativas: o levantamento da variabilidade da Galáxia e o projeto de ciência cidadã, é <b>coletar dados</b> que possam ser úteis para o <b>avanço científico</b> e a <b>publicação de artigos</b>, ao mesmo tempo em que servem a propósitos <b>educacionais</b> e de <b>divulgação</b>.</p>
-          <p style="font-size:14px; line-height:1.7; margin-bottom:10px;">A área a ser coberta pelo <b>primeiro grupo</b> de cerca de 10 telescópios é de <b>600 graus quadrados do céu</b>, selecionados a partir de campos já observados pelo telescópio robótico brasileiro T80-South e pelo levantamento Southern Photometric Local Universe Survey (S-PLUS). Os campos serão centrados no sistema de coordenadas equatoriais em <u>AR=90°</u> e <u>DEC=−30°</u> para o <u>bojo</u>, e <u>AR=110°</u> e <u>DEC=−30°</u> para o <u>disco</u> de nossa Galáxia. Se esses campos se mostrarem muito povoados para o tamanho de pixel do Seestar 50 (2,4 segundos de arco por pixel), adaptaremos os alvos.</p>
-          <p style="font-size:14px; line-height:1.7; margin-bottom:10px;">O <span style="color:#cc0000; font-weight:700;">Projeto Nanotelescópios</span> visa <b>aumentar a visibilidade pública</b> da Astronomia e gerar <b>interesse</b> no uso de telescópios e na exploração mais profunda de tópicos astrofísicos de <b>maneira envolvente</b>, potencialmente <b>atraindo jovens</b> para o estudo da ciência. Também busca <b>aproximar</b> as comunidades do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b> neste projeto piloto, que é de interesse para astrônomos dos três países. Se for bem-sucedido, a escala e o alcance do projeto serão ampliados no futuro, em particular para escolas no Brasil.</p>
-          <p style="font-size:14px; line-height:1.7; margin-bottom:10px;">O Projeto Nanotelescópios faz parte de uma iniciativa maior para instalar um telescópio de 2 m no Cerro Tololo Inter-American Observatory, cujo principal objetivo será o acompanhamento de fontes descobertas pelo Vera Rubin Observatory.</p>
-          <p style="font-size:14px; line-height:1.7; margin-bottom:10px;">Do ponto de vista da educação científica, <b>estudantes podem aprender</b> e <b>desenvolver habilidades</b> em <b>processamento de imagens</b>, <b>análise de dados</b> e nos fundamentos da <b>operação de telescópios</b>. A experiência com formatos digitais de dados, como imagens <i>.fits</i>, expõe os usuários a condições semelhantes às encontradas em pipelines profissionais de processamento de dados, aproximando-os das práticas e métodos utilizados em cenários reais. Com o treinamento adequado, estudantes e professores podem se engajar em temas de pesquisa que oferecem oportunidades únicas.</p>
+          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">O <span style="color:#c0392b; font-weight:700;">Projeto Nanotelescópios</span> utiliza telescópios inteligentes (atualmente ZWO Seestar 50) para <b>pesquisa</b>, <b>educação</b> e <b>divulgação</b> em Astronomia, criando ferramentas e atividades para ajudar diferentes públicos a usar facilmente os telescópios, coletar dados, aprender sobre diferentes tópicos de <b>Astronomia</b>, <b>Física</b> e <b>Matemática</b> e/ou ajudar astrônomos a publicar artigos científicos.</p>
+          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">O plano original consistia em dedicar um conjunto de nanotelescópios (cerca de 10 deles) para um levantamento da <b>variabilidade</b> de objetos celestes observados em nossa <u>Galáxia</u>. Outro conjunto de telescópios (outros 10 ou mais) será dedicado à realização de observações por astrônomos amadores e profissionais, ou até mesmo por estudantes ou pelo público em geral (orientados por astrônomos profissionais). O plano inicial de um <span style="color:#c0392b; font-weight:700;">projeto piloto de ciência cidadã</span> foi iniciado com um número pré-selecionado de alvos de interesse científico escolhidos por nossa equipe (que atualmente são: estrelas variáveis, asteroides, aglomerados abertos, trânsitos). As iniciativas são coordenadas por astrônomos profissionais de diferentes universidades no Brasil, Argentina e Chile.</p>
+          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">O <b>principal objetivo</b> de ambas as iniciativas: o levantamento da variabilidade da Galáxia e o projeto de ciência cidadã, é <b>coletar dados</b> que possam ser úteis para o <b>avanço científico</b> e a <b>publicação de artigos</b>, ao mesmo tempo em que servem a propósitos <b>educacionais</b> e de <b>divulgação</b>.</p>
+          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">A área a ser coberta pelo <b>primeiro grupo</b> de cerca de 10 telescópios é de <b>600 graus quadrados do céu</b>, selecionados a partir de campos já observados pelo telescópio robótico brasileiro T80-South e pelo levantamento Southern Photometric Local Universe Survey (S-PLUS). Os campos serão centrados no sistema de coordenadas equatoriais em <u>AR=90°</u> e <u>DEC=−30°</u> para o <u>bojo</u>, e <u>AR=110°</u> e <u>DEC=−30°</u> para o <u>disco</u> de nossa Galáxia. Se esses campos se mostrarem muito povoados para o tamanho de pixel do Seestar 50 (2,4 segundos de arco por pixel), adaptaremos os alvos.</p>
+          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">O <span style="color:#c0392b; font-weight:700;">Projeto Nanotelescópios</span> visa <b>aumentar a visibilidade pública</b> da Astronomia e gerar <b>interesse</b> no uso de telescópios e na exploração mais profunda de tópicos astrofísicos de <b>maneira envolvente</b>, potencialmente <b>atraindo jovens</b> para o estudo da ciência. Também busca <b>aproximar</b> as comunidades do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b> neste projeto piloto, que é de interesse para astrônomos dos três países. Se for bem-sucedido, a escala e o alcance do projeto serão ampliados no futuro, em particular para escolas no Brasil.</p>
+          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">O Projeto Nanotelescópios faz parte de uma iniciativa maior para instalar um telescópio de 2 m no Cerro Tololo Inter-American Observatory, cujo principal objetivo será o acompanhamento de fontes descobertas pelo Vera Rubin Observatory.</p>
+          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">Do ponto de vista da educação científica, <b>estudantes podem aprender</b> e <b>desenvolver habilidades</b> em <b>processamento de imagens</b>, <b>análise de dados</b> e nos fundamentos da <b>operação de telescópios</b>. A experiência com formatos digitais de dados, como imagens <i>.fits</i>, expõe os usuários a condições semelhantes às encontradas em pipelines profissionais de processamento de dados, aproximando-os das práticas e métodos utilizados em cenários reais. Com o treinamento adequado, estudantes e professores podem se engajar em temas de pesquisa que oferecem oportunidades únicas.</p>
           <div class="img-row">
             <img src="ZWO-Seestar-S50_-Telescopio-Inteligente.jpg" alt="Imagem 1">
             <img src="ZWO-Seestar-S50_-Telescopio-Inteligente-2.jpg" alt="Imagem 2">
           </div>
           <p class="img-caption">Duas imagens de um mesmo nanotelescópio. Fonte: https://www.seestar.com/products/seestar-s50.</p>
-          <p style="font-size:14px; line-height:1.7; margin-top:16px;">Em resumo, os <span style="color:#cc0000; font-weight:700;">nanotelescópios</span> oferecem uma excelente <b>relação custo-benefício</b>, e sua <b>facilidade de uso</b> os torna adequados <b>para fins educacionais e de divulgação</b>, bem como <b>para tópicos científicos focados</b>. Acreditamos que eles fornecerão a estudantes e professores ferramentas que antes eram reservadas apenas para profissionais.</p>
+          <p style="font-size:15px; line-height:1.7; margin-top:18px;">Em resumo, os <span style="color:#c0392b; font-weight:700;">nanotelescópios</span> oferecem uma excelente <b>relação custo-benefício</b>, e sua <b>facilidade de uso</b> os torna adequados <b>para fins educacionais e de divulgação</b>, bem como <b>para tópicos científicos focados</b>. Acreditamos que eles fornecerão a estudantes e professores ferramentas que antes eram reservadas apenas para profissionais.</p>
         </div>
 
         <div id="sub-observacao" class="subtab-content">
-          <p style="font-size:14px; line-height:1.7;">o que observamos</p>
+          <p style="font-size:15px; line-height:1.7;">o que observamos</p>
         </div>
 
         <div id="sub-divulgacao" class="subtab-content">
-          <p style="font-size:14px; line-height:1.7;">como e para e com quem conversamos</p>
+          <p style="font-size:15px; line-height:1.7;">como e para e com quem conversamos</p>
         </div>
       </div>
 
-      <!-- FUNDAMENTOS -->
+      <!-- ===== FUNDAMENTOS ===== -->
       <div id="tab-basics" class="tab-content">
-        <h2 style="font-size:20px; color:#000080; margin-bottom:12px;">Fundamentos de Astronomia</h2>
+        <h2 style="font-size:22px; color:#000080; margin-bottom:12px;">Fundamentos de Astronomia</h2>
         <div class="subtab-bar">
           <button class="subtab-btn active" data-subtab="bas-telescopes">Telescópios</button>
           <button class="subtab-btn" data-subtab="bas-transito">Trânsitos e Ocultações</button>
@@ -410,19 +593,19 @@
         </div>
 
         <div id="bas-telescopes" class="subtab-content active-subtab">
-          <p style="font-size:14px; line-height:1.7;">...</p>
+          <p style="font-size:15px; line-height:1.7;">...</p>
         </div>
 
         <div id="bas-transito" class="subtab-content">
           <div class="method-step">
             <h4><i class="fas fa-chart-line"></i> Ocultações estelares</h4>
             <p>As observações de fenômenos transitórios, como ocultações estelares, são extremamente importantes para o estudo dos pequenos corpos do Sistema Solar. O Sistema Solar possui diversas regiões povoadas por asteroides e outros objetos, como o Cinturão Principal de Asteroides e o Cinturão de Kuiper. O estudo dessas populações fornece pistas fundamentais sobre a formação e a evolução do Sistema Solar.</p>
-            <div class="img-row-single" style="display:flex; justify-content:center; margin:10px 0;">
+            <div class="img-row-single">
               <img src="image3.png" alt="Imagem 3">
             </div>
             <p class="img-caption">Legenda da imagem.</p>
             <p>Os asteroides, na maioria das vezes, aparecem em imagens como simples pontos de luz. Devido ao seu pequeno tamanho e à grande distância, não é possível observar diretamente suas formas a partir da Terra com telescópios comuns. As imagens detalhadas que mostram suas superfícies geralmente são obtidas por missões espaciais (sondas).</p>
-            <div class="img-row-single" style="display:flex; justify-content:center; margin:10px 0;">
+            <div class="img-row-single">
               <img src="image4.png" alt="Imagem 4">
             </div>
             <p class="img-caption">Legenda da imagem.</p>
@@ -432,24 +615,24 @@
             <p>Determinar a forma desses objetos, especialmente os chamados objetos transnetunianos, é um grande desafio, pois eles ocupam uma região muito pequena no céu.</p>
             <p>Uma das formas mais eficazes de estudar esses objetos é por meio das ocultações estelares. Esse fenômeno ocorre quando um asteroide passa em frente a uma estrela, bloqueando temporariamente sua luz. Essa “sombra” projetada pelo objeto pode ser observada na Terra. Ao registrar o instante em que a estrela desaparece e reaparece, conseguimos medir a duração da ocultação.</p>
             <p>Uma das formas mais eficazes de estudar esses objetos é por meio das ocultações estelares. Esse fenômeno ocorre quando um asteroide passa em frente a uma estrela, bloqueando temporariamente sua luz. Essa “sombra” projetada pelo objeto pode ser observada na Terra. Ao registrar o instante em que a estrela desaparece e reaparece, conseguimos medir a duração da ocultação.</p>
-            <div class="img-row-single" style="display:flex; justify-content:center; margin:10px 0;">
+            <div class="img-row-single">
               <img src="image5.png" alt="Imagem 5">
             </div>
             <p class="img-caption">Legenda da imagem.</p>
             <p>Quanto maior o número de observações distribuídas geograficamente, mais preciso será o cálculo do tamanho e da forma do asteroide. Esse método permite reconstruir o perfil do objeto com boa precisão.</p>
-            <div class="img-row-single" style="display:flex; justify-content:center; margin:10px 0;">
+            <div class="img-row-single">
               <img src="image6.png" alt="Imagem 6">
             </div>
             <p class="img-caption">Legenda da imagem.</p>
             <p>Por exemplo, já foram realizados estudos em que o tamanho de um asteroide foi determinado com base em observações feitas em diferentes pontos do sul da América do Sul, combinando os dados de vários observadores.</p>
             <p>Além do tamanho e da forma, também é possível estimar o albedo do objeto, que é a fração de luz refletida por sua superfície.</p>
-            <div class="img-row-single" style="display:flex; justify-content:center; margin:10px 0;">
+            <div class="img-row-single">
               <img src="image7.png" alt="Imagem 7">
             </div>
             <p class="img-caption">Legenda da imagem.</p>
             <p>Combinando o albedo com outras medições, podemos inferir propriedades físicas importantes, como a composição superficial.</p>
             <p>Em alguns casos, quando há informações adicionais (como massa estimada, por exemplo, a partir da presença de satélites naturais), é possível também calcular a densidade do objeto, o que fornece pistas sobre sua estrutura interna (se é rochoso, metálico ou mais poroso).</p>
-            <div class="img-row-single" style="display:flex; justify-content:center; margin:10px 0;">
+            <div class="img-row-single">
               <img src="image8.png" alt="Imagem 8">
             </div>
             <p class="img-caption">Legenda da imagem.</p>
@@ -457,18 +640,18 @@
           <div class="method-step">
             <h4><i class="fas fa-chart-line"></i> Ainda mais!</h4>
             <p>As ocultações estelares também podem levar a descobertas surpreendentes. Em certas situações, observa-se mais de uma queda de brilho durante o mesmo evento, indicando que dois objetos passaram em frente à estrela — o que pode levar à descoberta de novos asteroides.</p>
-            <div class="img-row-single" style="display:flex; justify-content:center; margin:10px 0;">
+            <div class="img-row-single">
               <img src="image9.png" alt="Imagem 9">
             </div>
             <p class="img-caption">Legenda da imagem.</p>
             <p>Além disso, esse tipo de observação pode revelar a existência de estrelas duplas, quando a luz da estrela desaparece em etapas, indicando que há duas fontes próximas sendo ocultadas separadamente.</p>
             <p>Outro resultado fascinante é a detecção de anéis ao redor de asteroides. Pequenas quedas de brilho antes e depois da ocultação principal podem indicar a presença de material orbitando o objeto, formando sistemas de anéis — algo que antes se pensava existir apenas ao redor de planetas gigantes.</p>
-            <div class="img-row-single" style="display:flex; justify-content:center; margin:10px 0;">
+            <div class="img-row-single">
               <img src="image10.png" alt="Imagem 10">
             </div>
             <p class="img-caption">Legenda da imagem.</p>
             <p>Várias descobertas foram feitas no Brasil:</p>
-            <div class="img-row-single" style="display:flex; justify-content:center; margin:10px 0;">
+            <div class="img-row-single">
               <img src="image11.png" alt="Imagem 11">
             </div>
             <p class="img-caption">Legenda da imagem.</p>
@@ -478,23 +661,23 @@
         </div>
 
         <div id="bas-variaveis" class="subtab-content">
-          <h3 style="font-size:17px; color:#000080; margin-top:12px;">O periastro de eta Carinae 2025.7</h3>
-          <p style="font-size:14px; line-height:1.7;">Eta Car é uma das estrelas mais luminosas do Universo local. É observada desde o século XVII e apresentou características surpreendentes desde então. Descobriu-se que é uma binária massiva interagente com longo período (P=2022d) e excentricidade extremamente alta (e=0,94). Ela passará pelo periastro no final de setembro de 2025 e os dados mais importantes a serem obtidos serão a fotometria em banda V (V~4,0). Esse grande brilho e o fato de a estrela cruzar o meridiano ao meio-dia em 1º de setembro tornam-na um alvo difícil, no entanto as observações são viáveis a partir do sul do Brasil, Argentina e Chile. A precisão melhor que 0,01 mag (facilmente alcançada com dezenas a centenas de imagens) é necessária porque o pico a ser monitorado tem amplitude de ~0,25 mag. Há uma estrela de comparação (HD303308 V=8,15) a 1 minuto de arco ao norte. O período crítico é de 15/ago a 15/set, o que exige amostragem diária. Nosso objetivo é obter dezenas de pontos de dados durante os crepúsculos astronômicos (vespertino e matutino). O pico fotométrico não é explicado por nenhum modelo existente do sistema. Mostrou-se que ele atinge uma amplitude maior a cada periastro e que o pico se desloca a uma taxa de 1 dia mais cedo por órbita. O cenário possível é que seja causado por uma mancha brilhante na "superfície" da estrela primária, iluminada/aquecida pela estrela secundária quando elas se aproximam. As estrelas possivelmente estão se aproximando uma da outra a uma taxa rápida (órbita instável?!), de modo que uma fusão estelar possa ocorrer em alguns séculos (outra Erupção Gigante como em 1847?). Um grande evento iminente no céu como este exige a atenção de toda a humanidade, mesmo que não ocorra em nossa vida. Este objeto receberá atenção da imprensa mundial por ocasião do periastro, provavelmente chamando a atenção do público para a campanha de monitoramento que estaremos realizando.</p>
+          <h3 style="font-size:19px; color:#000080; margin-top:8px;">O periastro de eta Carinae 2025.7</h3>
+          <p style="font-size:15px; line-height:1.7;">Eta Car é uma das estrelas mais luminosas do Universo local. É observada desde o século XVII e apresentou características surpreendentes desde então. Descobriu-se que é uma binária massiva interagente com longo período (P=2022d) e excentricidade extremamente alta (e=0,94). Ela passará pelo periastro no final de setembro de 2025 e os dados mais importantes a serem obtidos serão a fotometria em banda V (V~4,0). Esse grande brilho e o fato de a estrela cruzar o meridiano ao meio-dia em 1º de setembro tornam-na um alvo difícil, no entanto as observações são viáveis a partir do sul do Brasil, Argentina e Chile. A precisão melhor que 0,01 mag (facilmente alcançada com dezenas a centenas de imagens) é necessária porque o pico a ser monitorado tem amplitude de ~0,25 mag. Há uma estrela de comparação (HD303308 V=8,15) a 1 minuto de arco ao norte. O período crítico é de 15/ago a 15/set, o que exige amostragem diária. Nosso objetivo é obter dezenas de pontos de dados durante os crepúsculos astronômicos (vespertino e matutino). O pico fotométrico não é explicado por nenhum modelo existente do sistema. Mostrou-se que ele atinge uma amplitude maior a cada periastro e que o pico se desloca a uma taxa de 1 dia mais cedo por órbita. O cenário possível é que seja causado por uma mancha brilhante na "superfície" da estrela primária, iluminada/aquecida pela estrela secundária quando elas se aproximam. As estrelas possivelmente estão se aproximando uma da outra a uma taxa rápida (órbita instável?!), de modo que uma fusão estelar possa ocorrer em alguns séculos (outra Erupção Gigante como em 1847?). Um grande evento iminente no céu como este exige a atenção de toda a humanidade, mesmo que não ocorra em nossa vida. Este objeto receberá atenção da imprensa mundial por ocasião do periastro, provavelmente chamando a atenção do público para a campanha de monitoramento que estaremos realizando.</p>
         </div>
 
         <div id="bas-clusters" class="subtab-content">
-          <p style="font-size:14px; line-height:1.7;">Estrelas jovens devem estar próximas de seus locais de nascimento e ter velocidades ainda muito semelhantes às iniciais. Nesse contexto, os movimentos próprios estelares são fundamentais para distinguir membros do aglomerado de estrelas de campo. Por exemplo, ao traçar um diagrama vetorial de movimentos próprios, pode-se distinguir facilmente as estrelas que compartilham um movimento comum (membros do aglomerado) daquelas com movimentos aleatórios (estrelas de campo). Além disso, combinando os movimentos próprios dos membros do aglomerado com informações adicionais (por exemplo, paralaxe e velocidade radial), pode-se reconstruir o movimento 3D e a história de formação do aglomerado na Galáxia.</p>
+          <p style="font-size:15px; line-height:1.7;">Estrelas jovens devem estar próximas de seus locais de nascimento e ter velocidades ainda muito semelhantes às iniciais. Nesse contexto, os movimentos próprios estelares são fundamentais para distinguir membros do aglomerado de estrelas de campo. Por exemplo, ao traçar um diagrama vetorial de movimentos próprios, pode-se distinguir facilmente as estrelas que compartilham um movimento comum (membros do aglomerado) daquelas com movimentos aleatórios (estrelas de campo). Além disso, combinando os movimentos próprios dos membros do aglomerado com informações adicionais (por exemplo, paralaxe e velocidade radial), pode-se reconstruir o movimento 3D e a história de formação do aglomerado na Galáxia.</p>
           <div class="figure-placeholder"><i class="fas fa-star-of-life" style="font-size:28px;"></i> <strong>Exemplo:</strong> Diagrama vetorial de movimentos próprios para um aglomerado aberto observado com Seestar S50.</div>
         </div>
 
         <div id="bas-graphics" class="subtab-content">
-          <p style="font-size:14px; line-height:1.7;">...</p>
+          <p style="font-size:15px; line-height:1.7;">...</p>
         </div>
       </div>
 
-      <!-- COMO FUNCIONA? -->
+      <!-- ===== COMO FUNCIONA? ===== -->
       <div id="tab-howitworks" class="tab-content">
-        <h2 style="font-size:20px; color:#000080; margin-bottom:12px;">⚙️ Como funciona?</h2>
+        <h2 style="font-size:22px; color:#000080; margin-bottom:12px;">⚙️ Como funciona?</h2>
         <div class="subtab-bar">
           <button class="subtab-btn active" data-subtab="how-telescopes">Telescópios & S50</button>
           <button class="subtab-btn" data-subtab="how-astrometry">Medida astrométrica</button>
@@ -517,52 +700,53 @@
         </div>
       </div>
 
-      <!-- EQUIPE -->
+      <!-- ===== EQUIPE ===== -->
       <div id="tab-team" class="tab-content">
-        <h2 style="font-size:20px; color:#000080; margin-bottom:4px;">👥 Equipe Nanotelescópios</h2>
-        <p style="font-size:14px; text-align:center; margin-bottom:12px;">Pesquisadores, professores e colaboradores do Brasil, Chile e Argentina.</p>
+        <h2 style="font-size:22px; color:#000080; margin-bottom:6px;">👥 Equipe Nanotelescópios</h2>
+        <p style="font-size:15px; text-align:center; margin-bottom:14px;">Pesquisadores, professores e colaboradores do Brasil, Chile e Argentina.</p>
         <div class="team-grid" id="team-container"></div>
-        <div style="text-align:center; margin-top:16px;">
+        <div style="text-align:center; margin-top:20px;">
           <a href="#" class="btn-outline" id="teamMoreLink">Conheça todos os membros →</a>
         </div>
       </div>
 
-      <!-- CONTATO -->
+      <!-- ===== CONTATO ===== -->
       <div id="tab-contact" class="tab-content">
-        <h2 style="font-size:20px; color:#000080; margin-bottom:12px;">📬 Participe & Contato</h2>
+        <h2 style="font-size:22px; color:#000080; margin-bottom:12px;">📬 Participe & Contato</h2>
         <div class="grid-2">
           <div class="contact-info">
             <i class="fas fa-envelope"></i>
             <h3>E-mail geral</h3>
-            <p><a href="mailto:place@holder.net" style="color:#000080; font-weight:600;">place@holder.net</a></p>
+            <p><a href="mailto:place@holder.net">place@holder.net</a></p>
             <p>Interessado em contribuir? Escreva para nós.</p>
           </div>
           <div class="contact-info">
             <i class="fas fa-link"></i>
             <h3>Recursos</h3>
             <ul>
-              <li>🔗 <a href="https://andromeda.cbpf.br:5001" target="_blank" style="color:#000080; font-weight:600;">Hub de Dados (envio/redução)</a></li>
-              <li>📘 <a href="#" style="color:#000080; font-weight:600;">Tutorial: como operar o Seestar S50</a> (*aqui*)</li>
-              <li>🐙 <a href="https://github.com/smart-underworld/seestar_run" target="_blank" style="color:#000080; font-weight:600;">Scripts de automação no GitHub</a></li>
-              <li>📄 <a href="#" style="color:#000080; font-weight:600;">Publicações e relatórios</a> (em breve)</li>
+              <li>🔗 <a href="https://andromeda.cbpf.br:5001" target="_blank">Hub de Dados (envio/redução)</a></li>
+              <li>📘 <a href="#">Tutorial: como operar o Seestar S50</a> (*aqui*)</li>
+              <li>🐙 <a href="https://github.com/smart-underworld/seestar_run" target="_blank">Scripts de automação no GitHub</a></li>
+              <li>📄 <a href="#">Publicações e relatórios</a> (em breve)</li>
             </ul>
           </div>
         </div>
-        <div style="margin-top:20px; text-align:center; font-size:13px;">
+        <div style="margin-top:24px; text-align:center; font-size:14px;">
           <p>Este projeto é financiado por agências de fomento dos três países e conta com o apoio de diversas universidades.</p>
         </div>
       </div>
 
-    </div> <!-- /window-content -->
-  </div> <!-- /window -->
+    </div> <!-- /.window-content -->
+  </div> <!-- /.window -->
 
-  <!-- FOOTER (original) -->
+  <!-- RODAPÉ -->
   <footer>
-    <div class="container">
+    <div style="max-width:1100px; margin:0 auto; padding:0 20px;">
       <p>© 2026 Projeto Nanotelescópios · Todos os direitos reservados.</p>
     </div>
   </footer>
-</div> <!-- /desktop -->
+
+</div> <!-- /.desktop -->
 
 <script>
   // ===== DADOS DA EQUIPE (original) =====
@@ -616,7 +800,7 @@
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-tab') === tabId);
     });
-    localStorage.setItem('retro_tab', tabId);
+    localStorage.setItem('vista_tab', tabId);
   }
 
   function activateSubTab(subtabId) {
@@ -630,17 +814,17 @@
     tabContent.querySelectorAll('.subtab-btn').forEach(b => {
       b.classList.toggle('active', b.getAttribute('data-subtab') === subtabId);
     });
-    if (tabContent.id) localStorage.setItem('retro_subtab_' + tabContent.id, subtabId);
+    if (tabContent.id) localStorage.setItem('vista_subtab_' + tabContent.id, subtabId);
   }
 
   function restoreState() {
-    const savedTab = localStorage.getItem('retro_tab');
+    const savedTab = localStorage.getItem('vista_tab');
     let defaultTab = (savedTab && document.getElementById(savedTab)) ? savedTab : 'tab-home';
     activateTab(defaultTab);
     document.querySelectorAll('.tab-content').forEach(tab => {
       const subtabs = tab.querySelectorAll('.subtab-btn');
       if (subtabs.length === 0) return;
-      const savedSub = localStorage.getItem('retro_subtab_' + tab.id);
+      const savedSub = localStorage.getItem('vista_subtab_' + tab.id);
       let defaultSub = savedSub && tab.querySelector(`#${savedSub}`) ? savedSub : subtabs[0].getAttribute('data-subtab');
       if (defaultSub) {
         tab.querySelectorAll('.subtab-content').forEach(c => c.classList.remove('active-subtab'));
