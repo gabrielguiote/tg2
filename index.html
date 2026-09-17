@@ -722,11 +722,8 @@ In return, observers agree to allow open access to the processed and calibrated 
       <!-- ===== EQUIPE ===== -->
       <div id="tab-team" class="tab-content">
         <h2 style="font-size:22px; color:#000080; margin-bottom:6px;">👥 Equipe Nanotelescópios</h2>
-        <p style="font-size:15px; text-align:center; margin-bottom:14px;">Pesquisadores, professores e colaboradores do Brasil, Chile e Argentina.</p>
+        <p style="font-size:15px; text-align:center; margin-bottom:14px;">Pessoas pesquisadoras, professoras e colaboradoras do Brasil, Chile e Argentina.</p>
         <div class="team-grid" id="team-container"></div>
-        <div style="text-align:center; margin-top:20px;">
-          <a href="#" class="btn-outline" id="teamMoreLink">Conheça todos os membros →</a>
-        </div>
       </div>
 
       <!-- ===== CONTATO ===== -->
@@ -769,26 +766,33 @@ In return, observers agree to allow open access to the processed and calibrated 
 
 <script>
   // ===== DADOS DA EQUIPE (original) =====
-  const teamMembers = [
-    { name: "Claudia Mendes de Oliveira", affil: "USP, Brasil", country: "Brasil" },
-    { name: "Francisco Jablonski", affil: "INPE, Brasil", country: "Brasil" },
-    { name: "Antônio Kanaan", affil: "UFSC, Brasil", country: "Brasil" },
-    { name: "Arianna Cortesi", affil: "UFRJ, Brasil", country: "Brasil" },
-    { name: "Felipe Braga Ribas", affil: "UTFPR, Brasil", country: "Brasil" },
-    { name: "Gustavo Schwarz", affil: "USP/CBPF, Brasil", country: "Brasil" },
-    { name: "Phillip Galli", affil: "USP, Brasil", country: "Brasil" },
-    { name: "Augusto Damineli", affil: "USP, Brasil", country: "Brasil" },
-    { name: "Sergio Scarano", affil: "UFS, Brasil", country: "Brasil" },
-    { name: "Amilcar Queiroz", affil: "UFCG, Brasil", country: "Brasil" },
-    { name: "Ramachrisna Teixeira", affil: "USP, Brasil", country: "Brasil" },
-    { name: "Sergio Torres-Flores", affil: "U. La Serena, Chile", country: "Chile" },
-    { name: "Amelia Ramirez", affil: "U. La Serena, Chile", country: "Chile" },
-    { name: "Claudio Tenreiro", affil: "U. Talca, Chile", country: "Chile" },
-    { name: "Daniela Olave", affil: "U. Talca, Chile", country: "Chile" },
-    { name: "Ricardo Demarco", affil: "U. Andrés Bello, Chile", country: "Chile" },
-    { name: "Analia Smith-Castelli", affil: "U. La Plata, Argentina", country: "Argentina" },
-    { name: "Rodrigo Haack", affil: "U. La Plata, Argentina", country: "Argentina" }
-  ];
+const teamMembers = [
+  { name: "Claudia Mendes de Oliveira", affil: "USP, Brasil", country: "Brasil" },
+  { name: "Francisco Jablonski", affil: "INPE/MCTI, Brasil", country: "Brasil" },
+  { name: "Fabio Herpich", affil: "LNA, Brasil", country: "Brasil" },
+  { name: "Clecio de Bom", affil: "CBPF, Brasil", country: "Brasil" },
+  { name: "Irapuan Rodrigues", affil: "UNIVAP, Brasil", country: "Brasil" },
+  { name: "Arianna Cortesi", affil: "UFRJ, Brasil", country: "Brasil" },
+  { name: "Philipp Galli", affil: "USP, Brasil", country: "Brasil" },
+  { name: "Augusto Damineli", affil: "USP, Brasil", country: "Brasil" },
+  { name: "Sergio Scarano", affil: "UFS, Brasil", country: "Brasil" },
+  { name: "Antônio Kanaan", affil: "UFSC, Brasil", country: "Brasil" },
+  { name: "Amilcar de Queiroz", affil: "UFCG, Brasil", country: "Brasil" },
+  { name: "Alex Carciofi", affil: "USP, Brasil", country: "Brasil" },
+  { name: "Julio Fabris", affil: "UFES, Brasil", country: "Brasil" },
+  { name: "Elysandra Figueredo Cypriano", affil: "USP, Brasil", country: "Brasil" },
+  { name: "Ramachrisna Teixeira", affil: "USP, Brasil", country: "Brasil" },
+  { name: "Sergio Torres-Flores", affil: "U. La Serena, Chile", country: "Chile" },
+  { name: "Amelia Ramirez", affil: "U. La Serena, Chile", country: "Chile" },
+  { name: "Daniela Olave", affil: "U. Talca, Chile", country: "Chile" },
+  { name: "Claudio Fabian Tenreiro Leiva", affil: "U. Talca, Chile", country: "Chile" },
+  { name: "Ricardo Demarco", affil: "U. Andrés Bello, Chile", country: "Chile" },
+  { name: "Analia Smith-Castelli", affil: "U. La Plata, Argentina", country: "Argentina" },
+  { name: "Rodrigo Haack", affil: "U. La Plata, Argentina", country: "Argentina" },
+  { name: "Felipe Braga Ribas", affil: "UTFPR, Brasil", country: "Brasil" },
+  { name: "Gustavo Schwarz", affil: "USP/CBPF, Brasil", country: "Brasil" },
+  { name: "Nicolas de Camaret", affil: "ABCD", country: "Brasil" }
+];
 
   function renderTeam() {
     const container = document.getElementById('team-container');
@@ -868,10 +872,6 @@ In return, observers agree to allow open access to the processed and calibrated 
     // Previne scroll em links vazios
     document.querySelectorAll('a[href="#"]').forEach(link => {
       link.addEventListener('click', e => e.preventDefault());
-    });
-    document.getElementById('teamMoreLink')?.addEventListener('click', e => {
-      e.preventDefault();
-      alert('Lista completa de membros em breve.');
     });
   }
   document.addEventListener('DOMContentLoaded', init);
