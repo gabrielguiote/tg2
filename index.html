@@ -24,6 +24,10 @@
       align-items: flex-start;
       color: #1e1e1e;
       line-height: 1.5;
+      /* hifenização automática em pt-BR */
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      overflow-wrap: break-word;
     }
 
     .desktop {
@@ -193,7 +197,7 @@
       border: 2px solid transparent;
       padding: 8px 18px;
       font-family: 'Segoe UI', sans-serif;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       color: #1a2a3a;
       border-radius: 8px;
@@ -220,7 +224,7 @@
 
     /* ===== CARDS (retrô com toque moderno) ===== */
     .card {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0);
       backdrop-filter: blur(4px);
       border-radius: 10px;
       padding: 18px 20px;
@@ -265,7 +269,7 @@
       margin-top: 12px;
     }
     .team-card {
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0);
       backdrop-filter: blur(4px);
       border-radius: 10px;
       padding: 16px;
@@ -303,7 +307,7 @@
 
     /* ===== CONTATO ===== */
     .contact-info {
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0);
       backdrop-filter: blur(4px);
       border-radius: 10px;
       padding: 20px;
@@ -381,7 +385,7 @@
     }
 
     .method-step {
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0);
       backdrop-filter: blur(4px);
       border-radius: 10px;
       padding: 16px 20px;
@@ -399,9 +403,15 @@
       gap: 10px;
       margin-bottom: 6px;
     }
-    .method-step p {
+    .method-step p:not(.img-caption) {
       font-size: 14px;
       line-height: 1.6;
+      /* hifenização com limites mais suaves */
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphenate-limit-chars: 8 3 3;
+      hyphenate-limit-lines: 2;
+      text-align: justify;
     }
 
     /* ===== IMAGENS ===== */
@@ -440,6 +450,7 @@
       font-size: 0.8rem;
       color: #3a5a6a;
       margin-top: 6px;
+      margin-bottom: 20px;
     }
 
     /* ===== RODAPÉ (Vista + retrô) ===== */
@@ -511,7 +522,7 @@
 
       <!-- ===== INÍCIO ===== -->
       <div id="tab-home" class="tab-content active-tab">
-        <div style="text-align:center; margin-bottom:20px;">
+        <div style="text-align:center; margin-bottom:20px;  margin-inline:20px;">
           <h2 style="font-size:26px; color:#000080; font-weight:700; margin-bottom:6px;">Nanotelescópios para ciência e divulgação</h2>
           <p style="font-size:17px; font-weight:400; color:#1e4a5a;">Uma rede trinacional de nanotelescópios integrando ciência, educação e ciência cidadã.</p>
           <small style="font-size:14px; color:#3a5a6a;">🇧🇷 Brasil · 🇨🇱 Chile · 🇦🇷 Argentina | Dados abertos · Ciência cidadã</small>
@@ -538,7 +549,6 @@
 
       <!-- ===== OBJETIVOS ===== -->
       <div id="tab-objectives" class="tab-content">
-        <h2 style="font-size:22px; color:#000080; margin-bottom:12px;">Objetivos ...</h2>
         <div class="subtab-bar">
           <button class="subtab-btn active" data-subtab="sub-overall">Visão Geral</button>
           <button class="subtab-btn" data-subtab="sub-observacao">Observação</button>
@@ -546,64 +556,65 @@
         </div>
 
         <div id="sub-overall" class="subtab-content active-subtab">
-          <p style="font-size:15px; line-height:1.7; margin-top:12px; margin-bottom:12px; margin-inline:50px">O <span style="color:orangered; font-weight:700;">Projeto Nanotelescópios</span> utiliza telescópios inteligentes (atualmente ZWO Seestar 50) para <b>pesquisa</b>, <b>educação</b> e <b>divulgação</b> em Astronomia, criando ferramentas e atividades para ajudar diferentes públicos a usar facilmente os telescópios, coletar dados, aprender sobre diferentes tópicos de <b>Astronomia</b>, <b>Física</b> e <b>Matemática</b> e/ou ajudar astrônomos a publicar artigos científicos.</p>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px; margin-inline:50px">O plano original consistia em dedicar um conjunto de nanotelescópios (cerca de 10 deles) para um levantamento da <b>variabilidade</b> de objetos celestes observados em nossa <u>Galáxia</u>. Outro conjunto de telescópios (outros 10 ou mais) será dedicado à realização de observações por astrônomos amadores e profissionais, ou até mesmo por estudantes ou pelo público em geral (orientados por astrônomos profissionais). O plano inicial de um <span style="color:orangered; font-weight:700;">projeto piloto de ciência cidadã</span> foi iniciado com um número pré-selecionado de alvos de interesse científico escolhidos por nossa equipe (que atualmente são: estrelas variáveis, asteroides, aglomerados abertos, trânsitos). As iniciativas são coordenadas por astrônomos profissionais de diferentes universidades no Brasil, Argentina e Chile.</p>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px; margin-inline:50px">O <b>principal objetivo</b> de ambas as iniciativas: o levantamento da variabilidade da Galáxia e o projeto de ciência cidadã, é <b>coletar dados</b> que possam ser úteis para o <b>avanço científico</b> e a <b>publicação de artigos</b>, ao mesmo tempo em que servem a propósitos <b>educacionais</b> e de <b>divulgação</b>.</p>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px; margin-inline:50px">A área a ser coberta pelo <b>primeiro grupo</b> de cerca de 10 telescópios é de <b>600 graus quadrados do céu</b>, selecionados a partir de campos já observados pelo telescópio robótico brasileiro T80-South e pelo levantamento Southern Photometric Local Universe Survey (S-PLUS). Os campos serão centrados no sistema de coordenadas equatoriais em <u>AR=90°</u> e <u>DEC=−30°</u> para o <u>bojo</u>, e <u>AR=110°</u> e <u>DEC=−30°</u> para o <u>disco</u> de nossa Galáxia. Se esses campos se mostrarem muito povoados para o tamanho de pixel do Seestar 50 (2,4 segundos de arco por pixel), adaptaremos os alvos.</p>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px; margin-inline:50px">O <span style="color:orangered; font-weight:700;">Projeto Nanotelescópios</span> visa <b>aumentar a visibilidade pública</b> da Astronomia e gerar <b>interesse</b> no uso de telescópios e na exploração mais profunda de tópicos astrofísicos de <b>maneira envolvente</b>, potencialmente <b>atraindo jovens</b> para o estudo da ciência. Também busca <b>aproximar</b> as comunidades do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b> neste projeto piloto, que é de interesse para astrônomos dos três países. Se for bem-sucedido, a escala e o alcance do projeto serão ampliados no futuro, em particular para escolas no Brasil.</p>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px; margin-inline:50px">O Projeto Nanotelescópios faz parte de uma iniciativa maior para instalar um telescópio de 2 m no Cerro Tololo Inter-American Observatory, cujo principal objetivo será o acompanhamento de fontes descobertas pelo Vera Rubin Observatory.</p>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px; margin-inline:50px">Do ponto de vista da educação científica, <b>estudantes podem aprender</b> e <b>desenvolver habilidades</b> em <b>processamento de imagens</b>, <b>análise de dados</b> e nos fundamentos da <b>operação de telescópios</b>. A experiência com formatos digitais de dados, como imagens <i>.fits</i>, expõe os usuários a condições semelhantes às encontradas em pipelines profissionais de processamento de dados, aproximando-os das práticas e métodos utilizados em cenários reais. Com o treinamento adequado, estudantes e professores podem se engajar em temas de pesquisa que oferecem oportunidades únicas.</p>
+          <div class="method-step">
+          <p style="font-size:16px; line-height:1.6; margin-top:12px; margin-bottom:20px; margin-inline:20px">O <span style="color:orangered; font-weight:700;">Projeto Nanotelescópios</span> utiliza telescópios inteligentes (atualmente ZWO Seestar 50) para <b>pesquisa</b>, <b>educação</b> e <b>divulgação</b> em Astronomia, criando ferramentas e atividades para ajudar diferentes públicos a usar facilmente os telescópios, coletar dados, aprender sobre diferentes tópicos de <b>Astronomia</b>, <b>Física</b> e <b>Matemática</b> e/ou ajudar astrônomos a publicar artigos científicos.</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px; margin-inline:20px">O plano original consistia em dedicar um conjunto de nanotelescópios (cerca de 10 deles) para um levantamento da <b>variabilidade</b> de objetos celestes observados em nossa <u>Galáxia</u>. Outro conjunto de telescópios (outros 10 ou mais) será dedicado à realização de observações por astrônomos amadores e profissionais, ou até mesmo por estudantes ou pelo público em geral (orientados por astrônomos profissionais). O plano inicial de um <span style="color:orangered; font-weight:700;">projeto piloto de ciência cidadã</span> foi iniciado com um número pré-selecionado de alvos de interesse científico escolhidos por nossa equipe (que atualmente são: estrelas variáveis, asteroides, aglomerados abertos, trânsitos). As iniciativas são coordenadas por astrônomos profissionais de diferentes universidades no Brasil, Argentina e Chile.</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px; margin-inline:20px">O <b>principal objetivo</b> de ambas as iniciativas: o levantamento da variabilidade da Galáxia e o projeto de ciência cidadã, é <b>coletar dados</b> que possam ser úteis para o <b>avanço científico</b> e a <b>publicação de artigos</b>, ao mesmo tempo em que servem a propósitos <b>educacionais</b> e de <b>divulgação</b>.</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px; margin-inline:20px">A área a ser coberta pelo <b>primeiro grupo</b> de cerca de 10 telescópios é de <b>600 graus quadrados do céu</b>, selecionados a partir de campos já observados pelo telescópio robótico brasileiro T80-South e pelo levantamento Southern Photometric Local Universe Survey (S-PLUS). Os campos serão centrados no sistema de coordenadas equatoriais em <u>AR=90°</u> e <u>DEC=−30°</u> para o <u>bojo</u>, e <u>AR=110°</u> e <u>DEC=−30°</u> para o <u>disco</u> de nossa Galáxia. Se esses campos se mostrarem muito povoados para o tamanho de pixel do Seestar 50 (2,4 segundos de arco por pixel), adaptaremos os alvos.</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px; margin-inline:20px">O <span style="color:orangered; font-weight:700;">Projeto Nanotelescópios</span> visa <b>aumentar a visibilidade pública</b> da Astronomia e gerar <b>interesse</b> no uso de telescópios e na exploração mais profunda de tópicos astrofísicos de <b>maneira envolvente</b>, potencialmente <b>atraindo jovens</b> para o estudo da ciência. Também busca <b>aproximar</b> as comunidades do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b> neste projeto piloto, que é de interesse para astrônomos dos três países. Se for bem-sucedido, a escala e o alcance do projeto serão ampliados no futuro, em particular para escolas no Brasil.</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px; margin-inline:20px">O Projeto Nanotelescópios faz parte de uma iniciativa maior para instalar um telescópio de 2 m no Cerro Tololo Inter-American Observatory, cujo principal objetivo será o acompanhamento de fontes descobertas pelo Vera Rubin Observatory.</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px; margin-inline:20px">Do ponto de vista da educação científica, <b>estudantes podem aprender</b> e <b>desenvolver habilidades</b> em <b>processamento de imagens</b>, <b>análise de dados</b> e nos fundamentos da <b>operação de telescópios</b>. A experiência com formatos digitais de dados, como imagens <i>.fits</i>, expõe os usuários a condições semelhantes às encontradas em pipelines profissionais de processamento de dados, aproximando-os das práticas e métodos utilizados em cenários reais. Com o treinamento adequado, estudantes e professores podem se engajar em temas de pesquisa que oferecem oportunidades únicas.</p>
           <div class="img-row">
             <img src="ZWO-Seestar-S50_-Telescopio-Inteligente.jpg" alt="Imagem 1">
             <img src="ZWO-Seestar-S50_-Telescopio-Inteligente-2.jpg" alt="Imagem 2">
           </div>
           <p class="img-caption">Duas imagens de um mesmo nanotelescópio. Fonte: https://www.seestar.com/products/seestar-s50.</p>
-          <p style="font-size:15px; line-height:1.7; margin-top:18px; margin-inline:50px">Em resumo, os <span style="color:orangered; font-weight:700;">nanotelescópios</span> oferecem uma excelente <b>relação custo-benefício</b>, e sua <b>facilidade de uso</b> os torna adequados <b>para fins educacionais e de divulgação</b>, bem como <b>para tópicos científicos focados</b>. Acreditamos que eles fornecerão a estudantes e professores ferramentas que antes eram reservadas apenas para profissionais.</p>
+          <p style="font-size:16px; line-height:1.6; margin-top:18px; margin-inline:20px">Em resumo, os <span style="color:orangered; font-weight:700;">nanotelescópios</span> oferecem uma excelente <b>relação custo-benefício</b>, e sua <b>facilidade de uso</b> os torna adequados <b>para fins educacionais e de divulgação</b>, bem como <b>para tópicos científicos focados</b>. Acreditamos que eles fornecerão a estudantes e professores ferramentas que antes eram reservadas apenas para profissionais.</p>
+        </div>
         </div>
 
         <div id="sub-observacao" class="subtab-content">
           <div class="method-step">
             <h4><i  class="fas fa-star-of-life"></i> Asteroides e Cometas</h4>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Com um <b>nanotelescópio</b>, é possível observar <b>ocultações</b> causadas por tipos de asteroides sobre estrelas de fundo, dada sua capacidade de realizar <b>medições sucessivas</b> ao longo do tempo. Algumas ocultações produzem efeitos que podem durar <u>dezenas de segundos</u>, e o registro desses fenômenos de diferentes locais da Terra permite <span style="color:orangered; font-weight:700;">determinar</span> as <span style="color:orangered; font-weight:700;">dimensões</span> e a <span style="color:orangered; font-weight:700;">forma dos objetos</span> de uma maneira que é inviável até mesmo com imageamento direto por grandes instrumentos. No caso de cometas, o imageamento a partir de vários locais de cada país proporciona uma excelente vitrine para a <b>divulgação científica</b>, com material de grande impacto visual. </p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Com um <b>nanotelescópio</b>, é possível observar <b>ocultações</b> causadas por tipos de asteroides sobre estrelas de fundo, dada sua capacidade de realizar <b>medições sucessivas</b> ao longo do tempo. Algumas ocultações produzem efeitos que podem durar <u>dezenas de segundos</u>, e o registro desses fenômenos de diferentes locais da Terra permite <span style="color:orangered; font-weight:700;">determinar</span> as <span style="color:orangered; font-weight:700;">dimensões</span> e a <span style="color:orangered; font-weight:700;">forma dos objetos</span> de uma maneira que é inviável até mesmo com imageamento direto por grandes instrumentos. No caso de cometas, o imageamento a partir de vários locais de cada país proporciona uma excelente vitrine para a <b>divulgação científica</b>, com material de grande impacto visual. </p>
             <span style="color:red; font-weight:700;"><b>COLOCAR IMAGENS</b></span>
         </div>
           <div class="method-step">
             <h4><i  class="fas fa-star-of-life"></i> Estrelas Variáveis</h4>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Dadas as qualidades do sensor CMOS usado no nanotelescópio S50, por exemplo, como <b>sensibilidade</b>, <b>baixo ruído</b> e <b>excelente linearidade</b>, é possível <span style="color:orangered; font-weight:700;">acompanhar</span> a <span style="color:orangered; font-weight:700;">variabilidade de objetos pulsantes</span>, <span style="color:orangered; font-weight:700;">sistemas binários eclipsantes</span> e objetos que exibem <span style="color:orangered; font-weight:700;">variações imprevisíveis</span> de brilho. A experiência mostra que, com uma abertura de apenas 50 mm e tempos de integração de vários minutos, é possível observar objetos que são alvos até mesmo de campanhas que utilizam o <u>Telescópio Espacial Hubble</u>.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Dadas as qualidades do sensor CMOS usado no nanotelescópio S50, por exemplo, como <b>sensibilidade</b>, <b>baixo ruído</b> e <b>excelente linearidade</b>, é possível <span style="color:orangered; font-weight:700;">acompanhar</span> a <span style="color:orangered; font-weight:700;">variabilidade de objetos pulsantes</span>, <span style="color:orangered; font-weight:700;">sistemas binários eclipsantes</span> e objetos que exibem <span style="color:orangered; font-weight:700;">variações imprevisíveis</span> de brilho. A experiência mostra que, com uma abertura de apenas 50 mm e tempos de integração de vários minutos, é possível observar objetos que são alvos até mesmo de campanhas que utilizam o <u>Telescópio Espacial Hubble</u>.</p>
             <div class="img-row-single">
               <img src="image12.png" alt="Imagem 3">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Gráfico com o <i>outburst</i> (surto/erupção) “normal” seguida por um mínimo e um <i>super-outburst</i> no sistema binário (do tipo variável cataclísmica) VW Hyi. Acesse a imagem (e sua legenda) clicando <a href="https://www.aavso.org/LCGv2/index.htm?DateFormat=Julian&RequestedBands=&view=api.delim&ident=vwhyi&fromjd=2460660&tojd=2460705&delimiter=@@@"><u>aqui</u></a>; nela, pode-se exibir graficamente a cobertura das <i>outbursts</i> em diferentes escalas de tempo.</p>
+            <p class="img-caption">Gráfico com o <i>outburst</i> (surto/erupção) “normal” seguida por um mínimo e um <i>super-outburst</i> no sistema binário (do tipo variável cataclísmica) VW Hyi. Acesse a imagem (e sua legenda) clicando <a href="https://www.aavso.org/LCGv2/index.htm?DateFormat=Julian&RequestedBands=&view=api.delim&ident=vwhyi&fromjd=2460660&tojd=2460705&delimiter=@@@"><u>aqui</u></a>; nela, pode-se exibir graficamente a cobertura das <i>outbursts</i> em diferentes escalas de tempo.</p>
 <span style="color:red; font-weight:700;"><b>COLOCAR FUNÇÃO DE AMPLIAR IMAGEM</b></span>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Um exemplo de um fenômeno que, quando observado ao longo do tempo, pode fornecer <b>informações valiosas</b> sobre <b>eventos transitórios</b> é mostrado na figura acima: o <u>sistema binário VW Hydri</u>; em que múltiplas observações foram feitas usando lentes com abertura de 50 mm (semelhante à dos telescópios S50). Trata-se de um sistema binário com <b>transferência de massa</b> entre duas estrelas: uma <b>semelhante ao Sol</b>, mas um pouco mais fria e de menor massa, que transfere material para uma <b>anã branca</b>, um objeto extremamente compacto com massa semelhante à do Sol comprimida em uma esfera do tamanho da Terra.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">A transferência de massa ocorre da estrela “normal” para a anã branca, formando um <b>disco de acreção,</b> um fenômeno físico desconhecido até meados do século XX. O sistema apresenta aspectos intrigantes: <i>outbursts</i> (surtos/erupções) com <b>variações de brilho</b> que ultrapassam um <b>fator de 100</b>, causadas pelo <b>aumento de luminosidade</b> do disco de gás. O mecanismo exato por trás desses <i>outbursts</i> ainda é <u>desconhecido</u>. Curiosamente, VW Hydri exibe <i>outbursts</i> “normais” que ocorrem a cada 20 a 30 dias (não exatamente periódicas), bem como “<i>super-outbursts</i>” com intervalos mais longos.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Na figura, pode-se ver um comportamento sem precedentes: o que começou como um <i>outburst</i> normal, durando apenas alguns dias, foi seguido por uma diminuição de brilho e, imediatamente depois, por um que durou quase duas semanas. VW Hyi tem uma posição muito ao sul no céu (com declinação de cerca de -74° no sistema de coordenadas celestes equatoriais), o que a torna um <span style="color:orangered; font-weight:700;">alvo privilegiado para observação no Hemisfério Sul</span>.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Um exemplo de um fenômeno que, quando observado ao longo do tempo, pode fornecer <b>informações valiosas</b> sobre <b>eventos transitórios</b> é mostrado na figura acima: o <u>sistema binário VW Hydri</u>; em que múltiplas observações foram feitas usando lentes com abertura de 50 mm (semelhante à dos telescópios S50). Trata-se de um sistema binário com <b>transferência de massa</b> entre duas estrelas: uma <b>semelhante ao Sol</b>, mas um pouco mais fria e de menor massa, que transfere material para uma <b>anã branca</b>, um objeto extremamente compacto com massa semelhante à do Sol comprimida em uma esfera do tamanho da Terra.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">A transferência de massa ocorre da estrela “normal” para a anã branca, formando um <b>disco de acreção,</b> um fenômeno físico desconhecido até meados do século XX. O sistema apresenta aspectos intrigantes: <i>outbursts</i> (surtos/erupções) com <b>variações de brilho</b> que ultrapassam um <b>fator de 100</b>, causadas pelo <b>aumento de luminosidade</b> do disco de gás. O mecanismo exato por trás desses <i>outbursts</i> ainda é <u>desconhecido</u>. Curiosamente, VW Hydri exibe <i>outbursts</i> “normais” que ocorrem a cada 20 a 30 dias (não exatamente periódicas), bem como “<i>super-outbursts</i>” com intervalos mais longos.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Na figura, pode-se ver um comportamento sem precedentes: o que começou como um <i>outburst</i> normal, durando apenas alguns dias, foi seguido por uma diminuição de brilho e, imediatamente depois, por um que durou quase duas semanas. VW Hyi tem uma posição muito ao sul no céu (com declinação de cerca de -74° no sistema de coordenadas celestes equatoriais), o que a torna um <span style="color:orangered; font-weight:700;">alvo privilegiado para observação no Hemisfério Sul</span>.</p>
             <span style="color:red; font-weight:700;"><b>COLOCAR IMAGENS</b></span>
         </div>
         <div class="method-step">
             <h4><i  class="fas fa-star-of-life"></i> Aglomerados Abertos</h4>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Supõe-se que <b>estrelas jovens</b> estejam próximas de seus <b>locais de nascimento</b> e tenham <b>velocidades</b> ainda muito <b>semelhantes</b> às iniciais. Nesse contexto, os <b>movimentos próprios estelares</b> são fundamentais para <b>distinguir</b> membros de aglomerados de estrelas de campo.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Com auxílio de um telescópio, o movimento próprio estelar pode ser observado pela mudança na posição celeste de uma estrela ao longo do tempo (em uma aproximação de primeira ordem, os movimentos próprios são calculados a partir de um ajuste linear das posições estelares em função do tempo). Em um gráfico, ao se traçar um <b>diagrama vetorial de movimentos próprios</b>, por exemplo, pode-se <b>distinguir</b> com facilidade as estrelas que compartilham um <b>movimento comum</b> (membros do aglomerado) daquelas com <b>movimentos aleatórios</b> (estrelas de campo, não ligadas gravitacionalmente). Com isso, e a partir combinação dos movimentos próprios dos membros do aglomerado com informações adicionais (como paralaxe e velocidade radial), é possível se <span style="color:orangered; font-weight:700;">reconstruir o movimento 3D</span> e a <span style="color:orangered; font-weight:700;">história de formação estelar do aglomerado</span> na Galáxia.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Propomos, então, <b>observar aglomerados abertos</b> com <b>diferentes propriedades</b> (idade, distância, número de membros etc.) com os nanotelescópios para medir as <b>posições</b> das fontes no campo <b>ao longo do tempo</b> e calcular movimentos próprios. Os movimentos próprios resultantes serão usados para discutir a <b>pertinência</b> ao aglomerado alvo do nosso projeto. Alternativamente, os dados coletados com os telescópios S50 também podem ser combinados com <b>levantamentos astrométricos</b> baseados em solo (<i>ground-based</i>) e com o catálogo Gaia para fornecer movimentos próprios <b>mais precisos</b> com uma base temporal estendida. Essa última abordagem pode nos permitir detectar <b>desvios nos movimentos estelares</b>, por exemplo, devido a binárias (desconhecidas) não detectadas. Além dos movimentos próprios estelares dos membros do aglomerado, podemos usar as mesmas imagens para <span style="color:orangered; font-weight:700;">procurar fontes de movimento rápido no campo</span> (por exemplo, corpos menores do Sistema Solar) e <span style="color:orangered; font-weight:700;">investigar</span> a <span style="color:orangered; font-weight:700;">variabilidade</span> das fontes no campo (como discutido no tópico anterior, <u><i>Estrelas Variáveis</i></u>).</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Supõe-se que <b>estrelas jovens</b> estejam próximas de seus <b>locais de nascimento</b> e tenham <b>velocidades</b> ainda muito <b>semelhantes</b> às iniciais. Nesse contexto, os <b>movimentos próprios estelares</b> são fundamentais para <b>distinguir</b> membros de aglomerados de estrelas de campo.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Com auxílio de um telescópio, o movimento próprio estelar pode ser observado pela mudança na posição celeste de uma estrela ao longo do tempo (em uma aproximação de primeira ordem, os movimentos próprios são calculados a partir de um ajuste linear das posições estelares em função do tempo). Em um gráfico, ao se traçar um <b>diagrama vetorial de movimentos próprios</b>, por exemplo, pode-se <b>distinguir</b> com facilidade as estrelas que compartilham um <b>movimento comum</b> (membros do aglomerado) daquelas com <b>movimentos aleatórios</b> (estrelas de campo, não ligadas gravitacionalmente). Com isso, e a partir combinação dos movimentos próprios dos membros do aglomerado com informações adicionais (como paralaxe e velocidade radial), é possível se <span style="color:orangered; font-weight:700;">reconstruir o movimento 3D</span> e a <span style="color:orangered; font-weight:700;">história de formação estelar do aglomerado</span> na Galáxia.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Propomos, então, <b>observar aglomerados abertos</b> com <b>diferentes propriedades</b> (idade, distância, número de membros etc.) com os nanotelescópios para medir as <b>posições</b> das fontes no campo <b>ao longo do tempo</b> e calcular movimentos próprios. Os movimentos próprios resultantes serão usados para discutir a <b>pertinência</b> ao aglomerado alvo do nosso projeto. Alternativamente, os dados coletados com os telescópios S50 também podem ser combinados com <b>levantamentos astrométricos</b> baseados em solo (<i>ground-based</i>) e com o catálogo Gaia para fornecer movimentos próprios <b>mais precisos</b> com uma base temporal estendida. Essa última abordagem pode nos permitir detectar <b>desvios nos movimentos estelares</b>, por exemplo, devido a binárias (desconhecidas) não detectadas. Além dos movimentos próprios estelares dos membros do aglomerado, podemos usar as mesmas imagens para <span style="color:orangered; font-weight:700;">procurar fontes de movimento rápido no campo</span> (por exemplo, corpos menores do Sistema Solar) e <span style="color:orangered; font-weight:700;">investigar</span> a <span style="color:orangered; font-weight:700;">variabilidade</span> das fontes no campo (como discutido no tópico anterior, <u><i>Estrelas Variáveis</i></u>).</p>
             <span style="color:red; font-weight:700;"><b>COLOCAR IMAGENS</b></span>
         </div>
         <div class="method-step">
             <h4><i  class="fas fa-star-of-life"></i> Exoplanetas(?)</h4>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">...</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Embora desafiador, a <span style="color:orangered; font-weight:700;">observação</span> de <span style="color:orangered; font-weight:700;">trânsitos exoplanetários</span> que causam uma <b>diminuição no brilho</b> da estrela hospedeira (a qual orbita) da ordem de poucos por cento é <b>viável</b>, visto que algumas podem ser visíveis a olho nu! Aqui, a natureza desafiadora de tais observações oferece uma <b>oportunidade</b> para explorar os limites das <b>capacidades dos nanotelescópios</b>, como o S50, de forma a se tornar um possível <b>objetivo futuro</b>.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">...</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Embora desafiador, a <span style="color:orangered; font-weight:700;">observação</span> de <span style="color:orangered; font-weight:700;">trânsitos exoplanetários</span> que causam uma <b>diminuição no brilho</b> da estrela hospedeira (a qual orbita) da ordem de poucos por cento é <b>viável</b>, visto que algumas podem ser visíveis a olho nu! Aqui, a natureza desafiadora de tais observações oferece uma <b>oportunidade</b> para explorar os limites das <b>capacidades dos nanotelescópios</b>, como o S50, de forma a se tornar um possível <b>objetivo futuro</b>.</p>
             <span style="color:red; font-weight:700;"><b>COLOCAR IMAGENS</b></span>
         </div>
         </div>
 
         <div id="sub-divulgacao" class="subtab-content">
-          <p style="font-size:15px; line-height:1.7;">como e para e com quem conversamos</p>
-          <p style="font-size:15px; line-height:1.7;">qual o papel do ensino científico</p>
+          <p style="font-size:16px; line-height:1.6;">como e para e com quem conversamos</p>
+          <p style="font-size:16px; line-height:1.6;">qual o papel do ensino científico</p>
         </div>
       </div>
 
       <!-- ===== FUNDAMENTOS ===== -->
       <div id="tab-basics" class="tab-content">
-        <h2 style="font-size:22px; color:#000080; margin-bottom:12px;">Fundamentos de Astronomia</h2>
         <div class="subtab-bar">
           <button class="subtab-btn active" data-subtab="bas-telescopes">Telescópios</button>
           <button class="subtab-btn" data-subtab="bas-celeste">Campo celeste</button>
@@ -617,18 +628,18 @@
         <div id="bas-telescopes" class="subtab-content active-subtab">
           <div class="method-step">
           <h4><i class="fas fa-eye"></i> O olho como telescópio</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">A história das ferramentas humanas, pode-se argumentar, é a história da tentativa de estender aquilo que nossos sentidos alcançam. O olho, primeiro instrumento que voltamos ao céu, continua sendo uma ferramenta natural para a observação do céu e suas estrelas; no entanto, sozinho, não é suficiente para estudar a fundo astros que compõem a esfera celeste. Telescópios apareceram por causa dessa necessidade. Telescópios surgiram dessa necessidade: não para simplesmente aproximar pontos brilhantes e distigui-los entre o que, hoje, são classificados como planetas, estrelas, asteroides e cometas, mas para captar radiações que a capacidade de visão humana, por si só, não abarca e transformá-las em informação que possamos medir e comparar. Essa capacidade de converter o “invisível” em dados faz do telescópio um dos símbolos centrais da Astronomia (tanto que não é incomum que a ideia desta seja atrelada àquele no imaginário popular).</p>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">(Vale notar que, essa “datificação”: a transformação da experiência visual em dados, medidas físicas catalogadas, facilitou e facilita a inclusão e ampliação da abordagem de entendimento do funcionamento celeste por pessoas cegas ou com perda visual.)</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">A história das ferramentas humanas, pode-se argumentar, é a história da tentativa de estender aquilo que nossos sentidos alcançam. O olho, primeiro instrumento que voltamos ao céu, continua sendo uma ferramenta natural para a observação do céu e suas estrelas; no entanto, sozinho, não é suficiente para estudar a fundo astros que compõem a esfera celeste. Telescópios apareceram por causa dessa necessidade. Telescópios surgiram dessa necessidade: não para simplesmente aproximar pontos brilhantes e distigui-los entre o que, hoje, são classificados como planetas, estrelas, asteroides e cometas, mas para captar radiações que a capacidade de visão humana, por si só, não abarca e transformá-las em informação que possamos medir e comparar. Essa capacidade de converter o “invisível” em dados faz do telescópio um dos símbolos centrais da Astronomia (tanto que não é incomum que a ideia desta seja atrelada àquele no imaginário popular).</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">(Vale notar que, essa “datificação”: a transformação da experiência visual em dados, medidas físicas catalogadas, facilitou e facilita a inclusão e ampliação da abordagem de entendimento do funcionamento celeste por pessoas cegas ou com perda visual.)</p>
         </div>
         <div class="method-step">
           <h4><i class="fas fa-eye"></i>Telescópio óptico</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">A ideia de que um telescópio é um aparato que nos deixa ver de perto objetos distantes não é bem certeira, porém também não completamente errada. Sim, de fato, quando o utilizamos, o telescópio parece aumentar o tamanho daquilo para qual o apontamos, porém, para além disso, proporcionam maior poder de resolução (facilitando a distinção de detalhes finos) e permitem exposições mais curtas ou longas do que poderíamos ver sem outro auxílio. A luz (ou demais ondas eletromagnéticas) é por ele captada e concentrada; é convergida, então, em uma região menor e mais próxima ao nosso olho (ou outro detector). Essa convergência se dá por um mecanismo próprio de cada telescópio e depende do que se quer ver, por quanto tempo, com qual resolução, etc. No caso dos telescópios ópticos, este mecanismo são as lentes e espelhos!</p>
-         <p style="font-size:15px; line-height:1.7;">Os nanotelescópios (telescópios portáteis), que utilizamos em nosso projeto, são deste tipo: ópticos.</p> 
-         <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">Como comentado, eles trabalham no espectro de luz visível (e o SeeStar S50 até um pouco além, na faixa entre 380 nm e 1100 nm) e usam associações de lentes e/ou espelhos para formar imagens de planetas, asteroides, nebulosas, estrelas e aglomerados, por exemplo. Para saber mais sobre especificações do SeeStar S50, acesse a aba “Como observar?”</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">A ideia de que um telescópio é um aparato que nos deixa ver de perto objetos distantes não é bem certeira, porém também não completamente errada. Sim, de fato, quando o utilizamos, o telescópio parece aumentar o tamanho daquilo para qual o apontamos, porém, para além disso, proporcionam maior poder de resolução (facilitando a distinção de detalhes finos) e permitem exposições mais curtas ou longas do que poderíamos ver sem outro auxílio. A luz (ou demais ondas eletromagnéticas) é por ele captada e concentrada; é convergida, então, em uma região menor e mais próxima ao nosso olho (ou outro detector). Essa convergência se dá por um mecanismo próprio de cada telescópio e depende do que se quer ver, por quanto tempo, com qual resolução, etc. No caso dos telescópios ópticos, este mecanismo são as lentes e espelhos!</p>
+         <p style="font-size:16px; line-height:1.6; margin-inline:20px;">Os nanotelescópios (telescópios portáteis), que utilizamos em nosso projeto, são deste tipo: ópticos.</p> 
+         <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Como comentado, eles trabalham no espectro de luz visível (e o SeeStar S50 até um pouco além, na faixa entre 380 nm e 1100 nm) e usam associações de lentes e/ou espelhos para formar imagens de planetas, asteroides, nebulosas, estrelas e aglomerados, por exemplo. Para saber mais sobre especificações do SeeStar S50, acesse a aba “Como observar?”</p>
         </div>
           <div class="method-step">
           <h4><i class="fas fa-eye-slash"></i>Outros tipos de telescópios...</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Esses instrumentos são, essencialmente, coletores de radiação eletromagnética. Dependendo do tipo, captam luz visível, ondas de rádio, infravermelho, ultravioleta, raios X ou gama. O sinal recolhido é concentrado em detectores e depois convertido em imagens, gráficos, espectros, mapas ou modelos tridimensionais. A Astronomia, portanto, não depende apenas de enxergar: ela depende de interpretar dados, e dados podem ser acessados por diferentes sentidos e tecnologias assistivas.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Esses instrumentos são, essencialmente, coletores de radiação eletromagnética. Dependendo do tipo, captam luz visível, ondas de rádio, infravermelho, ultravioleta, raios X ou gama. O sinal recolhido é concentrado em detectores e depois convertido em imagens, gráficos, espectros, mapas ou modelos tridimensionais. A Astronomia, portanto, não depende apenas de enxergar: ela depende de interpretar dados, e dados podem ser acessados por diferentes sentidos e tecnologias assistivas.
 
 O parâmetro mais fundamental de um telescópio é a abertura: o diâmetro de sua lente ou espelho principal. Quanto maior ela for, mais radiação o instrumento reúne e maior é sua capacidade de detectar objetos fracos e resolver detalhes finos. A resolução também varia conforme o comprimento de onda observado e as condições do ambiente, como a atmosfera terrestre.
 
@@ -647,7 +658,7 @@ Assim, o telescópio é uma extensão refinada dos nossos sentidos. Cada avanço
             <!-- Referência do Livro -->
         <div class="method-step">
           <h4><i class="fas fa-book"></i> Referência</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">
             CARROLL, Bradley W.; OSTLIE, Dale A. <i>An Introduction to Modern Astrophysics</i>. 2nd ed. San Francisco: Pearson Addison-Wesley, 2007. p. 141-172. ISBN 0-321-44284-9.
           </p>
         </div>
@@ -656,7 +667,7 @@ Assim, o telescópio é uma extensão refinada dos nossos sentidos. Cada avanço
           <div id="bas-celeste" class="subtab-content">
           <div class="method-step">
           <h4><i class="fas fa-eye"></i> ...</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>O céu noturno parece imóvel à primeira vista, mas basta observar com atenção por algumas horas para perceber que tudo se desloca. As estrelas nascem a leste e se põem a oeste; a cada noite, surgem cerca de quatro minutos mais cedo; ao longo dos meses, constelações inteiras desaparecem e outras tomam seu lugar. A Lua muda de posição e de fase, e os planetas, chamados de "estrelas errantes" pelos gregos antigos, percorrem trajetórias complexas contra o fundo fixo das estrelas. Organizar essa multiplicidade de movimentos exigiu séculos de observação e a criação de sistemas de referência cada vez mais precisos.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>O céu noturno parece imóvel à primeira vista, mas basta observar com atenção por algumas horas para perceber que tudo se desloca. As estrelas nascem a leste e se põem a oeste; a cada noite, surgem cerca de quatro minutos mais cedo; ao longo dos meses, constelações inteiras desaparecem e outras tomam seu lugar. A Lua muda de posição e de fase, e os planetas, chamados de "estrelas errantes" pelos gregos antigos, percorrem trajetórias complexas contra o fundo fixo das estrelas. Organizar essa multiplicidade de movimentos exigiu séculos de observação e a criação de sistemas de referência cada vez mais precisos.
 
 A ideia de uma esfera celeste, com a Terra no centro, foi a primeira tentativa sistemática de dar ordem ao céu. Nela, as estrelas estariam fixas a uma superfície que gira em torno de um eixo que atravessa os polos terrestres, encontrando a esfera celeste nos polos celestes norte e sul. O equador terrestre, prolongado até essa esfera, define o equador celeste. Essa construção explica bem o movimento diário aparente das estrelas, mas não dá conta do movimento retrógrado dos planetas, isto é, do recuo temporário de um planeta contra o fundo estelar antes de retomar seu caminho habitual. Durante quase dois mil anos, esse foi o principal problema da astronomia. Soluções com esferas concêntricas, epiciclos e deferentes foram propostas, refinadas e complicadas até que o modelo geocêntrico se tornasse excessivamente intricado. A virada veio com a proposta heliocêntrica: se a Terra orbita o Sol, o movimento retrógrado de Marte, por exemplo, resulta simplesmente do fato de a Terra, mais rápida, ultrapassar o planeta em sua órbita. O planeta parece recuar porque o observador também se move.
 
@@ -680,7 +691,7 @@ Em resumo, a astronomia de posição constrói pontes entre o observador e o cos
         </div>
         <div class="method-step">
            <h4><i class="fas fa-eye"></i> ...</h4>
-           <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>As leis que descrevem o movimento dos planetas nasceram de uma combinação entre observação meticulosa e ousadia teórica. Tycho Brahe, com instrumentos de medição cuidadosamente construídos, acumulou posições de planetas e estrelas com precisão que superava tudo o que existia antes. Seus dados, especialmente sobre Marte, passaram às mãos de Johannes Kepler, que passou anos tentando ajustá-los a órbitas circulares. A insistência de Kepler em não descartar as discrepâncias (oito minutos de arco que não fechavam) levou-o a abandonar a ideia de círculos perfeitos e a considerar elipses. Dessa ruptura surgiram três leis que descrevem o movimento planetário: a órbita é uma elipse com o Sol em um dos focos; o raio vetor que liga o planeta ao Sol varre áreas iguais em tempos iguais; e o quadrado do período orbital é proporcional ao cubo do semieixo maior da órbita.
+           <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>As leis que descrevem o movimento dos planetas nasceram de uma combinação entre observação meticulosa e ousadia teórica. Tycho Brahe, com instrumentos de medição cuidadosamente construídos, acumulou posições de planetas e estrelas com precisão que superava tudo o que existia antes. Seus dados, especialmente sobre Marte, passaram às mãos de Johannes Kepler, que passou anos tentando ajustá-los a órbitas circulares. A insistência de Kepler em não descartar as discrepâncias (oito minutos de arco que não fechavam) levou-o a abandonar a ideia de círculos perfeitos e a considerar elipses. Dessa ruptura surgiram três leis que descrevem o movimento planetário: a órbita é uma elipse com o Sol em um dos focos; o raio vetor que liga o planeta ao Sol varre áreas iguais em tempos iguais; e o quadrado do período orbital é proporcional ao cubo do semieixo maior da órbita.
 
 A elipse é uma curva definida pelo conjunto de pontos cuja soma das distâncias a dois focos é constante e igual a duas vezes o semieixo maior. O semieixo maior, a, é metade da maior dimensão da elipse; o semieixo menor, b, relaciona-se a a pela excentricidade, e, que mede o quanto a elipse se afasta de um círculo. Uma circunferência é uma elipse de excentricidade zero. O ponto mais próximo do Sol é o periélio; o mais distante, o afélio. A posição de um planeta ao longo da órbita pode ser descrita em coordenadas polares, com o raio r medido a partir do foco ocupado pelo Sol e o ângulo θ medido a partir da direção do periélio.
 
@@ -701,7 +712,7 @@ Em resumo, a mecânica celeste une observação, matemática e física para desc
         
         <div class="method-step">
            <h4><i class="fas fa-eye"></i> ...</h4>
-           <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>A luz é o principal canal de informação sobre o universo. Quase tudo o que se sabe a respeito de estrelas, galáxias e nuvens interestelares veio da análise da radiação que chega até nós. Medir a intensidade, a cor e a distribuição de energia dessa luz permite inferir distância, temperatura, composição e movimento dos corpos celestes.
+           <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>A luz é o principal canal de informação sobre o universo. Quase tudo o que se sabe a respeito de estrelas, galáxias e nuvens interestelares veio da análise da radiação que chega até nós. Medir a intensidade, a cor e a distribuição de energia dessa luz permite inferir distância, temperatura, composição e movimento dos corpos celestes.
 
 Determinar distâncias foi um dos primeiros desafios. O método da paralaxe trigonométrica usa a órbita da Terra como linha de base: duas observações da mesma estrela feitas com seis meses de intervalo revelam um deslocamento angular periódico contra o fundo de estrelas distantes. A metade desse deslocamento máximo é o ângulo de paralaxe p. Para ângulos pequenos, a distância d, em parsecs, é simplesmente o inverso de p medido em segundos de arco. Um parsec é a distância da qual o raio da órbita terrestre subtende um segundo de arco; equivale a cerca de 3,26 anos-luz. Mesmo a estrela mais próxima, Proxima Centauri, tem paralaxe inferior a um segundo de arco. Medições precisas exigiram telescópios espaciais, como o Hipparcos, e missões futuras prometem alcançar distâncias muito maiores.
 
@@ -720,7 +731,7 @@ Em resumo, a luz das estrelas carrega informação sobre distância, temperatura
                     <!-- Referência do Livro -->
         <div class="method-step">
           <h4><i class="fas fa-book"></i> Referência</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">
             CARROLL, Bradley W.; OSTLIE, Dale A. <i>An Introduction to Modern Astrophysics</i>. 2nd ed. San Francisco: Pearson Addison-Wesley, 2007. p. 2-79. ISBN 0-321-44284-9.
           </p>
         </div>
@@ -729,68 +740,68 @@ Em resumo, a luz das estrelas carrega informação sobre distância, temperatura
         <div id="bas-transito" class="subtab-content">
           <div class="method-step">
             <h4><i class="fas fa-chart-line"></i> Ocultações estelares</h4>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">As observações de fenômenos transitórios, como ocultações estelares, são extremamente importantes para o estudo dos pequenos corpos do Sistema Solar. O Sistema Solar possui diversas regiões povoadas por asteroides e outros objetos, como o Cinturão Principal de Asteroides e o Cinturão de Kuiper. O estudo dessas populações fornece pistas fundamentais sobre a formação e a evolução do Sistema Solar.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">As observações de fenômenos transitórios, como ocultações estelares, são extremamente importantes para o estudo dos pequenos corpos do Sistema Solar. O Sistema Solar possui diversas regiões povoadas por asteroides e outros objetos, como o Cinturão Principal de Asteroides e o Cinturão de Kuiper. O estudo dessas populações fornece pistas fundamentais sobre a formação e a evolução do Sistema Solar.</p>
             <div class="img-row-single">
               <img src="image3.png" alt="Imagem 3">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Legenda da imagem.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Os asteroides, na maioria das vezes, aparecem em imagens como simples pontos de luz. Devido ao seu pequeno tamanho e à grande distância, não é possível observar diretamente suas formas a partir da Terra com telescópios comuns. As imagens detalhadas que mostram suas superfícies geralmente são obtidas por missões espaciais (sondas).</p>
+            <p class="img-caption">Legenda da imagem.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Os asteroides, na maioria das vezes, aparecem em imagens como simples pontos de luz. Devido ao seu pequeno tamanho e à grande distância, não é possível observar diretamente suas formas a partir da Terra com telescópios comuns. As imagens detalhadas que mostram suas superfícies geralmente são obtidas por missões espaciais (sondas).</p>
             <div class="img-row-single">
               <img src="image4.png" alt="Imagem 4">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Legenda da imagem.</p>
+            <p class="img-caption">Legenda da imagem.</p>
           </div>
           <div class="method-step">
             <h4><i class="fas fa-chart-line"></i> Que propriedades físicas destes objetos podemos descobrir?</h4>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Determinar a forma desses objetos, especialmente os chamados objetos transnetunianos, é um grande desafio, pois eles ocupam uma região muito pequena no céu.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Uma das formas mais eficazes de estudar esses objetos é por meio das ocultações estelares. Esse fenômeno ocorre quando um asteroide passa em frente a uma estrela, bloqueando temporariamente sua luz. Essa “sombra” projetada pelo objeto pode ser observada na Terra. Ao registrar o instante em que a estrela desaparece e reaparece, conseguimos medir a duração da ocultação.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Determinar a forma desses objetos, especialmente os chamados objetos transnetunianos, é um grande desafio, pois eles ocupam uma região muito pequena no céu.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Uma das formas mais eficazes de estudar esses objetos é por meio das ocultações estelares. Esse fenômeno ocorre quando um asteroide passa em frente a uma estrela, bloqueando temporariamente sua luz. Essa “sombra” projetada pelo objeto pode ser observada na Terra. Ao registrar o instante em que a estrela desaparece e reaparece, conseguimos medir a duração da ocultação.</p>
             <div class="img-row-single">
               <img src="image5.png" alt="Imagem 5">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Legenda da imagem.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Quanto maior o número de observações distribuídas geograficamente, mais preciso será o cálculo do tamanho e da forma do asteroide. Esse método permite reconstruir o perfil do objeto com boa precisão.</p>
+            <p class="img-caption">Legenda da imagem.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Quanto maior o número de observações distribuídas geograficamente, mais preciso será o cálculo do tamanho e da forma do asteroide. Esse método permite reconstruir o perfil do objeto com boa precisão.</p>
             <div class="img-row-single">
               <img src="image6.png" alt="Imagem 6">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Legenda da imagem.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Por exemplo, já foram realizados estudos em que o tamanho de um asteroide foi determinado com base em observações feitas em diferentes pontos do sul da América do Sul, combinando os dados de vários observadores.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Além do tamanho e da forma, também é possível estimar o albedo do objeto, que é a fração de luz refletida por sua superfície.</p>
+            <p class="img-caption">Legenda da imagem.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Por exemplo, já foram realizados estudos em que o tamanho de um asteroide foi determinado com base em observações feitas em diferentes pontos do sul da América do Sul, combinando os dados de vários observadores.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Além do tamanho e da forma, também é possível estimar o albedo do objeto, que é a fração de luz refletida por sua superfície.</p>
             <div class="img-row-single">
               <img src="image7.png" alt="Imagem 7">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Legenda da imagem.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Combinando o albedo com outras medições, podemos inferir propriedades físicas importantes, como a composição superficial.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Em alguns casos, quando há informações adicionais (como massa estimada, por exemplo, a partir da presença de satélites naturais), é possível também calcular a densidade do objeto, o que fornece pistas sobre sua estrutura interna (se é rochoso, metálico ou mais poroso).</p>
+            <p class="img-caption">Legenda da imagem.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Combinando o albedo com outras medições, podemos inferir propriedades físicas importantes, como a composição superficial.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Em alguns casos, quando há informações adicionais (como massa estimada, por exemplo, a partir da presença de satélites naturais), é possível também calcular a densidade do objeto, o que fornece pistas sobre sua estrutura interna (se é rochoso, metálico ou mais poroso).</p>
             <div class="img-row-single">
               <img src="image8.png" alt="Imagem 8">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Legenda da imagem.</p>
+            <p class="img-caption">Legenda da imagem.</p>
           </div>
           <div class="method-step">
             <h4><i class="fas fa-chart-line"></i> Ainda mais!</h4>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">As ocultações estelares também podem levar a descobertas surpreendentes. Em certas situações, observa-se mais de uma queda de brilho durante o mesmo evento, indicando que dois objetos passaram em frente à estrela, o que pode levar à descoberta de novos asteroides.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">As ocultações estelares também podem levar a descobertas surpreendentes. Em certas situações, observa-se mais de uma queda de brilho durante o mesmo evento, indicando que dois objetos passaram em frente à estrela, o que pode levar à descoberta de novos asteroides.</p>
             <div class="img-row-single">
               <img src="image9.png" alt="Imagem 9">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Legenda da imagem.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Além disso, esse tipo de observação pode revelar a existência de estrelas duplas, quando a luz da estrela desaparece em etapas, indicando que há duas fontes próximas sendo ocultadas separadamente.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Outro resultado fascinante é a detecção de anéis ao redor de asteroides. Pequenas quedas de brilho antes e depois da ocultação principal podem indicar a presença de material orbitando o objeto, formando sistemas de anéis; algo que antes se pensava existir apenas ao redor de planetas gigantes.</p>
+            <p class="img-caption">Legenda da imagem.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Além disso, esse tipo de observação pode revelar a existência de estrelas duplas, quando a luz da estrela desaparece em etapas, indicando que há duas fontes próximas sendo ocultadas separadamente.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Outro resultado fascinante é a detecção de anéis ao redor de asteroides. Pequenas quedas de brilho antes e depois da ocultação principal podem indicar a presença de material orbitando o objeto, formando sistemas de anéis; algo que antes se pensava existir apenas ao redor de planetas gigantes.</p>
             <div class="img-row-single">
               <img src="image10.png" alt="Imagem 10">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Legenda da imagem.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Várias descobertas foram feitas no Brasil:</p>
+            <p class="img-caption">Legenda da imagem.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Várias descobertas foram feitas no Brasil:</p>
             <div class="img-row-single">
               <img src="image11.png" alt="Imagem 11">
             </div>
-            <p class="img-caption" style="margin-bottom:12px">Legenda da imagem.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Embora desafiador, a observação de trânsitos de exoplanetas que causam uma diminuição no brilho da estrela hospedeira da ordem de alguns por cento também é factível, pois existem estrelas hospedeiras que podem ser visíveis a olho nu! Aqui, a natureza desafiadora dessas observações oferece uma oportunidade de explorar os limites das capacidades de telescópios como o S50.</p>
-            <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">Com agendamento cuidadoso e fotometria diferencial, observadores amadores e estudantes podem detectar sinais de trânsito, contribuindo para o refinamento de efemérides e até mesmo descobrindo novos trânsitos ao redor de estrelas brilhantes do sul.</p>
+            <p class="img-caption">Legenda da imagem.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Embora desafiador, a observação de trânsitos de exoplanetas que causam uma diminuição no brilho da estrela hospedeira da ordem de alguns por cento também é factível, pois existem estrelas hospedeiras que podem ser visíveis a olho nu! Aqui, a natureza desafiadora dessas observações oferece uma oportunidade de explorar os limites das capacidades de telescópios como o S50.</p>
+            <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">Com agendamento cuidadoso e fotometria diferencial, observadores amadores e estudantes podem detectar sinais de trânsito, contribuindo para o refinamento de efemérides e até mesmo descobrindo novos trânsitos ao redor de estrelas brilhantes do sul.</p>
           </div>
           
             <div class="method-step">
               <h4><i class="fas fa-book"></i> Referência</h4>
-              <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">
+              <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">
                 RIBAS, Felipe Braga. <i>Ocultações estelares: os 10 anos da descoberta dos anéis de Chariklo e os avanços no estudo do Sistema Solar.</i> <strong>Cadernos de Astronomia</strong>, vol. 5, n. 2, p. 56-64, 2024.
               </p>
            </div>
@@ -800,7 +811,7 @@ Em resumo, a luz das estrelas carrega informação sobre distância, temperatura
         <div id="bas-variaveis" class="subtab-content">
         <div class="method-step">
           <h4><i class="fas fa-eye-slash"></i>Estrelas...</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Estrelas parecem pontos fixos, mas algumas mudam de brilho em escalas de tempo que vão de minutos a anos. O caso mais antigo registrado é o de Mira, na constelação da Baleia: em 1595, David Fabricius acompanhou seu desaparecimento e retorno, e o ciclo de cerca de onze meses foi estabelecido no século seguinte. Na época, atribuiu-se a variação a manchas escuras numa estrela em rotação; hoje se sabe que Mira pulsa: sua superfície se expande e se contrai, e o brilho acompanha esse movimento. Em 1784, John Goodricke identificou variações regulares em δ Cephei, com período de pouco mais de cinco dias. Essas duas estrelas inauguraram duas famílias de variáveis: as de longo período, com ciclos irregulares entre 100 e 700 dias, e as Cefeidas clássicas, cujo brilho varia de forma mais discreta e previsível.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Estrelas parecem pontos fixos, mas algumas mudam de brilho em escalas de tempo que vão de minutos a anos. O caso mais antigo registrado é o de Mira, na constelação da Baleia: em 1595, David Fabricius acompanhou seu desaparecimento e retorno, e o ciclo de cerca de onze meses foi estabelecido no século seguinte. Na época, atribuiu-se a variação a manchas escuras numa estrela em rotação; hoje se sabe que Mira pulsa: sua superfície se expande e se contrai, e o brilho acompanha esse movimento. Em 1784, John Goodricke identificou variações regulares em δ Cephei, com período de pouco mais de cinco dias. Essas duas estrelas inauguraram duas famílias de variáveis: as de longo período, com ciclos irregulares entre 100 e 700 dias, e as Cefeidas clássicas, cujo brilho varia de forma mais discreta e previsível.
 
 A importância das Cefeidas não está apenas no fenômeno em si, mas no que ele permite medir. Henrietta Swan Leavitt, trabalhando como calculadora no Observatório de Harvard, comparou fotografias de milhares de estrelas e percebeu que, nas Cefeidas da Pequena Nuvem de Magalhães, quanto maior o período, maior a luminosidade. Como todas estão aproximadamente à mesma distância, as diferenças de brilho aparente refletem diferenças intrínsecas. Isso deu origem à relação período-luminosidade: basta cronometrar o ciclo de uma Cefeida para estimar sua luminosidade e, comparando com o brilho observado, obter sua distância. A calibração exigiu esforço, mas o resultado transformou as Cefeidas em marcos cósmicos, visíveis a distâncias intergalácticas.
 
@@ -819,23 +830,23 @@ Essas ideias se aplicam ao Sol e a outras estrelas. A heliossismologia estuda as
 Para quem não vê com os olhos, o estudo de estrelas variáveis continua acessível. Curvas de luz podem ser convertidas em som, com a frequência ou o volume acompanhando o brilho; séries temporais podem ser representadas em gráficos táteis ou descritas em texto; padrões de periodicidade podem ser explorados por meio de ritmos e intervalos. A variação estelar é, afinal, um fenômeno de tempo e intensidade: grandezas que não dependem da visão para serem medidas, analisadas e comunicadas.</i></p>
         </div>
           <h3 style="font-size:19px; color:#000080; margin-top:8px;">O periastro de eta Carinae 2025.7</h3>
-          <p style="font-size:15px; line-height:1.7;">Eta Car é uma das estrelas mais luminosas do Universo local. É observada desde o século XVII e apresentou características surpreendentes desde então. Descobriu-se que é uma binária massiva interagente com longo período (P=2022d) e excentricidade extremamente alta (e=0,94). Ela passará pelo periastro no final de setembro de 2025 e os dados mais importantes a serem obtidos serão a fotometria em banda V (V~4,0). Esse grande brilho e o fato de a estrela cruzar o meridiano ao meio-dia em 1º de setembro tornam-na um alvo difícil, no entanto as observações são viáveis a partir do sul do Brasil, Argentina e Chile. A precisão melhor que 0,01 mag (facilmente alcançada com dezenas a centenas de imagens) é necessária porque o pico a ser monitorado tem amplitude de ~0,25 mag. Há uma estrela de comparação (HD303308 V=8,15) a 1 minuto de arco ao norte. O período crítico é de 15/ago a 15/set, o que exige amostragem diária. Nosso objetivo é obter dezenas de pontos de dados durante os crepúsculos astronômicos (vespertino e matutino). O pico fotométrico não é explicado por nenhum modelo existente do sistema. Mostrou-se que ele atinge uma amplitude maior a cada periastro e que o pico se desloca a uma taxa de 1 dia mais cedo por órbita. O cenário possível é que seja causado por uma mancha brilhante na “superfície” da estrela primária, iluminada/aquecida pela estrela secundária quando elas se aproximam. As estrelas possivelmente estão se aproximando uma da outra a uma taxa rápida (órbita instável?!), de modo que uma fusão estelar possa ocorrer em alguns séculos (outra Erupção Gigante como em 1847?). Um grande evento iminente no céu como este exige a atenção de toda a humanidade, mesmo que não ocorra em nossa vida. Este objeto receberá atenção da imprensa mundial por ocasião do periastro, provavelmente chamando a atenção do público para a campanha de monitoramento que estaremos realizando.</p>
+          <p style="font-size:16px; line-height:1.6;">Eta Car é uma das estrelas mais luminosas do Universo local. É observada desde o século XVII e apresentou características surpreendentes desde então. Descobriu-se que é uma binária massiva interagente com longo período (P=2022d) e excentricidade extremamente alta (e=0,94). Ela passará pelo periastro no final de setembro de 2025 e os dados mais importantes a serem obtidos serão a fotometria em banda V (V~4,0). Esse grande brilho e o fato de a estrela cruzar o meridiano ao meio-dia em 1º de setembro tornam-na um alvo difícil, no entanto as observações são viáveis a partir do sul do Brasil, Argentina e Chile. A precisão melhor que 0,01 mag (facilmente alcançada com dezenas a centenas de imagens) é necessária porque o pico a ser monitorado tem amplitude de ~0,25 mag. Há uma estrela de comparação (HD303308 V=8,15) a 1 minuto de arco ao norte. O período crítico é de 15/ago a 15/set, o que exige amostragem diária. Nosso objetivo é obter dezenas de pontos de dados durante os crepúsculos astronômicos (vespertino e matutino). O pico fotométrico não é explicado por nenhum modelo existente do sistema. Mostrou-se que ele atinge uma amplitude maior a cada periastro e que o pico se desloca a uma taxa de 1 dia mais cedo por órbita. O cenário possível é que seja causado por uma mancha brilhante na “superfície” da estrela primária, iluminada/aquecida pela estrela secundária quando elas se aproximam. As estrelas possivelmente estão se aproximando uma da outra a uma taxa rápida (órbita instável?!), de modo que uma fusão estelar possa ocorrer em alguns séculos (outra Erupção Gigante como em 1847?). Um grande evento iminente no céu como este exige a atenção de toda a humanidade, mesmo que não ocorra em nossa vida. Este objeto receberá atenção da imprensa mundial por ocasião do periastro, provavelmente chamando a atenção do público para a campanha de monitoramento que estaremos realizando.</p>
           <!-- Referência do Livro -->
         <div class="method-step">
           <h4><i class="fas fa-book"></i> Referência</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">
             CARROLL, Bradley W.; OSTLIE, Dale A. <i>An Introduction to Modern Astrophysics</i>. 2nd ed. San Francisco: Pearson Addison-Wesley, 2007. p. 483-512. ISBN 0-321-44284-9.
           </p>
         </div>
         </div>
 
         <div id="bas-clusters" class="subtab-content">
-          <p style="font-size:15px; line-height:1.7;">Estrelas jovens devem estar próximas de seus locais de nascimento e ter velocidades ainda muito semelhantes às iniciais. Nesse contexto, os movimentos próprios estelares são fundamentais para distinguir membros do aglomerado de estrelas de campo. Por exemplo, ao traçar um diagrama vetorial de movimentos próprios, pode-se distinguir facilmente as estrelas que compartilham um movimento comum (membros do aglomerado) daquelas com movimentos aleatórios (estrelas de campo). Além disso, combinando os movimentos próprios dos membros do aglomerado com informações adicionais (por exemplo, paralaxe e velocidade radial), pode-se reconstruir o movimento 3D e a história de formação do aglomerado na Galáxia.</p>
+          <p style="font-size:16px; line-height:1.6;">Estrelas jovens devem estar próximas de seus locais de nascimento e ter velocidades ainda muito semelhantes às iniciais. Nesse contexto, os movimentos próprios estelares são fundamentais para distinguir membros do aglomerado de estrelas de campo. Por exemplo, ao traçar um diagrama vetorial de movimentos próprios, pode-se distinguir facilmente as estrelas que compartilham um movimento comum (membros do aglomerado) daquelas com movimentos aleatórios (estrelas de campo). Além disso, combinando os movimentos próprios dos membros do aglomerado com informações adicionais (por exemplo, paralaxe e velocidade radial), pode-se reconstruir o movimento 3D e a história de formação do aglomerado na Galáxia.</p>
           <div class="figure-placeholder"><i class="fas fa-star-of-life" style="font-size:28px;"></i> <strong>Exemplo:</strong> Diagrama vetorial de movimentos próprios para um aglomerado aberto observado com Seestar S50.</div>
           
           <div class="method-step">
           <h4><i class="fas fa-eye-slash"></i>Nascimento de estrelas...</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>O espaço entre as estrelas não é vazio. Poeira e gás ocupam o disco da Galáxia, e é desse material que nascem novas estrelas. A poeira bloqueia a luz de estrelas distantes (de tal forma que as faixas escuras visíveis na Via Láctea são grãos que espalham e absorvem radiação). Como a luz azul é mais afetada que a vermelha, estrelas atrás das nuvens parecem mais avermelhadas do que sua temperatura indicaria.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>O espaço entre as estrelas não é vazio. Poeira e gás ocupam o disco da Galáxia, e é desse material que nascem novas estrelas. A poeira bloqueia a luz de estrelas distantes (de tal forma que as faixas escuras visíveis na Via Láctea são grãos que espalham e absorvem radiação). Como a luz azul é mais afetada que a vermelha, estrelas atrás das nuvens parecem mais avermelhadas do que sua temperatura indicaria.
 
 O gás é composto sobretudo de hidrogênio. No meio difuso, ele aparece na forma neutra, detectável pela linha de 21 cm, uma transição rara entre dois estados de spin do elétron. O hidrogênio molecular, que domina as nuvens densas, é difícil de observar diretamente; por isso se usam moléculas como CO como traçadores. Onde há mais poeira e gás, a radiação ultravioleta fica bloqueada e o hidrogênio pode se manter na forma molecular.
 
@@ -873,7 +884,7 @@ Esse ciclo: nuvem, estrela, perda de massa, enriquecimento do meio interestelar,
           </div>
                   <div class="method-step">
           <h4><i class="fas fa-eye-slash"></i>Aglomerados</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Aglomerados estelares são grupos de estrelas que nasceram da mesma nuvem molecular, praticamente ao mesmo tempo e com a mesma composição química. Essa origem comum faz deles laboratórios naturais: como a massa inicial é o principal fator que determina a evolução de uma estrela, as diferenças observadas entre os membros de um aglomerado refletem, em grande parte, apenas essa diferença de massa. O conjunto se torna, assim, um grupo de estrelas de idades e composições semelhantes, mas com massas distintas, um cenário ideal para testar modelos de evolução estelar.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Aglomerados estelares são grupos de estrelas que nasceram da mesma nuvem molecular, praticamente ao mesmo tempo e com a mesma composição química. Essa origem comum faz deles laboratórios naturais: como a massa inicial é o principal fator que determina a evolução de uma estrela, as diferenças observadas entre os membros de um aglomerado refletem, em grande parte, apenas essa diferença de massa. O conjunto se torna, assim, um grupo de estrelas de idades e composições semelhantes, mas com massas distintas, um cenário ideal para testar modelos de evolução estelar.
 
 Existem dois grandes tipos. Os aglomerados globulares são antigos, muito populosos e ocupam o halo galáctico; suas estrelas são pobres em metais (População II) e se formaram quando a Galáxia era jovem. Já os aglomerados abertos, também chamados de galácticos, são mais jovens, menos populosos e se concentram no disco; suas estrelas são ricas em metais (População I). As Plêiades são um exemplo próximo e conhecido. Aglomerados abertos tendem a se dispersar com o tempo, porque a atração gravitacional mútua nem sempre é suficiente para mantê-los unidos diante de encontros com outras estrelas, nuvens e marés galácticas.
 
@@ -892,7 +903,7 @@ Em resumo, aglomerados estelares são grupos de estrelas nascidas juntas, e os a
          <!-- Referência do Livro -->
         <div class="method-step">
           <h4><i class="fas fa-book"></i> Referência</h4>
-          <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">
           CARROLL, Bradley W.; OSTLIE, Dale A. <i>An Introduction to Modern Astrophysics</i>. 2nd ed. San Francisco: Pearson Addison-Wesley, 2007. p. 398-479. ISBN 0-321-44284-9.
           </p>
         </div>
@@ -904,88 +915,88 @@ Em resumo, aglomerados estelares são grupos de estrelas nascidas juntas, e os a
   <!-- 1. Medir é comparar -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Medir é comparar</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Medir é comparar uma grandeza com uma referência. O instrumento é o intermediário dessa comparação, e nenhuma medida é exata: toda leitura carrega uma incerteza. A teoria de erros existe para responder a duas perguntas: qual o melhor valor que se pode atribuir a uma grandeza a partir de um conjunto de medições, e quanto esse valor pode diferir do valor verdadeiro. Como o valor verdadeiro é, por definição, desconhecido, qualquer afirmação sobre ele é probabilística.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Medir é comparar uma grandeza com uma referência. O instrumento é o intermediário dessa comparação, e nenhuma medida é exata: toda leitura carrega uma incerteza. A teoria de erros existe para responder a duas perguntas: qual o melhor valor que se pode atribuir a uma grandeza a partir de um conjunto de medições, e quanto esse valor pode diferir do valor verdadeiro. Como o valor verdadeiro é, por definição, desconhecido, qualquer afirmação sobre ele é probabilística.</i></p>
   </div>
 
   <!-- 2. Instrumentos e leitura -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Instrumentos e leitura</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Em instrumentos analógicos, a leitura inclui todos os dígitos que a escala permite ler diretamente mais um dígito estimado pelo observador. Numa régua graduada em milímetros, lê-se a marca inteira e estima-se a fração de milímetro. Em instrumentos digitais, o último dígito pode oscilar; também aí cabe ao observador estimar o valor com base na flutuação.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>O nônio, ou vernier, aumenta a resolução sem multiplicar indefinidamente os traços da escala principal. Quando dez divisões do nônio equivalem a nove da escala, a marca coincidente indica a fração da menor divisão: um paquímetro de dez divisões lê décimos de milímetro; um de cinquenta divisões, centésimos. Mas mais divisões não garantem mais exatidão, e em instrumentos com muitas divisões, a dificuldade de decidir qual marca coincide torna o erro de leitura significativo, e o limite de erro real pode superar a menor leitura indicada.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Cada instrumento tem um limite de erro de calibração, geralmente fornecido pelo fabricante. Na falta de informação detalhada, admite-se como limite a menor divisão da escala. A incerteza correspondente é, como regra prática, metade desse limite. Essa regra não é universal: multímetros digitais, paquímetros com muitas divisões, réguas de plástico e instrumentos sujeitos a dilatação térmica ou folgas podem ter limite de erro bem maior. Aplicar a regra cegamente leva a incertezas subestimadas.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>O erro instrumental decompõe-se em três partes. O erro de zero ocorre quando o instrumento não indica zero na ausência da grandeza; em muitos casos, o próprio experimentador ajusta o zero. O erro linear de calibração é proporcional à leitura: se a régua é 0,5% mais comprida, todas as medidas ficam 0,5% maiores; se o coeficiente é conhecido, a correção é possível. O desvio de linearidade é uma função complicada da leitura, as marcas podem não ser regularmente espaçadas. Em instrumentos bem construídos, esse desvio é pequeno; em medições ao longo de toda a escala, tende a se anular; numa única medida, é sistemático.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Em instrumentos analógicos, a leitura inclui todos os dígitos que a escala permite ler diretamente mais um dígito estimado pelo observador. Numa régua graduada em milímetros, lê-se a marca inteira e estima-se a fração de milímetro. Em instrumentos digitais, o último dígito pode oscilar; também aí cabe ao observador estimar o valor com base na flutuação.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>O nônio, ou vernier, aumenta a resolução sem multiplicar indefinidamente os traços da escala principal. Quando dez divisões do nônio equivalem a nove da escala, a marca coincidente indica a fração da menor divisão: um paquímetro de dez divisões lê décimos de milímetro; um de cinquenta divisões, centésimos. Mas mais divisões não garantem mais exatidão, e em instrumentos com muitas divisões, a dificuldade de decidir qual marca coincide torna o erro de leitura significativo, e o limite de erro real pode superar a menor leitura indicada.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Cada instrumento tem um limite de erro de calibração, geralmente fornecido pelo fabricante. Na falta de informação detalhada, admite-se como limite a menor divisão da escala. A incerteza correspondente é, como regra prática, metade desse limite. Essa regra não é universal: multímetros digitais, paquímetros com muitas divisões, réguas de plástico e instrumentos sujeitos a dilatação térmica ou folgas podem ter limite de erro bem maior. Aplicar a regra cegamente leva a incertezas subestimadas.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>O erro instrumental decompõe-se em três partes. O erro de zero ocorre quando o instrumento não indica zero na ausência da grandeza; em muitos casos, o próprio experimentador ajusta o zero. O erro linear de calibração é proporcional à leitura: se a régua é 0,5% mais comprida, todas as medidas ficam 0,5% maiores; se o coeficiente é conhecido, a correção é possível. O desvio de linearidade é uma função complicada da leitura, as marcas podem não ser regularmente espaçadas. Em instrumentos bem construídos, esse desvio é pequeno; em medições ao longo de toda a escala, tende a se anular; numa única medida, é sistemático.</i></p>
   </div>
 
   <!-- 3. Erros sistemáticos e estatísticos -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Erros sistemáticos e estatísticos</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Erros sistemáticos permanecem iguais quando a medição é repetida nas mesmas condições. Erros estatísticos, ou aleatórios, variam de forma imprevisível e se distribuem em torno de um valor médio. Quando só há erro estatístico, o valor médio de muitas medições se aproxima do valor verdadeiro. Quando só há erro sistemático, todos os resultados são iguais entre si, mas deslocados do valor verdadeiro. Repetir a medição reduz o erro estatístico da média, mas não elimina o erro sistemático.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Erros sistemáticos têm origens diversas. Erros instrumentais vêm da calibração e de sua alteração com temperatura, desgaste ou tempo. Erros ambientais vêm de fatores externos: temperatura, pressão, umidade, campo magnético, vibrações. Erros observacionais vêm de limitações ou falhas de procedimento do observador, como paralaxe, atraso ao acionar um cronômetro, tempo de reação humano da ordem de décimos de segundo. Erros teóricos vêm do uso de modelos aproximados ou de constantes físicas imprecisas: desprezar a resistência do ar ao medir a aceleração da gravidade leva a um valor sistematicamente menor; o valor da carga do elétron obtido por Millikan em 1916 era 0,6% menor porque a viscosidade do ar usada nos cálculos estava ligeiramente errada.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Em muitos casos, é possível eliminar ou reduzir um erro sistemático por procedimentos engenhosos. Numa balança de pratos com braços desiguais, medir a massa duas vezes, invertendo os pratos, e tomar a média geométrica elimina o efeito da diferença entre os braços. Em medições elétricas, inverter dois voltímetros e combinar as leituras de forma adequada elimina erros multiplicativos de calibração, desde que não haja desvios de linearidade. Nem sempre a correção é viável. Quando um erro sistemático não pode ser reduzido nem corrigido, ele se torna um erro sistemático residual, cuja incerteza é tratada, na prática, como incerteza tipo B.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>A distinção entre erro sistemático e estatístico é, em parte, arbitrária: depende do universo de medições considerado. O erro de calibração de um instrumento é sistemático se compararmos medições feitas com o mesmo aparelho, mas se torna estatístico quando se comparam instrumentos de marcas diferentes. Por isso, organizações internacionais recomendam classificar as incertezas em tipo A (estimadas por métodos estatísticos) e tipo B (estimadas por outros meios). As regras para combiná-las são objeto de debate, mas a distinção é mais operacional do que conceitual.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Há ainda os erros grosseiros (anotar 37,4 em vez de 47,4, apertar a tecla errada, trocar um sinal, por exemplo). Não são erros no sentido da teoria de erros, mas enganos. A leitura suspeita deve ser repetida ou eliminada. Evitá-los exige repetição de medições, conferência de cálculos e análise criteriosa da consistência dos resultados.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Erros sistemáticos permanecem iguais quando a medição é repetida nas mesmas condições. Erros estatísticos, ou aleatórios, variam de forma imprevisível e se distribuem em torno de um valor médio. Quando só há erro estatístico, o valor médio de muitas medições se aproxima do valor verdadeiro. Quando só há erro sistemático, todos os resultados são iguais entre si, mas deslocados do valor verdadeiro. Repetir a medição reduz o erro estatístico da média, mas não elimina o erro sistemático.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Erros sistemáticos têm origens diversas. Erros instrumentais vêm da calibração e de sua alteração com temperatura, desgaste ou tempo. Erros ambientais vêm de fatores externos: temperatura, pressão, umidade, campo magnético, vibrações. Erros observacionais vêm de limitações ou falhas de procedimento do observador, como paralaxe, atraso ao acionar um cronômetro, tempo de reação humano da ordem de décimos de segundo. Erros teóricos vêm do uso de modelos aproximados ou de constantes físicas imprecisas: desprezar a resistência do ar ao medir a aceleração da gravidade leva a um valor sistematicamente menor; o valor da carga do elétron obtido por Millikan em 1916 era 0,6% menor porque a viscosidade do ar usada nos cálculos estava ligeiramente errada.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Em muitos casos, é possível eliminar ou reduzir um erro sistemático por procedimentos engenhosos. Numa balança de pratos com braços desiguais, medir a massa duas vezes, invertendo os pratos, e tomar a média geométrica elimina o efeito da diferença entre os braços. Em medições elétricas, inverter dois voltímetros e combinar as leituras de forma adequada elimina erros multiplicativos de calibração, desde que não haja desvios de linearidade. Nem sempre a correção é viável. Quando um erro sistemático não pode ser reduzido nem corrigido, ele se torna um erro sistemático residual, cuja incerteza é tratada, na prática, como incerteza tipo B.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>A distinção entre erro sistemático e estatístico é, em parte, arbitrária: depende do universo de medições considerado. O erro de calibração de um instrumento é sistemático se compararmos medições feitas com o mesmo aparelho, mas se torna estatístico quando se comparam instrumentos de marcas diferentes. Por isso, organizações internacionais recomendam classificar as incertezas em tipo A (estimadas por métodos estatísticos) e tipo B (estimadas por outros meios). As regras para combiná-las são objeto de debate, mas a distinção é mais operacional do que conceitual.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Há ainda os erros grosseiros (anotar 37,4 em vez de 47,4, apertar a tecla errada, trocar um sinal, por exemplo). Não são erros no sentido da teoria de erros, mas enganos. A leitura suspeita deve ser repetida ou eliminada. Evitá-los exige repetição de medições, conferência de cálculos e análise criteriosa da consistência dos resultados.</i></p>
   </div>
 
   <!-- 4. Acurácia, precisão, repetitividade e reprodutibilidade -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Acurácia, precisão, repetitividade e reprodutibilidade</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Acurácia, ou exatidão, é a proximidade entre o resultado e o valor verdadeiro. Precisão é a proximidade entre resultados repetidos. São conceitos distintos. Um instrumento pode ser preciso e pouco acurado (leituras estáveis, mas sistematicamente deslocadas); e pode ser acurado e pouco preciso (resultados dispersos, mas cuja média se aproxima do valor verdadeiro). Boa acurácia exige boa precisão e erros sistemáticos pequenos. (A palavra precisão não deve ser usada como sinônimo de acurácia!)</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Repetitividade é o grau de concordância entre medições feitas nas mesmas condições: mesmo procedimento, mesmo observador, mesmos instrumentos, mesmo local, em intervalos curtos. Reprodutibilidade é a concordância entre medições feitas sob condições variadas. A primeira avalia a dispersão em condições controladas; a segunda, a robustez do resultado quando algo muda.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Acurácia, ou exatidão, é a proximidade entre o resultado e o valor verdadeiro. Precisão é a proximidade entre resultados repetidos. São conceitos distintos. Um instrumento pode ser preciso e pouco acurado (leituras estáveis, mas sistematicamente deslocadas); e pode ser acurado e pouco preciso (resultados dispersos, mas cuja média se aproxima do valor verdadeiro). Boa acurácia exige boa precisão e erros sistemáticos pequenos. (A palavra precisão não deve ser usada como sinônimo de acurácia!)</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Repetitividade é o grau de concordância entre medições feitas nas mesmas condições: mesmo procedimento, mesmo observador, mesmos instrumentos, mesmo local, em intervalos curtos. Reprodutibilidade é a concordância entre medições feitas sob condições variadas. A primeira avalia a dispersão em condições controladas; a segunda, a robustez do resultado quando algo muda.</i></p>
   </div>
 
   <!-- 5. Incerteza e intervalo de confiança -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Incerteza e intervalo de confiança</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>A incerteza padrão é o desvio padrão da distribuição de erros. Ela define um intervalo de confiança de aproximadamente 68% em torno do resultado, no caso de distribuição gaussiana. Multiplicando a incerteza padrão por um fator k, obtém-se uma incerteza expandida com confiança maior: k = 2 dá cerca de 95%, k = 3 dá cerca de 99,7%. O limite de erro é o valor máximo admissível para o erro; se bem estabelecido, define um intervalo com confiança de 100%. Quando a distribuição é gaussiana, costuma-se tomar 3σ como limite prático. O erro provável, que tinha 50% de chance de ser excedido em módulo, caiu em desuso.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>A incerteza total de um resultado combina a variância tipo A com as variâncias tipo B: σ² = σ_A² + σ_B². Quando há várias fontes de erro sistemático residual, suas variâncias também se somam.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Na prática, muitas vezes o que se conhece não é a incerteza padrão, mas o limite de erro do instrumento. A conversão depende da distribuição assumida. Se gaussiana, L = 3σ; se retangular, σ = L/√3; se triangular, σ = L/√6. Uma regra prática comum em instrumentos analógicos é considerar a incerteza padrão como metade da menor divisão da escala, mas essa regra deve ser aplicada com bom senso: muitos instrumentos têm limite de erro maior que a menor divisão, e o erro de calibração pode variar ao longo da escala.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>A incerteza padrão é o desvio padrão da distribuição de erros. Ela define um intervalo de confiança de aproximadamente 68% em torno do resultado, no caso de distribuição gaussiana. Multiplicando a incerteza padrão por um fator k, obtém-se uma incerteza expandida com confiança maior: k = 2 dá cerca de 95%, k = 3 dá cerca de 99,7%. O limite de erro é o valor máximo admissível para o erro; se bem estabelecido, define um intervalo com confiança de 100%. Quando a distribuição é gaussiana, costuma-se tomar 3σ como limite prático. O erro provável, que tinha 50% de chance de ser excedido em módulo, caiu em desuso.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>A incerteza total de um resultado combina a variância tipo A com as variâncias tipo B: σ² = σ_A² + σ_B². Quando há várias fontes de erro sistemático residual, suas variâncias também se somam.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Na prática, muitas vezes o que se conhece não é a incerteza padrão, mas o limite de erro do instrumento. A conversão depende da distribuição assumida. Se gaussiana, L = 3σ; se retangular, σ = L/√3; se triangular, σ = L/√6. Uma regra prática comum em instrumentos analógicos é considerar a incerteza padrão como metade da menor divisão da escala, mas essa regra deve ser aplicada com bom senso: muitos instrumentos têm limite de erro maior que a menor divisão, e o erro de calibração pode variar ao longo da escala.</i></p>
   </div>
 
   <!-- 6. Propagação de incertezas -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Propagação de incertezas</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Quando uma grandeza w é calculada a partir de outras, sua incerteza depende das incertezas das variáveis de entrada e de como w varia com cada uma delas. Para erros independentes:</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + …</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Cada variável contribui de acordo com duas coisas: o quanto w muda quando aquela variável muda (a derivada parcial) e o tamanho da incerteza da própria variável. Quando só existe uma variável, σ_w = |dw/dx| σ_x.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Casos particulares simplificam o cálculo:</i></p>
-    <ul style="font-size:15px; line-height:1.7; margin-bottom:12px;">
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Quando uma grandeza w é calculada a partir de outras, sua incerteza depende das incertezas das variáveis de entrada e de como w varia com cada uma delas. Para erros independentes:</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + …</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Cada variável contribui de acordo com duas coisas: o quanto w muda quando aquela variável muda (a derivada parcial) e o tamanho da incerteza da própria variável. Quando só existe uma variável, σ_w = |dw/dx| σ_x.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Casos particulares simplificam o cálculo:</i></p>
+    <ul style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">
       <li><i><b>Soma ou subtração:</b> as variâncias se somam, mesmo na subtração.</i></li>
       <li><i><b>Multiplicação por constante:</b> σ_w = |a| σ_x.</i></li>
       <li><i><b>Produto ou razão:</b> as incertezas relativas se combinam em quadratura.</i></li>
       <li><i><b>Potências (w = x^p y^q):</b> (σ_w/w)² = (p σ_x/x)² + (q σ_y/y)².</i></li>
       <li><i><b>Funções trigonométricas e logarítmicas:</b> a derivada apropriada entra na fórmula.</i></li>
     </ul>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Um exemplo: o volume de um cilindro é V = π L R². Dividindo a expressão por V², chega-se a (σ_V/V)² = (σ_L/L)² + (2 σ_R/R)². O raio pesa mais, porque aparece elevado ao quadrado.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Essas expressões são aproximações válidas quando a função varia suavemente perto dos valores medidos, isto é, quando a derivada praticamente não muda para desvios da ordem da incerteza. Se a função oscila ou tem curvatura forte nessa escala, a aproximação linear deixa de ser boa.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>A fórmula simples supõe erros independentes. Quando não são, é preciso incluir as covariâncias:</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + … + 2 (∂w/∂x)(∂w/∂y) cov(x,y) + …</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>A covariância mede se duas variáveis tendem a variar juntas. O coeficiente de correlação r varia de −1 a +1 e indica o quanto os pontos se aproximam de uma reta. Correlação nula não garante independência: há distribuições em que os erros são dependentes, mas a covariância se anula por simetria.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Há ainda a transferência de incerteza. Quando y é medido em função de x e ambas as variáveis têm erro, pode-se admitir x como isenta de erro e incorporar sua incerteza à de y: σ_y² = σ_y0² + (dy/dx)² σ_x². Como a relação entre y e x nem sempre é conhecida de início, faz-se uma estimativa preliminar da derivada e depois se refina por aproximações sucessivas.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Um exemplo: o volume de um cilindro é V = π L R². Dividindo a expressão por V², chega-se a (σ_V/V)² = (σ_L/L)² + (2 σ_R/R)². O raio pesa mais, porque aparece elevado ao quadrado.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Essas expressões são aproximações válidas quando a função varia suavemente perto dos valores medidos, isto é, quando a derivada praticamente não muda para desvios da ordem da incerteza. Se a função oscila ou tem curvatura forte nessa escala, a aproximação linear deixa de ser boa.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>A fórmula simples supõe erros independentes. Quando não são, é preciso incluir as covariâncias:</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + … + 2 (∂w/∂x)(∂w/∂y) cov(x,y) + …</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>A covariância mede se duas variáveis tendem a variar juntas. O coeficiente de correlação r varia de −1 a +1 e indica o quanto os pontos se aproximam de uma reta. Correlação nula não garante independência: há distribuições em que os erros são dependentes, mas a covariância se anula por simetria.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Há ainda a transferência de incerteza. Quando y é medido em função de x e ambas as variáveis têm erro, pode-se admitir x como isenta de erro e incorporar sua incerteza à de y: σ_y² = σ_y0² + (dy/dx)² σ_x². Como a relação entre y e x nem sempre é conhecida de início, faz-se uma estimativa preliminar da derivada e depois se refina por aproximações sucessivas.</i></p>
   </div>
 
   <!-- 7. Qualidade de ajuste -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Qualidade de ajuste</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>O método dos mínimos quadrados encontra os melhores parâmetros para uma função de forma predeterminada, mas não diz se essa forma é adequada. Uma reta pode ser ajustada a pontos que claramente descrevem uma parábola, e o método ainda devolverá coeficientes. Avaliar a qualidade do ajuste é tão importante quanto obter os parâmetros.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>A verossimilhança de um ajuste não se mede pelo simples acordo visual. Um alinhamento quase perfeito pode ser inverossímil se as incertezas forem grandes: seria improvável que todos os pontos se alinhassem tão bem dentro de barras de erro largas. Uma dispersão aparentemente grande pode ser perfeitamente compatível com incertezas pequenas. O que define um bom ajuste é a coerência entre as flutuações dos dados e as incertezas declaradas.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Um critério simples é o das barras de incerteza. Se a função ajustada for correta, cada ponto tem cerca de 68% de probabilidade de ter sua barra cruzando a curva. Para n pontos e p parâmetros, o número médio de barras que devem cruzar a curva é Ncz ≈ (2/3)ν + p, onde ν = n − p é o número de graus de liberdade. O desvio padrão esperado é cerca de √(Ncz/3). Desvios grandes desse número indicam problema. O critério é rudimentar, mas aplicável por inspeção visual.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Um critério mais elaborado é o χ² reduzido. Define-se χ² como a soma dos quadrados das diferenças entre os valores observados e a função ajustada, cada diferença dividida pela incerteza do ponto. Em outras palavras, χ² mede a distância total entre os pontos e a curva, usando as incertezas como unidade. O χ² reduzido é χ² dividido pelo número de graus de liberdade, ν = n − p. Se o ajuste for bom e as incertezas corretas, o valor esperado de χ²_red é 1. Valores muito maiores indicam função inadequada ou incertezas subestimadas. Valores muito menores sugerem incertezas superestimadas ou ajuste bom demais para ser verdadeiro.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>A distribuição de χ²_red depende de ν. Para ν grande, concentra-se em torno de 1; para ν pequeno, a dispersão é maior. Por isso, usam-se intervalos de confiança. Para ν = 10, pode-se afirmar com 98% de confiança que χ²_red está entre 0,26 e 2,32. Se o valor obtido cair fora desse intervalo, o ajuste é provavelmente ruim.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Na prática, um χ²_red muito fora do intervalo aceitável pode ter duas causas: função inadequada ou incertezas mal estimadas. Distinguir entre as duas nem sempre é fácil. Se há certeza sobre a forma da função, o teste verifica as incertezas. Se as incertezas são confiáveis, o teste compara diferentes funções; entre as que produzem bom ajuste, prefere-se a de menor número de parâmetros. Considerações físicas também ajudam a escolher o modelo.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Quando as incertezas são desconhecidas, mas podem ser admitidas iguais, é possível estimá-las a partir do próprio ajuste. Impondo χ²_red ≈ 1, obtém-se σ² ≈ (1/ν) Σ [yᵢ − f(xᵢ)]². Essa expressão só é válida se houver razoável certeza de que a função ajustada é correta.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>O método dos mínimos quadrados encontra os melhores parâmetros para uma função de forma predeterminada, mas não diz se essa forma é adequada. Uma reta pode ser ajustada a pontos que claramente descrevem uma parábola, e o método ainda devolverá coeficientes. Avaliar a qualidade do ajuste é tão importante quanto obter os parâmetros.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>A verossimilhança de um ajuste não se mede pelo simples acordo visual. Um alinhamento quase perfeito pode ser inverossímil se as incertezas forem grandes: seria improvável que todos os pontos se alinhassem tão bem dentro de barras de erro largas. Uma dispersão aparentemente grande pode ser perfeitamente compatível com incertezas pequenas. O que define um bom ajuste é a coerência entre as flutuações dos dados e as incertezas declaradas.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Um critério simples é o das barras de incerteza. Se a função ajustada for correta, cada ponto tem cerca de 68% de probabilidade de ter sua barra cruzando a curva. Para n pontos e p parâmetros, o número médio de barras que devem cruzar a curva é Ncz ≈ (2/3)ν + p, onde ν = n − p é o número de graus de liberdade. O desvio padrão esperado é cerca de √(Ncz/3). Desvios grandes desse número indicam problema. O critério é rudimentar, mas aplicável por inspeção visual.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Um critério mais elaborado é o χ² reduzido. Define-se χ² como a soma dos quadrados das diferenças entre os valores observados e a função ajustada, cada diferença dividida pela incerteza do ponto. Em outras palavras, χ² mede a distância total entre os pontos e a curva, usando as incertezas como unidade. O χ² reduzido é χ² dividido pelo número de graus de liberdade, ν = n − p. Se o ajuste for bom e as incertezas corretas, o valor esperado de χ²_red é 1. Valores muito maiores indicam função inadequada ou incertezas subestimadas. Valores muito menores sugerem incertezas superestimadas ou ajuste bom demais para ser verdadeiro.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>A distribuição de χ²_red depende de ν. Para ν grande, concentra-se em torno de 1; para ν pequeno, a dispersão é maior. Por isso, usam-se intervalos de confiança. Para ν = 10, pode-se afirmar com 98% de confiança que χ²_red está entre 0,26 e 2,32. Se o valor obtido cair fora desse intervalo, o ajuste é provavelmente ruim.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Na prática, um χ²_red muito fora do intervalo aceitável pode ter duas causas: função inadequada ou incertezas mal estimadas. Distinguir entre as duas nem sempre é fácil. Se há certeza sobre a forma da função, o teste verifica as incertezas. Se as incertezas são confiáveis, o teste compara diferentes funções; entre as que produzem bom ajuste, prefere-se a de menor número de parâmetros. Considerações físicas também ajudam a escolher o modelo.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Quando as incertezas são desconhecidas, mas podem ser admitidas iguais, é possível estimá-las a partir do próprio ajuste. Impondo χ²_red ≈ 1, obtém-se σ² ≈ (1/ν) Σ [yᵢ − f(xᵢ)]². Essa expressão só é válida se houver razoável certeza de que a função ajustada é correta.</i></p>
   </div>
 
   <!-- 8. Algarismos significativos -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Algarismos significativos</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>O número de dígitos apresentados num resultado deve refletir a incerteza. A incerteza padrão costuma ser escrita com um ou dois algarismos: dois quando o primeiro é 1 ou 2; um ou dois quando o primeiro é 3 ou maior. O resultado é escrito com os algarismos significativos correspondentes, sem zeros à esquerda desnecessários. Zeros à direita podem ser significativos.</i></p>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>Números são arredondados segundo regras definidas: se o algarismo descartado é menor que 5, arredonda-se para baixo; se maior, para cima; se exatamente 5, arredonda-se para o par mais próximo. Quando não se indica a incerteza, o limite de erro deve ser no máximo 0,5 no último algarismo apresentado.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>O número de dígitos apresentados num resultado deve refletir a incerteza. A incerteza padrão costuma ser escrita com um ou dois algarismos: dois quando o primeiro é 1 ou 2; um ou dois quando o primeiro é 3 ou maior. O resultado é escrito com os algarismos significativos correspondentes, sem zeros à esquerda desnecessários. Zeros à direita podem ser significativos.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>Números são arredondados segundo regras definidas: se o algarismo descartado é menor que 5, arredonda-se para baixo; se maior, para cima; se exatamente 5, arredonda-se para o par mais próximo. Quando não se indica a incerteza, o limite de erro deve ser no máximo 0,5 no último algarismo apresentado.</i></p>
   </div>
 
   <!-- 9. Vocabulário essencial -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Vocabulário essencial</h4>
-    <ul style="font-size:15px; line-height:1.7; margin-bottom:12px;">
+    <ul style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">
       <li><i><b>Grandeza:</b> atributo que pode ser distinguido qualitativamente e determinado quantitativamente.</i></li>
       <li><i><b>Medição:</b> conjunto de operações para determinar o valor de uma grandeza.</i></li>
       <li><i><b>Mensurando:</b> a grandeza específica submetida à medição.</i></li>
@@ -1010,7 +1021,7 @@ Em resumo, aglomerados estelares são grupos de estrelas nascidas juntas, e os a
   <!-- Referência do Livro -->
   <div class="method-step">
     <h4><i class="fas fa-book"></i> Referência</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;">
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">
       VUOLO, José Henrique. <i>Fundamentos da Teoria de Erros</i>. 2. ed. rev. ampl. São Paulo: Edgard Blücher, 1996. pp. 53-94, 113-140, 189-210, 217-226, 235-236. ISBN 85-212-0056-0.
     </p>
   </div>
@@ -1019,7 +1030,7 @@ Em resumo, aglomerados estelares são grupos de estrelas nascidas juntas, e os a
   <div id="bas-dados" class="subtab-content">
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Números e números...</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:12px;"><i>A astronomia moderna depende tanto de observações quanto de cálculo. Os telescópios produzem grandes volumes de dados (imagens, espectros, séries temporais) e extrair informação desses dados exige métodos numéricos. Ajustar curvas de luz, modelar atmosferas estelares, inferir parâmetros de órbitas, reconstruir mapas de galáxias, tudo isso envolve aproximações, iterações e estimativas. Entender como esses métodos funcionam, suas limitações e seus erros é parte essencial do trabalho astronômico.
+    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;"><i>A astronomia moderna depende tanto de observações quanto de cálculo. Os telescópios produzem grandes volumes de dados (imagens, espectros, séries temporais) e extrair informação desses dados exige métodos numéricos. Ajustar curvas de luz, modelar atmosferas estelares, inferir parâmetros de órbitas, reconstruir mapas de galáxias, tudo isso envolve aproximações, iterações e estimativas. Entender como esses métodos funcionam, suas limitações e seus erros é parte essencial do trabalho astronômico.
 
 Computadores não armazenam números com precisão infinita. Um número de ponto flutuante é representado por um sinal, um expoente e uma mantissa, e essa representação tem limites. O menor número que, somado a 1.0, produz um resultado diferente de 1.0 é a precisão de máquina, cerca de 10⁻⁷ para floats de 32 bits e 10⁻¹⁶ para doubles de 64 bits. Cada operação aritmética introduz um erro de arredondamento da ordem dessa precisão. Ao longo de milhares ou milhões de operações, esses erros se acumulam, e o resultado pode divergir do valor verdadeiro.
 
@@ -1040,7 +1051,7 @@ Em resumo, a análise de dados em astronomia combina observação, matemática e
           <!-- Referência do Livro -->
   <div class="method-step">
     <h4><i class="fas fa-book"></i> Referência</h4>
-    <p style="font-size:15px; line-height:1.7; margin-bottom:5px;">
+    <p style="font-size:16px; line-height:1.6; margin-bottom:5px;">
       PRESS, William H. et al. <i>Numerical Recipes: The Art of Scientific Computing</i>. 3rd ed. Cambridge: Cambridge University Press, 2007. p. 1-12. ISBN 978-0-521-88068-8.
     </p>
   </div>
@@ -1049,7 +1060,6 @@ Em resumo, a análise de dados em astronomia combina observação, matemática e
 
       <!-- ===== COMO OBSERVAR? ===== -->
       <div id="tab-howitworks" class="tab-content">
-        <h2 style="font-size:22px; color:#000080; margin-bottom:12px;">Como observar?</h2>
         <div class="subtab-bar">
           <button class="subtab-btn active" data-subtab="how-telescopes">Telescópios & S50</button>
           <button class="subtab-btn" data-subtab="how-astrometry">Medida astrométrica</button>
@@ -1067,7 +1077,7 @@ Em resumo, a análise de dados em astronomia combina observação, matemática e
         </div>
         <div id="how-graphics" class="subtab-content">
           <div class="method-step"><h4><i class="fas fa-chart-line"></i> ...</h4>
-          <p  style="font-size:15px; line-height:1.7; margin-bottom:12px;">We will have a programmer who will set up a hub so that project observers can upload their images to a common system (a server hosted at one of the participating universities). At the end of each night, observers will send their images to the server. This will allow the technical person(s) to process and calibrate (astrometry and flux) all the data collected each night.
+          <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">We will have a programmer who will set up a hub so that project observers can upload their images to a common system (a server hosted at one of the participating universities). At the end of each night, observers will send their images to the server. This will allow the technical person(s) to process and calibrate (astrometry and flux) all the data collected each night.
 The benefit for observers using this system is that they will be able to download the processed and calibrated data and access all the automatically obtained parameters for each object through a user-friendly platform. This eliminates the burden of data processing and parameter extraction for the observer, allowing them to focus solely on publishing or advertising the results, using the data for education, or publication in specialized journals.
 In return, observers agree to allow open access to the processed and calibrated data, as well as the extracted parameters, so that anyone interested can publish them in scientific studies or use them for educational or outreach purposes.</p>
             <div class="figure-placeholder"><i class="fas fa-chart-pie"></i> Exemplo: curva de luz do pipeline (magnitude vs tempo).</div>
@@ -1077,14 +1087,13 @@ In return, observers agree to allow open access to the processed and calibrated 
 
       <!-- ===== EQUIPE ===== -->
       <div id="tab-team" class="tab-content">
-        <h2 style="font-size:22px; color:#000080; margin-bottom:6px;">👥 Equipe Nanotelescópios</h2>
-        <p style="font-size:15px; text-align:center; margin-bottom:14px;">Pessoas pesquisadoras, professoras e colaboradoras do Brasil, Chile e Argentina.</p>
+        <p style="font-size:17px; text-align:center; margin-bottom:14px;">Pessoas pesquisadoras, professoras e colaboradoras do Brasil, Chile e Argentina.</p>
         <div class="team-grid" id="team-container"></div>
       </div>
 
       <!-- ===== CONTATO ===== -->
       <div id="tab-contact" class="tab-content">
-        <h2 style="font-size:22px; color:#000080; margin-bottom:12px;">📬 Participe & Contato</h2>
+        <h2 style="font-size:22px; color:#000080; margin-bottom:20px;  margin-inline:20px;"> Participe e Contato</h2>
         <div class="grid-2">
           <div class="contact-info">
             <i class="fas fa-envelope"></i>
