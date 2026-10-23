@@ -1263,7 +1263,7 @@
                 </div>
                 <input type="range" id="azimSlider" min="0" max="360" value="45" step="1" class="sim-slider slider-orange">
                 <div class="sim-slider-labels">
-                  <span>0° (N)</span><span>90° (L)</span><span>180° (S)</span><span>270° (O)</span>
+                  <span>0° (N)</span><span>90° (L)</span><span>180° (S)</span><span>270° (O)</span><span>360° (N)</span>
                 </div>
               </div>
             </div>
@@ -2045,6 +2045,55 @@ function initSimulatorEngine() {
   updateSimUI();
 }
 
+function drawAzimuthArc() {
+  const obs = project3D(0, 0, 0);
+  const az = simState.azimuth;
+  if (az <= 0) return;
+
+  const radiusFactor = 0.60; // Tamanho do arco em relação ao raio do horizonte
+
+  // Setor colorido no chão (do Norte 0° até o Azimute)
+  ctx.beginPath();
+  ctx.moveTo(obs.x, obs.y);
+  for (let a = 0; a <= az; a += 2) {
+    const pt = project3D(a, 0, radiusFactor);
+    ctx.lineTo(pt.x, pt.y);
+  }
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(16, 185, 129, 0.25)'; // Verde translúcido
+  ctx.fill();
+
+  // Linha de referência inicial no Norte (0°)
+  const northPt = project3D(0, 0, radiusFactor);
+  ctx.beginPath();
+  ctx.moveTo(obs.x, obs.y);
+  ctx.lineTo(northPt.x, northPt.y);
+  ctx.strokeStyle = '#059669';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // Arco pontilhado ao longo do chão
+  ctx.beginPath();
+  for (let a = 0; a <= az; a += 2) {
+    const pt = project3D(a, 0, radiusFactor);
+    if (a === 0) ctx.moveTo(pt.x, pt.y);
+    else ctx.lineTo(pt.x, pt.y);
+  }
+  ctx.strokeStyle = '#059669';
+  ctx.lineWidth = 2.5;
+  ctx.setLineDash([4, 3]);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Rótulo numérico do Azimute
+  const midAz = az / 2;
+  const labelPt = project3D(midAz, 0, radiusFactor * 0.72);
+  ctx.font = 'bold 12px Segoe UI, sans-serif';
+  ctx.fillStyle = '#047857';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(`Azimute: ${Math.round(az)}°`, labelPt.x, labelPt.y);
+}
 function getCardinalAbbr(azimuth) {
   const az = (azimuth % 360 + 360) % 360;
   if (az >= 337.5 || az < 22.5) return 'N';
@@ -2114,20 +2163,28 @@ function renderSim() {
   drawDome();
   drawZenithLine();
 
+  // 1. Desenha o arco/setor de Azimute no plano do horizonte
+  drawAzimuthArc();
+
+  // 2. Desenha a Linha de Visada (com hachurado/setor e arco de elevação)
   drawVector({
     azim: simState.azimuth,
     elev: simState.elevation,
     label: `Linha de visada (${Math.round(simState.elevation)}°)`,
     color: '#ea580c',
-    sectorColor: 'rgba(234, 88, 12, 0.22)'
+    sectorColor: 'rgba(234, 88, 12, 0.22)',
+    showSector: true,
+    showArc: true
   });
 
+  // 3. Desenha o Polo Celeste (MANTÉM O VETOR E A LABEL, mas OMITINDO o hachurado e o arco do ângulo)
   drawVector({
     azim: poleAzim,
     elev: poleElev,
-    label: `${poleName} (${Math.round(poleElev)}°)`,
+    label: poleName,
     color: '#0284c7',
-    sectorColor: 'rgba(2, 132, 199, 0.25)'
+    showSector: false, // Desativa a área hachurada do PNC
+    showArc: false    // Desativa o arco/texto do ângulo na base do PNC
   });
 
   drawObserver();
@@ -2256,7 +2313,12 @@ function drawVector(config) {
   const target = project3D(config.azim, config.elev);
   const groundProj = project3D(config.azim, 0);
 
-  if (config.elev > 0) {
+  // Flags para controlar se desenha a área sombreada e o arco numérico do ângulo
+  const showSector = config.showSector !== false;
+  const showArc = config.showArc !== false;
+
+  // 1. Setor/Área hachurada (sombreada)
+  if (config.elev > 0 && showSector) {
     ctx.beginPath();
     ctx.moveTo(obs.x, obs.y);
     for (let e = 0; e <= config.elev; e += 2) {
@@ -2264,10 +2326,11 @@ function drawVector(config) {
       ctx.lineTo(pt.x, pt.y);
     }
     ctx.closePath();
-    ctx.fillStyle = config.sectorColor;
+    ctx.fillStyle = config.sectorColor || 'transparent';
     ctx.fill();
   }
 
+  // Linhas guiadas de projeção vertical no chão
   ctx.beginPath();
   ctx.moveTo(target.x, target.y);
   ctx.lineTo(groundProj.x, groundProj.y);
@@ -2282,7 +2345,8 @@ function drawVector(config) {
   ctx.stroke();
   ctx.setLineDash([]);
 
-  if (config.elev > 0) {
+  // 2. Arco pontilhado de elevação/altura com o texto em graus
+  if (config.elev > 0 && showArc) {
     ctx.beginPath();
     for (let e = 0; e <= config.elev; e += 2) {
       const pt = project3D(config.azim, e, 0.48);
@@ -2302,6 +2366,7 @@ function drawVector(config) {
     ctx.fillText(`${Math.round(config.elev)}°`, midArc.x, midArc.y);
   }
 
+  // Vetor / Seta principal
   ctx.beginPath();
   ctx.moveTo(obs.x, obs.y);
   ctx.lineTo(target.x, target.y);
