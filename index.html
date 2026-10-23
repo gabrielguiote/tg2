@@ -557,6 +557,131 @@
       font-size: 14px;
       line-height: 1.55;
     }
+    
+        /* ===== ESTILOS DO SIMULADOR CELESTE 3D ===== */
+    .sim-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 20px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      border: 2px solid #b6bcc8;
+      border-color: #e6ecf4 #8a909c #8a909c #e6ecf4;
+    }
+
+    .sim-container {
+      position: relative;
+      width: 100%;
+      height: 440px;
+      background: linear-gradient(135deg, #f0f4f9 0%, #d9e2ec 100%);
+      overflow: hidden;
+    }
+
+    .sim-container canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      touch-action: none;
+      cursor: grab;
+    }
+    .sim-container canvas:active { cursor: grabbing; }
+
+    .sim-instruction {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      pointer-events: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      z-index: 5;
+    }
+
+    .sim-controls {
+      padding: 16px 20px;
+      background: #f8fafc;
+      border-top: 1px solid #cbd5e1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .sim-control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .sim-control-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .sim-control-header label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sim-control-header span {
+      font-weight: 700;
+      font-size: 13px;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    #latDisplay { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    #elevDisplay, #azimDisplay { background: #ffedd5; color: #c2410c; border: 1px solid #fed7aa; }
+
+    .sim-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #cbd5e1;
+      outline: none;
+    }
+
+    .sim-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: transform 0.1s ease;
+    }
+    .sim-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+    .slider-blue::-webkit-slider-thumb { background: #0284c7; }
+    .slider-orange::-webkit-slider-thumb { background: #ea580c; }
+    .slider-blue::-moz-range-thumb { background: #0284c7; border: none; }
+    .slider-orange::-moz-range-thumb { background: #ea580c; border: none; }
+
+    .sim-slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
 
     @media (max-width: 900px) {
       .hero-block { grid-template-columns: 1fr; }
@@ -581,8 +706,13 @@
       }
       .figure-trio { grid-template-columns: 1fr; }
       .figure-pair { grid-template-columns: 1fr; }
+      .hero-block { grid-template-columns: 1fr; }
+      .figure-trio { grid-template-columns: 1fr 1fr; }
+      .sim-controls { flex-direction: column; align-items: stretch; }
+      .sim-container { height: 320px; }
     }
   </style>
+  
 </head>
 <body>
 
@@ -1092,6 +1222,53 @@
     
 </div>
           </div>
+          
+                    <!-- SIMULADOR 3D DO DOMO CELESTE -->
+          <div class="sim-card">
+            <div class="sim-container" id="sim3d-container">
+              <span class="sim-instruction"><i class="fas fa-mouse"></i> Arraste para girar a visão 3D</span>
+              <canvas id="celestialCanvas"></canvas>
+            </div>
+            
+            <div class="sim-controls">
+              <!-- Latitude -->
+              <div class="sim-control-group">
+                <div class="sim-control-header">
+                  <label for="latSlider"><i class="fas fa-globe"></i> Latitude</label>
+                  <span id="latDisplay">-23.5° (S)</span>
+                </div>
+                <input type="range" id="latSlider" min="-90" max="90" value="-23.5" step="0.5" class="sim-slider slider-blue">
+                <div class="sim-slider-labels">
+                  <span>90°S</span><span>0° (Equador)</span><span>90°N</span>
+                </div>
+              </div>
+
+              <!-- Elevação / Altitude -->
+              <div class="sim-control-group">
+                <div class="sim-control-header">
+                  <label for="elevSlider"><i class="fas fa-arrow-up"></i> Elevação (Altitude)</label>
+                  <span id="elevDisplay">25°</span>
+                </div>
+                <input type="range" id="elevSlider" min="0" max="90" value="25" step="1" class="sim-slider slider-orange">
+                <div class="sim-slider-labels">
+                  <span>0° (Horiz.)</span><span>90° (Zênite)</span>
+                </div>
+              </div>
+
+              <!-- Direção / Azimute -->
+              <div class="sim-control-group">
+                <div class="sim-control-header">
+                  <label for="azimSlider"><i class="fas fa-compass"></i> Direção (Azimute)</label>
+                  <span id="azimDisplay">45° (NE)</span>
+                </div>
+                <input type="range" id="azimSlider" min="0" max="360" value="45" step="1" class="sim-slider slider-orange">
+                <div class="sim-slider-labels">
+                  <span>0° (N)</span><span>90° (L)</span><span>180° (S)</span><span>270° (O)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
           <div class="method-step">
             <h4><i class="fas fa-clock"></i> Quando vale a pena observar?</h4>
@@ -1753,6 +1930,8 @@ function activateTab(tabId) {
   });
   localStorage.setItem('vista_tab', tabId);
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  setTimeout(checkAndResizeSimulator, 60);
 }
 
   function activateSubTab(subtabId) {
@@ -1767,6 +1946,10 @@ function activateTab(tabId) {
       b.classList.toggle('active', b.getAttribute('data-subtab') === subtabId);
     });
     if (tabContent.id) localStorage.setItem('vista_subtab_' + tabContent.id, subtabId);
+    
+    if (subtabId === 'bas-celeste') {
+    setTimeout(checkAndResizeSimulator, 60);
+  }
   }
 
   function restoreState() {
@@ -1804,6 +1987,417 @@ function activateTab(tabId) {
     });
   }
   document.addEventListener('DOMContentLoaded', init);
+  
+  // ===== LÓGICA DO SIMULADOR 3D DO CÉU =====
+const simState = {
+  latitude: -23.5,
+  elevation: 25,
+  azimuth: 45,
+  camera: {
+    rotX: 25 * (Math.PI / 180),
+    rotZ: -35 * (Math.PI / 180),
+    isDragging: false,
+    lastX: 0,
+    lastY: 0
+  }
+};
+
+let canvas, ctx;
+let latSlider, elevSlider, azimSlider;
+let latDisplay, elevDisplay, azimDisplay;
+let width = 0, height = 0, R_horizon = 0, H_dome = 0, CX = 0, CY = 0;
+
+function checkAndResizeSimulator() {
+  const container = document.getElementById('sim3d-container');
+  if (!container) return;
+  if (container.clientWidth > 0) {
+    if (!canvas) initSimulatorEngine();
+    else resizeCanvas();
+  }
+}
+
+function initSimulatorEngine() {
+  canvas = document.getElementById('celestialCanvas');
+  if (!canvas) return;
+  ctx = canvas.getContext('2d');
+
+  latSlider = document.getElementById('latSlider');
+  elevSlider = document.getElementById('elevSlider');
+  azimSlider = document.getElementById('azimSlider');
+
+  latDisplay = document.getElementById('latDisplay');
+  elevDisplay = document.getElementById('elevDisplay');
+  azimDisplay = document.getElementById('azimDisplay');
+
+  [latSlider, elevSlider, azimSlider].forEach(el => el.addEventListener('input', updateSimUI));
+
+  canvas.addEventListener('mousedown', onPointerDown);
+  window.addEventListener('mousemove', onPointerMove);
+  window.addEventListener('mouseup', onPointerUp);
+
+  canvas.addEventListener('touchstart', onPointerDown, { passive: true });
+  window.addEventListener('touchmove', onPointerMove, { passive: true });
+  window.addEventListener('touchend', onPointerUp);
+
+  window.addEventListener('resize', resizeCanvas);
+
+  resizeCanvas();
+  updateSimUI();
+}
+
+function getCardinalAbbr(azimuth) {
+  const az = (azimuth % 360 + 360) % 360;
+  if (az >= 337.5 || az < 22.5) return 'N';
+  if (az >= 22.5 && az < 67.5) return 'NE';
+  if (az >= 67.5 && az < 112.5) return 'L';
+  if (az >= 112.5 && az < 157.5) return 'SE';
+  if (az >= 157.5 && az < 202.5) return 'S';
+  if (az >= 202.5 && az < 247.5) return 'SO';
+  if (az >= 247.5 && az < 292.5) return 'O';
+  if (az >= 292.5 && az < 337.5) return 'NO';
+  return 'N';
+}
+
+function resizeCanvas() {
+  const container = document.getElementById('sim3d-container');
+  if (!container || !canvas) return;
+
+  width = container.clientWidth;
+  height = container.clientHeight;
+  if (width === 0 || height === 0) return;
+
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+  ctx.resetTransform();
+  ctx.scale(dpr, dpr);
+
+  CX = width / 2;
+  CY = height * 0.58;
+  R_horizon = Math.min(width, height) * 0.36;
+  H_dome = R_horizon * 0.92;
+
+  renderSim();
+}
+
+function project3D(azimuthDeg, elevationDeg, radiusFactor = 1.0) {
+  const azRad = azimuthDeg * (Math.PI / 180);
+  const elRad = elevationDeg * (Math.PI / 180);
+
+  const x = radiusFactor * Math.cos(elRad) * Math.sin(azRad);
+  const y = radiusFactor * Math.cos(elRad) * Math.cos(azRad);
+  const z = radiusFactor * Math.sin(elRad);
+
+  const cosZ = Math.cos(simState.camera.rotZ);
+  const sinZ = Math.sin(simState.camera.rotZ);
+  const rx = x * cosZ - y * sinZ;
+  const ry = x * sinZ + y * cosZ;
+
+  const cosX = Math.cos(simState.camera.rotX);
+  const sinX = Math.sin(simState.camera.rotX);
+
+  const px = CX + rx * R_horizon;
+  const py = CY - (ry * R_horizon * sinX) - (z * H_dome * cosX);
+
+  return { x: px, y: py, depth: ry };
+}
+
+function renderSim() {
+  if (!ctx) return;
+  ctx.clearRect(0, 0, width, height);
+
+  const poleElev = Math.abs(simState.latitude);
+  const poleAzim = simState.latitude >= 0 ? 0 : 180;
+  const poleName = simState.latitude >= 0 ? "Polo Norte Celeste" : "Polo Sul Celeste";
+
+  drawHorizonDisk();
+  drawDome();
+  drawZenithLine();
+
+  drawVector({
+    azim: simState.azimuth,
+    elev: simState.elevation,
+    label: `Linha de visada (${Math.round(simState.elevation)}°)`,
+    color: '#ea580c',
+    sectorColor: 'rgba(234, 88, 12, 0.22)'
+  });
+
+  drawVector({
+    azim: poleAzim,
+    elev: poleElev,
+    label: `${poleName} (${Math.round(poleElev)}°)`,
+    color: '#0284c7',
+    sectorColor: 'rgba(2, 132, 199, 0.25)'
+  });
+
+  drawObserver();
+}
+
+function drawHorizonDisk() {
+  ctx.beginPath();
+  for (let i = 0; i <= 90; i++) {
+    const az = (i / 90) * 360;
+    const pt = project3D(az, 0);
+    if (i === 0) ctx.moveTo(pt.x, pt.y);
+    else ctx.lineTo(pt.x, pt.y);
+  }
+  ctx.closePath();
+
+  const grad = ctx.createRadialGradient(CX, CY, 10, CX, CY, R_horizon * 1.1);
+  grad.addColorStop(0, '#fef08a');
+  grad.addColorStop(0.6, '#fde047');
+  grad.addColorStop(1, '#eab308');
+
+  ctx.fillStyle = grad;
+  ctx.globalAlpha = 0.85;
+  ctx.fill();
+
+  ctx.globalAlpha = 1.0;
+  ctx.strokeStyle = '#ca8a04';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  drawCardinalLabel('N', 0);
+  drawCardinalLabel('S', 180);
+  drawCardinalLabel('L', 90);
+  drawCardinalLabel('O', 270);
+
+  const hTag = project3D(125, 0, 1.06);
+  ctx.font = '600 12px Segoe UI, sans-serif';
+  ctx.fillStyle = '#0284c7';
+  ctx.textAlign = 'left';
+  ctx.fillText('Horizonte (0°)', hTag.x, hTag.y);
+}
+
+function drawCardinalLabel(text, azimuthDeg) {
+  const pt = project3D(azimuthDeg, 0, 1.12);
+  ctx.font = 'bold 14px Segoe UI, sans-serif';
+  ctx.fillStyle = '#1e293b';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, pt.x, pt.y);
+}
+
+function drawDome() {
+  ctx.strokeStyle = 'rgba(148, 163, 184, 0.35)';
+  ctx.lineWidth = 1;
+
+  [30, 60].forEach(alt => {
+    ctx.beginPath();
+    for (let az = 0; az <= 360; az += 5) {
+      const pt = project3D(az, alt);
+      if (az === 0) ctx.moveTo(pt.x, pt.y);
+      else ctx.lineTo(pt.x, pt.y);
+    }
+    ctx.setLineDash([3, 3]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  });
+
+  ctx.beginPath();
+  for (let az = 0; az <= 360; az += 5) {
+    const pt = project3D(az, 0);
+    if (az === 0) ctx.moveTo(pt.x, pt.y);
+    else ctx.lineTo(pt.x, pt.y);
+  }
+  ctx.fillStyle = 'rgba(224, 242, 254, 0.2)';
+  ctx.fill();
+}
+
+function drawZenithLine() {
+  const obs = project3D(0, 0, 0);
+  const zen = project3D(0, 90, 1.05);
+
+  ctx.beginPath();
+  ctx.moveTo(obs.x, obs.y);
+  ctx.lineTo(zen.x, zen.y);
+  ctx.strokeStyle = '#475569';
+  ctx.lineWidth = 2;
+  ctx.setLineDash([4, 4]);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  ctx.font = 'bold 12px Segoe UI, sans-serif';
+  ctx.fillStyle = '#0f172a';
+  ctx.textAlign = 'center';
+  ctx.fillText('Zênite (90°)', zen.x, zen.y - 10);
+}
+
+function drawObserver() {
+  const obs = project3D(0, 0, 0);
+
+  ctx.beginPath();
+  ctx.ellipse(obs.x, obs.y + 2, 8, 3.5, 0, 0, Math.PI * 2);
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+  ctx.fill();
+
+  ctx.strokeStyle = '#0f172a';
+  ctx.fillStyle = '#0f172a';
+  ctx.lineWidth = 2;
+
+  ctx.beginPath();
+  ctx.arc(obs.x, obs.y - 18, 3.5, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.moveTo(obs.x, obs.y - 14.5); ctx.lineTo(obs.x, obs.y - 5);
+  ctx.moveTo(obs.x, obs.y - 5); ctx.lineTo(obs.x - 3.5, obs.y);
+  ctx.moveTo(obs.x, obs.y - 5); ctx.lineTo(obs.x + 3.5, obs.y);
+  ctx.stroke();
+
+  ctx.font = '500 11px Segoe UI, sans-serif';
+  ctx.fillStyle = '#334155';
+  ctx.textAlign = 'center';
+  ctx.fillText('Observador', obs.x, obs.y + 15);
+}
+
+function drawVector(config) {
+  const obs = project3D(0, 0, 0);
+  const target = project3D(config.azim, config.elev);
+  const groundProj = project3D(config.azim, 0);
+
+  if (config.elev > 0) {
+    ctx.beginPath();
+    ctx.moveTo(obs.x, obs.y);
+    for (let e = 0; e <= config.elev; e += 2) {
+      const pt = project3D(config.azim, e);
+      ctx.lineTo(pt.x, pt.y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = config.sectorColor;
+    ctx.fill();
+  }
+
+  ctx.beginPath();
+  ctx.moveTo(target.x, target.y);
+  ctx.lineTo(groundProj.x, groundProj.y);
+  ctx.strokeStyle = config.color;
+  ctx.lineWidth = 1.2;
+  ctx.setLineDash([3, 3]);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(obs.x, obs.y);
+  ctx.lineTo(groundProj.x, groundProj.y);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  if (config.elev > 0) {
+    ctx.beginPath();
+    for (let e = 0; e <= config.elev; e += 2) {
+      const pt = project3D(config.azim, e, 0.48);
+      if (e === 0) ctx.moveTo(pt.x, pt.y);
+      else ctx.lineTo(pt.x, pt.y);
+    }
+    ctx.strokeStyle = config.color;
+    ctx.lineWidth = 1.8;
+    ctx.setLineDash([2, 2]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    const midArc = project3D(config.azim, config.elev / 2, 0.55);
+    ctx.font = 'bold 11px Segoe UI, sans-serif';
+    ctx.fillStyle = config.color;
+    ctx.textAlign = 'center';
+    ctx.fillText(`${Math.round(config.elev)}°`, midArc.x, midArc.y);
+  }
+
+  ctx.beginPath();
+  ctx.moveTo(obs.x, obs.y);
+  ctx.lineTo(target.x, target.y);
+  ctx.strokeStyle = config.color;
+  ctx.lineWidth = 3;
+  ctx.stroke();
+
+  drawArrowhead(obs, target, config.color);
+  drawBadge(target, config.label, config.color);
+}
+
+function drawArrowhead(from, to, color) {
+  const dx = to.x - from.x;
+  const dy = to.y - from.y;
+  const angle = Math.atan2(dy, dx);
+  const headLen = 11;
+
+  ctx.beginPath();
+  ctx.moveTo(to.x, to.y);
+  ctx.lineTo(to.x - headLen * Math.cos(angle - Math.PI / 7), to.y - headLen * Math.sin(angle - Math.PI / 7));
+  ctx.lineTo(to.x - headLen * Math.cos(angle + Math.PI / 7), to.y - headLen * Math.sin(angle + Math.PI / 7));
+  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+function drawBadge(pt, text, color) {
+  ctx.font = 'bold 11px Segoe UI, sans-serif';
+  const textMetrics = ctx.measureText(text);
+  const padX = 7;
+  const padY = 4;
+  const boxW = textMetrics.width + padX * 2;
+  const boxH = 20;
+  const boxX = pt.x + 8;
+  const boxY = pt.y - 10;
+
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 1.5;
+
+  ctx.beginPath();
+  ctx.roundRect(boxX, boxY, boxW, boxH, 5);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.fillStyle = color;
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, boxX + padX, boxY + boxH / 2);
+}
+
+function updateSimUI() {
+  simState.latitude = parseFloat(latSlider.value);
+  simState.elevation = parseFloat(elevSlider.value);
+  simState.azimuth = parseFloat(azimSlider.value);
+
+  const latSign = simState.latitude > 0 ? "+" : "";
+  const latHem = simState.latitude > 0 ? "N" : simState.latitude < 0 ? "S" : "Eq";
+  latDisplay.textContent = `${latSign}${simState.latitude}° (${latHem})`;
+
+  elevDisplay.textContent = `${Math.round(simState.elevation)}°`;
+
+  const cardDir = getCardinalAbbr(simState.azimuth);
+  azimDisplay.textContent = `${Math.round(simState.azimuth)}° (${cardDir})`;
+
+  renderSim();
+}
+
+function onPointerDown(e) {
+  simState.camera.isDragging = true;
+  simState.camera.lastX = e.clientX || (e.touches && e.touches[0].clientX);
+  simState.camera.lastY = e.clientY || (e.touches && e.touches[0].clientY);
+}
+
+function onPointerMove(e) {
+  if (!simState.camera.isDragging) return;
+  const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+  const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+  const dx = clientX - simState.camera.lastX;
+  const dy = clientY - simState.camera.lastY;
+
+  simState.camera.rotZ += dx * 0.008;
+  simState.camera.rotX += dy * 0.006;
+  simState.camera.rotX = Math.max(0.05, Math.min(Math.PI / 2.15, simState.camera.rotX));
+
+  simState.camera.lastX = clientX;
+  simState.camera.lastY = clientY;
+
+  renderSim();
+}
+
+function onPointerUp() {
+  simState.camera.isDragging = false;
+}
+
 </script>
 
 </body>
