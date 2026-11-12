@@ -291,14 +291,13 @@
     .container {
     position: relative;
     width: 100%;
-    max-width: 600px; /* Diminua este valor para deixar menor */
+    max-width: 600px;
     aspect-ratio: 4 / 3;
     margin: 0 auto;
     }
     
     .celestial-figure {
       background-color: #030611;
-      /* Criação das estrelas usando gradientes radiais */
       background-image: 
           radial-gradient(1px 1px at 10% 20%, white, transparent),
           radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.8), transparent),
@@ -558,7 +557,7 @@
       line-height: 1.55;
     }
     
-        /* ===== ESTILOS DO SIMULADOR CELESTE 3D ===== */
+    /* ===== ESTILOS DO SIMULADOR CELESTE 3D ===== */
     .sim-card {
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(8px);
@@ -775,11 +774,11 @@
               </figure>
               <figure>
                 <img src="img/campo/m42-s50.jpg" alt="Nebulosa de Órion com Seestar S50">
-                <figcaption><b>M42</b> — verificar crédito do arquivo.</figcaption>
+                <figcaption><b>M42</b>, verificar crédito do arquivo.</figcaption>
               </figure>
               <figure>
                 <img src="img/campo/m42-s50.jpg" alt="Nebulosa de Órion com Seestar S50">
-                <figcaption><b>M42</b> — verificar crédito do arquivo.</figcaption>
+                <figcaption><b>M42</b>, verificar crédito do arquivo.</figcaption>
               </figure>
             </div>
 
@@ -854,7 +853,7 @@
           <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;">Os <span class="cat">telescópios</span>, para além de <b>aumentar</b> o <b>tamanho</b> aparente daquilo para qual o apontamos, também proporcionam maior <b>poder de resolução</b> (facilitando a distinção de detalhes finos) e permitem <b>exposições</b> mais curtas ou longas do que poderíamos ver sem outro auxílio. A <b>luz</b> (e demais ondas eletromagnéticas) após ser captada é <b>concentrada</b>, convergida em uma região menor e mais próxima ao nosso <b>olho</b> (ou a outro detector). Essa convergência se dá por um <b>mecanismo próprio</b> de cada <span class="cat">telescópio</span> e depende: <u>do que se quer ver</u>, por <u>quanto tempo</u>, com <u>qual resolução</u>, etc. No caso dos <span class='cat'>telescópios ópticos</span>, este mecanismo são as <b>lentes</b> e <b>espelhos</b>!
           <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;">Um <b>parâmetro</b> muito importante de qualquer <span class="cat">telescópio</span> é sua <b>abertura</b>: o <u>diâmetro</u> de sua <u>lente</u> ou <u>espelho principal</u>. Esse <b>tamanho</b> está diretamente relacionado à capacidade limite do aparelho de detectar objetos mais fracos; de modo geral, <b>quanto maior</b> for, <b>mais detalhes</b> pode-se captar. A <b>qualidade da resolução</b>, no entanto, depende de outros fatores como as <u>condições ambientes</u> e até mesmo dos <u>comprimentos de onda</u> observados.</p>
           <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;">O <span class="cat">telescópio Seestar S50</span> que utilizamos no projeto tem <b>50 mm</b> de abertura, com <b>três elementos de lente</b> com o objetivo para <b>corrigir</b> as <b>aberrações</b>. Para saber mais sobre especificações do SeeStar S50, e sobre as condições ambientes propícias para uma boa observação, acesse a aba “Como observar?”</p>
-          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;">Os <b>mapas</b> e <b>catálogos</b> que utilizamos, desde asteroides a galáxias distantes, são em grande parte resultado do varrimento de vastas áreas do céu por <b>grandes telescópios</b>. Além dos espaciais, temos <b>observatórios terrestres</b> instalados em regiões de <u>maior altitude</u> e <u>baixa umidade relativa</u> do ar; nessas a atmosfera apresenta maior <b>transparência</b> e <b>estabilidade</b> (o que evita com que as estrelas pareçam sibilar). Regiões montanhosas  tal como a  de Cerro Pachón, em que o Observatório Vera C. Rubin está situado. Um dos objetivos do <span class="cat">Projeto Nanotelescópios</span> é justamente acompanhar as fontes que têm sido descobertas por ele.</p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;">Os <b>mapas</b> e <b>catálogos</b> que utilizamos, desde asteroides a galáxias distantes, são em grande parte resultado do varrimento de vastas áreas do céu por <b>grandes telescópios</b>. Além dos espaciais, temos <b>observatórios terrestres</b> instalados em regiões de <u>maior altitude</u> e <u>baixa umidade relativa</u> do ar; nessas a atmosfera apresenta maior <b>transparência</b> e <b>estabilidade</b> (o que evita com que as estrelas pareçam sibilhar). Regiões montanhosas  tal como a  de Cerro Pachón, em que o Observatório Vera C. Rubin está situado. Um dos objetivos do <span class="cat">Projeto Nanotelescópios</span> é justamente acompanhar as fontes que têm sido descobertas por ele.</p>
         </div>
             <!-- Referência do Livro -->
         <div class="method-step">
@@ -1027,19 +1026,14 @@
            <div class="container">
     <svg viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <!-- Gradiente do Horizonte -->
             <radialGradient id="horizonGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
                 <stop offset="0%" stop-color="#ffe082" stop-opacity="1" />
                 <stop offset="100%" stop-color="#ffb300" stop-opacity="1" />
             </radialGradient>
-
-            <!-- Gradiente do Domo Celeste -->
             <linearGradient id="domeGrad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#cfd8dc" stop-opacity="0.4" />
                 <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05" />
             </linearGradient>
-
-            <!-- Marcadores de seta -->
             <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                 <path d="M 0 0 L 10 5 L 0 10 z" fill="#0288d1" />
             </marker>
@@ -1047,111 +1041,66 @@
                 <path d="M 0 0 L 10 5 L 0 10 z" fill="#f57c00" />
             </marker>
         </defs>
-
-        <!-- Domo Celeste (Semiesfera) -->
         <path d="M 100 450 A 300 300 0 0 1 700 450 Z" fill="url(#domeGrad)" stroke="#90a4ae" stroke-width="2.5" />
-
-        <!-- Plano do Horizonte (Base) -->
         <ellipse cx="400" cy="450" rx="300" ry="80" fill="url(#horizonGrad)" stroke="#f57c00" stroke-width="3" />
-
-        <!-- Linhas guias no horizonte -->
         <g stroke="#d84315" stroke-width="1.5" stroke-opacity="0.2">
             <line x1="100" y1="450" x2="700" y2="450" />
             <line x1="400" y1="370" x2="400" y2="530" />
             <line x1="200" y1="400" x2="600" y2="500" />
             <line x1="200" y1="500" x2="600" y2="400" />
         </g>
-
-        <!-- Pontos Cardeais -->
         <text x="390" y="555" class="text-label">S</text>
         <text x="690" y="470" class="text-label">L</text>
         <text x="100" y="435" class="text-label">O</text>
         <text x="520" y="400" class="text-label">N</text>
-
-        <!-- Polo Norte Celeste -->
         <line x1="400" y1="450" x2="550" y2="180" stroke="#78909c" stroke-width="2" stroke-dasharray="4 4" />
         <text x="560" y="175" class="text-label" fill="#546e7a" font-size="16">Polo Norte</text>
         <text x="560" y="195" class="text-label" fill="#546e7a" font-size="16">Celeste</text>
-
-        <!-- Linha do Zênite -->
         <line x1="400" y1="450" x2="400" y2="100" stroke="#546e7a" stroke-width="2.5" stroke-dasharray="8 6" />
         <text x="400" y="80" text-anchor="middle" class="text-label" fill="#2c3e50">Zênite (90°)</text>
-
-        <!-- Observador (Silhueta) -->
         <g transform="translate(385, 420)">
             <circle cx="15" cy="10" r="6" fill="#1e1e1e" />
             <path d="M 10 18 L 20 18 L 22 40 L 18 40 L 15 30 L 12 40 L 8 40 Z" fill="#1e1e1e" />
             <line x1="18" y1="20" x2="30" y2="10" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round" />
         </g>
         <text x="400" y="485" text-anchor="middle" class="text-label" fill="#1e1e1e" font-size="15">Observador</text>
-
-        <!-- ========================================== -->
-        <!-- ARCO E LINHA DE 60° (AZUL) - CORRIGIDO    -->
-        <!-- ========================================== -->
-        <!-- Linha de Visada 60° -->
         <line x1="400" y1="450" x2="550" y2="190.2" stroke="#0288d1" stroke-width="3.5" marker-end="url(#arrowBlue)" />
-        
-        <!-- Preenchimento e Arco de Altitude (0° a 60°) -->
         <path d="M 400 450 L 500 450 A 100 100 0 0 0 450 363.4 Z" fill="rgba(2, 136, 209, 0.12)" />
         <path d="M 500 450 A 100 100 0 0 0 450 363.4" fill="none" stroke="#0288d1" stroke-width="2.5" stroke-dasharray="4 3" />
-        
-        <!-- Rótulo 60° e Texto -->
         <text x="480" y="410" class="text-angle" fill="#0288d1">60°</text>
         <text x="495" y="295" fill="#0288d1" font-size="14" font-weight="bold" transform="rotate(-60 495 295)">Linha de visada (60°)</text>
-
-        <!-- ========================================== -->
-        <!-- ARCO E LINHA DE 25° (LARANJA) - CORRIGIDO  -->
-        <!-- ========================================== -->
-        <!-- Linha de Visada 25° -->
         <line x1="400" y1="450" x2="671.9" y2="323.2" stroke="#f57c00" stroke-width="3.5" marker-end="url(#arrowOrange)" />
-        
-        <!-- Preenchimento e Arco de Altitude (0° a 25°) -->
         <path d="M 400 450 L 560 450 A 160 160 0 0 0 545 382.4 Z" fill="rgba(245, 124, 0, 0.12)" />
         <path d="M 560 450 A 160 160 0 0 0 545 382.4" fill="none" stroke="#f57c00" stroke-width="2.5" stroke-dasharray="4 3" />
-        
-        <!-- Rótulo 25° e Texto -->
         <text x="585" y="425" class="text-angle" fill="#f57c00">25°</text>
         <text x="560" y="375" fill="#f57c00" font-size="14" font-weight="bold" transform="rotate(-25 560 375)">Linha de visada (25°)</text>
-
-        <!-- Linha do Horizonte (Eixo 0°) -->
         <line x1="100" y1="450" x2="700" y2="450" stroke="#bdbdbd" stroke-width="1.5" />
         <text x="640" y="440" class="text-label" fill="#546e7a" font-size="17">Horizonte (0°)</text>
-
-        <!-- Legenda Inferior -->
         <text x="400" y="590" class="text-caption">Imagem a ser refeita.</text>
     </svg>
 </div>
            <div class="container">
     <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <!-- Fundo de Estrelas Suaves -->
             <radialGradient id="spaceGlow" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stop-color="#121e3d" stop-opacity="0.6" />
                 <stop offset="100%" stop-color="#040711" stop-opacity="1" />
             </radialGradient>
-
-            <!-- Brilho do Domo Celeste -->
             <radialGradient id="sphereGrad" cx="50%" cy="50%" r="50%">
                 <stop offset="70%" stop-color="#152852" stop-opacity="0.35" />
                 <stop offset="95%" stop-color="#2a5298" stop-opacity="0.5" />
                 <stop offset="100%" stop-color="#64b5f6" stop-opacity="0.8" />
             </radialGradient>
-
-            <!-- Gradiente da Terra -->
             <radialGradient id="earthGrad" cx="40%" cy="40%" r="60%">
                 <stop offset="0%" stop-color="#64b5f6" />
                 <stop offset="40%" stop-color="#1e88e5" />
                 <stop offset="80%" stop-color="#0d47a1" />
                 <stop offset="100%" stop-color="#031936" />
             </radialGradient>
-
-            <!-- Seta Vermelha para os Arcos de AR e Dec -->
             <marker id="arrowRed" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                 <path d="M 0 1 L 10 5 L 0 9 Z" fill="#ff3344" />
             </marker>
         </defs>
-
-        <!-- Campo de Estrelas Estáticas no Fundo -->
         <rect width="800" height="600" fill="url(#spaceGlow)" />
         <g fill="#ffffff" opacity="0.5">
             <circle cx="120" cy="80" r="1" />
@@ -1163,59 +1112,29 @@
             <circle cx="600" cy="70" r="1.8" opacity="0.9" />
             <circle cx="250" cy="530" r="1.2" />
         </g>
-
-        <!-- 1. Esfera Celeste (Fundo e Brilho Outer) -->
         <circle cx="400" cy="300" r="210" fill="url(#sphereGrad)" stroke="#4fc3f7" stroke-width="1.5" stroke-opacity="0.8" />
-
-        <!-- 2. Equador Celestial (Parte Traseira - Pontilhada) -->
         <path d="M 190 300 A 210 57.88 0 0 1 610 300" fill="none" stroke="#81d4fa" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.4" />
-
-        <!-- 3. Eixo dos Pólos Celestes (Linha Vertical) -->
         <line x1="400" y1="75" x2="400" y2="525" stroke="#b2ebf2" stroke-width="2" opacity="0.9" />
-
-        <!-- 4. Globo da Terra no Centro -->
         <g transform="translate(400, 300)">
-            <!-- Atmosfera e Corpo da Terra -->
             <circle cx="0" cy="0" r="22" fill="url(#earthGrad)" stroke="#90caf9" stroke-width="0.8" />
-            <!-- Continentes Esqueletados (Simulação do Globo) -->
             <path d="M -12 -5 C -8 -15, 5 -18, 12 -10 C 15 -2, 8 10, 2 15 C -8 18, -18 8, -12 -5 Z" fill="#4caf50" opacity="0.75" />
             <path d="M 2 2 C 8 -2, 14 5, 10 12 C 5 15, -2 10, 2 2 Z" fill="#81c784" opacity="0.7" />
         </g>
-
-        <!-- 5. Equador Celestial (Parte Frontal - Sólida) -->
         <path d="M 190 300 A 210 57.88 0 0 0 610 300" fill="none" stroke="#81d4fa" stroke-width="1.8" opacity="0.85" />
         <text x="270" y="275" class="text-cyan" font-size="18">Equador celestial</text>
-
-        <!-- 6. Meridiano do Objeto (Arco de Polo a Polo passando pelo Objeto) -->
         <path d="M 400 90 L 412.9 102.5 L 425.8 108.3 L 438.4 115.6 L 450.8 124.3 L 462.8 134.4 L 474.3 145.6 L 485.2 158.1 L 495.5 171.7 L 505.0 186.2 L 513.8 201.6 L 521.6 217.7 L 528.6 234.5 L 534.6 251.8 L 539.5 269.4 L 543.4 287.3 L 546.2 305.3 L 547.9 323.2 L 548.5 340.9 L 547.9 358.4 L 546.2 375.4 L 543.4 391.8 L 539.5 407.5 L 534.6 422.4 L 528.6 436.4 L 521.6 449.3 L 513.8 461.1 L 505.0 471.7 L 495.5 481.0 L 485.2 488.8 L 474.3 495.3 L 462.8 500.3 L 450.8 503.7 L 438.4 505.6 L 425.8 505.9 L 412.9 504.7 L 400 501.9" fill="none" stroke="#81d4fa" stroke-width="1.2" opacity="0.65" />
-
-        <!-- 7. Linhas de Projeção a partir do Centro da Terra -->
-        <!-- Linha até o Ponto Vernal -->
         <line x1="400" y1="300" x2="227.98" y2="333.2" stroke="#ffffff" stroke-width="1.5" opacity="0.75" />
-        <!-- Linha até a projeção do Objeto no Equador -->
         <line x1="400" y1="300" x2="548.49" y2="340.93" stroke="#ff3344" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.7" />
-
-        <!-- 8. ARCO DA ASCENSÃO RETA (AR) - Vermelho ao longo do Equador -->
         <path d="M 227.98 333.2 A 210 57.88 0 0 0 548.49 340.93" fill="none" stroke="#ff3344" stroke-width="3" marker-end="url(#arrowRed)" />
         <text x="415" y="380" class="text-red">AR</text>
-
-        <!-- 9. ARCO DA DECLINAÇÃO (Dec) - Vermelho ao longo do Meridiano -->
         <path d="M 548.49 340.93 L 548.4 333.9 L 548.1 326.8 L 547.7 319.6 L 547.1 312.4 L 546.2 305.3 L 545.3 298.1 L 544.1 290.9 L 542.7 283.7 L 541.2 276.6 L 539.5 269.4 L 537.7 262.3 L 535.7 255.3 L 533.5 248.3 L 531.1 241.4 L 528.6 234.5 L 525.9 227.7 L 523.1 221.1 L 520.1 214.5 L 517.0 208.0 L 513.75 201.6" fill="none" stroke="#ff3344" stroke-width="3" marker-end="url(#arrowRed)" />
         <text x="565" y="270" class="text-red">Dec</text>
-
-        <!-- 10. PONTOS DE DESTAQUE E RÓTULOS -->
-        <!-- Ponto Vernal -->
         <circle cx="227.98" cy="333.2" r="5" fill="#ffffff" stroke="#000000" stroke-width="1" />
         <text x="180" y="365" class="text-white">Ponto vernal</text>
-
-        <!-- Objeto Celestial -->
         <circle cx="513.75" cy="201.6" r="6" fill="#ffffff" stroke="#ff3344" stroke-width="1.5" />
         <text x="480" y="175" class="text-white">Objeto</text>
-
-        <!-- Pólos Celestes -->
         <text x="400" y="52" text-anchor="middle" class="text-cyan">Polo celestial norte</text>
         <text x="400" y="565" text-anchor="middle" class="text-cyan">Polo celestial sul</text>
-        !-- Legenda Inferior -->
         <text x="400" y="590" class="text-caption">Imagem a ser refeita.</text>
     </svg>
     
@@ -1281,30 +1200,30 @@
           <div class="method-step">
             <h4><i class="fas fa-camera"></i> O que registramos com o S50?</h4>
             <p style="font-size:16px; line-height:1.6; margin-bottom:14px;">O <span class="cat">Seestar S50</span> combina um <b>telescópio compacto</b> de 50 mm com uma câmera e <b>recursos automáticos</b> de observação e composição de imagens. <b>Exposições sucessivas</b> podem ser <b>combinadas</b> para revelar objetos que nossos olhos não percebem <u>diretamente</u>. O resultado depende do <u>céu</u>, do <u>tempo de integração</u> e do <u>processamento</u>: uma imagem obtida com esse equipamento não deve ser confundida com a aparência visual a olho nu.</p>
-            <p>Fotografia S50 indicada — Lua
+            <p>Fotografia S50 indicada, Lua
 Exemplo de imagem lunar feita com Seestar S50; adequada para ilustrar crateras, mares e a importância da iluminação.
 Abrir fotografia original e conferir condições de uso: https://commons.wikimedia.org/wiki/File:2025-11-03-181511-Lunar.jpg
-Crédito: どがさん — CC0 1.0</p>
-            <p>Fotografia S50 indicada — Galáxia de Andrômeda (M31)
+Crédito: どがさん, CC0 1.0</p>
+            <p>Fotografia S50 indicada, Galáxia de Andrômeda (M31)
 Exemplo de uma galáxia fotografada com o mesmo modelo de nanotelescópio; permite introduzir a ideia de luz acumulada e de objetos fora da Via Láctea.
 Abrir fotografia original e conferir condições de uso: https://commons.wikimedia.org/wiki/File:Stacked_13_M_31_10.0s_IRCUT_20251129-195600.jpg
-Crédito: どがさん — CC0 1.0</p>
-            <p>Fotografia S50 indicada — Nebulosa de Órion (M42)
+Crédito: どがさん, CC0 1.0</p>
+            <p>Fotografia S50 indicada, Nebulosa de Órion (M42)
 Escolher nesta categoria uma fotografia identificada como produzida com S50; serve para explicar regiões onde estrelas se formam.
 Abrir fotografia original e conferir condições de uso: https://commons.wikimedia.org/wiki/Category:Taken_with_ZWO_Seestar_S50
 Crédito: Fotógrafo e licença: confirmar na página específica do arquivo</p>
             <div class="figure-trio">
               <figure>
                 <img src="img/campo/lua-s50.jpg" alt="Lua fotografada com Seestar S50">
-                <figcaption><b>Lua</b> — CC0, ビガさん.</figcaption>
+                <figcaption><b>Lua</b>, CC0, ビガさん.</figcaption>
               </figure>
               <figure>
                 <img src="img/campo/m31-s50.jpg" alt="Galáxia de Andrômeda com Seestar S50">
-                <figcaption><b>M31</b> — CC0, ビガさん.</figcaption>
+                <figcaption><b>M31</b>, CC0, ビガさん.</figcaption>
               </figure>
               <figure>
                 <img src="img/campo/m42-s50.jpg" alt="Nebulosa de Órion com Seestar S50">
-                <figcaption><b>M42</b> — verificar crédito do arquivo.</figcaption>
+                <figcaption><b>M42</b>, verificar crédito do arquivo.</figcaption>
               </figure>
             </div>
           </div>
@@ -1431,26 +1350,52 @@ Crédito: Fotógrafo e licença: confirmar na página específica do arquivo</p>
             <p  style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;">Propomos, então, <b>observar aglomerados abertos</b> com <b>diferentes propriedades</b> (idade, distância, número de membros etc.) com os nanotelescópios para medir as <b>posições</b> das fontes no campo <b>ao longo do tempo</b> e calcular movimentos próprios. Os movimentos próprios resultantes serão usados para discutir a <b>pertinência</b> ao aglomerado alvo do nosso projeto. Alternativamente, os dados coletados com os telescópios S50 também podem ser combinados com <b>levantamentos astrométricos</b> baseados em solo (<i>ground-based</i>) e com o catálogo Gaia para fornecer movimentos próprios <b>mais precisos</b> com uma base temporal estendida. Essa última abordagem pode nos permitir detectar <b>desvios nos movimentos estelares</b>, por exemplo, devido a binárias (desconhecidas) não detectadas. Além dos movimentos próprios estelares dos membros do aglomerado, podemos usar as mesmas imagens para <span style="color:orangered; font-weight:700;">procurar fontes de movimento rápido no campo</span> (por exemplo, corpos menores do Sistema Solar) e <span style="color:orangered; font-weight:700;">investigar</span> a <span style="color:orangered; font-weight:700;">variabilidade</span> das fontes no campo (como discutido no tópico anterior, <u><i>Estrelas Variáveis</i></u>).</p>
             <span style="color:red; font-weight:700;"><b>COLOCAR IMAGENS</b></span>
         </div>
+
+        <!-- ==== SEÇÃO REESCRITA: HISTÓRIA E FÍSICA DAS ESTRELAS VARIÁVEIS ==== -->
         <div class="method-step">
-          <h4><i class="fas fa-eye-slash"></i>Estrelas...</h4>
-          <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Estrelas parecem pontos fixos, mas algumas mudam de brilho em escalas de tempo que vão de minutos a anos. O caso mais antigo registrado é o de Mira, na constelação da Baleia: em 1595, David Fabricius acompanhou seu desaparecimento e retorno, e o ciclo de cerca de onze meses foi estabelecido no século seguinte. Na época, atribuiu-se a variação a manchas escuras numa estrela em rotação; hoje se sabe que Mira pulsa: sua superfície se expande e se contrai, e o brilho acompanha esse movimento. Em 1784, John Goodricke identificou variações regulares em δ Cephei, com período de pouco mais de cinco dias. Essas duas estrelas inauguraram duas famílias de variáveis: as de longo período, com ciclos irregulares entre 100 e 700 dias, e as Cefeidas clássicas, cujo brilho varia de forma mais discreta e previsível.
+          <h4><i class="fas fa-eye-slash"></i>História e física das variáveis</h4>
 
-A importância das Cefeidas não está apenas no fenômeno em si, mas no que ele permite medir. Henrietta Swan Leavitt, trabalhando como calculadora no Observatório de Harvard, comparou fotografias de milhares de estrelas e percebeu que, nas Cefeidas da Pequena Nuvem de Magalhães, quanto maior o período, maior a luminosidade. Como todas estão aproximadamente à mesma distância, as diferenças de brilho aparente refletem diferenças intrínsecas. Isso deu origem à relação período-luminosidade: basta cronometrar o ciclo de uma Cefeida para estimar sua luminosidade e, comparando com o brilho observado, obter sua distância. A calibração exigiu esforço, mas o resultado transformou as Cefeidas em marcos cósmicos, visíveis a distâncias intergalácticas.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            <b>Estrelas parecem pontos fixos</b>, mas algumas <b>mudam de brilho</b> em escalas de tempo que vão de minutos a anos. O caso mais antigo registrado é o de <b>Mira</b>, na constelação da Baleia: em 1595, David Fabricius acompanhou seu desaparecimento e retorno, e o ciclo de cerca de onze meses foi estabelecido no século seguinte. Na época, atribuiu-se a variação a manchas escuras numa estrela em rotação; hoje se sabe que <b>Mira pulsa</b>: sua superfície se expande e se contrai, e o brilho acompanha esse movimento. Em 1784, John Goodricke identificou variações regulares em <b>δ Cephei</b>, com período de pouco mais de cinco dias. Essas duas estrelas inauguraram duas famílias de variáveis: as de <b>longo período</b>, com ciclos irregulares entre 100 e 700 dias, e as <b>Cefeidas clássicas</b>, cujo brilho varia de forma mais discreta e previsível.
+          </p>
 
-Entender por que essas estrelas pulsam levou algumas décadas. Harlow Shapley argumentou, em 1914, que a hipótese de binárias era inviável: o tamanho necessário da estrela excederia a órbita do sistema. Ele propôs que estrelas individuais vibravam radialmente, como se respirassem. Eddington deu base teórica à ideia, e as observações de δ Cephei confirmaram: brilho, temperatura, raio e velocidade superficial variam em conjunto. A mudança de temperatura domina a variação de luminosidade; a variação de tamanho contribui menos. O brilho máximo ocorre quando a superfície se expande mais rapidamente, depois do raio mínimo: um atraso de fase que se explica pelo mecanismo que sustenta a oscilação.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            A importância das Cefeidas não está apenas no fenômeno em si, mas no que ele permite <b>medir</b>. <b>Henrietta Swan Leavitt</b>, trabalhando como calculadora no Observatório de Harvard, comparou fotografias de milhares de estrelas e percebeu que, nas Cefeidas da Pequena Nuvem de Magalhães, <b>quanto maior o período, maior a luminosidade</b>. Como todas estão aproximadamente à mesma distância, as diferenças de brilho aparente refletem diferenças intrínsecas. Isso deu origem à <span class="cat">relação período-luminosidade</span>: basta cronometrar o ciclo de uma Cefeida para estimar sua luminosidade e, comparando com o brilho observado, obter sua <b>distância</b>. A calibração exigiu esforço, mas o resultado transformou as Cefeidas em <b>marcos cósmicos</b>, visíveis a distâncias intergalácticas.
+          </p>
 
-No diagrama H-R, a maioria das estrelas pulsantes ocupa uma faixa estreita e quase vertical à direita da sequência principal, chamada faixa de instabilidade. Estrelas entram e saem dessa faixa conforme evoluem, e por isso a pulsação é um fenômeno transitório: de cada cem mil estrelas, apenas uma pulsa no momento em que a observamos. As classes se distinguem por período, população e tipo de oscilação. As Cefeidas clássicas são supergigantes de população I, com períodos de 1 a 50 dias. As W Virginis são Cefeidas pobres em metais, cerca de quatro vezes menos luminosas para o mesmo período. As RR Lyrae são estrelas de ramo horizontal em aglomerados globulares, com períodos de horas e luminosidade semelhante entre si, outro recurso para medir distâncias. As δ Scuti são estrelas evoluídas de tipo F, próximas à sequência principal, com oscilações radiais e não radiais. As β Cephei são estrelas B quentes, com pulsações de poucas horas. As ZZ Ceti são anãs brancas pulsantes, com períodos de centenas a milhares de segundos. As variáveis de longo período, como Mira, são supergigantes vermelhas com envelopes convectivos extensos, e as roAp são estrelas Ap com campos magnéticos fortes e amplitudes ínfimas.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            Entender <b>por que</b> essas estrelas pulsam levou algumas décadas. <b>Harlow Shapley</b> argumentou, em 1914, que a hipótese de binárias era inviável: o tamanho necessário da estrela excederia a órbita do sistema. Ele propôs que estrelas individuais <b>vibravam radialmente</b>, como se respirassem. <b>Eddington</b> deu base teórica à ideia, e as observações de δ Cephei confirmaram: brilho, temperatura, raio e velocidade superficial variam em conjunto. A <b>mudança de temperatura</b> domina a variação de luminosidade; a variação de tamanho contribui menos. O brilho máximo ocorre quando a superfície se expande mais rapidamente, <u>depois do raio mínimo</u>: um atraso de fase que se explica pelo mecanismo que sustenta a oscilação.
+          </p>
 
-A física da pulsação começa por uma relação simples: o período é inversamente proporcional à raiz quadrada da densidade média. Isso explica por que supergigantes pulsam em dezenas de dias e anãs brancas em segundos. O mecanismo que sustenta as oscilações foi identificado nas zonas de ionização parcial. Em camadas onde o hidrogênio ou o hélio estão parcialmente ionizados, a compressão não eleva a temperatura tanto quanto elevaria num gás neutro: parte da energia vai para ionizar mais átomos. Com temperatura menor, a opacidade aumenta e a camada absorve calor. Na expansão, os íons se recombinam, liberam energia e a opacidade cai. Esse ciclo funciona como uma válvula térmica, e recebe o nome de mecanismo κ, reforçado pelo mecanismo γ. A zona de ionização do He II, a cerca de 40.000 K, é a principal responsável por sustentar as pulsações dentro da faixa de instabilidade. A zona de ionização do hidrogênio, mais externa, desempenha papel mais sutil: ela se move em relação à superfície e produz o atraso de fase observado. Nos casos fora da faixa, como as β Cephei, o ferro assume o papel de agente da opacidade, graças ao grande número de linhas de absorção próximas de 100.000 K.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            No <b>diagrama H-R</b>, a maioria das estrelas pulsantes ocupa uma faixa estreita e quase vertical à direita da sequência principal, chamada <span class="cat">faixa de instabilidade</span>. Estrelas entram e saem dessa faixa conforme evoluem, e por isso a pulsação é um <b>fenômeno transitório</b>: de cada cem mil estrelas, apenas uma pulsa no momento em que a observamos. As classes se distinguem por período, população e tipo de oscilação: as <b>Cefeidas clássicas</b> são supergigantes de população I, com períodos de 1 a 50 dias; as <b>W Virginis</b> são Cefeidas pobres em metais, cerca de quatro vezes menos luminosas para o mesmo período; as <b>RR Lyrae</b> são estrelas de ramo horizontal em aglomerados globulares, com períodos de horas e luminosidade semelhante entre si, outro recurso para medir distâncias; as <b>δ Scuti</b> são estrelas evoluídas de tipo F, próximas à sequência principal, com oscilações radiais e não radiais; as <b>β Cephei</b> são estrelas B quentes, com pulsações de poucas horas; as <b>ZZ Ceti</b> são anãs brancas pulsantes, com períodos de centenas a milhares de segundos; as <b>variáveis de longo período</b>, como Mira, são supergigantes vermelhas com envelopes convectivos extensos; e as <b>roAp</b> são estrelas Ap com campos magnéticos fortes e amplitudes ínfimas.
+          </p>
 
-Modelar esse comportamento exige equações que abandonam o equilíbrio hidrostático. Em cálculos não lineares, as camadas de massa são deslocadas e soltas, e a amplitude cresce ou decai até um ciclo limite. Esses modelos reproduzem curvas de luz assimétricas, mas consomem tempo computacional e podem apresentar comportamento caótico. Uma alternativa é linearizar as equações, supondo oscilações de pequena amplitude. O custo é que o resultado é forçado a ser senoidal e a amplitude final não pode ser determinada. Um modelo didático de uma zona (uma casca fina em torno de uma massa central) mostra que, para γ maior que 4/3, a estrela oscila harmonicamente; para γ menor que 4/3, ela colapsa. Essa condição reaparece no estudo de anãs brancas.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            A física da pulsação começa por uma relação simples: o <b>período é inversamente proporcional à raiz quadrada da densidade média</b>. Isso explica por que supergigantes pulsam em dezenas de dias e anãs brancas em segundos. O mecanismo que sustenta as oscilações foi identificado nas <span class="cat">zonas de ionização parcial</span>. Em camadas onde o hidrogênio ou o hélio estão parcialmente ionizados, a compressão não eleva a temperatura tanto quanto elevaria num gás neutro: parte da energia vai para ionizar mais átomos. Com temperatura menor, a <b>opacidade aumenta</b> e a camada absorve calor. Na expansão, os íons se recombinam, liberam energia e a opacidade cai. Esse ciclo funciona como uma <b>válvula térmica</b> e recebe o nome de <span class="cat">mecanismo κ</span>, reforçado pelo <b>mecanismo γ</b>. A zona de ionização do He II, a cerca de 40.000 K, é a principal responsável por sustentar as pulsações dentro da faixa de instabilidade. A zona de ionização do hidrogênio, mais externa, desempenha papel mais sutil: ela se move em relação à superfície e produz o atraso de fase observado. Nos casos fora da faixa, como as β Cephei, o <b>ferro</b> assume o papel de agente da opacidade, graças ao grande número de linhas de absorção próximas de 100.000 K.
+          </p>
 
-Nem toda pulsação é radial. Em modos não radiais, algumas regiões da superfície se expandem enquanto outras se contraem. Esses padrões são descritos por harmônicos esféricos e se dividem em três famílias. Os modos p são ondas de pressão, com movimento concentrado nas camadas superficiais. Os modos g são ondas de gravidade interna, ligadas à flutuabilidade do material, e atingem o interior profundo. O modo f é uma onda de superfície, sem análogo radial. A frequência de buoyancy, ou de Brunt-Väisälä, define onde os modos g podem existir e é nula no centro e nas bordas das zonas convectivas.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            <b>Modelar</b> esse comportamento exige equações que abandonam o equilíbrio hidrostático. Em cálculos <b>não lineares</b>, as camadas de massa são deslocadas e soltas, e a amplitude cresce ou decai até um <b>ciclo limite</b>. Esses modelos reproduzem curvas de luz assimétricas, mas consomem tempo computacional e podem apresentar comportamento caótico. Uma alternativa é <b>linearizar</b> as equações, supondo oscilações de pequena amplitude. O custo é que o resultado é forçado a ser senoidal e a amplitude final não pode ser determinada. Um modelo didático de uma zona (uma casca fina em torno de uma massa central) mostra que, para <b>γ maior que 4/3</b>, a estrela oscila harmonicamente; para <b>γ menor que 4/3</b>, ela colapsa. Essa condição reaparece no estudo de anãs brancas.
+          </p>
 
-Essas ideias se aplicam ao Sol e a outras estrelas. A heliossismologia estuda as oscilações solares, descobertas em 1962. O Sol vibra com milhões de modos superpostos, com velocidades superficiais de poucos centímetros por segundo e variações de luminosidade da ordem de um milionésimo. Os modos p de cinco minutos, confinados na zona convectiva, revelam a profundidade de sua base, a rotação diferencial e a abundância de hélio nas camadas externas. Os modos g, presos abaixo da zona convectiva, chegam à superfície com amplitude muito reduzida e ainda não foram identificados com certeza. A asterossismologia estende essas técnicas a outras estrelas, incluindo as δ Scuti e as roAp, cujas oscilações permitem investigar composição, rotação e campos magnéticos.
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            Nem toda pulsação é <b>radial</b>. Em <b>modos não radiais</b>, algumas regiões da superfície se expandem enquanto outras se contraem. Esses padrões são descritos por harmônicos esféricos e se dividem em três famílias: os <b>modos p</b> são ondas de pressão, com movimento concentrado nas camadas superficiais; os <b>modos g</b> são ondas de gravidade interna, ligadas à flutuabilidade do material, e atingem o interior profundo; o <b>modo f</b> é uma onda de superfície, sem análogo radial. A <b>frequência de buoyancy</b>, ou de Brunt-Väisälä, define onde os modos g podem existir e é nula no centro e nas bordas das zonas convectivas.
+          </p>
 
-Para quem não vê com os olhos, o estudo de estrelas variáveis continua acessível. Curvas de luz podem ser convertidas em som, com a frequência ou o volume acompanhando o brilho; séries temporais podem ser representadas em gráficos táteis ou descritas em texto; padrões de periodicidade podem ser explorados por meio de ritmos e intervalos. A variação estelar é, afinal, um fenômeno de tempo e intensidade: grandezas que não dependem da visão para serem medidas, analisadas e comunicadas.</i></p>
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            Essas ideias se aplicam ao <b>Sol</b> e a outras estrelas. A <span class="cat">heliossismologia</span> estuda as oscilações solares, descobertas em 1962. O Sol vibra com milhões de modos superpostos, com velocidades superficiais de poucos centímetros por segundo e variações de luminosidade da ordem de um milionésimo. Os <b>modos p de cinco minutos</b>, confinados na zona convectiva, revelam a profundidade de sua base, a rotação diferencial e a abundância de hélio nas camadas externas. Os <b>modos g</b>, presos abaixo da zona convectiva, chegam à superfície com amplitude muito reduzida e ainda não foram identificados com certeza. A <span class="cat">asterossismologia</span> estende essas técnicas a outras estrelas, incluindo as δ Scuti e as roAp, cujas oscilações permitem investigar composição, rotação e campos magnéticos.
+          </p>
+
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            No <span class="cat">Projeto Nanotelescópios</span>, o estudo de estrelas variáveis conecta diretamente a <b>observação com o S50</b> à <b>análise no hub de dados</b>: curvas de luz obtidas com dezenas ou centenas de exposições são calibradas, comparadas com estrelas de referência e usadas para investigar <b>pulsações</b>, <b>eclipses</b> e <b>surtos</b> como os de VW Hydri. O objetivo é que estudantes e observadores em formação possam <b>produzir dados úteis</b> para campanhas científicas, do monitoramento de <b>Mira</b> e <b>δ Cephei</b> ao acompanhamento de <b>sistemas binários eclipsantes</b> e <b>anãs brancas pulsantes</b>.
+          </p>
+
+          <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+            Para quem não vê com os olhos, o estudo de estrelas variáveis continua <b>acessível</b>. Curvas de luz podem ser convertidas em <b>som</b>, com a frequência ou o volume acompanhando o brilho; séries temporais podem ser representadas em <b>gráficos táteis</b> ou descritas em texto; padrões de periodicidade podem ser explorados por meio de <b>ritmos e intervalos</b>. A variação estelar é, afinal, um fenômeno de <b>tempo</b> e <b>intensidade</b>: grandezas que não dependem da visão para serem medidas, analisadas e comunicadas.
+          </p>
         </div>
+
           <h3 style="font-size:19px; color:#000080; margin-top:8px;">O periastro de eta Carinae 2025.7</h3>
           <p style="font-size:16px; line-height:1.6;">Eta Car é uma das estrelas mais luminosas do Universo local. É observada desde o século XVII e apresentou características surpreendentes desde então. Descobriu-se que é uma binária massiva interagente com longo período (P=2022d) e excentricidade extremamente alta (e=0,94). Ela passará pelo periastro no final de setembro de 2025 e os dados mais importantes a serem obtidos serão a fotometria em banda V (V~4,0). Esse grande brilho e o fato de a estrela cruzar o meridiano ao meio-dia em 1º de setembro tornam-na um alvo difícil, no entanto as observações são viáveis a partir do sul do Brasil, Argentina e Chile. A precisão melhor que 0,01 mag (facilmente alcançada com dezenas a centenas de imagens) é necessária porque o pico a ser monitorado tem amplitude de ~0,25 mag. Há uma estrela de comparação (HD303308 V=8,15) a 1 minuto de arco ao norte. O período crítico é de 15/ago a 15/set, o que exige amostragem diária. Nosso objetivo é obter dezenas de pontos de dados durante os crepúsculos astronômicos (vespertino e matutino). O pico fotométrico não é explicado por nenhum modelo existente do sistema. Mostrou-se que ele atinge uma amplitude maior a cada periastro e que o pico se desloca a uma taxa de 1 dia mais cedo por órbita. O cenário possível é que seja causado por uma mancha brilhante na “superfície” da estrela primária, iluminada/aquecida pela estrela secundária quando elas se aproximam. As estrelas possivelmente estão se aproximando uma da outra a uma taxa rápida (órbita instável?!), de modo que uma fusão estelar possa ocorrer em alguns séculos (outra Erupção Gigante como em 1847?). Um grande evento iminente no céu como este exige a atenção de toda a humanidade, mesmo que não ocorra em nossa vida. Este objeto receberá atenção da imprensa mundial por ocasião do periastro, provavelmente chamando a atenção do público para a campanha de monitoramento que estaremos realizando.</p>
           <!-- Referência do Livro -->
@@ -1462,9 +1407,6 @@ Para quem não vê com os olhos, o estudo de estrelas variáveis continua acess�
         </div>
         </div>
 
-       
-        
-      
       </div>
 
       <!-- =========================================================
@@ -1557,7 +1499,7 @@ Para quem não vê com os olhos, o estudo de estrelas variáveis continua acess�
               <figcaption>1. Acessar o <b>Sky Atlas</b>. <span class="credit">Captura: autor do tutorial.</span></figcaption>
             </figure>
             <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
-              Este guia mostra como configurar o app do Seestar S50 para <b>exposições curtas</b> (escalas de <b>ms</b> ou <b>μs</b>) <b>sem aplicativos externos</b> — ideal para alta cadência (trânsitos, ocultações).
+              Este guia mostra como configurar o app do Seestar S50 para <b>exposições curtas</b> (escalas de <b>ms</b> ou <b>μs</b>) <b>sem aplicativos externos</b>, ideal para alta cadência (trânsitos, ocultações).
             </p>
 
             <h4><i class="fas fa-1"></i> SkyAtlas</h4>
@@ -1567,7 +1509,7 @@ Para quem não vê com os olhos, o estudo de estrelas variáveis continua acess�
 
             <figure class="figure-float left">
               <img src="img/tutorial/seestar-app-findobject.jpg" alt="Tela de busca de objetos com lupa">
-              <figcaption>2. Ícone de <b>lupa</b> — “Find Objects”. <span class="credit">Captura: autor do tutorial.</span></figcaption>
+              <figcaption>2. Ícone de <b>lupa</b>, “Find Objects”. <span class="credit">Captura: autor do tutorial.</span></figcaption>
             </figure>
             <h4><i class="fas fa-2"></i> Buscar o objeto</h4>
             <p style="font-size:16px; line-height:1.6; margin-bottom:14px;">
@@ -1609,7 +1551,7 @@ Para quem não vê com os olhos, o estudo de estrelas variáveis continua acess�
 
             <h4><i class="fas fa-8"></i> Brilho manual</h4>
             <p style="font-size:16px; line-height:1.6; margin-bottom:14px;">
-              Em <b>Brightness</b>, escolha <b>Manual</b> — ajusta <b>tempo de exposição real</b>, não só o LUT.
+              Em <b>Brightness</b>, escolha <b>Manual</b>, ajusta <b>tempo de exposição real</b>, não só o LUT.
             </p>
 
             <h4><i class="fas fa-9"></i> Exposição e ganho</h4>
@@ -1699,106 +1641,184 @@ Para quem não vê com os olhos, o estudo de estrelas variáveis continua acess�
   <!-- 1. Medir é comparar -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Medir é comparar</h4>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Medir é comparar uma grandeza com uma referência. O instrumento é o intermediário dessa comparação, e nenhuma medida é exata: toda leitura carrega uma incerteza. A teoria de erros existe para responder a duas perguntas: qual o melhor valor que se pode atribuir a uma grandeza a partir de um conjunto de medições, e quanto esse valor pode diferir do valor verdadeiro. Como o valor verdadeiro é, por definição, desconhecido, qualquer afirmação sobre ele é probabilística.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Em astronomia, <b>medir</b> é <b>comparar</b> uma grandeza com uma <b>referência</b>: o brilho de uma estrela com o de outra, a posição de um asteroide com a de estrelas de fundo, o instante de uma ocultação com o de um cronômetro. O <b>instrumento</b> é o intermediário dessa comparação, e <b>nenhuma medida é exata</b>: toda leitura carrega uma <span class="cat">incerteza</span>.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A <b>teoria de erros</b> existe para responder a duas perguntas: qual o <b>melhor valor</b> que se pode atribuir a uma grandeza a partir de um conjunto de medições, e <b>quanto</b> esse valor pode diferir do valor verdadeiro. Como o valor verdadeiro é, por definição, <b>desconhecido</b>, qualquer afirmação sobre ele é <b>probabilística</b>.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      No <span class="cat">Projeto Nanotelescópios</span>, essa lógica está presente em cada etapa: ao medir a magnitude de uma estrela variável, ao calcular o movimento próprio de um membro de aglomerado, ao estimar a duração de uma ocultação estelar. Reconhecer e quantificar a incerteza é o que transforma uma <b>imagem bonita</b> em um <b>resultado científico</b>.
+    </p>
   </div>
 
   <!-- 2. Instrumentos e leitura -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Instrumentos e leitura</h4>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Em instrumentos analógicos, a leitura inclui todos os dígitos que a escala permite ler diretamente mais um dígito estimado pelo observador. Numa régua graduada em milímetros, lê-se a marca inteira e estima-se a fração de milímetro. Em instrumentos digitais, o último dígito pode oscilar; também aí cabe ao observador estimar o valor com base na flutuação.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>O nônio, ou vernier, aumenta a resolução sem multiplicar indefinidamente os traços da escala principal. Quando dez divisões do nônio equivalem a nove da escala, a marca coincidente indica a fração da menor divisão: um paquímetro de dez divisões lê décimos de milímetro; um de cinquenta divisões, centésimos. Mas mais divisões não garantem mais exatidão, e em instrumentos com muitas divisões, a dificuldade de decidir qual marca coincide torna o erro de leitura significativo, e o limite de erro real pode superar a menor leitura indicada.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Cada instrumento tem um limite de erro de calibração, geralmente fornecido pelo fabricante. Na falta de informação detalhada, admite-se como limite a menor divisão da escala. A incerteza correspondente é, como regra prática, metade desse limite. Essa regra não é universal: multímetros digitais, paquímetros com muitas divisões, réguas de plástico e instrumentos sujeitos a dilatação térmica ou folgas podem ter limite de erro bem maior. Aplicar a regra cegamente leva a incertezas subestimadas.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>O erro instrumental decompõe-se em três partes. O erro de zero ocorre quando o instrumento não indica zero na ausência da grandeza; em muitos casos, o próprio experimentador ajusta o zero. O erro linear de calibração é proporcional à leitura: se a régua é 0,5% mais comprida, todas as medidas ficam 0,5% maiores; se o coeficiente é conhecido, a correção é possível. O desvio de linearidade é uma função complicada da leitura, as marcas podem não ser regularmente espaçadas. Em instrumentos bem construídos, esse desvio é pequeno; em medições ao longo de toda a escala, tende a se anular; numa única medida, é sistemático.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Em instrumentos <b>analógicos</b>, a leitura inclui todos os dígitos que a escala permite ler diretamente, mais um dígito <b>estimado</b> pelo observador. Numa régua graduada em milímetros, lê-se a marca inteira e estima-se a fração de milímetro. Em instrumentos <b>digitais</b>, o último dígito pode oscilar; também aí cabe ao observador estimar o valor com base na flutuação.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      O <span class="cat">nônio</span>, ou vernier, aumenta a resolução sem multiplicar indefinidamente os traços da escala principal. Quando dez divisões do nônio equivalem a nove da escala, a marca coincidente indica a fração da menor divisão: um paquímetro de dez divisões lê décimos de milímetro; um de cinquenta divisões, centésimos. Mas <b>mais divisões não garantem mais exatidão</b>: em instrumentos com muitas divisões, a dificuldade de decidir qual marca coincide torna o erro de leitura significativo, e o limite de erro real pode superar a menor leitura indicada.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Cada instrumento tem um <b>limite de erro de calibração</b>, geralmente fornecido pelo fabricante. Na falta de informação detalhada, admite-se como limite a menor divisão da escala. A incerteza correspondente é, como regra prática, <b>metade desse limite</b>. Essa regra não é universal: multímetros digitais, paquímetros com muitas divisões, réguas de plástico e instrumentos sujeitos a dilatação térmica ou folgas podem ter limite de erro bem maior. Aplicar a regra cegamente leva a <b>incertezas subestimadas</b>.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      O erro instrumental decompõe-se em três partes. O <b>erro de zero</b> ocorre quando o instrumento não indica zero na ausência da grandeza; em muitos casos, o próprio experimentador ajusta o zero. O <b>erro linear de calibração</b> é proporcional à leitura: se a régua é 0,5% mais comprida, todas as medidas ficam 0,5% maiores; se o coeficiente é conhecido, a correção é possível. O <b>desvio de linearidade</b> é uma função complicada da leitura: as marcas podem não ser regularmente espaçadas. Em instrumentos bem construídos, esse desvio é pequeno; em medições ao longo de toda a escala, tende a se anular; numa única medida, é <b>sistemático</b>.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Nos <span class="cat">nanotelescópios</span> como o Seestar S50, a leitura digital dos pixels e a calibração automática de <i>dark</i> e <i>flat</i> não eliminam a necessidade de conhecer o instrumento. Saber como o sensor responde à luz, qual o ganho usado e como o <i>software</i> combina as exposições é parte de <b>medir bem</b> em astronomia.
+    </p>
   </div>
 
   <!-- 3. Erros sistemáticos e estatísticos -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Erros sistemáticos e estatísticos</h4>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Erros sistemáticos permanecem iguais quando a medição é repetida nas mesmas condições. Erros estatísticos, ou aleatórios, variam de forma imprevisível e se distribuem em torno de um valor médio. Quando só há erro estatístico, o valor médio de muitas medições se aproxima do valor verdadeiro. Quando só há erro sistemático, todos os resultados são iguais entre si, mas deslocados do valor verdadeiro. Repetir a medição reduz o erro estatístico da média, mas não elimina o erro sistemático.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Erros sistemáticos têm origens diversas. Erros instrumentais vêm da calibração e de sua alteração com temperatura, desgaste ou tempo. Erros ambientais vêm de fatores externos: temperatura, pressão, umidade, campo magnético, vibrações. Erros observacionais vêm de limitações ou falhas de procedimento do observador, como paralaxe, atraso ao acionar um cronômetro, tempo de reação humano da ordem de décimos de segundo. Erros teóricos vêm do uso de modelos aproximados ou de constantes físicas imprecisas: desprezar a resistência do ar ao medir a aceleração da gravidade leva a um valor sistematicamente menor; o valor da carga do elétron obtido por Millikan em 1916 era 0,6% menor porque a viscosidade do ar usada nos cálculos estava ligeiramente errada.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Em muitos casos, é possível eliminar ou reduzir um erro sistemático por procedimentos engenhosos. Numa balança de pratos com braços desiguais, medir a massa duas vezes, invertendo os pratos, e tomar a média geométrica elimina o efeito da diferença entre os braços. Em medições elétricas, inverter dois voltímetros e combinar as leituras de forma adequada elimina erros multiplicativos de calibração, desde que não haja desvios de linearidade. Nem sempre a correção é viável. Quando um erro sistemático não pode ser reduzido nem corrigido, ele se torna um erro sistemático residual, cuja incerteza é tratada, na prática, como incerteza tipo B.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>A distinção entre erro sistemático e estatístico é, em parte, arbitrária: depende do universo de medições considerado. O erro de calibração de um instrumento é sistemático se compararmos medições feitas com o mesmo aparelho, mas se torna estatístico quando se comparam instrumentos de marcas diferentes. Por isso, organizações internacionais recomendam classificar as incertezas em tipo A (estimadas por métodos estatísticos) e tipo B (estimadas por outros meios). As regras para combiná-las são objeto de debate, mas a distinção é mais operacional do que conceitual.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Há ainda os erros grosseiros (anotar 37,4 em vez de 47,4, apertar a tecla errada, trocar um sinal, por exemplo). Não são erros no sentido da teoria de erros, mas enganos. A leitura suspeita deve ser repetida ou eliminada. Evitá-los exige repetição de medições, conferência de cálculos e análise criteriosa da consistência dos resultados.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      <b>Erros sistemáticos</b> permanecem iguais quando a medição é repetida nas mesmas condições. <b>Erros estatísticos</b>, ou <b>aleatórios</b>, variam de forma imprevisível e se distribuem em torno de um valor médio. Quando só há erro estatístico, o <b>valor médio</b> de muitas medições se aproxima do valor verdadeiro. Quando só há erro sistemático, todos os resultados são iguais entre si, mas <b>deslocados</b> do valor verdadeiro. <u>Repetir a medição reduz o erro estatístico da média, mas não elimina o erro sistemático.</u>
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Erros sistemáticos têm origens diversas. <b>Erros instrumentais</b> vêm da calibração e de sua alteração com temperatura, desgaste ou tempo. <b>Erros ambientais</b> vêm de fatores externos: temperatura, pressão, umidade, campo magnético, vibrações. <b>Erros observacionais</b> vêm de limitações ou falhas de procedimento do observador, como paralaxe, atraso ao acionar um cronômetro, tempo de reação humano da ordem de décimos de segundo. <b>Erros teóricos</b> vêm do uso de modelos aproximados ou de constantes físicas imprecisas: desprezar a resistência do ar ao medir a aceleração da gravidade leva a um valor sistematicamente menor; o valor da carga do elétron obtido por Millikan em 1916 era 0,6% menor porque a viscosidade do ar usada nos cálculos estava ligeiramente errada.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Em muitos casos, é possível <b>eliminar ou reduzir</b> um erro sistemático por procedimentos engenhosos. Numa balança de pratos com braços desiguais, medir a massa duas vezes, invertendo os pratos, e tomar a média geométrica elimina o efeito da diferença entre os braços. Em medições elétricas, inverter dois voltímetros e combinar as leituras de forma adequada elimina erros multiplicativos de calibração, desde que não haja desvios de linearidade. Nem sempre a correção é viável. Quando um erro sistemático não pode ser reduzido nem corrigido, ele se torna um <span class="cat">erro sistemático residual</span>, cuja incerteza é tratada, na prática, como <b>incerteza tipo B</b>.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A distinção entre erro sistemático e estatístico é, em parte, <b>arbitrária</b>: depende do universo de medições considerado. O erro de calibração de um instrumento é sistemático se compararmos medições feitas com o mesmo aparelho, mas se torna estatístico quando se comparam instrumentos de marcas diferentes. Por isso, organizações internacionais recomendam classificar as incertezas em <b>tipo A</b> (estimadas por métodos estatísticos) e <b>tipo B</b> (estimadas por outros meios). As regras para combiná-las são objeto de debate, mas a distinção é mais <b>operacional</b> do que conceitual.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Há ainda os <b>erros grosseiros</b>: anotar 37,4 em vez de 47,4, apertar a tecla errada, trocar um sinal. Não são erros no sentido da teoria de erros, mas <b>enganos</b>. A leitura suspeita deve ser repetida ou eliminada. Evitá-los exige repetição de medições, conferência de cálculos e análise criteriosa da consistência dos resultados, algo especialmente importante em campanhas de <span class="cat">ciência cidadã</span>, em que diferentes observadores contribuem com dados para um mesmo alvo.
+    </p>
   </div>
 
   <!-- 4. Acurácia, precisão, repetitividade e reprodutibilidade -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Acurácia, precisão, repetitividade e reprodutibilidade</h4>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Acurácia, ou exatidão, é a proximidade entre o resultado e o valor verdadeiro. Precisão é a proximidade entre resultados repetidos. São conceitos distintos. Um instrumento pode ser preciso e pouco acurado (leituras estáveis, mas sistematicamente deslocadas); e pode ser acurado e pouco preciso (resultados dispersos, mas cuja média se aproxima do valor verdadeiro). Boa acurácia exige boa precisão e erros sistemáticos pequenos. (A palavra precisão não deve ser usada como sinônimo de acurácia!)</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Repetitividade é o grau de concordância entre medições feitas nas mesmas condições: mesmo procedimento, mesmo observador, mesmos instrumentos, mesmo local, em intervalos curtos. Reprodutibilidade é a concordância entre medições feitas sob condições variadas. A primeira avalia a dispersão em condições controladas; a segunda, a robustez do resultado quando algo muda.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      <b>Acurácia</b>, ou <b>exatidão</b>, é a proximidade entre o resultado e o valor verdadeiro. <b>Precisão</b> é a proximidade entre resultados repetidos. São conceitos distintos: um instrumento pode ser <b>preciso e pouco acurado</b> (leituras estáveis, mas sistematicamente deslocadas) ou <b>acurado e pouco preciso</b> (resultados dispersos, mas cuja média se aproxima do valor verdadeiro). Boa acurácia exige boa precisão e erros sistemáticos pequenos. <u>A palavra precisão não deve ser usada como sinônimo de acurácia!</u>
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      <b>Repetitividade</b> é o grau de concordância entre medições feitas nas mesmas condições: mesmo procedimento, mesmo observador, mesmos instrumentos, mesmo local, em intervalos curtos. <b>Reprodutibilidade</b> é a concordância entre medições feitas sob condições variadas. A primeira avalia a dispersão em condições controladas; a segunda, a robustez do resultado quando algo muda. Em uma <span class="cat">rede de nanotelescópios</span>, a reprodutibilidade entre diferentes sítios e observadores é um dos grandes desafios, e um dos principais objetivos do <b>hub de dados</b> do projeto.
+    </p>
   </div>
 
   <!-- 5. Incerteza e intervalo de confiança -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Incerteza e intervalo de confiança</h4>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>A incerteza padrão é o desvio padrão da distribuição de erros. Ela define um intervalo de confiança de aproximadamente 68% em torno do resultado, no caso de distribuição gaussiana. Multiplicando a incerteza padrão por um fator k, obtém-se uma incerteza expandida com confiança maior: k = 2 dá cerca de 95%, k = 3 dá cerca de 99,7%. O limite de erro é o valor máximo admissível para o erro; se bem estabelecido, define um intervalo com confiança de 100%. Quando a distribuição é gaussiana, costuma-se tomar 3σ como limite prático. O erro provável, que tinha 50% de chance de ser excedido em módulo, caiu em desuso.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>A incerteza total de um resultado combina a variância tipo A com as variâncias tipo B: σ² = σ_A² + σ_B². Quando há várias fontes de erro sistemático residual, suas variâncias também se somam.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Na prática, muitas vezes o que se conhece não é a incerteza padrão, mas o limite de erro do instrumento. A conversão depende da distribuição assumida. Se gaussiana, L = 3σ; se retangular, σ = L/√3; se triangular, σ = L/√6. Uma regra prática comum em instrumentos analógicos é considerar a incerteza padrão como metade da menor divisão da escala, mas essa regra deve ser aplicada com bom senso: muitos instrumentos têm limite de erro maior que a menor divisão, e o erro de calibração pode variar ao longo da escala.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A <b>incerteza padrão</b> é o desvio padrão da distribuição de erros. Ela define um <b>intervalo de confiança</b> de aproximadamente <b>68%</b> em torno do resultado, no caso de distribuição gaussiana. Multiplicando a incerteza padrão por um fator <b>k</b>, obtém-se uma <b>incerteza expandida</b> com confiança maior: <i>k</i> = 2 dá cerca de 95%, <i>k</i> = 3 dá cerca de 99,7%. O <b>limite de erro</b> é o valor máximo admissível para o erro; se bem estabelecido, define um intervalo com confiança de 100%. Quando a distribuição é gaussiana, costuma-se tomar 3σ como limite prático. O <b>erro provável</b>, que tinha 50% de chance de ser excedido em módulo, caiu em desuso.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A <b>incerteza total</b> de um resultado combina a variância tipo A com as variâncias tipo B: <b>σ² = σ_A² + σ_B²</b>. Quando há várias fontes de erro sistemático residual, suas variâncias também se somam.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Na prática, muitas vezes o que se conhece não é a incerteza padrão, mas o <b>limite de erro do instrumento</b>. A conversão depende da distribuição assumida: se <b>gaussiana</b>, L = 3σ; se <b>retangular</b>, σ = L/√3; se <b>triangular</b>, σ = L/√6. Uma regra prática comum em instrumentos analógicos é considerar a incerteza padrão como metade da menor divisão da escala, mas essa regra deve ser aplicada com bom senso: muitos instrumentos têm limite de erro maior que a menor divisão, e o erro de calibração pode variar ao longo da escala.
+    </p>
   </div>
 
   <!-- 6. Propagação de incertezas -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Propagação de incertezas</h4>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Quando uma grandeza w é calculada a partir de outras, sua incerteza depende das incertezas das variáveis de entrada e de como w varia com cada uma delas. Para erros independentes:</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + …</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Cada variável contribui de acordo com duas coisas: o quanto w muda quando aquela variável muda (a derivada parcial) e o tamanho da incerteza da própria variável. Quando só existe uma variável, σ_w = |dw/dx| σ_x.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Casos particulares simplificam o cálculo:</i></p>
-    <ul style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;">
-      <li><i><b>Soma ou subtração:</b> as variâncias se somam, mesmo na subtração.</i></li>
-      <li><i><b>Multiplicação por constante:</b> σ_w = |a| σ_x.</i></li>
-      <li><i><b>Produto ou razão:</b> as incertezas relativas se combinam em quadratura.</i></li>
-      <li><i><b>Potências (w = x^p y^q):</b> (σ_w/w)² = (p σ_x/x)² + (q σ_y/y)².</i></li>
-      <li><i><b>Funções trigonométricas e logarítmicas:</b> a derivada apropriada entra na fórmula.</i></li>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Quando uma grandeza <b>w</b> é calculada a partir de outras, sua incerteza depende das incertezas das variáveis de entrada e de <b>como w varia com cada uma delas</b>. Para erros independentes:
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px; text-align:center;">
+      <b>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + …</b>
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Cada variável contribui de acordo com duas coisas: <b>o quanto w muda</b> quando aquela variável muda (a derivada parcial) e <b>o tamanho da incerteza</b> da própria variável. Quando só existe uma variável, σ_w = |dw/dx| σ_x.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">Casos particulares simplificam o cálculo:</p>
+    <ul style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      <li><b>Soma ou subtração:</b> as variâncias se somam, mesmo na subtração.</li>
+      <li><b>Multiplicação por constante:</b> σ_w = |a| σ_x.</li>
+      <li><b>Produto ou razão:</b> as incertezas relativas se combinam em quadratura.</li>
+      <li><b>Potências (w = x<sup>p</sup> y<sup>q</sup>):</b> (σ_w/w)² = (p σ_x/x)² + (q σ_y/y)².</li>
+      <li><b>Funções trigonométricas e logarítmicas:</b> a derivada apropriada entra na fórmula.</li>
     </ul>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Um exemplo: o volume de um cilindro é V = π L R². Dividindo a expressão por V², chega-se a (σ_V/V)² = (σ_L/L)² + (2 σ_R/R)². O raio pesa mais, porque aparece elevado ao quadrado.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Essas expressões são aproximações válidas quando a função varia suavemente perto dos valores medidos, isto é, quando a derivada praticamente não muda para desvios da ordem da incerteza. Se a função oscila ou tem curvatura forte nessa escala, a aproximação linear deixa de ser boa.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>A fórmula simples supõe erros independentes. Quando não são, é preciso incluir as covariâncias:</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + … + 2 (∂w/∂x)(∂w/∂y) cov(x,y) + …</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>A covariância mede se duas variáveis tendem a variar juntas. O coeficiente de correlação r varia de −1 a +1 e indica o quanto os pontos se aproximam de uma reta. Correlação nula não garante independência: há distribuições em que os erros são dependentes, mas a covariância se anula por simetria.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Há ainda a transferência de incerteza. Quando y é medido em função de x e ambas as variáveis têm erro, pode-se admitir x como isenta de erro e incorporar sua incerteza à de y: σ_y² = σ_y0² + (dy/dx)² σ_x². Como a relação entre y e x nem sempre é conhecida de início, faz-se uma estimativa preliminar da derivada e depois se refina por aproximações sucessivas.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Um exemplo: o volume de um cilindro é <b>V = π L R²</b>. Dividindo a expressão por V², chega-se a <b>(σ_V/V)² = (σ_L/L)² + (2 σ_R/R)²</b>. O raio pesa mais, porque aparece elevado ao quadrado.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Essas expressões são aproximações válidas quando a função varia <b>suavemente</b> perto dos valores medidos, isto é, quando a derivada praticamente não muda para desvios da ordem da incerteza. Se a função oscila ou tem curvatura forte nessa escala, a aproximação linear deixa de ser boa.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A fórmula simples supõe erros <b>independentes</b>. Quando não são, é preciso incluir as <b>covariâncias</b>:
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px; text-align:center;">
+      <b>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + … + 2 (∂w/∂x)(∂w/∂y) cov(x,y) + …</b>
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A covariância mede se duas variáveis tendem a variar <b>juntas</b>. O <b>coeficiente de correlação r</b> varia de −1 a +1 e indica o quanto os pontos se aproximam de uma reta. Correlação nula <u>não</u> garante independência: há distribuições em que os erros são dependentes, mas a covariância se anula por simetria.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Há ainda a <b>transferência de incerteza</b>. Quando y é medido em função de x e ambas as variáveis têm erro, pode-se admitir x como isenta de erro e incorporar sua incerteza à de y: <b>σ_y² = σ_y0² + (dy/dx)² σ_x²</b>. Como a relação entre y e x nem sempre é conhecida de início, faz-se uma estimativa preliminar da derivada e depois se refina por aproximações sucessivas.
+    </p>
   </div>
 
   <!-- 7. Qualidade de ajuste -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Qualidade de ajuste</h4>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>O método dos mínimos quadrados encontra os melhores parâmetros para uma função de forma predeterminada, mas não diz se essa forma é adequada. Uma reta pode ser ajustada a pontos que claramente descrevem uma parábola, e o método ainda devolverá coeficientes. Avaliar a qualidade do ajuste é tão importante quanto obter os parâmetros.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>A verossimilhança de um ajuste não se mede pelo simples acordo visual. Um alinhamento quase perfeito pode ser inverossímil se as incertezas forem grandes: seria improvável que todos os pontos se alinhassem tão bem dentro de barras de erro largas. Uma dispersão aparentemente grande pode ser perfeitamente compatível com incertezas pequenas. O que define um bom ajuste é a coerência entre as flutuações dos dados e as incertezas declaradas.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Um critério simples é o das barras de incerteza. Se a função ajustada for correta, cada ponto tem cerca de 68% de probabilidade de ter sua barra cruzando a curva. Para n pontos e p parâmetros, o número médio de barras que devem cruzar a curva é Ncz ≈ (2/3)ν + p, onde ν = n − p é o número de graus de liberdade. O desvio padrão esperado é cerca de √(Ncz/3). Desvios grandes desse número indicam problema. O critério é rudimentar, mas aplicável por inspeção visual.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Um critério mais elaborado é o χ² reduzido. Define-se χ² como a soma dos quadrados das diferenças entre os valores observados e a função ajustada, cada diferença dividida pela incerteza do ponto. Em outras palavras, χ² mede a distância total entre os pontos e a curva, usando as incertezas como unidade. O χ² reduzido é χ² dividido pelo número de graus de liberdade, ν = n − p. Se o ajuste for bom e as incertezas corretas, o valor esperado de χ²_red é 1. Valores muito maiores indicam função inadequada ou incertezas subestimadas. Valores muito menores sugerem incertezas superestimadas ou ajuste bom demais para ser verdadeiro.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>A distribuição de χ²_red depende de ν. Para ν grande, concentra-se em torno de 1; para ν pequeno, a dispersão é maior. Por isso, usam-se intervalos de confiança. Para ν = 10, pode-se afirmar com 98% de confiança que χ²_red está entre 0,26 e 2,32. Se o valor obtido cair fora desse intervalo, o ajuste é provavelmente ruim.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Na prática, um χ²_red muito fora do intervalo aceitável pode ter duas causas: função inadequada ou incertezas mal estimadas. Distinguir entre as duas nem sempre é fácil. Se há certeza sobre a forma da função, o teste verifica as incertezas. Se as incertezas são confiáveis, o teste compara diferentes funções; entre as que produzem bom ajuste, prefere-se a de menor número de parâmetros. Considerações físicas também ajudam a escolher o modelo.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Quando as incertezas são desconhecidas, mas podem ser admitidas iguais, é possível estimá-las a partir do próprio ajuste. Impondo χ²_red ≈ 1, obtém-se σ² ≈ (1/ν) Σ [yᵢ − f(xᵢ)]². Essa expressão só é válida se houver razoável certeza de que a função ajustada é correta.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      O método dos <b>mínimos quadrados</b> encontra os melhores parâmetros para uma função de forma predeterminada, mas <u>não diz se essa forma é adequada</u>. Uma reta pode ser ajustada a pontos que claramente descrevem uma parábola, e o método ainda devolverá coeficientes. Avaliar a qualidade do ajuste é tão importante quanto obter os parâmetros.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A <b>verossimilhança</b> de um ajuste não se mede pelo simples acordo visual. Um alinhamento quase perfeito pode ser <b>inverossímil</b> se as incertezas forem grandes: seria improvável que todos os pontos se alinhassem tão bem dentro de barras de erro largas. Uma dispersão aparentemente grande pode ser perfeitamente compatível com incertezas pequenas. O que define um bom ajuste é a <b>coerência</b> entre as flutuações dos dados e as incertezas declaradas.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Um critério simples é o das <b>barras de incerteza</b>. Se a função ajustada for correta, cada ponto tem cerca de <b>68%</b> de probabilidade de ter sua barra cruzando a curva. Para <i>n</i> pontos e <i>p</i> parâmetros, o número médio de barras que devem cruzar a curva é <b>N<sub>cz</sub> ≈ (2/3)ν + p</b>, onde <b>ν = n − p</b> é o número de graus de liberdade. O desvio padrão esperado é cerca de <b>√(N<sub>cz</sub>/3)</b>. Desvios grandes desse número indicam problema. O critério é rudimentar, mas aplicável por inspeção visual.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Um critério mais elaborado é o <span class="cat">χ² reduzido</span>. Define-se <b>χ²</b> como a soma dos quadrados das diferenças entre os valores observados e a função ajustada, cada diferença dividida pela incerteza do ponto. Em outras palavras, χ² mede a <b>distância total</b> entre os pontos e a curva, usando as incertezas como unidade. O <b>χ² reduzido</b> é χ² dividido pelo número de graus de liberdade, <b>ν = n − p</b>. Se o ajuste for bom e as incertezas corretas, o valor esperado de χ²<sub>red</sub> é <b>1</b>. Valores muito maiores indicam função inadequada ou incertezas subestimadas. Valores muito menores sugerem incertezas superestimadas ou ajuste bom demais para ser verdadeiro.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A distribuição de χ²<sub>red</sub> depende de ν. Para ν grande, concentra-se em torno de 1; para ν pequeno, a dispersão é maior. Por isso, usam-se intervalos de confiança. Para ν = 10, pode-se afirmar com 98% de confiança que χ²<sub>red</sub> está entre <b>0,26 e 2,32</b>. Se o valor obtido cair fora desse intervalo, o ajuste é provavelmente ruim.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Na prática, um χ²<sub>red</sub> muito fora do intervalo aceitável pode ter duas causas: <b>função inadequada</b> ou <b>incertezas mal estimadas</b>. Distinguir entre as duas nem sempre é fácil. Se há certeza sobre a forma da função, o teste verifica as incertezas. Se as incertezas são confiáveis, o teste compara diferentes funções; entre as que produzem bom ajuste, prefere-se a de menor número de parâmetros. Considerações físicas também ajudam a escolher o modelo.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Quando as incertezas são desconhecidas, mas podem ser admitidas iguais, é possível estimá-las a partir do próprio ajuste. Impondo χ²<sub>red</sub> ≈ 1, obtém-se <b>σ² ≈ (1/ν) Σ [yᵢ − f(xᵢ)]²</b>. Essa expressão só é válida se houver razoável certeza de que a função ajustada é correta.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      No <span class="cat">Projeto Nanotelescópios</span>, a qualidade de ajuste aparece diretamente nas <b>curvas de luz</b>: ao ajustar um modelo de trânsito planetário, uma curva de pulsação estelar ou um evento de ocultação, é preciso verificar se o modelo descreve os dados dentro das incertezas, e não apenas se a curva "passa perto" dos pontos.
+    </p>
   </div>
 
   <!-- 8. Algarismos significativos -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Algarismos significativos</h4>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>O número de dígitos apresentados num resultado deve refletir a incerteza. A incerteza padrão costuma ser escrita com um ou dois algarismos: dois quando o primeiro é 1 ou 2; um ou dois quando o primeiro é 3 ou maior. O resultado é escrito com os algarismos significativos correspondentes, sem zeros à esquerda desnecessários. Zeros à direita podem ser significativos.</i></p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>Números são arredondados segundo regras definidas: se o algarismo descartado é menor que 5, arredonda-se para baixo; se maior, para cima; se exatamente 5, arredonda-se para o par mais próximo. Quando não se indica a incerteza, o limite de erro deve ser no máximo 0,5 no último algarismo apresentado.</i></p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      O número de dígitos apresentados num resultado deve refletir a <b>incerteza</b>. A incerteza padrão costuma ser escrita com <b>um ou dois algarismos</b>: dois quando o primeiro é 1 ou 2; um ou dois quando o primeiro é 3 ou maior. O resultado é escrito com os <b>algarismos significativos</b> correspondentes, sem zeros à esquerda desnecessários. Zeros à direita podem ser significativos.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Números são arredondados segundo regras definidas: se o algarismo descartado é <b>menor que 5</b>, arredonda-se para baixo; se <b>maior</b>, para cima; se <b>exatamente 5</b>, arredonda-se para o par mais próximo. Quando não se indica a incerteza, o limite de erro deve ser no máximo <b>0,5 no último algarismo</b> apresentado.
+    </p>
   </div>
 
   <!-- 9. Vocabulário essencial -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Vocabulário essencial</h4>
-    <ul style="font-size:16px; line-height:1.6; margin-bottom:20px;  margin-inline:20px;">
-      <li><i><b>Grandeza:</b> atributo que pode ser distinguido qualitativamente e determinado quantitativamente.</i></li>
-      <li><i><b>Medição:</b> conjunto de operações para determinar o valor de uma grandeza.</i></li>
-      <li><i><b>Mensurando:</b> a grandeza específica submetida à medição.</i></li>
-      <li><i><b>Valor verdadeiro:</b> valor consistente com a definição da grandeza; por natureza, indeterminado.</i></li>
-      <li><i><b>Resultado de uma medição:</b> valor atribuído ao mensurando.</i></li>
-      <li><i><b>Erro:</b> resultado da medição menos o valor verdadeiro.</i></li>
-      <li><i><b>Correção:</b> valor somado ao resultado não corrigido para compensar erro sistemático.</i></li>
-      <li><i><b>Incerteza de medição:</b> parâmetro que caracteriza a dispersão dos valores atribuíveis ao mensurando.</i></li>
-      <li><i><b>Incerteza padrão:</b> incerteza expressa como desvio padrão.</i></li>
-      <li><i><b>Incerteza tipo A:</b> obtida por métodos estatísticos.</i></li>
-      <li><i><b>Incerteza tipo B:</b> obtida por outros métodos.</i></li>
-      <li><i><b>Incerteza expandida:</b> incerteza padrão multiplicada por um fator k.</i></li>
-      <li><i><b>Intervalo de confiança:</b> intervalo que contém o valor verdadeiro com probabilidade P.</i></li>
-      <li><i><b>Nível de confiança:</b> a probabilidade P associada ao intervalo.</i></li>
-      <li><i><b>Limite de erro:</b> valor máximo admissível para o erro.</i></li>
-      <li><i><b>Desvio padrão experimental:</b> medida da dispersão de n medições.</i></li>
-      <li><i><b>Repetitividade e reprodutibilidade:</b> concordância em condições iguais e variadas, respectivamente.</i></li>
-      <li><i><b>Acurácia e precisão:</b> proximidade do valor verdadeiro e proximidade entre repetições.</i></li>
+    <ul style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      <li><b>Grandeza:</b> atributo que pode ser distinguido qualitativamente e determinado quantitativamente.</li>
+      <li><b>Medição:</b> conjunto de operações para determinar o valor de uma grandeza.</li>
+      <li><b>Mensurando:</b> a grandeza específica submetida à medição.</li>
+      <li><b>Valor verdadeiro:</b> valor consistente com a definição da grandeza; por natureza, indeterminado.</li>
+      <li><b>Resultado de uma medição:</b> valor atribuído ao mensurando.</li>
+      <li><b>Erro:</b> resultado da medição menos o valor verdadeiro.</li>
+      <li><b>Correção:</b> valor somado ao resultado não corrigido para compensar erro sistemático.</li>
+      <li><b>Incerteza de medição:</b> parâmetro que caracteriza a dispersão dos valores atribuíveis ao mensurando.</li>
+      <li><b>Incerteza padrão:</b> incerteza expressa como desvio padrão.</li>
+      <li><b>Incerteza tipo A:</b> obtida por métodos estatísticos.</li>
+      <li><b>Incerteza tipo B:</b> obtida por outros métodos.</li>
+      <li><b>Incerteza expandida:</b> incerteza padrão multiplicada por um fator k.</li>
+      <li><b>Intervalo de confiança:</b> intervalo que contém o valor verdadeiro com probabilidade P.</li>
+      <li><b>Nível de confiança:</b> a probabilidade P associada ao intervalo.</li>
+      <li><b>Limite de erro:</b> valor máximo admissível para o erro.</li>
+      <li><b>Desvio padrão experimental:</b> medida da dispersão de n medições.</li>
+      <li><b>Repetitividade e reprodutibilidade:</b> concordância em condições iguais e variadas, respectivamente.</li>
+      <li><b>Acurácia e precisão:</b> proximidade do valor verdadeiro e proximidade entre repetições.</li>
     </ul>
   </div>
 
@@ -1814,25 +1834,38 @@ Para quem não vê com os olhos, o estudo de estrelas variáveis continua acess�
   <div id="bas-dados" class="subtab-content">
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Números e números...</h4>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:20px;  ;"><i>A astronomia moderna depende tanto de observações quanto de cálculo. Os telescópios produzem grandes volumes de dados (imagens, espectros, séries temporais) e extrair informação desses dados exige métodos numéricos. Ajustar curvas de luz, modelar atmosferas estelares, inferir parâmetros de órbitas, reconstruir mapas de galáxias, tudo isso envolve aproximações, iterações e estimativas. Entender como esses métodos funcionam, suas limitações e seus erros é parte essencial do trabalho astronômico.
-
-Computadores não armazenam números com precisão infinita. Um número de ponto flutuante é representado por um sinal, um expoente e uma mantissa, e essa representação tem limites. O menor número que, somado a 1.0, produz um resultado diferente de 1.0 é a precisão de máquina, cerca de 10⁻⁷ para floats de 32 bits e 10⁻¹⁶ para doubles de 64 bits. Cada operação aritmética introduz um erro de arredondamento da ordem dessa precisão. Ao longo de milhares ou milhões de operações, esses erros se acumulam, e o resultado pode divergir do valor verdadeiro.
-
-Há dois tipos principais de erro. O erro de arredondamento vem do hardware e é inevitável. O erro de truncamento vem do algoritmo: quando se aproxima uma integral por uma soma finita, ou uma função por seus primeiros termos, ou uma derivada por uma diferença, comete-se um erro que persistiria mesmo num computador perfeito. O erro de truncamento está sob controle do programador: escolher mais pontos, mais termos, passos menores, reduz o erro, mas aumenta o custo computacional. O equilíbrio entre precisão e eficiência é uma decisão central em qualquer análise.
-
-Além disso, um método pode ser instável. Isso significa que pequenos erros introduzidos no início do cálculo são amplificados a cada etapa, até dominarem completamente o resultado. Um exemplo clássico é uma recorrência que, embora matematicamente correta, admite uma solução espúria que cresce exponencialmente. Se o algoritmo não for estável, a resposta final pode ser completamente errada, mesmo que a matemática esteja certa. Reconhecer e evitar instabilidades é parte do ofício.
-
-A análise de dados em astronomia envolve várias etapas. Primeiro, é preciso organizar e limpar os dados: remover artefatos, corrigir pela atmosfera, calibrar em fluxo ou magnitude. Depois, vem a modelagem: escolher uma função ou um modelo físico que descreva o fenômeno, ajustar seus parâmetros aos dados, estimar incertezas. Em seguida, a inferência: comparar modelos, testar hipóteses, classificar objetos. Cada etapa usa métodos numéricos: interpolação, integração, ajuste por mínimos quadrados, transformadas de Fourier, métodos de Monte Carlo, cadeias de Markov.
-
-A escolha do método importa. Uma interpolação ingênua pode oscilar entre pontos; uma integração com passo fixo pode ser lenta demais ou imprecisa demais; um ajuste não linear pode convergir para um mínimo local em vez do global. Por isso, entender o que está por trás de cada rotina é mais valioso do que tratá-la como caixa-preta. Saber como o algoritmo funciona permite adaptá-lo ao problema, diagnosticar falhas e reconhecer quando os resultados não fazem sentido.
-
-A validação é parte integrante. Testar o código com casos conhecidos, comparar com soluções analíticas quando possível, verificar a convergência com diferentes resoluções, estimar a sensibilidade a perturbações nos dados; tudo isso ajuda a construir confiança nos resultados. A reprodutibilidade também importa: registrar versões, parâmetros e sementes de geradores aleatórios permite que outros repitam a análise e verifiquem as conclusões.
-
-Para quem não vê com os olhos, a análise de dados continua acessível. Tabelas de valores podem ser lidas por leitores de tela. Gráficos podem ser convertidos em descrições verbais detalhadas, em representações táteis com relevos que indicam tendências, ou em sonificações que mapeiam variáveis em frequência, intensidade ou timbre. Ajustes de curvas podem ser comunicados por meio de parâmetros e incertezas expressos numericamente. A lógica dos algoritmos (iteração, convergência, estabilidade) pode ser explicada em texto. O essencial da análise está nos números, nas relações entre eles e na interpretação, não na imagem que os representa.
-
-Em resumo, a análise de dados em astronomia combina observação, matemática e computação. Erros de arredondamento e truncamento são inevitáveis, mas podem ser gerenciados. A estabilidade dos algoritmos precisa ser verificada. A escolha do método e a validação dos resultados são tão importantes quanto a coleta dos dados. E, com as adaptações adequadas, todo esse processo pode ser compreendido e praticado por pessoas que percebem o mundo de maneiras diversas.</i></p>
-        </div>
-          <!-- Referência do Livro -->
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A astronomia moderna depende tanto de <b>observações</b> quanto de <b>cálculo</b>. Os telescópios produzem grandes volumes de dados (imagens, espectros, séries temporais) e extrair informação desses dados exige <b>métodos numéricos</b>. Ajustar curvas de luz, modelar atmosferas estelares, inferir parâmetros de órbitas, reconstruir mapas de galáxias, tudo isso envolve aproximações, iterações e estimativas. Entender como esses métodos funcionam, suas limitações e seus erros é parte essencial do trabalho astronômico.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Computadores não armazenam números com <b>precisão infinita</b>. Um número de <b>ponto flutuante</b> é representado por um sinal, um expoente e uma mantissa, e essa representação tem limites. O menor número que, somado a 1.0, produz um resultado diferente de 1.0 é a <b>precisão de máquina</b>, cerca de 10⁻⁷ para <i>floats</i> de 32 bits e 10⁻¹⁶ para <i>doubles</i> de 64 bits. Cada operação aritmética introduz um <b>erro de arredondamento</b> da ordem dessa precisão. Ao longo de milhares ou milhões de operações, esses erros se acumulam, e o resultado pode divergir do valor verdadeiro.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Há dois tipos principais de erro. O <b>erro de arredondamento</b> vem do <i>hardware</i> e é inevitável. O <b>erro de truncamento</b> vem do <i>algoritmo</i>: quando se aproxima uma integral por uma soma finita, ou uma função por seus primeiros termos, ou uma derivada por uma diferença, comete-se um erro que persistiria mesmo num computador perfeito. O erro de truncamento está sob controle do programador: escolher mais pontos, mais termos, passos menores, reduz o erro, mas aumenta o custo computacional. O <b>equilíbrio</b> entre precisão e eficiência é uma decisão central em qualquer análise.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Além disso, um método pode ser <b>instável</b>. Isso significa que pequenos erros introduzidos no início do cálculo são <b>amplificados</b> a cada etapa, até dominarem completamente o resultado. Um exemplo clássico é uma recorrência que, embora matematicamente correta, admite uma solução espúria que cresce exponencialmente. Se o algoritmo não for estável, a resposta final pode ser completamente errada, mesmo que a matemática esteja certa. Reconhecer e evitar instabilidades é parte do ofício.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A análise de dados em astronomia envolve várias etapas. Primeiro, é preciso <b>organizar e limpar</b> os dados: remover artefatos, corrigir pela atmosfera, calibrar em fluxo ou magnitude. Depois, vem a <b>modelagem</b>: escolher uma função ou um modelo físico que descreva o fenômeno, ajustar seus parâmetros aos dados, estimar incertezas. Em seguida, a <b>inferência</b>: comparar modelos, testar hipóteses, classificar objetos. Cada etapa usa métodos numéricos: interpolação, integração, ajuste por mínimos quadrados, transformadas de Fourier, métodos de Monte Carlo, cadeias de Markov.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A <b>escolha do método</b> importa. Uma interpolação ingênua pode oscilar entre pontos; uma integração com passo fixo pode ser lenta demais ou imprecisa demais; um ajuste não linear pode convergir para um <b>mínimo local</b> em vez do global. Por isso, entender o que está por trás de cada rotina é mais valioso do que tratá-la como caixa-preta. Saber como o algoritmo funciona permite adaptá-lo ao problema, diagnosticar falhas e reconhecer quando os resultados não fazem sentido.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      A <b>validação</b> é parte integrante. Testar o código com casos conhecidos, comparar com soluções analíticas quando possível, verificar a convergência com diferentes resoluções, estimar a sensibilidade a perturbações nos dados, tudo isso ajuda a construir confiança nos resultados. A <b>reprodutibilidade</b> também importa: registrar versões, parâmetros e sementes de geradores aleatórios permite que outros repitam a análise e verifiquem as conclusões.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Para quem não vê com os olhos, a análise de dados continua <b>acessível</b>. Tabelas de valores podem ser lidas por <b>leitores de tela</b>. Gráficos podem ser convertidos em <b>descrições verbais detalhadas</b>, em <b>representações táteis</b> com relevos que indicam tendências, ou em <b>sonificações</b> que mapeiam variáveis em frequência, intensidade ou timbre. Ajustes de curvas podem ser comunicados por meio de parâmetros e incertezas expressos numericamente. A lógica dos algoritmos (iteração, convergência, estabilidade) pode ser explicada em texto. O essencial da análise está nos <b>números</b>, nas <b>relações entre eles</b> e na <b>interpretação</b>, não na imagem que os representa.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      Em resumo, a análise de dados em astronomia combina <b>observação</b>, <b>matemática</b> e <b>computação</b>. Erros de arredondamento e truncamento são inevitáveis, mas podem ser gerenciados. A estabilidade dos algoritmos precisa ser verificada. A escolha do método e a validação dos resultados são tão importantes quanto a coleta dos dados. E, com as adaptações adequadas, todo esse processo pode ser compreendido e praticado por pessoas que percebem o mundo de maneiras diversas.
+    </p>
+    <p style="font-size:16px; line-height:1.6; margin-bottom:18px;">
+      No <span class="cat">Projeto Nanotelescópios</span>, essas ideias ganham forma no <b>hub de dados</b>: um <i>pipeline</i> de redução automática, scripts de automação e uma plataforma que recebe imagens de dezenas de telescópios, calibra, faz astrometria e fotometria e devolve curvas de luz e medidas prontas para análise. A qualidade do dado final depende de cada etapa numérica, do <i>stacking</i> das exposições à estimativa de incertezas nas magnitudes.
+    </p>
+  </div>
+  <!-- Referência do Livro -->
   <div class="method-step">
     <h4><i class="fas fa-book"></i> Referência</h4>
     <p style="font-size:16px; line-height:1.6; margin-bottom:5px;">
@@ -2049,9 +2082,8 @@ function drawAzimuthArc() {
   const az = simState.azimuth;
   if (az <= 0) return;
 
-  const radiusFactor = 0.60; // Tamanho do arco em relação ao raio do horizonte
+  const radiusFactor = 0.60;
 
-  // Setor colorido no chão (do Norte 0° até o Azimute)
   ctx.beginPath();
   ctx.moveTo(obs.x, obs.y);
   for (let a = 0; a <= az; a += 2) {
@@ -2059,10 +2091,9 @@ function drawAzimuthArc() {
     ctx.lineTo(pt.x, pt.y);
   }
   ctx.closePath();
-  ctx.fillStyle = 'rgba(16, 185, 129, 0.25)'; // Verde translúcido
+  ctx.fillStyle = 'rgba(16, 185, 129, 0.25)';
   ctx.fill();
 
-  // Linha de referência inicial no Norte (0°)
   const northPt = project3D(0, 0, radiusFactor);
   ctx.beginPath();
   ctx.moveTo(obs.x, obs.y);
@@ -2071,7 +2102,6 @@ function drawAzimuthArc() {
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  // Arco pontilhado ao longo do chão
   ctx.beginPath();
   for (let a = 0; a <= az; a += 2) {
     const pt = project3D(a, 0, radiusFactor);
@@ -2084,7 +2114,6 @@ function drawAzimuthArc() {
   ctx.stroke();
   ctx.setLineDash([]);
 
-  // Rótulo numérico do Azimute
   const midAz = az / 2;
   const labelPt = project3D(midAz, 0, radiusFactor * 0.72);
   ctx.font = 'bold 12px Segoe UI, sans-serif';
@@ -2162,10 +2191,8 @@ function renderSim() {
   drawDome();
   drawZenithLine();
 
-  // 1. Desenha o arco/setor de Azimute no plano do horizonte
   drawAzimuthArc();
 
-  // 2. Desenha a Linha de Visada (com hachurado/setor e arco de elevação)
   drawVector({
     azim: simState.azimuth,
     elev: simState.elevation,
@@ -2176,14 +2203,13 @@ function renderSim() {
     showArc: true
   });
 
-  // 3. Desenha o Polo Celeste (MANTÉM O VETOR E A LABEL, mas OMITINDO o hachurado e o arco do ângulo)
   drawVector({
     azim: poleAzim,
     elev: poleElev,
     label: poleName,
     color: '#0284c7',
-    showSector: false, // Desativa a área hachurada do PNC
-    showArc: false    // Desativa o arco/texto do ângulo na base do PNC
+    showSector: false,
+    showArc: false
   });
 
   drawObserver();
@@ -2312,11 +2338,9 @@ function drawVector(config) {
   const target = project3D(config.azim, config.elev);
   const groundProj = project3D(config.azim, 0);
 
-  // Flags para controlar se desenha a área sombreada e o arco numérico do ângulo
   const showSector = config.showSector !== false;
   const showArc = config.showArc !== false;
 
-  // 1. Setor/Área hachurada (sombreada)
   if (config.elev > 0 && showSector) {
     ctx.beginPath();
     ctx.moveTo(obs.x, obs.y);
@@ -2329,7 +2353,6 @@ function drawVector(config) {
     ctx.fill();
   }
 
-  // Linhas guiadas de projeção vertical no chão
   ctx.beginPath();
   ctx.moveTo(target.x, target.y);
   ctx.lineTo(groundProj.x, groundProj.y);
@@ -2344,7 +2367,6 @@ function drawVector(config) {
   ctx.stroke();
   ctx.setLineDash([]);
 
-  // 2. Arco pontilhado de elevação/altura com o texto em graus
   if (config.elev > 0 && showArc) {
     ctx.beginPath();
     for (let e = 0; e <= config.elev; e += 2) {
@@ -2365,7 +2387,6 @@ function drawVector(config) {
     ctx.fillText(`${Math.round(config.elev)}°`, midArc.x, midArc.y);
   }
 
-  // Vetor / Seta principal
   ctx.beginPath();
   ctx.moveTo(obs.x, obs.y);
   ctx.lineTo(target.x, target.y);
