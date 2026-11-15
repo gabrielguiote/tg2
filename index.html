@@ -284,7 +284,7 @@
       padding: 6px;
     }
     .figure-pair img {
-      width: 100%; height: 160px;
+      width: 100%; height: 500px;
       object-fit: cover;
       border-radius: 6px;
       display: block;
@@ -691,6 +691,39 @@
       font-weight: 500;
     }
 
+/* ===== PÁGINA INICIAL ===== */
+.card.nav-card {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.card.nav-card i {
+  display: block;
+  width: auto;
+  font-size: 30px;
+  color: #000080;
+  margin-bottom: 10px;
+}
+.card.nav-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000080;
+  margin-bottom: 6px;
+}
+.card.nav-card p {
+  font-size: 13px;
+  color: #32505c;
+  line-height: 1.45;
+  margin: 0;
+}
+.card p.compact {
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+
     /* ===== RESPONSIVO ===== */
     @media (max-width: 900px) {
       .hero-block { grid-template-columns: 1fr; }
@@ -750,51 +783,67 @@
 
     <div class="window-content">
 
-      <!-- ===== INÍCIO ===== -->
-      <div id="tab-home" class="tab-content active-tab">
-        <div class="hero-header">
-          <h2>Nanotelescópios para ciência e divulgação</h2>
-          <p class="hero-sub">Uma rede trinacional de nanotelescópios integrando ciência, educação e ciência cidadã.</p>
-          <small class="hero-tag">🇧🇷 Brasil · 🇨🇱 Chile · 🇦🇷 Argentina | Dados abertos · Ciência cidadã</small>
-        </div>
+<!-- ===== INÍCIO ===== -->
+<div id="tab-home" class="tab-content active-tab">
 
-        <div class="card">
-          <h3 class="center">Metas e Impacto</h3>
-          <div class="grid-2">
-            <div class="card"><i class="fas fa-eye"></i> <b>Observações poderosas ao alcance</b><br>Monitoramento de variabilidade estelar, movimentos próprios em aglomerados abertos, paralaxe de asteroides e ocultações estelares.</div>
-            <div class="card"><i class="fas fa-graduation-cap"></i> <b>Educação e Divulgação</b><br>Formação de estudantes e professores, com materiais didáticos e oficinas práticas de astronomia.</div>
-            <div class="card"><i class="fas fa-users"></i> <b>Ciência cidadã</b><br>Qualquer pessoa com um nanotelescópio pode contribuir. As observações são enviadas para um hub central, reduzidas e disponibilizadas à comunidade.</div>
-          </div>
-        </div>
+  <!-- HERO -->
+  <div class="hero-header">
+    <h2>Nanotelescópios para ciência e divulgação</h2>
+    <p class="hero-sub">Uma rede trinacional de nanotelescópios integrando ciência, educação e ciência cidadã.</p>
+    <small class="hero-tag">🇧🇷 Brasil · 🇨🇱 Chile · 🇦🇷 Argentina | Dados abertos · Ciência cidadã</small>
+  </div>
 
-        <div class="figure-pair">
-          <figure>
-            <img src="PHOTO-2026-10-20-13-10-16.jpg" alt="..." loading="lazy">
-            <figcaption><b>Alterar</b> Alterar.</figcaption>
-          </figure>
-          <figure>
-            <img src="PHOTO-2026-10-20-13-10-45 (2).jpg" alt="..." loading="lazy">
-            <figcaption><b>Alterar</b> Alterar.</figcaption>
-          </figure>
-          <figure>
-            <img src="img/campo/m42-s50.jpg" alt="Nebulosa de Órion com Seestar S50" loading="lazy">
-            <figcaption><b>M42</b> — verificar crédito do arquivo.</figcaption>
-          </figure>
-          <figure>
-            <img src="img/campo/m42-s50.jpg" alt="Nebulosa de Órion com Seestar S50" loading="lazy">
-            <figcaption><b>M42</b> — verificar crédito do arquivo.</figcaption>
-          </figure>
-        </div>
+  <!-- O QUE É -->
+  <div class="card">
+    <h3 class="center">O que é o Projeto Nanotelescópios?</h3>
+    <p class="prose prose--mb-0">O <span class="cat">Projeto Nanotelescópios</span> reúne pesquisadores, estudantes e o público em torno de telescópios portáteis de alta qualidade (ZWO Seestar S50) para <b>pesquisa</b>, <b>educação</b> e <b>divulgação</b> em astronomia. A rede conecta instituições do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b> em observações coordenadas de <b>estrelas variáveis</b>, <b>asteroides</b>, <b>aglomerados abertos</b> e <b>trânsitos</b>, gerando <b>dados científicos abertos</b> e oportunidades de formação para estudantes e professores.</p>
+  </div>
+  
+    <!-- PILARES -->
+  <div class="grid-2">
+    <div class="card">
+      <h3><i class="fas fa-flask"></i> Pesquisa</h3>
+      <p class="compact">Levantamento de variabilidade estelar em cerca de 600 graus quadrados da Galáxia, astrometria de precisão, paralaxe de asteroides e ocultações estelares.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-graduation-cap"></i> Educação</h3>
+      <p class="compact">Formação de estudantes e professores em processamento de imagens, análise de dados e operação de telescópios, com materiais didáticos e oficinas.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-users"></i> Ciência cidadã</h3>
+      <p class="compact">Qualquer pessoa com um nanotelescópio pode contribuir. As observações vão para um hub central, onde são reduzidas e disponibilizadas à comunidade.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-database"></i> Dados abertos</h3>
+      <p class="compact">Pipeline automático de redução e plataforma de envio e download em <a href="https://t05.iag.usp.br/" target="_blank" class="link">t05.iag.usp.br</a>, com scripts de automação disponíveis.</p>
+    </div>
+  </div>
+  
+    <!-- GALERIA -->
+  <div class="card">
+    <h3 class="center">Imagens obtidas com nanotelescópios</h3>
+    <div class="figure-pair">
+      <figure>
+        <img src="PHOTO-2026-10-20-13-10-47 (1).jpg" alt="Lua fotografada com Seestar S50" loading="lazy">
+        <figcaption><b>Lua</b>: sobreposições de um eclipse.</figcaption>
+      </figure>
+      <figure>
+        <img src="PHOTO-2026-10-20-13-10-16.jpg" alt="." loading="lazy">
+        <figcaption><b>.</b> ..</figcaption>
+      </figure>
+            <figure>
+        <img src="PHOTO-2026-10-20-13-10-45 (2).jpg" alt="Lua fotografada com Seestar S50" loading="lazy">
+        <figcaption><b>.</b>...</figcaption>
+      </figure>
+      <figure>
+        <img src="PHOTO-2026-10-20-13-10-45.jpg" alt="." loading="lazy">
+        <figcaption><b>.</b> ..</figcaption>
+      </figure>
+    </div>
+  </div>
 
-        <div class="card">
-          <h3 class="center">Nanotelescópios: telescópios portáteis</h3>
-          <div class="grid-2">
-            <div class="card"><i class="fas fa-camera"></i> <b>Tecnologia acessível</b><br> Nanotelescópios SeeStar S50 adquiridos e em fase de testes, distribuídos entre instituições parceiras. Abertura de 50 mm, câmera CMOS com filtro IRCUT. Opera em modo Alt-Az ou equatorial (com cunha). Sensibilidade similar ao filtro BP do Gaia, permitindo fotometria precisa até magnitude 13.</div>
-            <div class="card"><i class="fas fa-chart-line"></i> <b>O que medimos?</b><br>Curvas de luz (variabilidade estelar ou de asteroides); posições precisas (astrometria) e movimentos próprios; paralaxe e ocultações estelares; rotação do Sol.</div>
-            <div class="card"><i class="fas fa-code-branch"></i> <b>Hub de Dados</b><br>Infraestrutura de processamento e armazenamento em nuvem, com pipeline de redução automática. Plataforma online: <a href="https://t05.iag.usp.br/" target="_blank" class="link">https://t05.iag.usp.br/</a>. Scripts para operação remota e agendamento de observações, integrados com o hub: envie seus frames, receba dados calibrados e acesse curvas de luz.</div>
-          </div>
-        </div>
-      </div>
+ 
+</div>
 
       <!-- ===== OBJETIVOS ===== -->
       <div id="tab-objectives" class="tab-content">
@@ -1192,18 +1241,6 @@
           <div class="method-step">
             <h4><i class="fas fa-camera"></i> O que registramos com o S50?</h4>
             <p class="prose prose--mb-14">O <span class="cat">Seestar S50</span> combina um <b>telescópio compacto</b> de 50 mm com uma câmera e <b>recursos automáticos</b> de observação e composição de imagens. <b>Exposições sucessivas</b> podem ser <b>combinadas</b> para revelar objetos que nossos olhos não percebem <u>diretamente</u>. O resultado depende do <u>céu</u>, do <u>tempo de integração</u> e do <u>processamento</u>: uma imagem obtida com esse equipamento não deve ser confundida com a aparência visual a olho nu.</p>
-            <p>Fotografia S50 indicada — Lua
-Exemplo de imagem lunar feita com Seestar S50; adequada para ilustrar crateras, mares e a importância da iluminação.
-Abrir fotografia original e conferir condições de uso: https://commons.wikimedia.org/wiki/File:2025-11-03-181511-Lunar.jpg
-Crédito: どがさん — CC0 1.0</p>
-            <p>Fotografia S50 indicada — Galáxia de Andrômeda (M31)
-Exemplo de uma galáxia fotografada com o mesmo modelo de nanotelescópio; permite introduzir a ideia de luz acumulada e de objetos fora da Via Láctea.
-Abrir fotografia original e conferir condições de uso: https://commons.wikimedia.org/wiki/File:Stacked_13_M_31_10.0s_IRCUT_20251129-195600.jpg
-Crédito: どがさん — CC0 1.0</p>
-            <p>Fotografia S50 indicada — Nebulosa de Órion (M42)
-Escolher nesta categoria uma fotografia identificada como produzida com S50; serve para explicar regiões onde estrelas se formam.
-Abrir fotografia original e conferir condições de uso: https://commons.wikimedia.org/wiki/Category:Taken_with_ZWO_Seestar_S50
-Crédito: Fotógrafo e licença: confirmar na página específica do arquivo</p>
             <div class="figure-trio">
               <figure>
                 <img src="img/campo/lua-s50.jpg" alt="Lua fotografada com Seestar S50" loading="lazy">
@@ -1363,7 +1400,7 @@ Crédito: Fotógrafo e licença: confirmar na página específica do arquivo</p>
 
       <!-- ===== EQUIPE ===== -->
       <div id="tab-team" class="tab-content">
-        <p class="team-intro">Pessoas pesquisadoras, professoras e colaboradoras do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b>.</p>
+        <p class="team-intro">Equipe colaboradora do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b>.</p>
         <div class="team-grid" id="team-container"></div>
       </div>
 
@@ -1372,8 +1409,7 @@ Crédito: Fotógrafo e licença: confirmar na página específica do arquivo</p>
         <div class="subtab-bar">
           <button class="subtab-btn" data-subtab="bas-recursos">Recursos</button>
           <button class="subtab-btn" data-subtab="how-tutorial">Tutorial do telescópio</button>
-          <button class="subtab-btn" data-subtab="bas-medidas">Medidas e incertezas</button>
-          <button class="subtab-btn" data-subtab="bas-dados">Análise de dados</button>
+          <button class="subtab-btn" data-subtab="bas-medidas">Incertezas e Análise de Dados</button>
         </div>
 
         <div id="bas-recursos" class="subtab-content">
@@ -1381,7 +1417,9 @@ Crédito: Fotógrafo e licença: confirmar na página específica do arquivo</p>
             <ul>
               <li>🔗 <a href="https://t05.iag.usp.br/" target="_blank">Hub de Dados (envio/redução)</a></li>
               <li>📘 <a href="#">Tutoriais em vídeo: como operar o Seestar S50</a> (em breve)</li>
-              <li>🐙 <a href="https://github.com/smart-underworld/seestar_run" target="_blank">Scripts de automação no GitHub</a></li>
+              <li>📘 <a href="S50_ShortExposures.pdf"
+            download="S50_ShortExposures.pdf">Tutoriais em texto: como operar o Seestar S50</a></li>
+              <li>🔗 <a href="https://github.com/smart-underworld/seestar_run" target="_blank">Scripts de automação no GitHub</a></li>
               <li>📄 <a href="#">Publicações e relatórios</a> (em breve)</li>
             </ul>
           </div>
@@ -1472,212 +1510,49 @@ Crédito: Fotógrafo e licença: confirmar na página específica do arquivo</p>
         <div id="bas-medidas" class="subtab-content">
           <div class="method-step">
             <h4><i class="fas fa-eye"></i> Medir é comparar</h4>
-            <p class="prose">Em astronomia, <b>medir</b> é <b>comparar</b> uma grandeza com uma <b>referência</b>: o brilho de uma estrela com o de outra, a posição de um asteroide com a de estrelas de fundo, o instante de uma ocultação com o de um cronômetro. O <b>instrumento</b> é o intermediário dessa comparação, e <b>nenhuma medida é exata</b>: toda leitura carrega uma <span class="cat">incerteza</span>.</p>
-            <p class="prose">A <b>teoria de erros</b> existe para responder a duas perguntas: qual o <b>melhor valor</b> que se pode atribuir a uma grandeza a partir de um conjunto de medições, e <b>quanto</b> esse valor pode diferir do valor verdadeiro. Como o valor verdadeiro é, por definição, <b>desconhecido</b>, qualquer afirmação sobre ele é <b>probabilística</b>.</p>
-            <p class="prose"> No <span class="cat">Projeto Nanotelescópios</span>, essa lógica está presente em cada etapa: ao medir a magnitude de uma estrela variável, ao calcular o movimento próprio de um membro de aglomerado, ao estimar a duração de uma ocultação estelar. Reconhecer e quantificar a incerteza é o que transforma uma <b>imagem bonita</b> em um <b>resultado científico</b>.</p>
+<p class="prose">Na astronomia, e na física como um geral, <span class="cat">medidas são comparações</span>. Compara-se o brilho de uma estrela em relação a outra, a distância de um asteroide comparado a das estrelas de fundo, ou o tempo de ocultação ao longo de seu trânsito a partir da medida de quantas rotações um ponteiro faz em um relógio, e etc; todas medições, nesse sentido, dependem de um <b>instrumento</b> que medie essa comparação. Entretanto, ele <b>nunca é exato</b>, sempre tem uma <u>resolução máxima</u> e uma <u>incerteza ou erro associado</u>.</p>
+
+<p class="prose">Ao longo das observações do <b>projeto Nanotelescópios</b>, você se deparará com isto: uma série de medidas (seja de <u>magnitude de uma estrela variável</u> ou das <u>velocidades de movimento próprio</u> de um membro de um aglomerado aberto, etc.). Um dos papeis da <b>teoria do erro</b> é conceder ferramentas para: decidir o <b>melhor valor</b> para se atribuir a uma grandeza; e descobrir o quanto esse valor se distancia do verdadeiro, que é <b>desconhecido</b> (ou, mesmo, <u>inacessível</u>). Nesse sentido, a prática de se fazer ciência é <b>indissociável</b> da de <span class="cat">quantificar e analisar incertezas</span>, e é o que <b>transforma uma imagem bonita em um resultado científico</b>.</p>
             
           </div>
 
           <div class="method-step">
-            <h4><i class="fas fa-eye"></i> Instrumentos e leitura</h4>
-            <p class="prose">Em instrumentos <b>analógicos</b>, a leitura inclui todos os dígitos que a escala permite ler diretamente, mais um dígito <b>estimado</b> pelo observador. Numa régua graduada em milímetros, lê-se a marca inteira e estima-se a fração de milímetro. Em instrumentos <b>digitais</b>, o último dígito pode oscilar; também aí cabe ao observador estimar o valor com base na flutuação.</p>
-            <p class="prose">O <span class="cat">nônio</span>, ou vernier, aumenta a resolução sem multiplicar indefinidamente os traços da escala principal. Quando dez divisões do nônio equivalem a nove da escala, a marca coincidente indica a fração da menor divisão: um paquímetro de dez divisões lê décimos de milímetro; um de cinquenta divisões, centésimos. Mas <b>mais divisões não garantem mais exatidão</b>: em instrumentos com muitas divisões, a dificuldade de decidir qual marca coincide torna o erro de leitura significativo, e o limite de erro real pode superar a menor leitura indicada.</p>
-            <p class="prose">Cada instrumento tem um <b>limite de erro de calibração</b>, geralmente fornecido pelo fabricante. Na falta de informação detalhada, admite-se como limite a menor divisão da escala. A incerteza correspondente é, como regra prática, <b>metade desse limite</b>. Essa regra não é universal: multímetros digitais, paquímetros com muitas divisões, réguas de plástico e instrumentos sujeitos a dilatação térmica ou folgas podem ter limite de erro bem maior. Aplicar a regra cegamente leva a <b>incertezas subestimadas</b>.</p>
-            <p class="prose">O erro instrumental decompõe-se em três partes. O <b>erro de zero</b> ocorre quando o instrumento não indica zero na ausência da grandeza; em muitos casos, o próprio experimentador ajusta o zero. O <b>erro linear de calibração</b> é proporcional à leitura: se a régua é 0,5% mais comprida, todas as medidas ficam 0,5% maiores; se o coeficiente é conhecido, a correção é possível. O <b>desvio de linearidade</b> é uma função complicada da leitura: as marcas podem não ser regularmente espaçadas. Em instrumentos bem construídos, esse desvio é pequeno; em medições ao longo de toda a escala, tende a se anular; numa única medida, é <b>sistemático</b>.</p>
-            <p class="prose">Nos <span class="cat">nanotelescópios</span> como o Seestar S50, a leitura digital dos pixels e a calibração automática de <i>dark</i> e <i>flat</i> não eliminam a necessidade de conhecer o instrumento. Saber como o sensor responde à luz, qual o ganho usado e como o <i>software</i> combina as exposições é parte de <b>medir bem</b> em astronomia.</p>
-      
+            <h4><i class="fas fa-eye"></i>Leitura de instrumentos</h4>
+<p class="prose">Com um instrumento <b>analógico</b>, a medida inclui todos os algarismos que a escala permite ler mais um último, a ser <span class="cat">estimado</span>; por exemplo, em uma régua milimetrada é possível identificar cada milímetro e <u>estimar uma fração de milímetro</u> (entre um traço e o outro). Com um instrumento <b>digital</b>, esse último dígito por vezes aparece como uma <u>flutuação</u>, logo se pode escolher o <b>valor intermediário</b> entre o qual há a oscilação.</p>
+
+<p class="prose">Além do mais, todos instrumentos têm sua própria <span class="cat">incerteza</span> (ou <u>limite de erro</u>) relacionada à sua <b>confecção</b> ou <b>calibração</b>; no caso da primeira, deve ser dada pelo <b>fabricante</b>; no caso da segunda, é especificada em <u>manuais</u> ou regulada em <u>softwares</u>.</p>
+
+<p class="prose">Mesmo com instrumentos digitais como o telescópio <b>Seestar S50</b>, é preciso levar em consideração erros e <b>entender como funcionam</b>. Saber como o <u>sensor</u> reage à luz, ou qual <u>ganho</u> está sendo usado ou como o <u>software combina as exposições</u>, por exemplo, são essenciais para a <span class="cat">tomada de boas medidas</span>.</p>
           </div>
 
            <!-- 3. Erros sistemáticos e estatísticos -->
   <div class="method-step">
     <h4><i class="fas fa-eye"></i> Erros sistemáticos e estatísticos</h4>
-    <p class="prose">
-      <b>Erros sistemáticos</b> permanecem iguais quando a medição é repetida nas mesmas condições. <b>Erros estatísticos</b>, ou <b>aleatórios</b>, variam de forma imprevisível e se distribuem em torno de um valor médio. Quando só há erro estatístico, o <b>valor médio</b> de muitas medições se aproxima do valor verdadeiro. Quando só há erro sistemático, todos os resultados são iguais entre si, mas <b>deslocados</b> do valor verdadeiro. <u>Repetir a medição reduz o erro estatístico da média, mas não elimina o erro sistemático.</u>
-    </p>
-    <p class="prose">
-      Erros sistemáticos têm origens diversas. <b>Erros instrumentais</b> vêm da calibração e de sua alteração com temperatura, desgaste ou tempo. <b>Erros ambientais</b> vêm de fatores externos: temperatura, pressão, umidade, campo magnético, vibrações. <b>Erros observacionais</b> vêm de limitações ou falhas de procedimento do observador, como paralaxe, atraso ao acionar um cronômetro, tempo de reação humano da ordem de décimos de segundo. <b>Erros teóricos</b> vêm do uso de modelos aproximados ou de constantes físicas imprecisas: desprezar a resistência do ar ao medir a aceleração da gravidade leva a um valor sistematicamente menor; o valor da carga do elétron obtido por Millikan em 1916 era 0,6% menor porque a viscosidade do ar usada nos cálculos estava ligeiramente errada.
-    </p>
-    <p class="prose">
-      Em muitos casos, é possível <b>eliminar ou reduzir</b> um erro sistemático por procedimentos engenhosos. Numa balança de pratos com braços desiguais, medir a massa duas vezes, invertendo os pratos, e tomar a média geométrica elimina o efeito da diferença entre os braços. Em medições elétricas, inverter dois voltímetros e combinar as leituras de forma adequada elimina erros multiplicativos de calibração, desde que não haja desvios de linearidade. Nem sempre a correção é viável. Quando um erro sistemático não pode ser reduzido nem corrigido, ele se torna um <span class="cat">erro sistemático residual</span>, cuja incerteza é tratada, na prática, como <b>incerteza tipo B</b>.
-    </p>
-    <p class="prose">
-      A distinção entre erro sistemático e estatístico é, em parte, <b>arbitrária</b>: depende do universo de medições considerado. O erro de calibração de um instrumento é sistemático se compararmos medições feitas com o mesmo aparelho, mas se torna estatístico quando se comparam instrumentos de marcas diferentes. Por isso, organizações internacionais recomendam classificar as incertezas em <b>tipo A</b> (estimadas por métodos estatísticos) e <b>tipo B</b> (estimadas por outros meios). As regras para combiná-las são objeto de debate, mas a distinção é mais <b>operacional</b> do que conceitual.
-    </p>
-    <p class="prose">
-      Há ainda os <b>erros grosseiros</b>: anotar 37,4 em vez de 47,4, apertar a tecla errada, trocar um sinal. Não são erros no sentido da teoria de erros, mas <b>enganos</b>. A leitura suspeita deve ser repetida ou eliminada. Evitá-los exige repetição de medições, conferência de cálculos e análise criteriosa da consistência dos resultados, algo especialmente importante em campanhas de <span class="cat">ciência cidadã</span>, em que diferentes observadores contribuem com dados para um mesmo alvo.
-    </p>
+<p class="prose"><span class="cat">Erros sistemáticos</span> são aqueles que são <b>constantes</b> apesar da repetição das medidas. <b>Erros estatísticos</b> (ou aleatórios) são aqueles que <u>não são previsíveis</u> e variam em torno de um <u>valor médio</u>. Caso uma medição tenha apenas esse último tipo de erro, então os resultados terão um valor médio <b>próximo ao exato</b>. Caso, no entanto, além disso, tenha erros sistemáticos, os resultados serão os mesmos, porém <b>deslocados</b> (a mais ou a menos) em relação ao valor médio.</p>
+
+<p class="prose">Note que a repetição de medidas deve reduzir o erro estatístico do valor médio obtido, <b>todavia não o sistemático</b>. Este pode ter diversas fontes: próprio ao <u>instrumento</u>; <u>condições ambientais</u> (temperatura, umidade, visibilidade, vibrações, etc.); <u>observacional</u>, causadas pelo observador (paralaxe da linha de visão, tempo de reação para apertar um temporizador, etc.); <u>teórica</u> (utilização de valores errados de constantes, de modelos inadequados aos dados, de efeitos físicos desconsiderados, etc.). <span class="cat">Reconhecer essas fontes</span> se faz importante tanto para a correta interpretação de resultados (e classificação de resíduos), quanto para a preparação de <b>métodos experimentais</b> que possam os eliminar ou reduzir.</p>
+
+<p class="prose">Por fim, pode-se classificar o que seriam <span class="cat">erros “grosseiros”</span>: ler ou escrever trocado o algarismo da dezena de um número; apertar o botão errado, ou esquecer de apertá-lo; apagar a linha ou coluna de uma tabela; entre outros relacionados ao <b>descuido humano</b>. Principalmente em um projeto como este, de <b>ciência cidadã</b>, em que os dados sobre um mesmo objeto são inseridos por múltiplas pessoas, necessita-se tomar cuidado para os evitar: <u>repita medidas</u>, mantenha sempre suas <u>anotações sobre as observações</u> atualizadas, <u>confira suas contas</u> e <u>analise a consistência de seus resultados</u>.</p>
   </div>
 
-  <!-- 4. Acurácia, precisão, repetitividade e reprodutibilidade -->
+  <!-- 4. Acurácia e precisão-->
   <div class="method-step">
-    <h4><i class="fas fa-eye"></i> Acurácia, precisão, repetitividade e reprodutibilidade</h4>
-    <p class="prose">
-      <b>Acurácia</b>, ou <b>exatidão</b>, é a proximidade entre o resultado e o valor verdadeiro. <b>Precisão</b> é a proximidade entre resultados repetidos. São conceitos distintos: um instrumento pode ser <b>preciso e pouco acurado</b> (leituras estáveis, mas sistematicamente deslocadas) ou <b>acurado e pouco preciso</b> (resultados dispersos, mas cuja média se aproxima do valor verdadeiro). Boa acurácia exige boa precisão e erros sistemáticos pequenos. <u>A palavra precisão não deve ser usada como sinônimo de acurácia!</u>
-    </p>
-    <p class="prose">
-      <b>Repetitividade</b> é o grau de concordância entre medições feitas nas mesmas condições: mesmo procedimento, mesmo observador, mesmos instrumentos, mesmo local, em intervalos curtos. <b>Reprodutibilidade</b> é a concordância entre medições feitas sob condições variadas. A primeira avalia a dispersão em condições controladas; a segunda, a robustez do resultado quando algo muda. Em uma <span class="cat">rede de nanotelescópios</span>, a reprodutibilidade entre diferentes sítios e observadores é um dos grandes desafios, e um dos principais objetivos do <b>hub de dados</b> do projeto.
-    </p>
+    <h4><i class="fas fa-eye"></i> Acurácia e Precisão</h4>
+<p class="prose">A <b>acurácia</b> (ou exatidão) corresponde a quão perto o resultado está em relação ao <b>valor verdadeiro</b>. A <b>precisão</b> se relaciona à <u>proximidade numérica</u> dos valores de <u>reiteradas medidas</u>. É possível, então, que um instrumento seja <b>preciso, mas não exato</b>; e vice-versa.</p>
   </div>
-
-  <!-- 5. Incerteza e intervalo de confiança -->
+  
+  <!-- 5. Análise de dados-->
   <div class="method-step">
-    <h4><i class="fas fa-eye"></i> Incerteza e intervalo de confiança</h4>
-    <p class="prose">
-      A <b>incerteza padrão</b> é o desvio padrão da distribuição de erros. Ela define um <b>intervalo de confiança</b> de aproximadamente <b>68%</b> em torno do resultado, no caso de distribuição gaussiana. Multiplicando a incerteza padrão por um fator <b>k</b>, obtém-se uma <b>incerteza expandida</b> com confiança maior: <i>k</i> = 2 dá cerca de 95%, <i>k</i> = 3 dá cerca de 99,7%. O <b>limite de erro</b> é o valor máximo admissível para o erro; se bem estabelecido, define um intervalo com confiança de 100%. Quando a distribuição é gaussiana, costuma-se tomar 3σ como limite prático. O <b>erro provável</b>, que tinha 50% de chance de ser excedido em módulo, caiu em desuso.
-    </p>
-    <p class="prose">
-      A <b>incerteza total</b> de um resultado combina a variância tipo A com as variâncias tipo B: <b>σ² = σ_A² + σ_B²</b>. Quando há várias fontes de erro sistemático residual, suas variâncias também se somam.
-    </p>
-    <p class="prose">
-      Na prática, muitas vezes o que se conhece não é a incerteza padrão, mas o <b>limite de erro do instrumento</b>. A conversão depende da distribuição assumida: se <b>gaussiana</b>, L = 3σ; se <b>retangular</b>, σ = L/√3; se <b>triangular</b>, σ = L/√6. Uma regra prática comum em instrumentos analógicos é considerar a incerteza padrão como metade da menor divisão da escala, mas essa regra deve ser aplicada com bom senso: muitos instrumentos têm limite de erro maior que a menor divisão, e o erro de calibração pode variar ao longo da escala.
-    </p>
-  </div>
+    <h4><i class="fas fa-eye"></i> Análise de dados</h4>
+<p class="prose">No campo da Astronomia, há uma <b>grande quantidade de dados</b> capturados por telescópios em <u>imagens, espectros, séries temporais</u>, que devem ser processados para que deles possamos <b>extrair informações</b>. Os <span class="cat">métodos numéricos</span> utilizados envolvem, por exemplo, a <u>remoção de artefatos</u>, <u>correção de efeitos atmosféricos</u>, <u>calibração de fluxo ou magnitude</u>: é preciso <b>organizar e limpar</b> os valores e conteúdos. Após essa etapa, pode-se escolher uma <u>função ou modelo físico</u> para verificar a sua adequação, ou não, às medidas, a depender do que se quer estudar.</p>
 
-  <!-- 6. Propagação de incertezas -->
-  <div class="method-step">
-    <h4><i class="fas fa-eye"></i> Propagação de incertezas</h4>
-    <p class="prose">
-      Quando uma grandeza <b>w</b> é calculada a partir de outras, sua incerteza depende das incertezas das variáveis de entrada e de <b>como w varia com cada uma delas</b>. Para erros independentes:
-    </p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:18px; text-align:center;">
-      <b>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + …</b>
-    </p>
-    <p class="prose">
-      Cada variável contribui de acordo com duas coisas: <b>o quanto w muda</b> quando aquela variável muda (a derivada parcial) e <b>o tamanho da incerteza</b> da própria variável. Quando só existe uma variável, σ_w = |dw/dx| σ_x.
-    </p>
-    <p class="prose">Casos particulares simplificam o cálculo:</p>
-    <ul style="font-size:16px; line-height:1.6; margin-bottom:18px;">
-      <li><b>Soma ou subtração:</b> as variâncias se somam, mesmo na subtração.</li>
-      <li><b>Multiplicação por constante:</b> σ_w = |a| σ_x.</li>
-      <li><b>Produto ou razão:</b> as incertezas relativas se combinam em quadratura.</li>
-      <li><b>Potências (w = x<sup>p</sup> y<sup>q</sup>):</b> (σ_w/w)² = (p σ_x/x)² + (q σ_y/y)².</li>
-      <li><b>Funções trigonométricas e logarítmicas:</b> a derivada apropriada entra na fórmula.</li>
-    </ul>
-    <p class="prose">
-      Um exemplo: o volume de um cilindro é <b>V = π L R²</b>. Dividindo a expressão por V², chega-se a <b>(σ_V/V)² = (σ_L/L)² + (2 σ_R/R)²</b>. O raio pesa mais, porque aparece elevado ao quadrado.
-    </p>
-    <p class="prose">
-      Essas expressões são aproximações válidas quando a função varia <b>suavemente</b> perto dos valores medidos, isto é, quando a derivada praticamente não muda para desvios da ordem da incerteza. Se a função oscila ou tem curvatura forte nessa escala, a aproximação linear deixa de ser boa.
-    </p>
-    <p class="prose">
-      A fórmula simples supõe erros <b>independentes</b>. Quando não são, é preciso incluir as <b>covariâncias</b>:
-    </p>
-    <p style="font-size:16px; line-height:1.6; margin-bottom:18px; text-align:center;">
-      <b>σ_w² = (∂w/∂x)² σ_x² + (∂w/∂y)² σ_y² + … + 2 (∂w/∂x)(∂w/∂y) cov(x,y) + …</b>
-    </p>
-    <p class="prose">
-      A covariância mede se duas variáveis tendem a variar <b>juntas</b>. O <b>coeficiente de correlação r</b> varia de −1 a +1 e indica o quanto os pontos se aproximam de uma reta. Correlação nula <u>não</u> garante independência: há distribuições em que os erros são dependentes, mas a covariância se anula por simetria.
-    </p>
-    <p class="prose">
-      Há ainda a <b>transferência de incerteza</b>. Quando y é medido em função de x e ambas as variáveis têm erro, pode-se admitir x como isenta de erro e incorporar sua incerteza à de y: <b>σ_y² = σ_y0² + (dy/dx)² σ_x²</b>. Como a relação entre y e x nem sempre é conhecida de início, faz-se uma estimativa preliminar da derivada e depois se refina por aproximações sucessivas.
-    </p>
-  </div>
-
-  <!-- 7. Qualidade de ajuste -->
-  <div class="method-step">
-    <h4><i class="fas fa-eye"></i> Qualidade de ajuste</h4>
-    <p class="prose">
-      O método dos <b>mínimos quadrados</b> encontra os melhores parâmetros para uma função de forma predeterminada, mas <u>não diz se essa forma é adequada</u>. Uma reta pode ser ajustada a pontos que claramente descrevem uma parábola, e o método ainda devolverá coeficientes. Avaliar a qualidade do ajuste é tão importante quanto obter os parâmetros.
-    </p>
-    <p class="prose">
-      A <b>verossimilhança</b> de um ajuste não se mede pelo simples acordo visual. Um alinhamento quase perfeito pode ser <b>inverossímil</b> se as incertezas forem grandes: seria improvável que todos os pontos se alinhassem tão bem dentro de barras de erro largas. Uma dispersão aparentemente grande pode ser perfeitamente compatível com incertezas pequenas. O que define um bom ajuste é a <b>coerência</b> entre as flutuações dos dados e as incertezas declaradas.
-    </p>
-    <p class="prose">
-      Um critério simples é o das <b>barras de incerteza</b>. Se a função ajustada for correta, cada ponto tem cerca de <b>68%</b> de probabilidade de ter sua barra cruzando a curva. Para <i>n</i> pontos e <i>p</i> parâmetros, o número médio de barras que devem cruzar a curva é <b>N<sub>cz</sub> ≈ (2/3)ν + p</b>, onde <b>ν = n − p</b> é o número de graus de liberdade. O desvio padrão esperado é cerca de <b>√(N<sub>cz</sub>/3)</b>. Desvios grandes desse número indicam problema. O critério é rudimentar, mas aplicável por inspeção visual.
-    </p>
-    <p class="prose">
-      Um critério mais elaborado é o <span class="cat">χ² reduzido</span>. Define-se <b>χ²</b> como a soma dos quadrados das diferenças entre os valores observados e a função ajustada, cada diferença dividida pela incerteza do ponto. Em outras palavras, χ² mede a <b>distância total</b> entre os pontos e a curva, usando as incertezas como unidade. O <b>χ² reduzido</b> é χ² dividido pelo número de graus de liberdade, <b>ν = n − p</b>. Se o ajuste for bom e as incertezas corretas, o valor esperado de χ²<sub>red</sub> é <b>1</b>. Valores muito maiores indicam função inadequada ou incertezas subestimadas. Valores muito menores sugerem incertezas superestimadas ou ajuste bom demais para ser verdadeiro.
-    </p>
-    <p class="prose">
-      A distribuição de χ²<sub>red</sub> depende de ν. Para ν grande, concentra-se em torno de 1; para ν pequeno, a dispersão é maior. Por isso, usam-se intervalos de confiança. Para ν = 10, pode-se afirmar com 98% de confiança que χ²<sub>red</sub> está entre <b>0,26 e 2,32</b>. Se o valor obtido cair fora desse intervalo, o ajuste é provavelmente ruim.
-    </p>
-    <p class="prose">
-      Na prática, um χ²<sub>red</sub> muito fora do intervalo aceitável pode ter duas causas: <b>função inadequada</b> ou <b>incertezas mal estimadas</b>. Distinguir entre as duas nem sempre é fácil. Se há certeza sobre a forma da função, o teste verifica as incertezas. Se as incertezas são confiáveis, o teste compara diferentes funções; entre as que produzem bom ajuste, prefere-se a de menor número de parâmetros. Considerações físicas também ajudam a escolher o modelo.
-    </p>
-    <p class="prose">
-      Quando as incertezas são desconhecidas, mas podem ser admitidas iguais, é possível estimá-las a partir do próprio ajuste. Impondo χ²<sub>red</sub> ≈ 1, obtém-se <b>σ² ≈ (1/ν) Σ [yᵢ − f(xᵢ)]²</b>. Essa expressão só é válida se houver razoável certeza de que a função ajustada é correta.
-    </p>
-    <p class="prose">
-      No <span class="cat">Projeto Nanotelescópios</span>, a qualidade de ajuste aparece diretamente nas <b>curvas de luz</b>: ao ajustar um modelo de trânsito planetário, uma curva de pulsação estelar ou um evento de ocultação, é preciso verificar se o modelo descreve os dados dentro das incertezas, e não apenas se a curva "passa perto" dos pontos.
-    </p>
-  </div>
-
-  <!-- 8. Algarismos significativos -->
-  <div class="method-step">
-    <h4><i class="fas fa-eye"></i> Algarismos significativos</h4>
-    <p class="prose">
-      O número de dígitos apresentados num resultado deve refletir a <b>incerteza</b>. A incerteza padrão costuma ser escrita com <b>um ou dois algarismos</b>: dois quando o primeiro é 1 ou 2; um ou dois quando o primeiro é 3 ou maior. O resultado é escrito com os <b>algarismos significativos</b> correspondentes, sem zeros à esquerda desnecessários. Zeros à direita podem ser significativos.
-    </p>
-    <p class="prose">
-      Números são arredondados segundo regras definidas: se o algarismo descartado é <b>menor que 5</b>, arredonda-se para baixo; se <b>maior</b>, para cima; se <b>exatamente 5</b>, arredonda-se para o par mais próximo. Quando não se indica a incerteza, o limite de erro deve ser no máximo <b>0,5 no último algarismo</b> apresentado.
-    </p>
-  </div>
-
-  <!-- 9. Vocabulário essencial -->
-  <div class="method-step">
-    <h4><i class="fas fa-eye"></i> Vocabulário essencial</h4>
-    <ul style="font-size:16px; line-height:1.6; margin-bottom:18px;">
-      <li><b>Grandeza:</b> atributo que pode ser distinguido qualitativamente e determinado quantitativamente.</li>
-      <li><b>Medição:</b> conjunto de operações para determinar o valor de uma grandeza.</li>
-      <li><b>Mensurando:</b> a grandeza específica submetida à medição.</li>
-      <li><b>Valor verdadeiro:</b> valor consistente com a definição da grandeza; por natureza, indeterminado.</li>
-      <li><b>Resultado de uma medição:</b> valor atribuído ao mensurando.</li>
-      <li><b>Erro:</b> resultado da medição menos o valor verdadeiro.</li>
-      <li><b>Correção:</b> valor somado ao resultado não corrigido para compensar erro sistemático.</li>
-      <li><b>Incerteza de medição:</b> parâmetro que caracteriza a dispersão dos valores atribuíveis ao mensurando.</li>
-      <li><b>Incerteza padrão:</b> incerteza expressa como desvio padrão.</li>
-      <li><b>Incerteza tipo A:</b> obtida por métodos estatísticos.</li>
-      <li><b>Incerteza tipo B:</b> obtida por outros métodos.</li>
-      <li><b>Incerteza expandida:</b> incerteza padrão multiplicada por um fator k.</li>
-      <li><b>Intervalo de confiança:</b> intervalo que contém o valor verdadeiro com probabilidade P.</li>
-      <li><b>Nível de confiança:</b> a probabilidade P associada ao intervalo.</li>
-      <li><b>Limite de erro:</b> valor máximo admissível para o erro.</li>
-      <li><b>Desvio padrão experimental:</b> medida da dispersão de n medições.</li>
-      <li><b>Repetitividade e reprodutibilidade:</b> concordância em condições iguais e variadas, respectivamente.</li>
-      <li><b>Acurácia e precisão:</b> proximidade do valor verdadeiro e proximidade entre repetições.</li>
-    </ul>
-  </div>
-        </div>
-
-        <div id="bas-dados" class="subtab-content">
-            <div class="method-step">
-    <p class="prose">
-      A <span class="cat">astronomia moderna</span> depende tanto de <b>observações</b> quanto de <b>cálculo</b>. Os telescópios produzem grandes volumes de dados (imagens, espectros, séries temporais) e extrair informação desses dados exige <b>métodos numéricos</b>. Ajustar curvas de luz, modelar atmosferas estelares, inferir parâmetros de órbitas, reconstruir mapas de galáxias, tudo isso envolve aproximações, iterações e estimativas. Entender como esses métodos funcionam, suas limitações e seus erros é parte essencial do trabalho astronômico.
-    </p>
-    <p class="prose">
-      Computadores não armazenam números com <b>precisão infinita</b>. Um número de <b>ponto flutuante</b> é representado por um sinal, um expoente e uma mantissa, e essa representação tem limites. O menor número que, somado a 1.0, produz um resultado diferente de 1.0 é a <b>precisão de máquina</b>, cerca de 10⁻⁷ para <i>floats</i> de 32 bits e 10⁻¹⁶ para <i>doubles</i> de 64 bits. Cada operação aritmética introduz um <b>erro de arredondamento</b> da ordem dessa precisão. Ao longo de milhares ou milhões de operações, esses erros se acumulam, e o resultado pode divergir do valor verdadeiro.
-    </p>
-    <p class="prose">
-      Há dois tipos principais de erro. O <b>erro de arredondamento</b> vem do <i>hardware</i> e é inevitável. O <b>erro de truncamento</b> vem do <i>algoritmo</i>: quando se aproxima uma integral por uma soma finita, ou uma função por seus primeiros termos, ou uma derivada por uma diferença, comete-se um erro que persistiria mesmo num computador perfeito. O erro de truncamento está sob controle do programador: escolher mais pontos, mais termos, passos menores, reduz o erro, mas aumenta o custo computacional. O <b>equilíbrio</b> entre precisão e eficiência é uma decisão central em qualquer análise.
-    </p>
-    <p class="prose">
-      Além disso, um método pode ser <b>instável</b>. Isso significa que pequenos erros introduzidos no início do cálculo são <b>amplificados</b> a cada etapa, até dominarem completamente o resultado. Um exemplo clássico é uma recorrência que, embora matematicamente correta, admite uma solução espúria que cresce exponencialmente. Se o algoritmo não for estável, a resposta final pode ser completamente errada, mesmo que a matemática esteja certa. Reconhecer e evitar instabilidades é parte do ofício.
-    </p>
-    <p class="prose">
-      A análise de dados em astronomia envolve várias etapas. Primeiro, é preciso <b>organizar e limpar</b> os dados: remover artefatos, corrigir pela atmosfera, calibrar em fluxo ou magnitude. Depois, vem a <b>modelagem</b>: escolher uma função ou um modelo físico que descreva o fenômeno, ajustar seus parâmetros aos dados, estimar incertezas. Em seguida, a <b>inferência</b>: comparar modelos, testar hipóteses, classificar objetos. Cada etapa usa métodos numéricos: interpolação, integração, ajuste por mínimos quadrados, transformadas de Fourier, métodos de Monte Carlo, cadeias de Markov.
-    </p>
-    <p class="prose">
-      A <b>escolha do método</b> importa. Uma interpolação ingênua pode oscilar entre pontos; uma integração com passo fixo pode ser lenta demais ou imprecisa demais; um ajuste não linear pode convergir para um <b>mínimo local</b> em vez do global. Por isso, entender o que está por trás de cada rotina é mais valioso do que tratá-la como caixa-preta. Saber como o algoritmo funciona permite adaptá-lo ao problema, diagnosticar falhas e reconhecer quando os resultados não fazem sentido.
-    </p>
-    <p class="prose">
-      A <b>validação</b> é parte integrante. Testar o código com casos conhecidos, comparar com soluções analíticas quando possível, verificar a convergência com diferentes resoluções, estimar a sensibilidade a perturbações nos dados, tudo isso ajuda a construir confiança nos resultados. A <b>reprodutibilidade</b> também importa: registrar versões, parâmetros e sementes de geradores aleatórios permite que outros repitam a análise e verifiquem as conclusões.
-    </p>
-    <p class="prose">
-      Para quem não vê com os olhos, a análise de dados continua <b>acessível</b>. Tabelas de valores podem ser lidas por <b>leitores de tela</b>. Gráficos podem ser convertidos em <b>descrições verbais detalhadas</b>, em <b>representações táteis</b> com relevos que indicam tendências, ou em <b>sonificações</b> que mapeiam variáveis em frequência, intensidade ou timbre. Ajustes de curvas podem ser comunicados por meio de parâmetros e incertezas expressos numericamente. A lógica dos algoritmos (iteração, convergência, estabilidade) pode ser explicada em texto. O essencial da análise está nos <b>números</b>, nas <b>relações entre eles</b> e na <b>interpretação</b>, não na imagem que os representa.
-    </p>
-    <p class="prose">
-      Em resumo, a análise de dados em astronomia combina <b>observação</b>, <b>matemática</b> e <b>computação</b>. Erros de arredondamento e truncamento são inevitáveis, mas podem ser gerenciados. A estabilidade dos algoritmos precisa ser verificada. A escolha do método e a validação dos resultados são tão importantes quanto a coleta dos dados. E, com as adaptações adequadas, todo esse processo pode ser compreendido e praticado por pessoas que percebem o mundo de maneiras diversas.
-    </p>
-    <p class="prose">
-      No <span class="cat">Projeto Nanotelescópios</span>, essas ideias ganham forma no <b>hub de dados</b>: um <i>pipeline</i> de redução automática, scripts de automação e uma plataforma que recebe imagens de dezenas de telescópios, calibra, faz astrometria e fotometria e devolve curvas de luz e medidas prontas para análise. A qualidade do dado final depende de cada etapa numérica, do <i>stacking</i> das exposições à estimativa de incertezas nas magnitudes.
-    </p>
+<p class="prose">No <b>projeto Nanotelescópios</b> isso pode, em parte, ser feito no <span class="cat"><i>hub</i> de dados</span> (acesse a <u>sub-aba “Recursos”</u>).</p>
   </div>
         </div>
       </div>
 
       <!-- ===== CONTATO ===== -->
       <div id="tab-contact" class="tab-content">
-        <h2 class="contact-title"> Participe e Contato</h2>
         <div class="grid-2">
           <div class="contact-info">
             <i class="fas fa-envelope"></i>
