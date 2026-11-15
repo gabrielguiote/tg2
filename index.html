@@ -284,7 +284,7 @@
       padding: 6px;
     }
     .figure-pair img {
-      width: 100%; height: 500px;
+      width: 100%; height: 160px;
       object-fit: cover;
       border-radius: 6px;
       display: block;
@@ -691,37 +691,68 @@
       font-weight: 500;
     }
 
-/* ===== PÁGINA INICIAL ===== */
-.card.nav-card {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+/* ===== HOME — ZIGZAG E NAVEGAÇÃO RÁPIDA ===== */
+.zigzag {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  margin: 22px 0;
 }
-.card.nav-card i {
+.zigzag.reverse > img { order: 2; }
+.zigzag.reverse > .zigzag-text { order: 1; }
+
+.zigzag img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #b6bcc8;
+  border-color: #e6ecf4 #8a909c #8a909c #e6ecf4;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
   display: block;
-  width: auto;
-  font-size: 30px;
+}
+.zigzag .zigzag-text h3 {
+  font-size: 20px;
   color: #000080;
   margin-bottom: 10px;
 }
-.card.nav-card h4 {
-  font-size: 15px;
-  font-weight: 700;
-  color: #000080;
-  margin-bottom: 6px;
+.zigzag .zigzag-text p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin-bottom: 8px;
 }
-.card.nav-card p {
-  font-size: 13px;
-  color: #32505c;
-  line-height: 1.45;
-  margin: 0;
+.zigzag .zigzag-text .link { color: #000080; font-weight: 600; }
+
+.quick-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
 }
-.card p.compact {
-  font-size: 14px;
-  line-height: 1.55;
-  margin: 0;
+.nav-card {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid #b6bcc8;
+  border-color: #e6ecf4 #8a909c #8a909c #e6ecf4;
+  border-radius: 10px;
+  padding: 16px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.nav-card:hover {
+  background: rgba(235, 240, 248, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.nav-card i { font-size: 26px; color: #000080; margin-bottom: 8px; display: block; }
+.nav-card h4 { font-size: 14px; color: #000080; margin-bottom: 4px; }
+.nav-card p { font-size: 12px; color: #32505c; line-height: 1.4; }
+
+@media (max-width: 768px) {
+  .zigzag { grid-template-columns: 1fr; gap: 14px; }
+  .zigzag.reverse > img { order: 1; }
+  .zigzag.reverse > .zigzag-text { order: 2; }
 }
 
     /* ===== RESPONSIVO ===== */
@@ -783,68 +814,88 @@
 
     <div class="window-content">
 
-<!-- ===== INÍCIO ===== -->
-<div id="tab-home" class="tab-content active-tab">
+      <!-- ===== INÍCIO ===== -->
+     <div id="tab-home" class="tab-content active-tab">
 
   <!-- HERO -->
   <div class="hero-header">
-    <h2>Nanotelescópios para ciência e divulgação</h2>
-    <p class="hero-sub">Uma rede trinacional de nanotelescópios integrando ciência, educação e ciência cidadã.</p>
+    <h2>Nanotelescópios para Ciência e Educação</h2>
+    <p class="hero-sub">Uma rede trinacional de telescópios inteligentes que une Brasil, Chile e Argentina em pesquisa, educação e ciência cidadã.</p>
     <small class="hero-tag">🇧🇷 Brasil · 🇨🇱 Chile · 🇦🇷 Argentina | Dados abertos · Ciência cidadã</small>
   </div>
 
-  <!-- O QUE É -->
-  <div class="card">
-    <h3 class="center">O que é o Projeto Nanotelescópios?</h3>
-    <p class="prose prose--mb-0">O <span class="cat">Projeto Nanotelescópios</span> reúne pesquisadores, estudantes e o público em torno de telescópios portáteis de alta qualidade (ZWO Seestar S50) para <b>pesquisa</b>, <b>educação</b> e <b>divulgação</b> em astronomia. A rede conecta instituições do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b> em observações coordenadas de <b>estrelas variáveis</b>, <b>asteroides</b>, <b>aglomerados abertos</b> e <b>trânsitos</b>, gerando <b>dados científicos abertos</b> e oportunidades de formação para estudantes e professores.</p>
-  </div>
-  
-    <!-- PILARES -->
-  <div class="grid-2">
-    <div class="card">
-      <h3><i class="fas fa-flask"></i> Pesquisa</h3>
-      <p class="compact">Levantamento de variabilidade estelar em cerca de 600 graus quadrados da Galáxia, astrometria de precisão, paralaxe de asteroides e ocultações estelares.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fas fa-graduation-cap"></i> Educação</h3>
-      <p class="compact">Formação de estudantes e professores em processamento de imagens, análise de dados e operação de telescópios, com materiais didáticos e oficinas.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fas fa-users"></i> Ciência cidadã</h3>
-      <p class="compact">Qualquer pessoa com um nanotelescópio pode contribuir. As observações vão para um hub central, onde são reduzidas e disponibilizadas à comunidade.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fas fa-database"></i> Dados abertos</h3>
-      <p class="compact">Pipeline automático de redução e plataforma de envio e download em <a href="https://t05.iag.usp.br/" target="_blank" class="link">t05.iag.usp.br</a>, com scripts de automação disponíveis.</p>
-    </div>
-  </div>
-  
-    <!-- GALERIA -->
-  <div class="card">
-    <h3 class="center">Imagens obtidas com nanotelescópios</h3>
-    <div class="figure-pair">
-      <figure>
-        <img src="PHOTO-2026-10-20-13-10-47 (1).jpg" alt="Lua fotografada com Seestar S50" loading="lazy">
-        <figcaption><b>Lua</b>: sobreposições de um eclipse.</figcaption>
-      </figure>
-      <figure>
-        <img src="PHOTO-2026-10-20-13-10-16.jpg" alt="." loading="lazy">
-        <figcaption><b>.</b> ..</figcaption>
-      </figure>
-            <figure>
-        <img src="PHOTO-2026-10-20-13-10-45 (2).jpg" alt="Lua fotografada com Seestar S50" loading="lazy">
-        <figcaption><b>.</b>...</figcaption>
-      </figure>
-      <figure>
-        <img src="PHOTO-2026-10-20-13-10-45.jpg" alt="." loading="lazy">
-        <figcaption><b>.</b> ..</figcaption>
-      </figure>
+  <!-- INTRODUÇÃO -->
+  <p class="prose" style="text-align:center; max-width: 820px; margin: 0 auto 12px;">
+    O <span class="cat">Projeto Nanotelescópios</span> usa telescópios portáteis (ZWO Seestar S50) para pesquisar o céu, formar estudantes e professores e aproximar o público da astronomia. Este site apresenta o projeto, seus objetivos, os fundamentos de astronomia, recursos para participantes e formas de contato.
+  </p>
+
+  <!-- ZIGZAG 1 -->
+  <div class="zigzag">
+    <img src="PHOTO-2026-10-20-13-10-44.jpg" alt="Estudantes observando o céu com nanotelescópio" loading="lazy">
+    <div class="zigzag-text">
+      <h3>🔭 O que é o projeto</h3>
+      <p>Uma rede de telescópios inteligentes dedicada a dois propósitos complementares: o <b>levantamento da variabilidade</b> de objetos da nossa Galáxia em cerca de 600 graus² do céu (campos do T80-South e do S-PLUS) e a <b>ciência cidadã</b>, com observações abertas a estudantes, amadores e ao público.</p>
     </div>
   </div>
 
- 
+  <!-- ZIGZAG 2 -->
+  <div class="zigzag reverse">
+    <img src="ZWO-Seestar-S50_-Telescopio-Inteligente.jpg" alt="Nanotelescópio Seestar S50" loading="lazy">
+    <div class="zigzag-text">
+      <h3>📷 Os nanotelescópios</h3>
+      <p>Telescópios portáteis com <b>abertura de 50 mm</b>, câmera CMOS com filtro IRCUT e operação automática em modo Alt-Az ou equatorial. Sensibilidade comparável ao filtro BP do Gaia, permitindo <b>fotometria precisa até magnitude 13</b>.</p>
+    </div>
+  </div>
+
+  <!-- ZIGZAG 3 -->
+  <div class="zigzag">
+    <img src="img/campo/m42-s50.jpg" alt="Nebulosa de Órion fotografada com Seestar S50" loading="lazy">
+    <div class="zigzag-text">
+      <h3>📊 O que medimos</h3>
+      <p>Curvas de luz de estrelas variáveis e asteroides, posições precisas (astrometria) e movimentos próprios em aglomerados abertos, paralaxe de asteroides e ocultações estelares. Todos os dados são enviados ao <b>hub central</b> (<a href="https://t05.iag.usp.br/" target="_blank" class="link">t05.iag.usp.br</a>), reduzidos automaticamente e disponibilizados à comunidade.</p>
+    </div>
+  </div>
+
+  <!-- ZIGZAG 4 -->
+  <div class="zigzag reverse">
+    <img src="PHOTO-2026-10-20-13-10-47 (2).jpg" alt="Estudantes em atividade de observação" loading="lazy">
+    <div class="zigzag-text">
+      <h3>🎓 Educação e divulgação</h3>
+      <p>Estudantes e professores aprendem <b>processamento de imagens</b> (.fits), <b>análise de dados</b> e os fundamentos da operação de telescópios, aproximando-se das práticas de pipelines profissionais. Oficinas, materiais didáticos e atividades práticas levam a astronomia à escola e ao público.</p>
+    </div>
+  </div>
+
+  <!-- NAVEGAÇÃO RÁPIDA -->
+  <h3 class="center" style="color:#000080; margin: 26px 0 8px;">Explore o site</h3>
+  <div class="quick-nav">
+    <div class="nav-card" data-tab-link="tab-objectives">
+      <i class="fas fa-bullseye"></i>
+      <h4>Objetivos</h4>
+      <p>Metas e escopo do projeto</p>
+    </div>
+    <div class="nav-card" data-tab-link="tab-basics">
+      <i class="fas fa-book-open"></i>
+      <h4>Fundamentos</h4>
+      <p>Conceitos de astronomia e observação</p>
+    </div>
+    <div class="nav-card" data-tab-link="tab-membros">
+      <i class="fas fa-toolbox"></i>
+      <h4>Participantes</h4>
+      <p>Recursos, tutoriais e análise de dados</p>
+    </div>
+    <div class="nav-card" data-tab-link="tab-team">
+      <i class="fas fa-users"></i>
+      <h4>Equipe</h4>
+      <p>Quem faz o projeto nos três países</p>
+    </div>
+    <div class="nav-card" data-tab-link="tab-contact">
+      <i class="fas fa-envelope"></i>
+      <h4>Contato</h4>
+      <p>Fale com a equipe</p>
+    </div>
+  </div>
+
 </div>
-
       <!-- ===== OBJETIVOS ===== -->
       <div id="tab-objectives" class="tab-content">
         <div class="method-step">
@@ -1241,6 +1292,18 @@
           <div class="method-step">
             <h4><i class="fas fa-camera"></i> O que registramos com o S50?</h4>
             <p class="prose prose--mb-14">O <span class="cat">Seestar S50</span> combina um <b>telescópio compacto</b> de 50 mm com uma câmera e <b>recursos automáticos</b> de observação e composição de imagens. <b>Exposições sucessivas</b> podem ser <b>combinadas</b> para revelar objetos que nossos olhos não percebem <u>diretamente</u>. O resultado depende do <u>céu</u>, do <u>tempo de integração</u> e do <u>processamento</u>: uma imagem obtida com esse equipamento não deve ser confundida com a aparência visual a olho nu.</p>
+            <p>Fotografia S50 indicada — Lua
+Exemplo de imagem lunar feita com Seestar S50; adequada para ilustrar crateras, mares e a importância da iluminação.
+Abrir fotografia original e conferir condições de uso: https://commons.wikimedia.org/wiki/File:2025-11-03-181511-Lunar.jpg
+Crédito: どがさん — CC0 1.0</p>
+            <p>Fotografia S50 indicada — Galáxia de Andrômeda (M31)
+Exemplo de uma galáxia fotografada com o mesmo modelo de nanotelescópio; permite introduzir a ideia de luz acumulada e de objetos fora da Via Láctea.
+Abrir fotografia original e conferir condições de uso: https://commons.wikimedia.org/wiki/File:Stacked_13_M_31_10.0s_IRCUT_20251129-195600.jpg
+Crédito: どがさん — CC0 1.0</p>
+            <p>Fotografia S50 indicada — Nebulosa de Órion (M42)
+Escolher nesta categoria uma fotografia identificada como produzida com S50; serve para explicar regiões onde estrelas se formam.
+Abrir fotografia original e conferir condições de uso: https://commons.wikimedia.org/wiki/Category:Taken_with_ZWO_Seestar_S50
+Crédito: Fotógrafo e licença: confirmar na página específica do arquivo</p>
             <div class="figure-trio">
               <figure>
                 <img src="img/campo/lua-s50.jpg" alt="Lua fotografada com Seestar S50" loading="lazy">
@@ -1400,7 +1463,7 @@
 
       <!-- ===== EQUIPE ===== -->
       <div id="tab-team" class="tab-content">
-        <p class="team-intro">Equipe colaboradora do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b>.</p>
+        <p class="team-intro">Pessoas pesquisadoras, professoras e colaboradoras do <b>Brasil</b>, <b>Chile</b> e <b>Argentina</b>.</p>
         <div class="team-grid" id="team-container"></div>
       </div>
 
